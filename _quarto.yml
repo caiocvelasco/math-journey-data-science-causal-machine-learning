@@ -8,22 +8,23 @@ book:
   chapters:
     - index.qmd
     - chapters/01_ch01.qmd
+  sidebar:
+    style: docked        # left, fixed sidebar with chapters
+    search: true
+    collapse-level: 1
 
-number-sections: false  # This disables numbering at chapter level
+number-sections: false
 
 format:
   html:
     theme: cosmo
     code-link: true
     math: true
+    toc: true
+    toc-location: left  # page TOC in the right margin
+    grid:
+      sidebar-width: 280px
+      body-width: 900px
+      margin-width: 0px
 
-bibliography: references.bib
-citeproc: true
-
-# Publish with Quarto's gh-pages provider (separate gh-pages branch)
-publish:
-  provider: gh-pages
-
-# Render into _book/ (default for Quarto)
 output-dir: _book
-

@@ -1,0 +1,24 @@
+/* Make the Quarto book use (nearly) full width */
+:root {
+    /* set to 100% for edge-to-edge; or 1200px/1400px for “wide” */
+    --content-max-width: 100%;
+  }
+  
+  /* Let containers actually expand */
+  .quarto-container,
+  .page-columns {
+    max-width: 100% !important;
+  }
+  
+  /* Remove the main column cap */
+  .page-columns .content {
+    max-width: none !important;
+  }
+  
+  /* Keep images/code responsive inside the wider content */
+  .page-columns .content img,
+  .page-columns .content .cell,
+  .page-columns .content pre {
+    max-width: 100%;
+  }
+  

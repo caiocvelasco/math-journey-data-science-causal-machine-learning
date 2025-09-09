@@ -1,0 +1,24 @@
+---
+author: "Caio Velasco"
+date: today
+---
+
+# Welcome {.unnumbered}
+
+This book explores ...
+
+---
+
+## Chapters (JUST AN EXAMPLE - NOT READY YET)
+
+### 1. Patterns Beneath the Noise — How Data Becomes Knowledge
+- What does it mean to “model” reality?
+- The idea of chance regularities and stochastic mechanisms
+
+
+### Latex Tests
+$p(\theta | \mathbf{y})$
+
+$$
+p(\theta | \mathbf{y})
+$$

@@ -1,0 +1,39 @@
+---
+title: "Chapter 1: Inference vs. Prediction"
+---
+
+# Motivation {.unnumbered}
+
+lorem ipslum...
+
+# 1. Name... {.unnumbered}
+
+lorem ipslum...
+
+# 2. Name... {.unnumbered}
+
+lorem ipslum... According to [@spanos1999probability; @spanos2010foundations]
+
+
+> “*Is modeling?*”
+
+$$
+Y_i \text{(Income)} = \beta_0 + \beta_1 \cdot \text{Education}_i + \varepsilon_i
+$$
+
+on explanatory variables $X$:
+
+$$
+Y \mid X \sim P(Y \mid X; \theta)
+$$
+
+Where:
+
+- $Y$ is the **response or dependent variable** (e.g., income),
+- $X$ is a vector of **covariates or explanatory variables** (e.g., education, experience),
+- $\theta$ represents the **parameters** of the distribution (e.g., regression coefficients).
+
+
+---
+
+## References

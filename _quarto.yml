@@ -1,0 +1,27 @@
+project:
+  type: book
+
+book:
+  title: "Foundations of Data Science & Causal ML: A Mathematical Journey"
+  author: "Caio Velasco"
+  date: today
+  chapters:
+    - index.qmd
+    - chapters/01_ch01.qmd
+
+number-sections: false  # This disables numbering at chapter level
+
+format:
+  html:
+    theme: cosmo
+    code-link: true
+    math: true
+
+bibliography: references.bib
+citeproc: true
+
+publish:
+  provider: gh-pages
+
+output-dir: docs
+

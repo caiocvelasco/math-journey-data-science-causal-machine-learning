@@ -1,0 +1,24 @@
+# Integrating dbt-core
+# Integrating Data Analysis Tools
+pandas
+numpy
+scipy
+
+# Integrating Data Visualization Tools
+seaborn # For visualization
+matplotlib # For visualization
+
+# Integrating Jupyter Notebooks
+ipytest # Pytest in Jupyter notebooks
+ipykernel
+jupyter
+
+# Integrating Software Engienering Best Practices Tools
+# pycodestyle # A tool to check your Python code against some of the style conventions in PEP 8
+# pytest # A framework that makes it easy to write small, readable tests
+
+# Integration Other Tools
+# requests # Allows you to send HTTP/1.1 requests extremely easily
+python-dotenv # Reads key-value pairs from a .env file and can set them as environment variables
+
+streamlit

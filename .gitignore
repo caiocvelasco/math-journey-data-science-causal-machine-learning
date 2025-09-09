@@ -1,0 +1,39 @@
+# Ignore .venv files
+.venv/
+
+# Ignore Python bytecode files
+*.pyc
+__pycache__
+
+# Ignore .env files
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Quart
+/.quarto/
+.quarto/
+
+# Quarto output directories
+_site/
+_book/
+_publish/
+
+# Quarto render artifacts
+*.html
+*.pdf
+*.docx
+*.log
+*.aux
+*.out
+*.toc
+
+# Temporary files
+*.tmp
+*.bak
+*.swp

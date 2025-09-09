@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "section": "",
+    "text": "Journey Phases\nThis book explores …",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#journey-phases",
+    "href": "index.html#journey-phases",
+    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "section": "",
+    "text": "0. Phase 0: Logic & Set Theory\n\nWhat does it mean to “model” reality?\nThe idea of chance regularities and stochastic mechanisms\n\n\n\nLatex Tests\n\\(p(\\theta | \\mathbf{y})\\)\n\\[\np(\\theta | \\mathbf{y})\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_ch01.html",
+    "href": "chapters/01_ch01.html",
+    "title": "Phase 0: Logic & Set Theory",
+    "section": "",
+    "text": "Motivation\nlorem ipslum…",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Phase 0: Logic & Set Theory</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_ch01.html#references",
+    "href": "chapters/01_ch01.html#references",
+    "title": "Phase 0: Logic & Set Theory",
+    "section": "References",
+    "text": "References\n\n\n\n\n\nSpanos, Aris. 1999. Probability Theory and Statistical Inference: Econometric Modeling with Observational Data. Cambridge University Press.\n\n\n———. 2010. The Foundations of Statistical Inference: A Unified Approach. Cambridge University Press.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Phase 0: Logic & Set Theory</span>"
+    ]
+  }
+]

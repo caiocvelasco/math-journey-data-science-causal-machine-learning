@@ -18,10 +18,13 @@ Thumbs.db
 # Quart
 /.quarto/
 .quarto/
+.quarto/*
 
 # Quarto output directories
 _site/
 _book/
+_book/*
+/_book/
 _publish/
 
 # Quarto render artifacts

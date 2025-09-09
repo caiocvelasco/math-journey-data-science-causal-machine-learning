@@ -20,8 +20,10 @@ format:
 bibliography: references.bib
 citeproc: true
 
+# Publish with Quarto's gh-pages provider (separate gh-pages branch)
 publish:
   provider: gh-pages
 
-output-dir: docs
+# Render into _book/ (default for Quarto)
+output-dir: _book
 

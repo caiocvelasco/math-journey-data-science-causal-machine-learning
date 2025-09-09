@@ -3,15 +3,13 @@ author: "Caio Velasco"
 date: today
 ---
 
-# Welcome {.unnumbered}
-
 This book explores ...
 
 ---
 
-## Chapters (JUST AN EXAMPLE - NOT READY YET)
+## Journey Phases
 
-### 1. Patterns Beneath the Noise — How Data Becomes Knowledge
+### 0. Phase 0: Logic & Set Theory
 - What does it mean to “model” reality?
 - The idea of chance regularities and stochastic mechanisms
 

@@ -1,5 +1,5 @@
 ---
-title: "Chapter 1: Inference vs. Prediction"
+title: "Phase 0: Logic & Set Theory"
 ---
 
 # Motivation {.unnumbered}

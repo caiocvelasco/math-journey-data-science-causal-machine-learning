@@ -1,42 +1,37 @@
-# Ignore .venv files
+# Virtual environments
 .venv/
+venv/
 
-# Ignore Python bytecode files
-*.pyc
-__pycache__
+# Python bytecode
+__pycache__/
+*.py[cod]
 
-# Ignore .env files
+# Environment files
 .env
+.env.*
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# OS generated files
+# OS files
 .DS_Store
 Thumbs.db
 
-# Quart
-/.quarto/
+# Quarto
 .quarto/
-.quarto/*
-
-# Quarto output directories
 _site/
 _book/
-_book/*
-/_book/
 _publish/
 
-# Quarto render artifacts
-*.html
-*.pdf
-*.docx
-*.log
-*.aux
-*.out
-*.toc
+# Build artifacts (only inside output dirs, not globally!)
+# If you really want to exclude ALL PDFs/logs, keep the patterns, but usually safer:
+# *.pdf
+# *.log
+# *.aux
+# *.out
+# *.toc
 
-# Temporary files
+# Temp files
 *.tmp
 *.bak
 *.swp

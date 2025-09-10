@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Caio Velasco">
-<meta name="dcterms.date" content="2025-09-09">
+<meta name="dcterms.date" content="2025-09-10">
 
 <title>Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-26df9116ba97b0b2f0c10f9d9c2463b6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,7 +103,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -122,9 +122,9 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Foundations of Data Science &amp; Causal ML: A Mathematical Journey</a> 
@@ -149,24 +149,28 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
   <li><a href="#journey-phases" id="toc-journey-phases" class="nav-link active" data-scroll-target="#journey-phases">Journey Phases</a>
   <ul class="collapse">
-  <li><a href="#phase-0-logic-set-theory" id="toc-phase-0-logic-set-theory" class="nav-link" data-scroll-target="#phase-0-logic-set-theory">0. Phase 0: Logic &amp; Set Theory</a></li>
-  <li><a href="#latex-tests" id="toc-latex-tests" class="nav-link" data-scroll-target="#latex-tests">Latex Tests</a></li>
+  <li><a href="#phase-0-logic-set-theory" id="toc-phase-0-logic-set-theory" class="nav-link" data-scroll-target="#phase-0-logic-set-theory">Phase 0 – Logic &amp; Set Theory</a></li>
+  <li><a href="#phase-1-real-analysis" id="toc-phase-1-real-analysis" class="nav-link" data-scroll-target="#phase-1-real-analysis">Phase 1 – Real Analysis</a></li>
+  <li><a href="#phase-2-topology-measure-theory" id="toc-phase-2-topology-measure-theory" class="nav-link" data-scroll-target="#phase-2-topology-measure-theory">Phase 2 – Topology &amp; Measure Theory</a></li>
+  <li><a href="#phase-3-probability" id="toc-phase-3-probability" class="nav-link" data-scroll-target="#phase-3-probability">Phase 3 – Probability</a></li>
+  <li><a href="#phase-4-mathematical-statistics" id="toc-phase-4-mathematical-statistics" class="nav-link" data-scroll-target="#phase-4-mathematical-statistics">Phase 4 – Mathematical Statistics</a></li>
+  <li><a href="#phase-5-causality" id="toc-phase-5-causality" class="nav-link" data-scroll-target="#phase-5-causality">Phase 5 – Causality</a></li>
   </ul></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -175,7 +179,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta column-body">
+<div class="quarto-title-meta">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -187,7 +191,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 9, 2025</p>
+      <p class="date">September 10, 2025</p>
     </div>
   </div>
   
@@ -199,23 +203,97 @@ window.Quarto = {
 </header>
 
 
-<p>This book explores …</p>
+<p>This is my structured learning roadmap to prepare for research in <strong>causal machine learning</strong> with mathematical rigor.</p>
+<p>Here you can find both <strong>mathematical foundations</strong> and <strong>applications</strong>.</p>
 <hr>
 <section id="journey-phases" class="level2">
 <h2 class="anchored" data-anchor-id="journey-phases">Journey Phases</h2>
 <section id="phase-0-logic-set-theory" class="level3">
-<h3 class="anchored" data-anchor-id="phase-0-logic-set-theory">0. Phase 0: Logic &amp; Set Theory</h3>
-<ul>
-<li>What does it mean to “model” reality?</li>
-<li>The idea of chance regularities and stochastic mechanisms</li>
-</ul>
+<h3 class="anchored" data-anchor-id="phase-0-logic-set-theory">Phase 0 – Logic &amp; Set Theory</h3>
+<p><strong>Goal:</strong> Build comfort with the <em>language of mathematics</em>.<br>
+- Proof techniques: direct, contrapositive, contradiction, induction.<br>
+- Sets and families of sets, Cartesian products, power sets.<br>
+- Functions: injective, surjective, bijective.<br>
+- Relations: equivalence relations, partial orders.<br>
+- Cardinality: countable vs.&nbsp;uncountable sets.</p>
+<p><strong>Theory Output:</strong> Notes + proofs on quantifiers, induction, and countability.<br>
+<strong>Application Project:</strong> SQL/database operations as set theory (joins, unions, intersections).</p>
+<p><strong>References:</strong><br>
+- Velleman – <em>How to Prove It</em><br>
+- Enderton – <em>Set Theory</em></p>
+<hr>
 </section>
-<section id="latex-tests" class="level3">
-<h3 class="anchored" data-anchor-id="latex-tests">Latex Tests</h3>
-<p><span class="math inline">\(p(\theta | \mathbf{y})\)</span></p>
-<p><span class="math display">\[
-p(\theta | \mathbf{y})
-\]</span></p>
+<section id="phase-1-real-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-real-analysis">Phase 1 – Real Analysis</h3>
+<p><strong>Goal:</strong> Rigorous calculus and convergence.<br>
+- Sequences, series, limits.<br>
+- Continuity, compactness, connectedness.<br>
+- Differentiation, Riemann integration (with rigor).<br>
+- Uniform convergence.</p>
+<p><strong>Theory Output:</strong> ε–δ proofs, compactness in ℝ, uniform convergence examples.<br>
+<strong>Application Project:</strong> Gradient descent convergence demo; connect convexity to logistic regression loss.</p>
+<p><strong>References:</strong><br>
+- Rudin – <em>Principles of Mathematical Analysis</em> (Baby Rudin)<br>
+- Tao – <em>Analysis I</em></p>
+<hr>
+</section>
+<section id="phase-2-topology-measure-theory" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-topology-measure-theory">Phase 2 – Topology &amp; Measure Theory</h3>
+<p><strong>Goal:</strong> Learn the structures that underlie probability theory.<br>
+- Metric spaces, open/closed sets.<br>
+- Compactness and product spaces.<br>
+- σ-algebras, measurable functions.<br>
+- Lebesgue measure and integration.<br>
+- Convergence theorems: MCT, DCT.</p>
+<p><strong>Theory Output:</strong> Worked examples of σ-algebras, Lebesgue integral, and convergence theorems.<br>
+<strong>Application Project:</strong> Fraud detection via Monte Carlo — rare events and measure-zero sets in anomaly detection.</p>
+<p><strong>References:</strong><br>
+- Munkres – <em>Topology</em><br>
+- Schilling – <em>Measures, Integrals and Martingales</em></p>
+<hr>
+</section>
+<section id="phase-3-probability" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-probability">Phase 3 – Probability</h3>
+<p><strong>Goal:</strong> Define probability rigorously à la Kolmogorov.<br>
+- Probability spaces and random variables as measurable functions.<br>
+- Distributions, independence, product measures.<br>
+- Conditional expectation as L² projection.<br>
+- Laws of large numbers, central limit theorem.<br>
+- Intro to martingales.</p>
+<p><strong>Theory Output:</strong> Probability space construction, LLN/CLT proofs, conditional expectation as projection.<br>
+<strong>Application Project:</strong> A/B testing simulation — CLT and confidence intervals for conversion rates.</p>
+<p><strong>References:</strong><br>
+- Durrett – <em>Probability: Theory and Examples</em><br>
+- Klenke – <em>Probability Theory</em></p>
+<hr>
+</section>
+<section id="phase-4-mathematical-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="phase-4-mathematical-statistics">Phase 4 – Mathematical Statistics</h3>
+<p><strong>Goal:</strong> Connect probability → inference.<br>
+- Point estimation: MLE, method of moments.<br>
+- Properties: unbiasedness, consistency, efficiency.<br>
+- Hypothesis testing and likelihood ratio tests.<br>
+- Asymptotic results: convergence in probability/distribution, delta method.</p>
+<p><strong>Theory Output:</strong> Consistency of MLE, hypothesis testing framework, asymptotic normality proofs.<br>
+<strong>Application Project:</strong> Logistic regression for churn prediction — prove Bernoulli MLE consistency, simulate convergence, apply to real dataset.</p>
+<p><strong>References:</strong><br>
+- Casella &amp; Berger – <em>Statistical Inference</em></p>
+<hr>
+</section>
+<section id="phase-5-causality" class="level3">
+<h3 class="anchored" data-anchor-id="phase-5-causality">Phase 5 – Causality</h3>
+<p><strong>Goal:</strong> Enter causal inference with strong mathematical foundations.<br>
+- Pearl’s Structural Causal Models &amp; do-calculus.<br>
+- Rubin’s potential outcomes framework.<br>
+- Invariant causal prediction (Peters, Janzing, Schölkopf).<br>
+- Identifiability proofs.<br>
+- Axiomatic frameworks (Park &amp; Muandet).</p>
+<p><strong>Theory Output:</strong> Worked proofs of identifiability, back-door/front-door criteria, do-calculus rules.<br>
+<strong>Application Project:</strong> Uplift modeling for churn retention OR reproduction of Chernozhukov’s Double Machine Learning estimator with Python.</p>
+<p><strong>References:</strong><br>
+- Pearl – <em>Causality</em><br>
+- Peters, Janzing, Schölkopf – <em>Elements of Causal Inference</em><br>
+- Chernozhukov et al.&nbsp;– <em>Causal Machine Learning papers</em></p>
 
 
 
@@ -622,7 +700,7 @@ p(\theta | \mathbf{y})
     }
   });
   </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">

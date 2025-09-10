@@ -3,20 +3,108 @@ author: "Caio Velasco"
 date: today
 ---
 
-This book explores ...
+This is my structured learning roadmap to prepare for research in **causal machine learning** with mathematical rigor.
+
+Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
 ## Journey Phases
 
-### 0. Phase 0: Logic & Set Theory
-- What does it mean to “model” reality?
-- The idea of chance regularities and stochastic mechanisms
+### Phase 0 – Logic & Set Theory
+**Goal:** Build comfort with the *language of mathematics*.  
+- Proof techniques: direct, contrapositive, contradiction, induction.  
+- Sets and families of sets, Cartesian products, power sets.  
+- Functions: injective, surjective, bijective.  
+- Relations: equivalence relations, partial orders.  
+- Cardinality: countable vs. uncountable sets.  
 
+**Theory Output:** Notes + proofs on quantifiers, induction, and countability.  
+**Application Project:** SQL/database operations as set theory (joins, unions, intersections).  
 
-### Latex Tests
-$p(\theta | \mathbf{y})$
+**References:**  
+- Velleman – *How to Prove It*  
+- Enderton – *Set Theory*  
 
-$$
-p(\theta | \mathbf{y})
-$$
+---
+
+### Phase 1 – Real Analysis
+**Goal:** Rigorous calculus and convergence.  
+- Sequences, series, limits.  
+- Continuity, compactness, connectedness.  
+- Differentiation, Riemann integration (with rigor).  
+- Uniform convergence.  
+
+**Theory Output:** ε–δ proofs, compactness in ℝ, uniform convergence examples.  
+**Application Project:** Gradient descent convergence demo; connect convexity to logistic regression loss.  
+
+**References:**  
+- Rudin – *Principles of Mathematical Analysis* (Baby Rudin)  
+- Tao – *Analysis I*  
+
+---
+
+### Phase 2 – Topology & Measure Theory
+**Goal:** Learn the structures that underlie probability theory.  
+- Metric spaces, open/closed sets.  
+- Compactness and product spaces.  
+- σ-algebras, measurable functions.  
+- Lebesgue measure and integration.  
+- Convergence theorems: MCT, DCT.  
+
+**Theory Output:** Worked examples of σ-algebras, Lebesgue integral, and convergence theorems.  
+**Application Project:** Fraud detection via Monte Carlo — rare events and measure-zero sets in anomaly detection.  
+
+**References:**  
+- Munkres – *Topology*  
+- Schilling – *Measures, Integrals and Martingales*  
+
+---
+
+### Phase 3 – Probability
+**Goal:** Define probability rigorously à la Kolmogorov.  
+- Probability spaces and random variables as measurable functions.  
+- Distributions, independence, product measures.  
+- Conditional expectation as L² projection.  
+- Laws of large numbers, central limit theorem.  
+- Intro to martingales.  
+
+**Theory Output:** Probability space construction, LLN/CLT proofs, conditional expectation as projection.  
+**Application Project:** A/B testing simulation — CLT and confidence intervals for conversion rates.  
+
+**References:**  
+- Durrett – *Probability: Theory and Examples*  
+- Klenke – *Probability Theory*  
+
+---
+
+### Phase 4 – Mathematical Statistics
+**Goal:** Connect probability → inference.  
+- Point estimation: MLE, method of moments.  
+- Properties: unbiasedness, consistency, efficiency.  
+- Hypothesis testing and likelihood ratio tests.  
+- Asymptotic results: convergence in probability/distribution, delta method.  
+
+**Theory Output:** Consistency of MLE, hypothesis testing framework, asymptotic normality proofs.  
+**Application Project:** Logistic regression for churn prediction — prove Bernoulli MLE consistency, simulate convergence, apply to real dataset.  
+
+**References:**  
+- Casella & Berger – *Statistical Inference*  
+
+---
+
+### Phase 5 – Causality
+**Goal:** Enter causal inference with strong mathematical foundations.  
+- Pearl’s Structural Causal Models & do-calculus.  
+- Rubin’s potential outcomes framework.  
+- Invariant causal prediction (Peters, Janzing, Schölkopf).  
+- Identifiability proofs.  
+- Axiomatic frameworks (Park & Muandet).  
+
+**Theory Output:** Worked proofs of identifiability, back-door/front-door criteria, do-calculus rules.  
+**Application Project:** Uplift modeling for churn retention OR reproduction of Chernozhukov’s Double Machine Learning estimator with Python.  
+
+**References:**  
+- Pearl – *Causality*  
+- Peters, Janzing, Schölkopf – *Elements of Causal Inference*  
+- Chernozhukov et al. – *Causal Machine Learning papers*  

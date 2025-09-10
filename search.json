@@ -14,7 +14,7 @@
     "href": "index.html#journey-phases",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
     "section": "",
-    "text": "Phase 0 – Logic & Set Theory\nGoal: Build comfort with the language of mathematics.\n- Proof techniques: direct, contrapositive, contradiction, induction.\n- Sets and families of sets, Cartesian products, power sets.\n- Functions: injective, surjective, bijective.\n- Relations: equivalence relations, partial orders.\n- Cardinality: countable vs. uncountable sets.\nTheory Output: Notes + proofs on quantifiers, induction, and countability.\nApplication Project: SQL/database operations as set theory (joins, unions, intersections).\nReferences:\n- Velleman – How to Prove It\n- Enderton – Set Theory\n\n\n\nPhase 1 – Real Analysis\nGoal: Rigorous calculus and convergence.\n- Sequences, series, limits.\n- Continuity, compactness, connectedness.\n- Differentiation, Riemann integration (with rigor).\n- Uniform convergence.\nTheory Output: ε–δ proofs, compactness in ℝ, uniform convergence examples.\nApplication Project: Gradient descent convergence demo; connect convexity to logistic regression loss.\nReferences:\n- Rudin – Principles of Mathematical Analysis (Baby Rudin)\n- Tao – Analysis I\n\n\n\nPhase 2 – Topology & Measure Theory\nGoal: Learn the structures that underlie probability theory.\n- Metric spaces, open/closed sets.\n- Compactness and product spaces.\n- σ-algebras, measurable functions.\n- Lebesgue measure and integration.\n- Convergence theorems: MCT, DCT.\nTheory Output: Worked examples of σ-algebras, Lebesgue integral, and convergence theorems.\nApplication Project: Fraud detection via Monte Carlo — rare events and measure-zero sets in anomaly detection.\nReferences:\n- Munkres – Topology\n- Schilling – Measures, Integrals and Martingales\n\n\n\nPhase 3 – Probability\nGoal: Define probability rigorously à la Kolmogorov.\n- Probability spaces and random variables as measurable functions.\n- Distributions, independence, product measures.\n- Conditional expectation as L² projection.\n- Laws of large numbers, central limit theorem.\n- Intro to martingales.\nTheory Output: Probability space construction, LLN/CLT proofs, conditional expectation as projection.\nApplication Project: A/B testing simulation — CLT and confidence intervals for conversion rates.\nReferences:\n- Durrett – Probability: Theory and Examples\n- Klenke – Probability Theory\n\n\n\nPhase 4 – Mathematical Statistics\nGoal: Connect probability → inference.\n- Point estimation: MLE, method of moments.\n- Properties: unbiasedness, consistency, efficiency.\n- Hypothesis testing and likelihood ratio tests.\n- Asymptotic results: convergence in probability/distribution, delta method.\nTheory Output: Consistency of MLE, hypothesis testing framework, asymptotic normality proofs.\nApplication Project: Logistic regression for churn prediction — prove Bernoulli MLE consistency, simulate convergence, apply to real dataset.\nReferences:\n- Casella & Berger – Statistical Inference\n\n\n\nPhase 5 – Causality\nGoal: Enter causal inference with strong mathematical foundations.\n- Pearl’s Structural Causal Models & do-calculus.\n- Rubin’s potential outcomes framework.\n- Invariant causal prediction (Peters, Janzing, Schölkopf).\n- Identifiability proofs.\n- Axiomatic frameworks (Park & Muandet).\nTheory Output: Worked proofs of identifiability, back-door/front-door criteria, do-calculus rules.\nApplication Project: Uplift modeling for churn retention OR reproduction of Chernozhukov’s Double Machine Learning estimator with Python.\nReferences:\n- Pearl – Causality\n- Peters, Janzing, Schölkopf – Elements of Causal Inference\n- Chernozhukov et al. – Causal Machine Learning papers",
+    "text": "Phase 1 – Logic & Set Theory\nGoal: Build comfort with the language of mathematics.\n- Proof techniques: direct, contrapositive, contradiction, induction.\n- Sets and families of sets, Cartesian products, power sets.\n- Functions: injective, surjective, bijective.\n- Relations: equivalence relations, partial orders.\n- Cardinality: countable vs. uncountable sets.\nTheory Output: - Sentential logic (Velleman Ch. 1) - Predicate logic & quantifiers (Ch. 2) - Proof techniques (direct, contrapositive, contradiction, induction) (Ch. 3) - Sets, relations, functions (Ch. 4–6) - Countability, infinity (Ch. 9 selected, Tao’s appendix)\nApplication Project: - SQL/database operations as set theory (joins, unions, intersections). - Prove/discuss equivalences (e.g., idempotency: SELECT DISTINCT twice = once)\nReferences:\n- Velleman – How to Prove It\n- Enderton – Set Theory\n\n\n\nPhase 2 – Real Analysis\nGoal: Rigorous calculus and convergence.\n- Sequences, series, limits.\n- Continuity, compactness, connectedness.\n- Differentiation, Riemann integration (with rigor).\n- Uniform convergence.\nTheory Output: ε–δ proofs, compactness in ℝ, uniform convergence examples.\nApplication Project: Gradient descent convergence demo; connect convexity to logistic regression loss.\nReferences:\n- Rudin – Principles of Mathematical Analysis (Baby Rudin)\n- Tao – Analysis I\n\n\n\nPhase 3 – Topology & Measure Theory\nGoal: Learn the structures that underlie probability theory.\n- Metric spaces, open/closed sets.\n- Compactness and product spaces.\n- σ-algebras, measurable functions.\n- Lebesgue measure and integration.\n- Convergence theorems: MCT, DCT.\nTheory Output: Worked examples of σ-algebras, Lebesgue integral, and convergence theorems.\nApplication Project: Fraud detection via Monte Carlo — rare events and measure-zero sets in anomaly detection.\nReferences:\n- Munkres – Topology\n- Schilling – Measures, Integrals and Martingales\n\n\n\nPhase 4 – Probability\nGoal: Define probability rigorously à la Kolmogorov.\n- Probability spaces and random variables as measurable functions.\n- Distributions, independence, product measures.\n- Conditional expectation as L² projection.\n- Laws of large numbers, central limit theorem.\n- Intro to martingales.\nTheory Output: Probability space construction, LLN/CLT proofs, conditional expectation as projection.\nApplication Project: A/B testing simulation — CLT and confidence intervals for conversion rates.\nReferences:\n- Durrett – Probability: Theory and Examples\n- Klenke – Probability Theory\n\n\n\nPhase 5 – Mathematical Statistics\nGoal: Connect probability → inference.\n- Point estimation: MLE, method of moments.\n- Properties: unbiasedness, consistency, efficiency.\n- Hypothesis testing and likelihood ratio tests.\n- Asymptotic results: convergence in probability/distribution, delta method.\nTheory Output: Consistency of MLE, hypothesis testing framework, asymptotic normality proofs.\nApplication Project: Logistic regression for churn prediction — prove Bernoulli MLE consistency, simulate convergence, apply to real dataset.\nReferences:\n- Casella & Berger – Statistical Inference\n\n\n\nPhase 6 – Causality\nGoal: Enter causal inference with strong mathematical foundations.\n- Pearl’s Structural Causal Models & do-calculus.\n- Rubin’s potential outcomes framework.\n- Invariant causal prediction (Peters, Janzing, Schölkopf).\n- Identifiability proofs.\n- Axiomatic frameworks (Park & Muandet).\nTheory Output: Worked proofs of identifiability, back-door/front-door criteria, do-calculus rules.\nApplication Project: Uplift modeling for churn retention OR reproduction of Chernozhukov’s Double Machine Learning estimator with Python.\nReferences:\n- Pearl – Causality\n- Peters, Janzing, Schölkopf – Elements of Causal Inference\n- Chernozhukov et al. – Causal Machine Learning papers",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
@@ -22,21 +22,41 @@
   {
     "objectID": "chapters/01_ch01.html",
     "href": "chapters/01_ch01.html",
-    "title": "Phase 0: Logic & Set Theory",
+    "title": "Phase 1: Logic & Set Theory",
     "section": "",
-    "text": "Motivation\nlorem ipslum…",
+    "text": "Motivation\nMathematical reasoning begins with logic. Proofs in analysis, probability, and statistics rely on the ability to manipulate statements rigorously, understand how they combine, and know when two statements are logically equivalent.\nIn causal machine learning, assumptions are often stated in logical form. For example:\nThus, before diving into analysis and probability, we establish a foundation in logic and set theory.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Phase 0: Logic & Set Theory</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_ch01.html#statements-and-connectives",
+    "href": "chapters/01_ch01.html#statements-and-connectives",
+    "title": "Phase 1: Logic & Set Theory",
+    "section": "1.1 Statements and Connectives",
+    "text": "1.1 Statements and Connectives\nA statement (or proposition) is a declarative sentence that is either true or false.\n\nExample: “3 is even” (false), “Barcelona is in Spain” (true).\n\nLogical connectives:\n\nNegation: \\(\\lnot p\\)\n\nConjunction: \\(p \\land q\\)\n\nDisjunction: \\(p \\lor q\\)\n\nConditional: \\(p \\to q\\)\n\nBiconditional: \\(p \\leftrightarrow q\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_ch01.html#truth-tables",
+    "href": "chapters/01_ch01.html#truth-tables",
+    "title": "Phase 1: Logic & Set Theory",
+    "section": "1.2 Truth Tables",
+    "text": "1.2 Truth Tables\nA truth table shows how the truth value of a compound statement depends on its parts.\nExample: Prove that an implication is equivalent to its contrapositive.\nWe want to show:\n\\[\np \\to q \\;\\equiv\\; \\lnot q \\to \\lnot p\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\to q\\)\n\\(\\lnot q\\)\n\\(\\lnot p\\)\n\\(\\lnot q \\to \\lnot p\\)\n\n\n\n\nT\nT\nT\nF\nF\nT\n\n\nT\nF\nF\nT\nF\nF\n\n\nF\nT\nT\nF\nT\nT\n\n\nF\nF\nT\nT\nT\nT\n\n\n\nSince the last two columns match, the implication is equivalent to its contrapositive. ∎\nDefinitions:\n- A tautology is a statement that is always true.\n- A contradiction is a statement that is always false.\n- Two statements are logically equivalent if they have the same truth table.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
     ]
   },
   {
     "objectID": "chapters/01_ch01.html#references",
     "href": "chapters/01_ch01.html#references",
-    "title": "Phase 0: Logic & Set Theory",
+    "title": "Phase 1: Logic & Set Theory",
     "section": "References",
-    "text": "References",
+    "text": "References\n\nVelleman, D. J. (2006). How to Prove It: A Structured Approach.\n\nRosen, K. H. (2011). Discrete Mathematics and Its Applications.\n\nSpanos, A. (1999, 2010). Probability Theory and Statistical Inference.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Phase 0: Logic & Set Theory</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
     ]
   }
 ]

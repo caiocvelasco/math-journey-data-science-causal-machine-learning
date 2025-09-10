@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Phase 0: Logic &amp; Set Theory – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
+<title>Phase 1: Logic &amp; Set Theory – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01_ch01.html"><span class="chapter-title">Phase 0: Logic &amp; Set Theory</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01_ch01.html"><span class="chapter-title">Phase 1: Logic &amp; Set Theory</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,7 +142,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/01_ch01.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Phase 0: Logic &amp; Set Theory</span></a>
+  <a href="../chapters/01_ch01.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Phase 1: Logic &amp; Set Theory</span></a>
   </div>
 </li>
     </ul>
@@ -152,8 +152,14 @@ window.Quarto = {
    
   <ul>
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#name" id="toc-name" class="nav-link" data-scroll-target="#name">1. Name…</a></li>
-  <li><a href="#name-1" id="toc-name-1" class="nav-link" data-scroll-target="#name-1">2. Name…</a>
+  <li><a href="#sentential-logic" id="toc-sentential-logic" class="nav-link" data-scroll-target="#sentential-logic">1. Sentential Logic</a>
+  <ul class="collapse">
+  <li><a href="#statements-and-connectives" id="toc-statements-and-connectives" class="nav-link" data-scroll-target="#statements-and-connectives">1.1 Statements and Connectives</a></li>
+  <li><a href="#truth-tables" id="toc-truth-tables" class="nav-link" data-scroll-target="#truth-tables">1.2 Truth Tables</a></li>
+  </ul></li>
+  <li><a href="#sets-and-truth-sets" id="toc-sets-and-truth-sets" class="nav-link" data-scroll-target="#sets-and-truth-sets">2. Sets and Truth Sets</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">3. Exercises</a></li>
+  <li><a href="#connection-to-causal-ml" id="toc-connection-to-causal-ml" class="nav-link" data-scroll-target="#connection-to-causal-ml">4. Connection to Causal ML</a>
   <ul class="collapse">
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
@@ -169,7 +175,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Phase 0: Logic &amp; Set Theory</span></h1>
+<h1 class="title"><span class="chapter-title">Phase 1: Logic &amp; Set Theory</span></h1>
 </div>
 
 
@@ -188,34 +194,171 @@ window.Quarto = {
 
 <section id="motivation" class="level1 unnumbered">
 <h1 class="unnumbered">Motivation</h1>
-<p>lorem ipslum…</p>
-</section>
-<section id="name" class="level1 unnumbered">
-<h1 class="unnumbered">1. Name…</h1>
-<p>lorem ipslum…</p>
-</section>
-<section id="name-1" class="level1 unnumbered">
-<h1 class="unnumbered">2. Name…</h1>
-<p>lorem ipslum… According to <span class="citation" data-cites="spanos1999probability spanos2010foundations">[@spanos1999probability; @spanos2010foundations]</span></p>
+<p>Mathematical reasoning begins with <strong>logic</strong>. Proofs in analysis, probability, and statistics rely on the ability to manipulate statements rigorously, understand how they combine, and know when two statements are logically equivalent.</p>
+<p>In causal machine learning, assumptions are often stated in logical form. For example:</p>
 <blockquote class="blockquote">
-<p>“<em>Is modeling?</em>”</p>
+<p><em>If ignorability holds, then a treatment effect is identifiable.</em></p>
 </blockquote>
-<p><span class="math display">\[
-Y_i \text{(Income)} = \beta_0 + \beta_1 \cdot \text{Education}_i + \varepsilon_i
-\]</span></p>
-<p>on explanatory variables <span class="math inline">\(X\)</span>:</p>
-<p><span class="math display">\[
-Y \mid X \sim P(Y \mid X; \theta)
-\]</span></p>
-<p>Where:</p>
+<p>Thus, before diving into analysis and probability, we establish a foundation in logic and set theory.</p>
+<hr>
+</section>
+<section id="sentential-logic" class="level1 unnumbered">
+<h1 class="unnumbered">1. Sentential Logic</h1>
+<section id="statements-and-connectives" class="level2">
+<h2 class="anchored" data-anchor-id="statements-and-connectives">1.1 Statements and Connectives</h2>
+<p>A <strong>statement</strong> (or proposition) is a declarative sentence that is either <em>true</em> or <em>false</em>.</p>
 <ul>
-<li><span class="math inline">\(Y\)</span> is the <strong>response or dependent variable</strong> (e.g., income),</li>
-<li><span class="math inline">\(X\)</span> is a vector of <strong>covariates or explanatory variables</strong> (e.g., education, experience),</li>
-<li><span class="math inline">\(\theta\)</span> represents the <strong>parameters</strong> of the distribution (e.g., regression coefficients).</li>
+<li>Example: “3 is even” (false), “Barcelona is in Spain” (true).</li>
 </ul>
+<p>Logical connectives:</p>
+<ul>
+<li>Negation: <span class="math inline">\(\lnot p\)</span><br>
+</li>
+<li>Conjunction: <span class="math inline">\(p \land q\)</span><br>
+</li>
+<li>Disjunction: <span class="math inline">\(p \lor q\)</span><br>
+</li>
+<li>Conditional: <span class="math inline">\(p \to q\)</span><br>
+</li>
+<li>Biconditional: <span class="math inline">\(p \leftrightarrow q\)</span></li>
+</ul>
+</section>
+<section id="truth-tables" class="level2">
+<h2 class="anchored" data-anchor-id="truth-tables">1.2 Truth Tables</h2>
+<p>A <strong>truth table</strong> shows how the truth value of a compound statement depends on its parts.</p>
+<p><strong>Example:</strong> Prove that an implication is equivalent to its contrapositive.</p>
+<p>We want to show:</p>
+<p><span class="math display">\[
+p \to q \;\equiv\; \lnot q \to \lnot p
+\]</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 17%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(p\)</span></th>
+<th><span class="math inline">\(q\)</span></th>
+<th><span class="math inline">\(p \to q\)</span></th>
+<th><span class="math inline">\(\lnot q\)</span></th>
+<th><span class="math inline">\(\lnot p\)</span></th>
+<th><span class="math inline">\(\lnot q \to \lnot p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>Since the last two columns match, the implication is equivalent to its contrapositive. ∎</p>
+<p><strong>Definitions:</strong><br>
+- A <strong>tautology</strong> is a statement that is always true.<br>
+- A <strong>contradiction</strong> is a statement that is always false.<br>
+- Two statements are <strong>logically equivalent</strong> if they have the same truth table.</p>
+<hr>
+</section>
+</section>
+<section id="sets-and-truth-sets" class="level1 unnumbered">
+<h1 class="unnumbered">2. Sets and Truth Sets</h1>
+<p>A <strong>set</strong> is a collection of distinct objects.<br>
+Example: <span class="math inline">\(A = \{2,4,6,8\}\)</span>.</p>
+<p>The <strong>truth set</strong> of a predicate <span class="math inline">\(P(x)\)</span> over a universe <span class="math inline">\(U\)</span> is</p>
+<p><span class="math display">\[
+\{x \in U \mid P(x) \text{ is true}\}.
+\]</span></p>
+<p>Example: If <span class="math inline">\(U = \mathbb{Z}\)</span> and <span class="math inline">\(P(x): x^2 = 4\)</span>, then the truth set is <span class="math inline">\(\{-2, 2\}\)</span>.</p>
+<p><strong>Basic operations on sets</strong> (parallel to logical connectives):</p>
+<ul>
+<li>Union: <span class="math inline">\(A \cup B \quad\leftrightarrow\quad p \lor q\)</span><br>
+</li>
+<li>Intersection: <span class="math inline">\(A \cap B \quad\leftrightarrow\quad p \land q\)</span><br>
+</li>
+<li>Complement: <span class="math inline">\(A^c \quad\leftrightarrow\quad \lnot p\)</span><br>
+</li>
+<li>Difference: <span class="math inline">\(A \setminus B = \{x \in A \mid x \notin B\}\)</span></li>
+</ul>
+<hr>
+</section>
+<section id="exercises" class="level1 unnumbered">
+<h1 class="unnumbered">3. Exercises</h1>
+<ol type="1">
+<li>Build a truth table for <span class="math inline">\((p \lor q) \land \lnot p\)</span>.<br>
+</li>
+<li>Show that <span class="math inline">\((p \to q) \equiv (\lnot q \to \lnot p)\)</span>.<br>
+</li>
+<li>Find the truth set of <span class="math inline">\(P(x): x^2 = 4\)</span> over <span class="math inline">\(U = \mathbb{Z}\)</span>.<br>
+</li>
+<li>Let<br>
+<span class="math display">\[
+A = \{x \in \mathbb{Z} \mid x \text{ even}\}, \quad  
+B = \{x \in \mathbb{Z} \mid x \text{ multiple of 4}\}.
+\]</span><br>
+Prove or disprove: <span class="math inline">\(B \subseteq A\)</span>.<br>
+</li>
+<li>Show with a truth table that <span class="math inline">\((p \land q) \to p\)</span> is a tautology.</li>
+</ol>
+<hr>
+</section>
+<section id="connection-to-causal-ml" class="level1 unnumbered">
+<h1 class="unnumbered">4. Connection to Causal ML</h1>
+<ul>
+<li>Logical connectives allow us to formalize assumptions.<br>
+</li>
+<li>Truth sets connect directly to <strong>sample spaces</strong> in probability.<br>
+</li>
+<li>Set operations mirror SQL/database operations (our application project).<br>
+</li>
+<li>The contrapositive law underlies many proofs in statistics and causal inference:</li>
+</ul>
+<blockquote class="blockquote">
+<p>If ignorability holds, then the treatment effect is identifiable.<br>
+Equivalently, if the treatment effect is not identifiable, ignorability does not hold.</p>
+</blockquote>
 <hr>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Velleman, D. J. (2006). <em>How to Prove It: A Structured Approach</em>.<br>
+</li>
+<li>Rosen, K. H. (2011). <em>Discrete Mathematics and Its Applications</em>.<br>
+</li>
+<li>Spanos, A. (1999, 2010). <em>Probability Theory and Statistical Inference</em>.</li>
+</ul>
 
 
 

@@ -19,8 +19,16 @@ Here you can find both **mathematical foundations** and **applications**.
 - Relations: equivalence relations, partial orders.  
 - Cardinality: countable vs. uncountable sets.  
 
-**Theory Output:** Notes + proofs on quantifiers, induction, and countability.  
-**Application Project:** SQL/database operations as set theory (joins, unions, intersections).  
+**Theory Output:**
+- Sentential logic (Velleman Ch. 1)
+- Predicate logic & quantifiers (Ch. 2)
+- Proof techniques (direct, contrapositive, contradiction, induction) (Ch. 3)
+- Sets, relations, functions (Ch. 4–6)
+- Countability, infinity (Ch. 9 selected, Tao’s appendix)  
+
+**Application Project:** 
+- SQL/database operations as set theory (joins, unions, intersections).
+- Prove/discuss equivalences (e.g., idempotency: SELECT DISTINCT twice = once)
 
 **References:**  
 - Velleman – *How to Prove It*  

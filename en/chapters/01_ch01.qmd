@@ -1,0 +1,491 @@
+---
+title: "Phase 1: Logic & Set Theory"
+---
+
+**Mathematical Reasoning** begins with **logic**. Proofs in analysis, probability, and statistics rely on the ability to manipulate statements rigorously, understand how they combine, and know when two statements are logically equivalent.
+
+For example, in **Causal Machine Learning**, assumptions are often stated in logical form. For example:
+
+> *If ignorability holds, then a treatment effect is identifiable.*
+
+Thus, before diving into analysis and probability, we establish a foundation in logic and set theory. This is important to **formalize assumptions, express mathematical objects precisely, and build proofs with rigor**.
+
+Logic gives us the language **to connect premises and conclusions**, while Set Theory gives us **the structure to define universes of discourse, events, and probability spaces**. Together, they form the toolkit we need **to reason about identification, estimation, and inference**, not only in Causal Machine Learning, but also in Data Science, AI, and any other field that depend on mathematics.
+
+# 1. Sentential Logic {.unnumbered}
+
+## 1.1 Statements, Propositions, Predicates, and Connectives
+
+**💡Motivation**\
+Learning statements and connectives is like learning the **alphabet of mathematics**.\
+- If you cannot distinguish valid statements, you cannot even *start* a proof.
+
+*Example in causal inference:*\
+- $p$: “Treatment is randomized.”\
+- $q$: “Ignorability holds.”\
+- Then “If treatment is randomized, then ignorability holds” is $p \to q$.
+
+Without connectives, we’d stay in informal language. With them, **we can formalize statements and reason rigorously about consequences**, such as proving that a set of assumptions implies consistency of an estimator, showing that ignorability implies identification of a treatment effect, or demonstrating that conditional independence leads to factorization of a probability distribution into simpler components.
+
+A **Statement** (or **Proposition**) is a declarative sentence that is either *true* or *false*.
+
+-   Example: “3 is even” (false), “Barcelona is in Spain” (true).
+
+A **Predicate** is like a “template” for a statement: it depends on a variable and becomes a statement once you specify the value. For example:\
+$P(x): x > 0$\
+- $P(2)$ → “2 \> 0” (true).\
+- $P(-1)$ → “-1 \> 0” (false).
+
+**Connectives** let us combine assumptions systematically. Logical connectives let us build compound statements:
+
+-   Negation: $\lnot p$ (“not $p$”)\
+-   Conjunction: $p \land q$ (“$p$ and $q$”)\
+-   Disjunction: $p \lor q$ (“$p$ or $q$”)\
+-   Conditional: $p \to q$ (“if $p$ then $q$”)\
+-   Biconditional: $p \leftrightarrow q$ (“$p$ if and only if $q$”)
+
+Thus:\
+-   **Predicate**: *general template* (open sentence, truth depends on a variable) -\> becomes true or false only when a variable is given a value.\
+-   **Proposition/statement**: *instance of that template* (closed sentence, definite truth) -\> something that is already true or false.\
+-   **Connectives**: *operators* that take simple propositions and form compound propositions.
+
+## 1.2 Truth Tables
+
+**💡Motivation** Truth tables are the **grammar checker** of logic.\
+- They allow us to test whether two statements are equivalent (so we can swap one for another in a proof, probably to make life easier).\
+- They reveal tautologies (always true) and contradictions (always false).\
+- They give a mechanical way to check validity of deductive arguments.
+
+*Example in statistics:*\
+- “If the data behave nicely (i.i.d. + finite variance), then the sample mean is reliable (it will converge to the true mean)” ($p \to q$).\
+- Equivalent contrapositive: “If effect is not identifiable, then ignorability does not hold” ($\lnot q \to \lnot p$).\
+- Truth tables prove these are the same, so you can flip perspectives safely in a paper.
+
+A **truth table** shows how the truth value of a compound statement depends on its parts.
+
+**Example:** Prove that an implication ($p \to q$) is equivalent ($\equiv$) to its contrapositive ($\lnot q \to \lnot p$).
+
+We want to show: $p \to q \;\equiv\; \lnot q \to \lnot p$
+
+| $p$ | $q$ | $p \to q$ | $\lnot q$ | $\lnot p$ | $\lnot q \to \lnot p$ |
+|-----|-----|-----------|-----------|-----------|-----------------------|
+| T   | T   | T         | F         | F         | T                     |
+| T   | F   | F         | T         | F         | F                     |
+| F   | T   | T         | F         | T         | T                     |
+| F   | F   | T         | T         | T         | T                     |
+
+Since the last two columns match, the implication is equivalent to its contrapositive.
+
+**The Basic Connectives**
+
+Logical connectives are rules for combining simpler statements into compound ones.  
+Here are the five most common and some intuition:
+
+---
+
+**Negation: $\lnot p$ (“not $p$”)**
+
+- **Rule:** Negation flips the truth value.  
+  - If $p$ is true, $\lnot p$ is false.  
+  - If $p$ is false, $\lnot p$ is true.  
+
+- **Example:**  
+  $p$: “It is raining.”  
+  $\lnot p$: “It is not raining.”  
+
+---
+
+**Conjunction: $p \land q$ (“$p$ and $q$”)**
+
+- **Rule:** $p \land q$ is true only if **both** $p$ and $q$ are true.  
+
+- **Example:**  
+  $p$: “It is raining.”  
+  $q$: “I am carrying an umbrella.”  
+  $p \land q$: “It is raining **and** I am carrying an umbrella.”  
+
+- **Truth check:** If either part fails, the whole conjunction is false.  
+
+---
+
+**Disjunction: $p \lor q$ (“$p$ or $q$”)**
+
+- **Rule:** $p \lor q$ is true if **at least one** of $p, q$ is true.  
+  (This is the **inclusive or** used in logic.)  
+
+- **Example:**  
+  $p$: “I will drink coffee.”  
+  $q$: “I will drink tea.”  
+  $p \lor q$: “I will drink coffee or tea (or both).”  
+
+- **Note:** In everyday language, “or” can be exclusive. Logic defaults to inclusive.  
+
+---
+
+**Conditional: $p \to q$ (“if $p$ then $q$”)**
+
+- **Rule:** An implication is false **only** when $p$ is true and $q$ is false.  
+  **In all other cases, it is true.**  
+  Equivalent form:  
+  $$
+  p \to q \;\equiv\; \lnot p \lor q
+  $$  
+
+- **Example:**  
+  $p$: “It rains.”  
+  $q$: “The ground is wet.”  
+  $p \to q$: “If it rains, then the ground is wet.”  
+
+- **Case analysis:**\  
+  - If it rains **and** the ground is wet → the statement “If it rains, then the ground is wet” has been **kept**. Both the condition and the consequence hold, so the implication is **true**.  
+  - If it rains **but** the ground is not wet → the statement has been **broken**. This is the **only case** where an implication is false: the condition was met but the promised result failed.  
+  - If it doesn’t rain → the statement never gets a chance to be tested. We cannot accuse it of being false, because the condition (“it rains”) never happened. By definition, logic treats this as **vacuously true**: the promise has not been broken, since there was nothing to check.  
+  - If it doesn’t rain **and** the ground is wet → still vacuously true. The implication didn’t say what should happen when it doesn’t rain; the ground being wet for other reasons (sprinklers, a bucket of water, etc.) doesn’t violate the promise.
+
+**Intuition and goal of the conditional**
+
+The statement $p \to q$ is read "if $p$ *holds* then $q$ *holds*" or even "if $p$ is *true* then $q$ is *true*."\  
+At first glance, this seems strange because we must also handle cases when $p$ or $q$ are false.\  
+Why not just say it means “both $p$ and $q$ are true”?  
+
+The key is that an implication is really a **promise** or **rule**:  
+- “Whenever $p$ happens, $q$ must also happen.”  
+
+So we only judge the statement in the situations where the promise could actually be tested: **when $p$ is true**.  
+
+- If $p$ is true and $q$ is true  → the promise is kept   → the implication is true.  
+- If $p$ is true and $q$ is false → the promise is broken → the implication is false.  
+
+But if $p$ is false, the situation that was promised **never arises**. In those cases, the rule is not violated. By convention (and to make logical systems consistent), we treat the implication as **vacuously true** whenever $p$ is false.  
+
+This explains why the truth table looks the way it does:  
+
+| $p$ | $q$ | $p \to q$ | Explanation |
+|-----|-----|-----------|-------------|
+| T   | T   | T         | promise kept |
+| T   | F   | F         | promise broken |
+| F   | T   | T         | vacuously true (*condition never triggered*) |
+| F   | F   | T         | vacuously true (*condition never triggered*) |
+
+**Why is this important?**
+
+Understanding the conditional matters because:  
+
+1. It allows us to **formalize logical rules** like the contrapositive:  
+   $$
+   p \to q \;\equiv\; \lnot q \to \lnot p
+   $$
+   which is *central* in proofs.  
+
+2. It prevents confusion when reading theorems:  
+   - “If a sequence converges, then it is bounded” ($p \to q$).  
+   - This is **not** claiming that all bounded sequences converge; the truth table guarantees the direction of the promise is clear.  
+
+3. It highlights **vacuous truth**, which appears everywhere in math:  
+   - “All unicorns have horns” is technically true, because there are no unicorns to provide a counterexample.  
+   - Similarly, in probability, if an event has probability zero, conditional statements given that event can be vacuously true.  
+
+By appreciating this structure, the reader sees why the conditional is defined with its somewhat surprising truth table: it captures the idea of a promise that can only be broken in one very specific case.
+
+---
+
+**Biconditional: $p \leftrightarrow q$ (“$p$ if and only if $q$”)**
+
+- **Rule:** $p \leftrightarrow q$ is true exactly when $p$ and $q$ have the **same truth value**  
+  (both true or both false).  
+  
+  Equivalent form:  
+  $$
+  p \leftrightarrow q \;\equiv\; (p \to q) \land (q \to p)
+  $$  
+
+- **Example:**  
+  $p$: “Today is Saturday.”  
+  $q$: “Tomorrow is Sunday.”  
+  $p \leftrightarrow q$: “Today is Saturday **if and only if** tomorrow is Sunday.”  
+
+- **Case analysis:**  
+  - If both $p$ and $q$ are true → the biconditional is true (both directions of the promise hold).  
+  - If $p$ is true but $q$ is false → false, because one direction of the “if and only if” fails.  
+  - If $p$ is false but $q$ is true → false, for the same reason.  
+  - If both $p$ and $q$ are false → true, because they match in value (both false).  
+
+This explains why the truth table looks like this:  
+
+| $p$ | $q$ | $p \leftrightarrow q$ | Explanation |
+|-----|-----|-----------------------|-------------|
+| T   | T   | T                     | both true → promise kept |
+| T   | F   | F                     | mismatch → one direction fails |
+| F   | T   | F                     | mismatch → one direction fails |
+| F   | F   | T                     | both false → they match |
+
+
+**Intuition and goal of the biconditional**
+
+The biconditional expresses **equivalence**: $p$ and $q$ “*stand or fall together*.”  
+It is stronger than a one-way implication: both $p \to q$ *and* $q \to p$ must hold.  
+
+- If you read $p \leftrightarrow q$ aloud, it means:  
+  *“$p$ is true exactly when $q$ is true.”* or *“$p$ holds exactly when $q$ holds.”*
+
+This is why mathematicians often use “**iff**” (*“if and only if”*) in definitions and theorems:  
+- It guarantees not only that $p$ implies $q$, but also that $q$ implies $p$.  
+
+---
+
+**Why is this important?**
+
+1. It formalizes **definitions** in mathematics.  
+   - Example: “A number $n$ is even **iff** $n = 2k$ for some integer $k$.”  
+   - This captures both directions: every even number has that form, and every number of that form is even.  
+
+2. It allows us to state **equivalence theorems**.  
+   - Example: “A sequence is Cauchy **iff** it is convergent (in $\mathbb{R}$).”  
+   - The biconditional captures the deep connection: each property implies the other.  
+
+3. It makes reasoning reversible.  
+   - With an implication, you can only go forward ($p \to q$).  
+   - With a biconditional, you can go forward and backward: knowing either $p$ or $q$ tells you the other.  
+
+By mastering the biconditional, the reader understands why mathematicians love the phrase “if and only if”: it’s the precise way of stating **true equivalence** between concepts.
+
+**Summary Table of Connectives**
+
+| Connective | Symbol | Rule (when true) |
+|------------|--------|------------------|
+| Negation   | $\lnot p$ | when $p$ is false |
+| Conjunction | $p \land q$ | when $p$ and $q$ are true |
+| Disjunction | $p \lor q$ | when at least one of $p, q$ is true |
+| Conditional | $p \to q$ | false only if $p$ true and $q$ false |
+| Biconditional | $p \leftrightarrow q$ | when $p$ and $q$ have same truth value |
+
+## 1.3 Tautologies, Contradictions, and Logical Equivalence
+
+**Tautology**
+
+**Definition:**  
+A **tautology** is a statement that is true in *all possible cases*.  
+
+**Why it matters:**  
+- Tautologies act like **universal truths**: they don’t depend on data or assumptions.  
+- They are often the “glue” of proofs, showing that certain forms are always valid.  
+- Many rules of inference (like *modus ponens*) are based on tautologies.  
+
+**Example (logic):**  
+
+$$
+(p \land q) \to p
+$$  
+
+This means: *If both \(p\) and \(q\) are true, then \(p\) is true.*  
+- Always true, regardless of whether \(p\) or \(q\) are true or false.  
+
+**Example (statistics):**  
+The **Law of Total Probability** is tautological:  
+
+$$
+P(A) = P(A \cap B) + P(A \cap \lnot B).
+$$  
+
+This identity always holds by construction, no matter what events \(A\) and \(B\) are.  
+
+---
+
+**Contradiction**
+
+**Definition:**  
+A **contradiction** is a statement that is false in *all possible cases*.  
+
+**Why it matters:**  
+- Contradictions are the **engine** of *proof by contradiction*.  
+- If assuming something leads to a contradiction, then the assumption must be false.  
+- They represent “impossible situations” in logic.  
+
+**Example (logic):**  
+
+$$
+p \land \lnot p
+$$  
+
+This means: *\(p\) is true and \(p\) is false at the same time.*  
+- Always false, no matter what truth value \(p\) has.  
+
+**Example (statistics):**  
+Suppose we assume:  
+1. “The variance of this distribution is finite.”  
+2. “The variance of this distribution is infinite.”  
+
+Together, these form a contradiction, so at least one assumption must be wrong.  
+
+---
+
+**Logical Equivalence**
+
+**Definition:**  
+Two statements are **logically equivalent** if they have the same truth value in *all possible cases*.  
+
+**Why it matters:**  
+- Logical equivalence lets us **replace one statement with another** in a proof.  
+- Many powerful proof strategies rely on equivalence (contrapositive law, De Morgan’s laws, distributive laws).  
+- Often the equivalent form is much easier to work with.  
+
+**Example (logic):**  
+
+$$
+p \to q \;\equiv\; \lnot p \lor q
+$$  
+
+This means: *“If \(p\), then \(q\)” is the same as “Either not \(p\), or \(q\).”*  
+- This equivalence makes it **easier** to manipulate conditionals in proofs.  
+
+**Example (causal inference):**  
+
+$$
+\text{Ignorability} \to \text{Identifiability}
+$$  
+
+is **logically equivalent** to  
+
+$$
+\lnot \text{Identifiability} \to \lnot \text{Ignorability}.
+$$  
+
+Switching to the contrapositive often makes a proof or argument **simpler**.  
+
+---
+
+**Summary:**  
+- **Tautologies** give us universal truths to rely on.  
+- **Contradictions** allow us to eliminate false assumptions through contradiction proofs.  
+- **Logical equivalence** lets us restate problems in easier forms without changing meaning.  
+
+------------------------------------------------------------------------
+
+# 2. Quantificational Logic {.unnumbered}
+
+In propositional (sentential) logic, we treated statements as indivisible units: each one was either true or false.  
+But in mathematics and statistics, we often want to say things about *all numbers* in a set, or claim that *at least one* number has a certain property.  
+This is where **quantifiers** come in.
+
+---
+
+## 2.1 Predicates and Quantifiers
+
+As we saw above, a **predicate** is like a sentence with a “blank” — it becomes a full statement only once you plug in a value.  
+
+- Example: $P(x): x > 0$.  
+  - If $x = 2$, then $P(2)$ is the proposition “2 > 0” (true).  
+  - If $x = -3$, then $P(-3)$ is the proposition “-3 > 0” (false).  
+
+We use **quantifiers** to talk about how many elements **satisfy** a predicate:  
+
+- **Universal quantifier ($\forall$):**  
+  $\forall x\; P(x)$ means “for all $x$, $P(x)$ is true.”  
+
+- **Existential quantifier ($\exists$):**  
+  $\exists x\; P(x)$ means “there exists at least one $x$ such that $P(x)$ is true.”  
+
+**Examples:**  
+- $\forall x \in \mathbb{Z},\; x^2 \geq 0$. (*Every integer squared is nonnegative.*)  
+- $\exists x \in \mathbb{Z},\; x^2 = 9$. (*There exists an integer whose square is 9.*)  
+
+## 2.2 Universe of Discourse
+
+The **universe of discourse** is the set of objects we allow $x$ to vary over.  
+The truth of a statement depends on it!  
+
+**Example:**  
+
+- $\forall x \in \mathbb{R},\; x^2 \geq 0$ is true.  
+- $\forall x \in \mathbb{Z},\; x^2 = 2$ is false (no integer squared equals 2).  
+
+If we didn’t specify whether $x$ ranges over $\mathbb{R}$ or $\mathbb{Z}$ (both interpreted as the **universe of discourse** of each **statement**), the meaning would be ambiguous.  
+
+## 2.3 Truth of Quantified Statements
+
+How to evaluate quantified statements:  
+
+- $\forall x\; P(x)$ is true if *every* $x$ in the universe makes $P(x)$ true.  
+- $\exists x\; P(x)$ is true if *at least one* $x$ makes $P(x)$ true.  
+
+### Negations of Quantifiers
+
+Negating quantified statements flips the quantifier:  
+
+$$
+\lnot (\forall x\, P(x)) \equiv \exists x\, \lnot P(x)
+$$
+
+$$
+\lnot (\exists x\, P(x)) \equiv \forall x\, \lnot P(x)
+$$
+
+**Examples:**  
+
+- “Not all students passed” means “There exists a student who did not pass.”  
+- “There does not exist a unicorn” means “For all $x$, $x$ is not a unicorn.”  
+
+## 2.4 Multiple Quantifiers
+
+Often statements involve more than one quantifier.  
+**The order matters!**
+
+- $\forall x \in \mathbb{R},\; \exists y \in \mathbb{R}: y > x$  
+  → True, because for every real number $x$, we can pick $y = x+1$.  
+
+- $\exists y \in \mathbb{R},\; \forall x \in \mathbb{R}: y > x$  
+  → False, because no single real number is greater than *all* real numbers.  
+
+**Tip:** Think of quantifiers as a kind of **game**:  
+- For $\forall x$, your opponent chooses the worst possible $x$.  
+- For $\exists y$, you get to respond by picking a suitable $y$.  
+
+The order decides who gets to “move” first, and the outcome can change completely.  
+
+## 2.5 Why This Matters
+
+Quantifiers appear in almost every mathematical theorem.  
+
+- **Analysis (limits):**  
+  $$
+  \forall \epsilon > 0,\; \exists \delta > 0:\; |x - a| < \delta \;\to\; |f(x) - L| < \epsilon
+  $$  
+  (“For every tolerance $\epsilon$, there exists a closeness $\delta$ that guarantees the function stays within that tolerance.”)  
+
+- **Statistics:**  
+  - $\forall n,\; \exists \hat{\theta}_n:\; \hat{\theta}_n \to \theta$ (*There exists an estimator consistent for $\theta$.*)  
+  - $\exists$ an unbiased estimator of $\mu$ (the sample mean).  
+
+- **Causal Inference:**  
+  - $\forall$ randomized experiments, $\exists$ an unbiased estimator of the treatment effect.  
+
+Quantifiers are the way mathematics formalizes sweeping claims like “always” and “sometimes,” which are **at the heart** of proofs and assumptions in Causal ML.
+
+---
+
+## 2.6 Exercises {.unnumbered}
+
+1. Decide whether each statement is true or false (universe of discourse: $\mathbb{Z}$):  
+   - $\forall x,\; x^2 \geq 0$  
+   - $\exists x,\; x^2 = 2$  
+
+2. Negate the following statements and simplify:  
+   - $\forall x \in \mathbb{R},\; x^2 \geq 0$  
+   - $\exists x \in \mathbb{N},\; x^2 = 2$  
+
+3. Show that the order of quantifiers matters by proving:  
+   - $\forall x \in \mathbb{R},\; \exists y \in \mathbb{R}: y > x$ is true.  
+   - $\exists y \in \mathbb{R},\; \forall x \in \mathbb{R}: y > x$ is false.  
+
+4. Write in logical symbols:  
+   - “Every dataset has at least one outlier.”  
+   - “There exists a consistent estimator for every parameter.”  
+
+---
+
+
+## References
+
+-   Velleman, D. J. (2006). *How to Prove It: A Structured Approach*.\
+-   Rosen, K. H. (2011). *Discrete Mathematics and Its Applications*.\
+-   Spanos, A. (1999, 2010). *Probability Theory and Statistical Inference*.

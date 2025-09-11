@@ -1,8 +1,0 @@
----
-author: "Caio Velasco"
-date: today
----
-
-> 🇬🇧 **English version:** [Go to EN](../en/index.html)
-
-Esse está em português.

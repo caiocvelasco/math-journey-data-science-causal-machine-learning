@@ -1,0 +1,22 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentos de Ciência de Dados & Causal ML: Uma Jornada Matemática",
+    "section": "",
+    "text": "🇬🇧 English version: Go to EN\n\nEsse está em português.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.html</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_cap01.html",
+    "href": "capitulos/01_cap01.html",
+    "title": "Teste em português",
+    "section": "",
+    "text": "abc abd",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Teste em português</span>"
+    ]
+  }
+]

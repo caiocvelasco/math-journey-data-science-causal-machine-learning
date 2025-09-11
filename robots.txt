@@ -1,1 +1,0 @@
-Sitemap: https://caiocvelasco.github.io/math-journey-data-science-causal-machine-learning/sitemap.xml

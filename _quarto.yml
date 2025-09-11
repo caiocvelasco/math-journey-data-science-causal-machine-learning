@@ -1,0 +1,7 @@
+project:
+  type: website
+  output-dir: _book
+  resources:
+    - en/**
+    - pt/**
+    - index.html

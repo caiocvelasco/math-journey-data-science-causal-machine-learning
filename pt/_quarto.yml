@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: ../_site/pt
+  output-dir: ../_book/pt
 
 book:
   title: "Fundamentos de Ciência de Dados & Causal ML: Uma Jornada Matemática"

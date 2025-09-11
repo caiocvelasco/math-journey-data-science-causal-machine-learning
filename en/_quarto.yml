@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: ../_site/en
+  output-dir: ../_book/en
 
 book:
   title: "Foundations of Data Science & Causal ML: A Mathematical Journey"

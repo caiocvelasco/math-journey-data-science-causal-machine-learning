@@ -22,6 +22,7 @@ format:
     math: true
     toc: true
     toc-location: left  # page TOC in the right margin
+    service-workers: false
     grid:
       sidebar-width: 280px
       body-width: 900px

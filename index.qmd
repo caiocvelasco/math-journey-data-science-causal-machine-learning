@@ -11,7 +11,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ## Journey Phases
 
-### Phase 0 – Logic & Set Theory
+### Phase 1 – Logic & Set Theory
 **Goal:** Build comfort with the *language of mathematics*.  
 - Proof techniques: direct, contrapositive, contradiction, induction.  
 - Sets and families of sets, Cartesian products, power sets.  
@@ -36,7 +36,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 1 – Real Analysis
+### Phase 2 – Real Analysis
 **Goal:** Rigorous calculus and convergence.  
 - Sequences, series, limits.  
 - Continuity, compactness, connectedness.  
@@ -52,7 +52,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 2 – Topology & Measure Theory
+### Phase 3 – Topology & Measure Theory
 **Goal:** Learn the structures that underlie probability theory.  
 - Metric spaces, open/closed sets.  
 - Compactness and product spaces.  
@@ -69,7 +69,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 3 – Probability
+### Phase 4 – Probability
 **Goal:** Define probability rigorously à la Kolmogorov.  
 - Probability spaces and random variables as measurable functions.  
 - Distributions, independence, product measures.  
@@ -86,7 +86,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 4 – Mathematical Statistics
+### Phase 5 – Mathematical Statistics
 **Goal:** Connect probability → inference.  
 - Point estimation: MLE, method of moments.  
 - Properties: unbiasedness, consistency, efficiency.  
@@ -101,7 +101,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 5 – Causality
+### Phase 6 – Causality
 **Goal:** Enter causal inference with strong mathematical foundations.  
 - Pearl’s Structural Causal Models & do-calculus.  
 - Rubin’s potential outcomes framework.  

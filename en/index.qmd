@@ -3,6 +3,8 @@ author: "Caio Velasco"
 date: today
 ---
 
+> 🇧🇷 **Portuguese Version:** [Go to PT](../pt/index.html)
+
 This is my structured learning roadmap to prepare for research in **causal machine learning** with mathematical rigor.
 
 Here you can find both **mathematical foundations** and **applications**.

@@ -13,9 +13,11 @@ __pycache__/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# OS files
-.DS_Store
+# OS & editor files
 Thumbs.db
+.DS_Store
+.Rhistory
+.Rproj.user/
 
 # Quarto
 .quarto/

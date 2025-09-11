@@ -151,16 +151,23 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#sentential-logic" id="toc-sentential-logic" class="nav-link" data-scroll-target="#sentential-logic">1. Sentential Logic</a>
+  <li><a href="#sentential-logic" id="toc-sentential-logic" class="nav-link active" data-scroll-target="#sentential-logic">1. Sentential Logic</a>
   <ul class="collapse">
-  <li><a href="#statements-and-connectives" id="toc-statements-and-connectives" class="nav-link" data-scroll-target="#statements-and-connectives">1.1 Statements and Connectives</a></li>
+  <li><a href="#statements-propositions-predicates-and-connectives" id="toc-statements-propositions-predicates-and-connectives" class="nav-link" data-scroll-target="#statements-propositions-predicates-and-connectives">1.1 Statements, Propositions, Predicates, and Connectives</a></li>
   <li><a href="#truth-tables" id="toc-truth-tables" class="nav-link" data-scroll-target="#truth-tables">1.2 Truth Tables</a></li>
+  <li><a href="#tautologies-contradictions-and-logical-equivalence" id="toc-tautologies-contradictions-and-logical-equivalence" class="nav-link" data-scroll-target="#tautologies-contradictions-and-logical-equivalence">1.3 Tautologies, Contradictions, and Logical Equivalence</a></li>
   </ul></li>
-  <li><a href="#sets-and-truth-sets" id="toc-sets-and-truth-sets" class="nav-link" data-scroll-target="#sets-and-truth-sets">2. Sets and Truth Sets</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">3. Exercises</a></li>
-  <li><a href="#connection-to-causal-ml" id="toc-connection-to-causal-ml" class="nav-link" data-scroll-target="#connection-to-causal-ml">4. Connection to Causal ML</a>
+  <li><a href="#quantificational-logic" id="toc-quantificational-logic" class="nav-link" data-scroll-target="#quantificational-logic">2. Quantificational Logic</a>
   <ul class="collapse">
+  <li><a href="#predicates-and-quantifiers" id="toc-predicates-and-quantifiers" class="nav-link" data-scroll-target="#predicates-and-quantifiers">2.1 Predicates and Quantifiers</a></li>
+  <li><a href="#universe-of-discourse" id="toc-universe-of-discourse" class="nav-link" data-scroll-target="#universe-of-discourse">2.2 Universe of Discourse</a></li>
+  <li><a href="#truth-of-quantified-statements" id="toc-truth-of-quantified-statements" class="nav-link" data-scroll-target="#truth-of-quantified-statements">2.3 Truth of Quantified Statements</a>
+  <ul class="collapse">
+  <li><a href="#negations-of-quantifiers" id="toc-negations-of-quantifiers" class="nav-link" data-scroll-target="#negations-of-quantifiers">Negations of Quantifiers</a></li>
+  </ul></li>
+  <li><a href="#multiple-quantifiers" id="toc-multiple-quantifiers" class="nav-link" data-scroll-target="#multiple-quantifiers">2.4 Multiple Quantifiers</a></li>
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">2.5 Why This Matters</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">2.6 Exercises</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -192,53 +199,71 @@ window.Quarto = {
 </header>
 
 
-<section id="motivation" class="level1 unnumbered">
-<h1 class="unnumbered">Motivation</h1>
-<p>Mathematical reasoning begins with <strong>logic</strong>. Proofs in analysis, probability, and statistics rely on the ability to manipulate statements rigorously, understand how they combine, and know when two statements are logically equivalent.</p>
-<p>In causal machine learning, assumptions are often stated in logical form. For example:</p>
+<p><strong>Mathematical Reasoning</strong> begins with <strong>logic</strong>. Proofs in analysis, probability, and statistics rely on the ability to manipulate statements rigorously, understand how they combine, and know when two statements are logically equivalent.</p>
+<p>For example, in <strong>Causal Machine Learning</strong>, assumptions are often stated in logical form. For example:</p>
 <blockquote class="blockquote">
 <p><em>If ignorability holds, then a treatment effect is identifiable.</em></p>
 </blockquote>
-<p>Thus, before diving into analysis and probability, we establish a foundation in logic and set theory.</p>
-<hr>
-</section>
+<p>Thus, before diving into analysis and probability, we establish a foundation in logic and set theory. This is important to <strong>formalize assumptions, express mathematical objects precisely, and build proofs with rigor</strong>.</p>
+<p>Logic gives us the language <strong>to connect premises and conclusions</strong>, while Set Theory gives us <strong>the structure to define universes of discourse, events, and probability spaces</strong>. Together, they form the toolkit we need <strong>to reason about identification, estimation, and inference</strong>, not only in Causal Machine Learning, but also in Data Science, AI, and any other field that depend on mathematics.</p>
 <section id="sentential-logic" class="level1 unnumbered">
 <h1 class="unnumbered">1. Sentential Logic</h1>
-<section id="statements-and-connectives" class="level2">
-<h2 class="anchored" data-anchor-id="statements-and-connectives">1.1 Statements and Connectives</h2>
-<p>A <strong>statement</strong> (or proposition) is a declarative sentence that is either <em>true</em> or <em>false</em>.</p>
+<section id="statements-propositions-predicates-and-connectives" class="level2">
+<h2 class="anchored" data-anchor-id="statements-propositions-predicates-and-connectives">1.1 Statements, Propositions, Predicates, and Connectives</h2>
+<p><strong>💡Motivation</strong><br>
+Learning statements and connectives is like learning the <strong>alphabet of mathematics</strong>.<br>
+- If you cannot distinguish valid statements, you cannot even <em>start</em> a proof.</p>
+<p><em>Example in causal inference:</em><br>
+- <span class="math inline">\(p\)</span>: “Treatment is randomized.”<br>
+- <span class="math inline">\(q\)</span>: “Ignorability holds.”<br>
+- Then “If treatment is randomized, then ignorability holds” is <span class="math inline">\(p \to q\)</span>.</p>
+<p>Without connectives, we’d stay in informal language. With them, <strong>we can formalize statements and reason rigorously about consequences</strong>, such as proving that a set of assumptions implies consistency of an estimator, showing that ignorability implies identification of a treatment effect, or demonstrating that conditional independence leads to factorization of a probability distribution into simpler components.</p>
+<p>A <strong>Statement</strong> (or <strong>Proposition</strong>) is a declarative sentence that is either <em>true</em> or <em>false</em>.</p>
 <ul>
 <li>Example: “3 is even” (false), “Barcelona is in Spain” (true).</li>
 </ul>
-<p>Logical connectives:</p>
+<p>A <strong>Predicate</strong> is like a “template” for a statement: it depends on a variable and becomes a statement once you specify the value. For example:<br>
+<span class="math inline">\(P(x): x &gt; 0\)</span><br>
+- <span class="math inline">\(P(2)\)</span> → “2 &gt; 0” (true).<br>
+- <span class="math inline">\(P(-1)\)</span> → “-1 &gt; 0” (false).</p>
+<p><strong>Connectives</strong> let us combine assumptions systematically. Logical connectives let us build compound statements:</p>
 <ul>
-<li>Negation: <span class="math inline">\(\lnot p\)</span><br>
+<li>Negation: <span class="math inline">\(\lnot p\)</span> (“not <span class="math inline">\(p\)</span>”)<br>
 </li>
-<li>Conjunction: <span class="math inline">\(p \land q\)</span><br>
+<li>Conjunction: <span class="math inline">\(p \land q\)</span> (“<span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>”)<br>
 </li>
-<li>Disjunction: <span class="math inline">\(p \lor q\)</span><br>
+<li>Disjunction: <span class="math inline">\(p \lor q\)</span> (“<span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span>”)<br>
 </li>
-<li>Conditional: <span class="math inline">\(p \to q\)</span><br>
+<li>Conditional: <span class="math inline">\(p \to q\)</span> (“if <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>”)<br>
 </li>
-<li>Biconditional: <span class="math inline">\(p \leftrightarrow q\)</span></li>
+<li>Biconditional: <span class="math inline">\(p \leftrightarrow q\)</span> (“<span class="math inline">\(p\)</span> if and only if <span class="math inline">\(q\)</span>”)</li>
 </ul>
+<p>Thus:<br>
+- <strong>Predicate</strong>: <em>general template</em> (open sentence, truth depends on a variable) -&gt; becomes true or false only when a variable is given a value.<br>
+- <strong>Proposition/statement</strong>: <em>instance of that template</em> (closed sentence, definite truth) -&gt; something that is already true or false.<br>
+- <strong>Connectives</strong>: <em>operators</em> that take simple propositions and form compound propositions.</p>
 </section>
 <section id="truth-tables" class="level2">
 <h2 class="anchored" data-anchor-id="truth-tables">1.2 Truth Tables</h2>
+<p><strong>💡Motivation</strong> Truth tables are the <strong>grammar checker</strong> of logic.<br>
+- They allow us to test whether two statements are equivalent (so we can swap one for another in a proof, probably to make life easier).<br>
+- They reveal tautologies (always true) and contradictions (always false).<br>
+- They give a mechanical way to check validity of deductive arguments.</p>
+<p><em>Example in statistics:</em><br>
+- “If the data behave nicely (i.i.d. + finite variance), then the sample mean is reliable (it will converge to the true mean)” (<span class="math inline">\(p \to q\)</span>).<br>
+- Equivalent contrapositive: “If effect is not identifiable, then ignorability does not hold” (<span class="math inline">\(\lnot q \to \lnot p\)</span>).<br>
+- Truth tables prove these are the same, so you can flip perspectives safely in a paper.</p>
 <p>A <strong>truth table</strong> shows how the truth value of a compound statement depends on its parts.</p>
-<p><strong>Example:</strong> Prove that an implication is equivalent to its contrapositive.</p>
-<p>We want to show:</p>
-<p><span class="math display">\[
-p \to q \;\equiv\; \lnot q \to \lnot p
-\]</span></p>
+<p><strong>Example:</strong> Prove that an implication (<span class="math inline">\(p \to q\)</span>) is equivalent (<span class="math inline">\(\equiv\)</span>) to its contrapositive (<span class="math inline">\(\lnot q \to \lnot p\)</span>).</p>
+<p>We want to show: <span class="math inline">\(p \to q \;\equiv\; \lnot q \to \lnot p\)</span></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 7%">
 <col style="width: 7%">
-<col style="width: 17%">
 <col style="width: 16%">
 <col style="width: 16%">
-<col style="width: 35%">
+<col style="width: 16%">
+<col style="width: 34%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -285,71 +310,477 @@ p \to q \;\equiv\; \lnot q \to \lnot p
 </tr>
 </tbody>
 </table>
-<p>Since the last two columns match, the implication is equivalent to its contrapositive. ∎</p>
-<p><strong>Definitions:</strong><br>
-- A <strong>tautology</strong> is a statement that is always true.<br>
-- A <strong>contradiction</strong> is a statement that is always false.<br>
-- Two statements are <strong>logically equivalent</strong> if they have the same truth table.</p>
+<p>Since the last two columns match, the implication is equivalent to its contrapositive.</p>
+<p><strong>The Basic Connectives</strong></p>
+<p>Logical connectives are rules for combining simpler statements into compound ones.<br>
+Here are the five most common and some intuition:</p>
 <hr>
-</section>
-</section>
-<section id="sets-and-truth-sets" class="level1 unnumbered">
-<h1 class="unnumbered">2. Sets and Truth Sets</h1>
-<p>A <strong>set</strong> is a collection of distinct objects.<br>
-Example: <span class="math inline">\(A = \{2,4,6,8\}\)</span>.</p>
-<p>The <strong>truth set</strong> of a predicate <span class="math inline">\(P(x)\)</span> over a universe <span class="math inline">\(U\)</span> is</p>
-<p><span class="math display">\[
-\{x \in U \mid P(x) \text{ is true}\}.
-\]</span></p>
-<p>Example: If <span class="math inline">\(U = \mathbb{Z}\)</span> and <span class="math inline">\(P(x): x^2 = 4\)</span>, then the truth set is <span class="math inline">\(\{-2, 2\}\)</span>.</p>
-<p><strong>Basic operations on sets</strong> (parallel to logical connectives):</p>
+<p><strong>Negation: <span class="math inline">\(\lnot p\)</span> (“not <span class="math inline">\(p\)</span>”)</strong></p>
 <ul>
-<li>Union: <span class="math inline">\(A \cup B \quad\leftrightarrow\quad p \lor q\)</span><br>
+<li><strong>Rule:</strong> Negation flips the truth value.
+<ul>
+<li>If <span class="math inline">\(p\)</span> is true, <span class="math inline">\(\lnot p\)</span> is false.<br>
 </li>
-<li>Intersection: <span class="math inline">\(A \cap B \quad\leftrightarrow\quad p \land q\)</span><br>
-</li>
-<li>Complement: <span class="math inline">\(A^c \quad\leftrightarrow\quad \lnot p\)</span><br>
-</li>
-<li>Difference: <span class="math inline">\(A \setminus B = \{x \in A \mid x \notin B\}\)</span></li>
+<li>If <span class="math inline">\(p\)</span> is false, <span class="math inline">\(\lnot p\)</span> is true.</li>
+</ul></li>
+<li><strong>Example:</strong><br>
+<span class="math inline">\(p\)</span>: “It is raining.”<br>
+<span class="math inline">\(\lnot p\)</span>: “It is not raining.”</li>
 </ul>
 <hr>
-</section>
-<section id="exercises" class="level1 unnumbered">
-<h1 class="unnumbered">3. Exercises</h1>
-<ol type="1">
-<li>Build a truth table for <span class="math inline">\((p \lor q) \land \lnot p\)</span>.<br>
-</li>
-<li>Show that <span class="math inline">\((p \to q) \equiv (\lnot q \to \lnot p)\)</span>.<br>
-</li>
-<li>Find the truth set of <span class="math inline">\(P(x): x^2 = 4\)</span> over <span class="math inline">\(U = \mathbb{Z}\)</span>.<br>
-</li>
-<li>Let<br>
+<p><strong>Conjunction: <span class="math inline">\(p \land q\)</span> (“<span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>”)</strong></p>
+<ul>
+<li><p><strong>Rule:</strong> <span class="math inline">\(p \land q\)</span> is true only if <strong>both</strong> <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are true.</p></li>
+<li><p><strong>Example:</strong><br>
+<span class="math inline">\(p\)</span>: “It is raining.”<br>
+<span class="math inline">\(q\)</span>: “I am carrying an umbrella.”<br>
+<span class="math inline">\(p \land q\)</span>: “It is raining <strong>and</strong> I am carrying an umbrella.”</p></li>
+<li><p><strong>Truth check:</strong> If either part fails, the whole conjunction is false.</p></li>
+</ul>
+<hr>
+<p><strong>Disjunction: <span class="math inline">\(p \lor q\)</span> (“<span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span>”)</strong></p>
+<ul>
+<li><p><strong>Rule:</strong> <span class="math inline">\(p \lor q\)</span> is true if <strong>at least one</strong> of <span class="math inline">\(p, q\)</span> is true.<br>
+(This is the <strong>inclusive or</strong> used in logic.)</p></li>
+<li><p><strong>Example:</strong><br>
+<span class="math inline">\(p\)</span>: “I will drink coffee.”<br>
+<span class="math inline">\(q\)</span>: “I will drink tea.”<br>
+<span class="math inline">\(p \lor q\)</span>: “I will drink coffee or tea (or both).”</p></li>
+<li><p><strong>Note:</strong> In everyday language, “or” can be exclusive. Logic defaults to inclusive.</p></li>
+</ul>
+<hr>
+<p><strong>Conditional: <span class="math inline">\(p \to q\)</span> (“if <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>”)</strong></p>
+<ul>
+<li><p><strong>Rule:</strong> An implication is false <strong>only</strong> when <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is false.<br>
+<strong>In all other cases, it is true.</strong><br>
+Equivalent form:<br>
 <span class="math display">\[
-A = \{x \in \mathbb{Z} \mid x \text{ even}\}, \quad  
-B = \{x \in \mathbb{Z} \mid x \text{ multiple of 4}\}.
-\]</span><br>
-Prove or disprove: <span class="math inline">\(B \subseteq A\)</span>.<br>
+p \to q \;\equiv\; \lnot p \lor q
+\]</span></p></li>
+<li><p><strong>Example:</strong><br>
+<span class="math inline">\(p\)</span>: “It rains.”<br>
+<span class="math inline">\(q\)</span>: “The ground is wet.”<br>
+<span class="math inline">\(p \to q\)</span>: “If it rains, then the ground is wet.”</p></li>
+<li><p><strong>Case analysis:</strong>&nbsp;</p>
+<ul>
+<li>If it rains <strong>and</strong> the ground is wet → the statement “If it rains, then the ground is wet” has been <strong>kept</strong>. Both the condition and the consequence hold, so the implication is <strong>true</strong>.<br>
 </li>
-<li>Show with a truth table that <span class="math inline">\((p \land q) \to p\)</span> is a tautology.</li>
+<li>If it rains <strong>but</strong> the ground is not wet → the statement has been <strong>broken</strong>. This is the <strong>only case</strong> where an implication is false: the condition was met but the promised result failed.<br>
+</li>
+<li>If it doesn’t rain → the statement never gets a chance to be tested. We cannot accuse it of being false, because the condition (“it rains”) never happened. By definition, logic treats this as <strong>vacuously true</strong>: the promise has not been broken, since there was nothing to check.<br>
+</li>
+<li>If it doesn’t rain <strong>and</strong> the ground is wet → still vacuously true. The implication didn’t say what should happen when it doesn’t rain; the ground being wet for other reasons (sprinklers, a bucket of water, etc.) doesn’t violate the promise.</li>
+</ul></li>
+</ul>
+<p><strong>Intuition and goal of the conditional</strong></p>
+<p>The statement <span class="math inline">\(p \to q\)</span> is read “if <span class="math inline">\(p\)</span> <em>holds</em> then <span class="math inline">\(q\)</span> <em>holds</em>” or even “if <span class="math inline">\(p\)</span> is <em>true</em> then <span class="math inline">\(q\)</span> is <em>true</em>.”&nbsp; At first glance, this seems strange because we must also handle cases when <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> are false.&nbsp; Why not just say it means “both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are true”?</p>
+<p>The key is that an implication is really a <strong>promise</strong> or <strong>rule</strong>:<br>
+- “Whenever <span class="math inline">\(p\)</span> happens, <span class="math inline">\(q\)</span> must also happen.”</p>
+<p>So we only judge the statement in the situations where the promise could actually be tested: <strong>when <span class="math inline">\(p\)</span> is true</strong>.</p>
+<ul>
+<li>If <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is true → the promise is kept → the implication is true.<br>
+</li>
+<li>If <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is false → the promise is broken → the implication is false.</li>
+</ul>
+<p>But if <span class="math inline">\(p\)</span> is false, the situation that was promised <strong>never arises</strong>. In those cases, the rule is not violated. By convention (and to make logical systems consistent), we treat the implication as <strong>vacuously true</strong> whenever <span class="math inline">\(p\)</span> is false.</p>
+<p>This explains why the truth table looks the way it does:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(p\)</span></th>
+<th><span class="math inline">\(q\)</span></th>
+<th><span class="math inline">\(p \to q\)</span></th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>promise kept</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>promise broken</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>vacuously true (<em>condition never triggered</em>)</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>vacuously true (<em>condition never triggered</em>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why is this important?</strong></p>
+<p>Understanding the conditional matters because:</p>
+<ol type="1">
+<li><p>It allows us to <strong>formalize logical rules</strong> like the contrapositive:<br>
+<span class="math display">\[
+p \to q \;\equiv\; \lnot q \to \lnot p
+\]</span> which is <em>central</em> in proofs.</p></li>
+<li><p>It prevents confusion when reading theorems:</p>
+<ul>
+<li>“If a sequence converges, then it is bounded” (<span class="math inline">\(p \to q\)</span>).<br>
+</li>
+<li>This is <strong>not</strong> claiming that all bounded sequences converge; the truth table guarantees the direction of the promise is clear.</li>
+</ul></li>
+<li><p>It highlights <strong>vacuous truth</strong>, which appears everywhere in math:</p>
+<ul>
+<li>“All unicorns have horns” is technically true, because there are no unicorns to provide a counterexample.<br>
+</li>
+<li>Similarly, in probability, if an event has probability zero, conditional statements given that event can be vacuously true.</li>
+</ul></li>
+</ol>
+<p>By appreciating this structure, the reader sees why the conditional is defined with its somewhat surprising truth table: it captures the idea of a promise that can only be broken in one very specific case.</p>
+<hr>
+<p><strong>Biconditional: <span class="math inline">\(p \leftrightarrow q\)</span> (“<span class="math inline">\(p\)</span> if and only if <span class="math inline">\(q\)</span>”)</strong></p>
+<ul>
+<li><p><strong>Rule:</strong> <span class="math inline">\(p \leftrightarrow q\)</span> is true exactly when <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> have the <strong>same truth value</strong><br>
+(both true or both false).</p>
+<p>Equivalent form:<br>
+<span class="math display">\[
+p \leftrightarrow q \;\equiv\; (p \to q) \land (q \to p)
+\]</span></p></li>
+<li><p><strong>Example:</strong><br>
+<span class="math inline">\(p\)</span>: “Today is Saturday.”<br>
+<span class="math inline">\(q\)</span>: “Tomorrow is Sunday.”<br>
+<span class="math inline">\(p \leftrightarrow q\)</span>: “Today is Saturday <strong>if and only if</strong> tomorrow is Sunday.”</p></li>
+<li><p><strong>Case analysis:</strong></p>
+<ul>
+<li>If both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are true → the biconditional is true (both directions of the promise hold).<br>
+</li>
+<li>If <span class="math inline">\(p\)</span> is true but <span class="math inline">\(q\)</span> is false → false, because one direction of the “if and only if” fails.<br>
+</li>
+<li>If <span class="math inline">\(p\)</span> is false but <span class="math inline">\(q\)</span> is true → false, for the same reason.<br>
+</li>
+<li>If both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are false → true, because they match in value (both false).</li>
+</ul></li>
+</ul>
+<p>This explains why the truth table looks like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(p\)</span></th>
+<th><span class="math inline">\(q\)</span></th>
+<th><span class="math inline">\(p \leftrightarrow q\)</span></th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>both true → promise kept</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>mismatch → one direction fails</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>mismatch → one direction fails</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>both false → they match</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Intuition and goal of the biconditional</strong></p>
+<p>The biconditional expresses <strong>equivalence</strong>: <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> “<em>stand or fall together</em>.”<br>
+It is stronger than a one-way implication: both <span class="math inline">\(p \to q\)</span> <em>and</em> <span class="math inline">\(q \to p\)</span> must hold.</p>
+<ul>
+<li>If you read <span class="math inline">\(p \leftrightarrow q\)</span> aloud, it means:<br>
+<em>“<span class="math inline">\(p\)</span> is true exactly when <span class="math inline">\(q\)</span> is true.”</em> or <em>“<span class="math inline">\(p\)</span> holds exactly when <span class="math inline">\(q\)</span> holds.”</em></li>
+</ul>
+<p>This is why mathematicians often use “<strong>iff</strong>” (<em>“if and only if”</em>) in definitions and theorems:<br>
+- It guarantees not only that <span class="math inline">\(p\)</span> implies <span class="math inline">\(q\)</span>, but also that <span class="math inline">\(q\)</span> implies <span class="math inline">\(p\)</span>.</p>
+<hr>
+<p><strong>Why is this important?</strong></p>
+<ol type="1">
+<li>It formalizes <strong>definitions</strong> in mathematics.
+<ul>
+<li>Example: “A number <span class="math inline">\(n\)</span> is even <strong>iff</strong> <span class="math inline">\(n = 2k\)</span> for some integer <span class="math inline">\(k\)</span>.”<br>
+</li>
+<li>This captures both directions: every even number has that form, and every number of that form is even.</li>
+</ul></li>
+<li>It allows us to state <strong>equivalence theorems</strong>.
+<ul>
+<li>Example: “A sequence is Cauchy <strong>iff</strong> it is convergent (in <span class="math inline">\(\mathbb{R}\)</span>).”<br>
+</li>
+<li>The biconditional captures the deep connection: each property implies the other.</li>
+</ul></li>
+<li>It makes reasoning reversible.
+<ul>
+<li>With an implication, you can only go forward (<span class="math inline">\(p \to q\)</span>).<br>
+</li>
+<li>With a biconditional, you can go forward and backward: knowing either <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> tells you the other.</li>
+</ul></li>
+</ol>
+<p>By mastering the biconditional, the reader understands why mathematicians love the phrase “if and only if”: it’s the precise way of stating <strong>true equivalence</strong> between concepts.</p>
+<p><strong>Summary Table of Connectives</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 21%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Connective</th>
+<th>Symbol</th>
+<th>Rule (when true)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Negation</td>
+<td><span class="math inline">\(\lnot p\)</span></td>
+<td>when <span class="math inline">\(p\)</span> is false</td>
+</tr>
+<tr class="even">
+<td>Conjunction</td>
+<td><span class="math inline">\(p \land q\)</span></td>
+<td>when <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are true</td>
+</tr>
+<tr class="odd">
+<td>Disjunction</td>
+<td><span class="math inline">\(p \lor q\)</span></td>
+<td>when at least one of <span class="math inline">\(p, q\)</span> is true</td>
+</tr>
+<tr class="even">
+<td>Conditional</td>
+<td><span class="math inline">\(p \to q\)</span></td>
+<td>false only if <span class="math inline">\(p\)</span> true and <span class="math inline">\(q\)</span> false</td>
+</tr>
+<tr class="odd">
+<td>Biconditional</td>
+<td><span class="math inline">\(p \leftrightarrow q\)</span></td>
+<td>when <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> have same truth value</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tautologies-contradictions-and-logical-equivalence" class="level2">
+<h2 class="anchored" data-anchor-id="tautologies-contradictions-and-logical-equivalence">1.3 Tautologies, Contradictions, and Logical Equivalence</h2>
+<p><strong>Tautology</strong></p>
+<p><strong>Definition:</strong><br>
+A <strong>tautology</strong> is a statement that is true in <em>all possible cases</em>.</p>
+<p><strong>Why it matters:</strong><br>
+- Tautologies act like <strong>universal truths</strong>: they don’t depend on data or assumptions.<br>
+- They are often the “glue” of proofs, showing that certain forms are always valid.<br>
+- Many rules of inference (like <em>modus ponens</em>) are based on tautologies.</p>
+<p><strong>Example (logic):</strong></p>
+<p><span class="math display">\[
+(p \land q) \to p
+\]</span></p>
+<p>This means: <em>If both (p) and (q) are true, then (p) is true.</em><br>
+- Always true, regardless of whether (p) or (q) are true or false.</p>
+<p><strong>Example (statistics):</strong><br>
+The <strong>Law of Total Probability</strong> is tautological:</p>
+<p><span class="math display">\[
+P(A) = P(A \cap B) + P(A \cap \lnot B).
+\]</span></p>
+<p>This identity always holds by construction, no matter what events (A) and (B) are.</p>
+<hr>
+<p><strong>Contradiction</strong></p>
+<p><strong>Definition:</strong><br>
+A <strong>contradiction</strong> is a statement that is false in <em>all possible cases</em>.</p>
+<p><strong>Why it matters:</strong><br>
+- Contradictions are the <strong>engine</strong> of <em>proof by contradiction</em>.<br>
+- If assuming something leads to a contradiction, then the assumption must be false.<br>
+- They represent “impossible situations” in logic.</p>
+<p><strong>Example (logic):</strong></p>
+<p><span class="math display">\[
+p \land \lnot p
+\]</span></p>
+<p>This means: <em>(p) is true and (p) is false at the same time.</em><br>
+- Always false, no matter what truth value (p) has.</p>
+<p><strong>Example (statistics):</strong><br>
+Suppose we assume:<br>
+1. “The variance of this distribution is finite.”<br>
+2. “The variance of this distribution is infinite.”</p>
+<p>Together, these form a contradiction, so at least one assumption must be wrong.</p>
+<hr>
+<p><strong>Logical Equivalence</strong></p>
+<p><strong>Definition:</strong><br>
+Two statements are <strong>logically equivalent</strong> if they have the same truth value in <em>all possible cases</em>.</p>
+<p><strong>Why it matters:</strong><br>
+- Logical equivalence lets us <strong>replace one statement with another</strong> in a proof.<br>
+- Many powerful proof strategies rely on equivalence (contrapositive law, De Morgan’s laws, distributive laws).<br>
+- Often the equivalent form is much easier to work with.</p>
+<p><strong>Example (logic):</strong></p>
+<p><span class="math display">\[
+p \to q \;\equiv\; \lnot p \lor q
+\]</span></p>
+<p>This means: <em>“If (p), then (q)” is the same as “Either not (p), or (q).”</em><br>
+- This equivalence makes it <strong>easier</strong> to manipulate conditionals in proofs.</p>
+<p><strong>Example (causal inference):</strong></p>
+<p><span class="math display">\[
+\text{Ignorability} \to \text{Identifiability}
+\]</span></p>
+<p>is <strong>logically equivalent</strong> to</p>
+<p><span class="math display">\[
+\lnot \text{Identifiability} \to \lnot \text{Ignorability}.
+\]</span></p>
+<p>Switching to the contrapositive often makes a proof or argument <strong>simpler</strong>.</p>
+<hr>
+<p><strong>Summary:</strong><br>
+- <strong>Tautologies</strong> give us universal truths to rely on.<br>
+- <strong>Contradictions</strong> allow us to eliminate false assumptions through contradiction proofs.<br>
+- <strong>Logical equivalence</strong> lets us restate problems in easier forms without changing meaning.</p>
+<hr>
+</section>
+</section>
+<section id="quantificational-logic" class="level1 unnumbered">
+<h1 class="unnumbered">2. Quantificational Logic</h1>
+<p>In propositional (sentential) logic, we treated statements as indivisible units: each one was either true or false.<br>
+But in mathematics and statistics, we often want to say things about <em>all numbers</em> in a set, or claim that <em>at least one</em> number has a certain property.<br>
+This is where <strong>quantifiers</strong> come in.</p>
+<hr>
+<section id="predicates-and-quantifiers" class="level2">
+<h2 class="anchored" data-anchor-id="predicates-and-quantifiers">2.1 Predicates and Quantifiers</h2>
+<p>As we saw above, a <strong>predicate</strong> is like a sentence with a “blank” — it becomes a full statement only once you plug in a value.</p>
+<ul>
+<li>Example: <span class="math inline">\(P(x): x &gt; 0\)</span>.
+<ul>
+<li>If <span class="math inline">\(x = 2\)</span>, then <span class="math inline">\(P(2)\)</span> is the proposition “2 &gt; 0” (true).<br>
+</li>
+<li>If <span class="math inline">\(x = -3\)</span>, then <span class="math inline">\(P(-3)\)</span> is the proposition “-3 &gt; 0” (false).</li>
+</ul></li>
+</ul>
+<p>We use <strong>quantifiers</strong> to talk about how many elements <strong>satisfy</strong> a predicate:</p>
+<ul>
+<li><p><strong>Universal quantifier (<span class="math inline">\(\forall\)</span>):</strong><br>
+<span class="math inline">\(\forall x\; P(x)\)</span> means “for all <span class="math inline">\(x\)</span>, <span class="math inline">\(P(x)\)</span> is true.”</p></li>
+<li><p><strong>Existential quantifier (<span class="math inline">\(\exists\)</span>):</strong><br>
+<span class="math inline">\(\exists x\; P(x)\)</span> means “there exists at least one <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(x)\)</span> is true.”</p></li>
+</ul>
+<p><strong>Examples:</strong><br>
+- <span class="math inline">\(\forall x \in \mathbb{Z},\; x^2 \geq 0\)</span>. (<em>Every integer squared is nonnegative.</em>)<br>
+- <span class="math inline">\(\exists x \in \mathbb{Z},\; x^2 = 9\)</span>. (<em>There exists an integer whose square is 9.</em>)</p>
+</section>
+<section id="universe-of-discourse" class="level2">
+<h2 class="anchored" data-anchor-id="universe-of-discourse">2.2 Universe of Discourse</h2>
+<p>The <strong>universe of discourse</strong> is the set of objects we allow <span class="math inline">\(x\)</span> to vary over.<br>
+The truth of a statement depends on it!</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><span class="math inline">\(\forall x \in \mathbb{R},\; x^2 \geq 0\)</span> is true.<br>
+</li>
+<li><span class="math inline">\(\forall x \in \mathbb{Z},\; x^2 = 2\)</span> is false (no integer squared equals 2).</li>
+</ul>
+<p>If we didn’t specify whether <span class="math inline">\(x\)</span> ranges over <span class="math inline">\(\mathbb{R}\)</span> or <span class="math inline">\(\mathbb{Z}\)</span> (both interpreted as the <strong>universe of discourse</strong> of each <strong>statement</strong>), the meaning would be ambiguous.</p>
+</section>
+<section id="truth-of-quantified-statements" class="level2">
+<h2 class="anchored" data-anchor-id="truth-of-quantified-statements">2.3 Truth of Quantified Statements</h2>
+<p>How to evaluate quantified statements:</p>
+<ul>
+<li><span class="math inline">\(\forall x\; P(x)\)</span> is true if <em>every</em> <span class="math inline">\(x\)</span> in the universe makes <span class="math inline">\(P(x)\)</span> true.<br>
+</li>
+<li><span class="math inline">\(\exists x\; P(x)\)</span> is true if <em>at least one</em> <span class="math inline">\(x\)</span> makes <span class="math inline">\(P(x)\)</span> true.</li>
+</ul>
+<section id="negations-of-quantifiers" class="level3">
+<h3 class="anchored" data-anchor-id="negations-of-quantifiers">Negations of Quantifiers</h3>
+<p>Negating quantified statements flips the quantifier:</p>
+<p><span class="math display">\[
+\lnot (\forall x\, P(x)) \equiv \exists x\, \lnot P(x)
+\]</span></p>
+<p><span class="math display">\[
+\lnot (\exists x\, P(x)) \equiv \forall x\, \lnot P(x)
+\]</span></p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>“Not all students passed” means “There exists a student who did not pass.”<br>
+</li>
+<li>“There does not exist a unicorn” means “For all <span class="math inline">\(x\)</span>, <span class="math inline">\(x\)</span> is not a unicorn.”</li>
+</ul>
+</section>
+</section>
+<section id="multiple-quantifiers" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-quantifiers">2.4 Multiple Quantifiers</h2>
+<p>Often statements involve more than one quantifier.<br>
+<strong>The order matters!</strong></p>
+<ul>
+<li><p><span class="math inline">\(\forall x \in \mathbb{R},\; \exists y \in \mathbb{R}: y &gt; x\)</span><br>
+→ True, because for every real number <span class="math inline">\(x\)</span>, we can pick <span class="math inline">\(y = x+1\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists y \in \mathbb{R},\; \forall x \in \mathbb{R}: y &gt; x\)</span><br>
+→ False, because no single real number is greater than <em>all</em> real numbers.</p></li>
+</ul>
+<p><strong>Tip:</strong> Think of quantifiers as a kind of <strong>game</strong>:<br>
+- For <span class="math inline">\(\forall x\)</span>, your opponent chooses the worst possible <span class="math inline">\(x\)</span>.<br>
+- For <span class="math inline">\(\exists y\)</span>, you get to respond by picking a suitable <span class="math inline">\(y\)</span>.</p>
+<p>The order decides who gets to “move” first, and the outcome can change completely.</p>
+</section>
+<section id="why-this-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters">2.5 Why This Matters</h2>
+<p>Quantifiers appear in almost every mathematical theorem.</p>
+<ul>
+<li><p><strong>Analysis (limits):</strong><br>
+<span class="math display">\[
+\forall \epsilon &gt; 0,\; \exists \delta &gt; 0:\; |x - a| &lt; \delta \;\to\; |f(x) - L| &lt; \epsilon
+\]</span><br>
+(“For every tolerance <span class="math inline">\(\epsilon\)</span>, there exists a closeness <span class="math inline">\(\delta\)</span> that guarantees the function stays within that tolerance.”)</p></li>
+<li><p><strong>Statistics:</strong></p>
+<ul>
+<li><span class="math inline">\(\forall n,\; \exists \hat{\theta}_n:\; \hat{\theta}_n \to \theta\)</span> (<em>There exists an estimator consistent for <span class="math inline">\(\theta\)</span>.</em>)<br>
+</li>
+<li><span class="math inline">\(\exists\)</span> an unbiased estimator of <span class="math inline">\(\mu\)</span> (the sample mean).</li>
+</ul></li>
+<li><p><strong>Causal Inference:</strong></p>
+<ul>
+<li><span class="math inline">\(\forall\)</span> randomized experiments, <span class="math inline">\(\exists\)</span> an unbiased estimator of the treatment effect.</li>
+</ul></li>
+</ul>
+<p>Quantifiers are the way mathematics formalizes sweeping claims like “always” and “sometimes,” which are <strong>at the heart</strong> of proofs and assumptions in Causal ML.</p>
+<hr>
+</section>
+<section id="exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises">2.6 Exercises</h2>
+<ol type="1">
+<li>Decide whether each statement is true or false (universe of discourse: <span class="math inline">\(\mathbb{Z}\)</span>):
+<ul>
+<li><span class="math inline">\(\forall x,\; x^2 \geq 0\)</span><br>
+</li>
+<li><span class="math inline">\(\exists x,\; x^2 = 2\)</span></li>
+</ul></li>
+<li>Negate the following statements and simplify:
+<ul>
+<li><span class="math inline">\(\forall x \in \mathbb{R},\; x^2 \geq 0\)</span><br>
+</li>
+<li><span class="math inline">\(\exists x \in \mathbb{N},\; x^2 = 2\)</span></li>
+</ul></li>
+<li>Show that the order of quantifiers matters by proving:
+<ul>
+<li><span class="math inline">\(\forall x \in \mathbb{R},\; \exists y \in \mathbb{R}: y &gt; x\)</span> is true.<br>
+</li>
+<li><span class="math inline">\(\exists y \in \mathbb{R},\; \forall x \in \mathbb{R}: y &gt; x\)</span> is false.</li>
+</ul></li>
+<li>Write in logical symbols:
+<ul>
+<li>“Every dataset has at least one outlier.”<br>
+</li>
+<li>“There exists a consistent estimator for every parameter.”</li>
+</ul></li>
 </ol>
 <hr>
 </section>
-<section id="connection-to-causal-ml" class="level1 unnumbered">
-<h1 class="unnumbered">4. Connection to Causal ML</h1>
-<ul>
-<li>Logical connectives allow us to formalize assumptions.<br>
-</li>
-<li>Truth sets connect directly to <strong>sample spaces</strong> in probability.<br>
-</li>
-<li>Set operations mirror SQL/database operations (our application project).<br>
-</li>
-<li>The contrapositive law underlies many proofs in statistics and causal inference:</li>
-</ul>
-<blockquote class="blockquote">
-<p>If ignorability holds, then the treatment effect is identifiable.<br>
-Equivalently, if the treatment effect is not identifiable, ignorability does not hold.</p>
-</blockquote>
-<hr>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>

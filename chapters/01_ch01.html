@@ -165,13 +165,11 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#predicates-and-quantifiers" id="toc-predicates-and-quantifiers" class="nav-link" data-scroll-target="#predicates-and-quantifiers">2.1 Predicates and Quantifiers</a></li>
   <li><a href="#universe-of-discourse" id="toc-universe-of-discourse" class="nav-link" data-scroll-target="#universe-of-discourse">2.2 Universe of Discourse</a></li>
-  <li><a href="#truth-of-quantified-statements" id="toc-truth-of-quantified-statements" class="nav-link" data-scroll-target="#truth-of-quantified-statements">2.3 Truth of Quantified Statements</a>
-  <ul class="collapse">
-  <li><a href="#negations-of-quantifiers" id="toc-negations-of-quantifiers" class="nav-link" data-scroll-target="#negations-of-quantifiers">Negations of Quantifiers</a></li>
-  </ul></li>
+  <li><a href="#truth-of-quantified-statements" id="toc-truth-of-quantified-statements" class="nav-link" data-scroll-target="#truth-of-quantified-statements">2.3 Truth of Quantified Statements</a></li>
   <li><a href="#multiple-quantifiers" id="toc-multiple-quantifiers" class="nav-link" data-scroll-target="#multiple-quantifiers">2.4 Multiple Quantifiers</a></li>
   <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">2.5 Why This Matters</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">2.6 Exercises</a></li>
+  <li><a href="#mathematical-interpretation" id="toc-mathematical-interpretation" class="nav-link" data-scroll-target="#mathematical-interpretation">2.6 Mathematical Interpretation</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">2.7 Exercises</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -696,8 +694,7 @@ The truth of a statement depends on it!</p>
 </li>
 <li><span class="math inline">\(\exists x\; P(x)\)</span> is true if <em>at least one</em> <span class="math inline">\(x\)</span> makes <span class="math inline">\(P(x)\)</span> true.</li>
 </ul>
-<section id="negations-of-quantifiers" class="level3">
-<h3 class="anchored" data-anchor-id="negations-of-quantifiers">Negations of Quantifiers</h3>
+<p><strong>Negations of Quantifiers</strong></p>
 <p>Negating quantified statements flips the quantifier:</p>
 <p><span class="math display">\[
 \lnot (\forall x\, P(x)) \equiv \exists x\, \lnot P(x)
@@ -711,7 +708,6 @@ The truth of a statement depends on it!</p>
 </li>
 <li>“There does not exist a unicorn” means “For all <span class="math inline">\(x\)</span>, <span class="math inline">\(x\)</span> is not a unicorn.”</li>
 </ul>
-</section>
 </section>
 <section id="multiple-quantifiers" class="level2">
 <h2 class="anchored" data-anchor-id="multiple-quantifiers">2.4 Multiple Quantifiers</h2>
@@ -751,32 +747,178 @@ The truth of a statement depends on it!</p>
 <p>Quantifiers are the way mathematics formalizes sweeping claims like “always” and “sometimes,” which are <strong>at the heart</strong> of proofs and assumptions in Causal ML.</p>
 <hr>
 </section>
+<section id="mathematical-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="mathematical-interpretation">2.6 Mathematical Interpretation</h2>
+<p>Quantifiers can look intimidating at first, but the real skill is <strong>learning how to read them</strong>.<br>
+Every quantified statement has two parts:<br>
+1. the <strong>quantifier</strong> (<span class="math inline">\(\forall\)</span> or <span class="math inline">\(\exists\)</span>), and<br>
+2. the <strong>predicate</strong> (a property of <span class="math inline">\(x\)</span> that is claimed to hold).</p>
+<hr>
+<p><strong>2.6.1 Single Quantifier Examples</strong></p>
+<ul>
+<li><p><strong>Universal</strong> (<span class="math inline">\(\forall\)</span>):</p>
+<p><span class="math display">\[
+\forall x \in \mathbb{R},\; x^2 \geq 0
+\]</span></p>
+<p>Read: <em>“For every real number <span class="math inline">\(x\)</span>, the square of <span class="math inline">\(x\)</span> is nonnegative.”</em><br>
+Interpretation: This is true, because no real number squared gives a negative result.</p>
+<p><strong>Statistics example:</strong></p>
+<p><span class="math display">\[
+\forall n \in \mathbb{N},\; \operatorname{Var}(\bar{X}_n) \geq 0
+\]</span></p>
+<p>Read: <em>“For every sample size <span class="math inline">\(n\)</span>, the variance of the sample mean is nonnegative.”</em><br>
+Interpretation: Always true, because variances can never be negative.</p></li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>Existential</strong> (<span class="math inline">\(\exists\)</span>):</p>
+<p><span class="math display">\[
+\exists x \in \mathbb{Z},\; x^2 = 4
+\]</span></p>
+<p>Read: <em>“There exists an integer whose square is 4.”</em><br>
+Interpretation: True, since <span class="math inline">\(x = 2\)</span> and <span class="math inline">\(x = -2\)</span> work.</p>
+<p><strong>Statistics example:</strong></p>
+<p><span class="math display">\[
+\exists \;\text{an estimator } \hat{\theta}\; : \; \mathbb{E}[\hat{\theta}] = \theta
+\]</span></p>
+<p>Read: <em>“There exists an estimator whose expected value equals the true parameter.”</em><br>
+Interpretation: This is the definition of an unbiased estimator (e.g., the sample mean for <span class="math inline">\(\mu\)</span>).</p></li>
+</ul>
+<hr>
+<p><strong>2.6.2 Multiple Quantifier Examples</strong></p>
+<p>When quantifiers are combined, <strong>order matters</strong>.</p>
+<ul>
+<li><p>Example 1:</p>
+<p><span class="math display">\[
+\forall x \in \mathbb{R},\; \exists y \in \mathbb{R}:\; y &gt; x
+\]</span></p>
+<p>Read: <em>“For every real number <span class="math inline">\(x\)</span>, there exists a real number <span class="math inline">\(y\)</span> that is greater than <span class="math inline">\(x\)</span>.”</em><br>
+True, because if someone hands you any <span class="math inline">\(x\)</span>, you can always respond with <span class="math inline">\(y = x+1\)</span>.</p>
+<p><strong>Statistics example:</strong></p>
+<p><span class="math display">\[
+\forall \epsilon &gt; 0,\; \exists N \in \mathbb{N}:\; n &gt; N \;\to\; |\bar{X}_n - \mu| &lt; \epsilon
+\]</span></p>
+<p>Read: <em>“For every tolerance <span class="math inline">\(\epsilon\)</span>, there exists a large enough sample size <span class="math inline">\(N\)</span> such that if <span class="math inline">\(n &gt; N\)</span>, the sample mean is within <span class="math inline">\(\epsilon\)</span> of <span class="math inline">\(\mu\)</span>.”</em><br>
+Interpretation: This is the definition of consistency (Law of Large Numbers).</p></li>
+</ul>
+<hr>
+<ul>
+<li><p>Example 2:</p>
+<p><span class="math display">\[
+\exists y \in \mathbb{R},\; \forall x \in \mathbb{R}:\; y &gt; x
+\]</span></p>
+<p>Read: <em>“There exists a real number <span class="math inline">\(y\)</span> such that <span class="math inline">\(y\)</span> is greater than every real number <span class="math inline">\(x\)</span>.”</em><br>
+False, because no single real number is larger than all others.</p>
+<p><strong>Statistics example (false statement):</strong></p>
+<p><span class="math display">\[
+\exists N \in \mathbb{N},\; \forall n &gt; N:\; \bar{X}_n = \mu
+\]</span></p>
+<p>Read: <em>“There exists a finite sample size <span class="math inline">\(N\)</span> such that for all <span class="math inline">\(n &gt; N\)</span>, the sample mean equals the population mean exactly.”</em><br>
+False, because sampling variation never completely disappears — the sample mean only converges in probability, not with exact equality at some <span class="math inline">\(N\)</span>.</p></li>
+</ul>
+<hr>
+<p><strong>2.6.3 How to Think About Multiple Quantifiers</strong></p>
+<p>A useful way to think is as a <strong>game</strong>:</p>
+<ul>
+<li><span class="math inline">\(\forall x\)</span> = your opponent picks a value of <span class="math inline">\(x\)</span>, possibly trying to make you fail.<br>
+</li>
+<li><span class="math inline">\(\exists y\)</span> = you get to respond by picking <span class="math inline">\(y\)</span> to satisfy the condition.</li>
+</ul>
+<p>So the statement</p>
+<p><span class="math display">\[
+\forall x \in \mathbb{R},\; \exists y \in \mathbb{R}:\; y &gt; x
+\]</span></p>
+<p>means: <em>No matter what <span class="math inline">\(x\)</span> your opponent picks, you can always respond with a suitable <span class="math inline">\(y\)</span>.</em></p>
+<p>But the reverse order</p>
+<p><span class="math display">\[
+\exists y \in \mathbb{R},\; \forall x \in \mathbb{R}:\; y &gt; x
+\]</span></p>
+<p>means: <em>You must pick one <span class="math inline">\(y\)</span> that beats all possible <span class="math inline">\(x\)</span>.</em> This is impossible, so the statement is false.</p>
+<hr>
+<p><strong>Why this section is important</strong></p>
+<p>Quantifiers are everywhere in math, stats, and causal ML.</p>
+<ul>
+<li><em>Universal</em> quantifiers express generality:
+<ul>
+<li>“For all sample sizes <span class="math inline">\(n\)</span>, <span class="math inline">\(\operatorname{Var}(\bar{X}_n) \geq 0\)</span>.”<br>
+</li>
+<li>“For all <span class="math inline">\(\epsilon &gt; 0\)</span>, there exists an <span class="math inline">\(N\)</span> such that …” (limits, consistency).</li>
+</ul></li>
+<li><em>Existential</em> quantifiers express possibility:
+<ul>
+<li>“There exists an unbiased estimator of <span class="math inline">\(\mu\)</span>.”<br>
+</li>
+<li>“There exists a consistent estimator for every parameter.”</li>
+</ul></li>
+<li>With multiple quantifiers, the <strong>order of ‘who chooses first’</strong> changes the meaning dramatically.<br>
+This interpretative skill is essential for reading theorems correctly and avoiding misinterpretation.</li>
+</ul>
+<hr>
+</section>
 <section id="exercises" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="exercises">2.6 Exercises</h2>
+<h2 class="unnumbered anchored" data-anchor-id="exercises">2.7 Exercises</h2>
+<p><strong>Goal of these exercises:</strong><br>
+- Practice <strong>evaluating truth values</strong>.<br>
+- Practice <strong>negating</strong> quantified statements.<br>
+- Practice <strong>reading and interpreting</strong> symbolic logic in plain English.<br>
+At this stage, we are not proving statements — only learning to understand and translate them correctly.</p>
 <ol type="1">
-<li>Decide whether each statement is true or false (universe of discourse: <span class="math inline">\(\mathbb{Z}\)</span>):
+<li><p><strong>Truth values (universe of discourse: <span class="math inline">\(\mathbb{Z}\)</span>):</strong><br>
+For each statement, decide whether it is true or false and explain why in words.</p>
 <ul>
 <li><span class="math inline">\(\forall x,\; x^2 \geq 0\)</span><br>
 </li>
 <li><span class="math inline">\(\exists x,\; x^2 = 2\)</span></li>
-</ul></li>
-<li>Negate the following statements and simplify:
+</ul>
+<p><em>Hint:</em> In the first, think: “Is there any integer whose square is negative?”<br>
+In the second, think: “Is there an integer whose square equals 2?”</p></li>
+</ol>
+<hr>
+<ol start="2" type="1">
+<li><p><strong>Negation practice:</strong><br>
+Write the logical negation of each statement and simplify.</p>
 <ul>
 <li><span class="math inline">\(\forall x \in \mathbb{R},\; x^2 \geq 0\)</span><br>
 </li>
 <li><span class="math inline">\(\exists x \in \mathbb{N},\; x^2 = 2\)</span></li>
-</ul></li>
-<li>Show that the order of quantifiers matters by proving:
+</ul>
+<p><em>Hint:</em> Use the rules:<br>
+<span class="math display">\[
+\lnot (\forall x\, P(x)) \equiv \exists x\, \lnot P(x), \qquad
+\lnot (\exists x\, P(x)) \equiv \forall x\, \lnot P(x).
+\]</span></p></li>
+</ol>
+<hr>
+<ol start="3" type="1">
+<li><p><strong>Quantifier order:</strong><br>
+Carefully interpret the following statements in plain English.<br>
+Are they true or false?</p>
 <ul>
-<li><span class="math inline">\(\forall x \in \mathbb{R},\; \exists y \in \mathbb{R}: y &gt; x\)</span> is true.<br>
+<li><span class="math inline">\(\forall x \in \mathbb{R},\; \exists y \in \mathbb{R}: y &gt; x\)</span><br>
 </li>
-<li><span class="math inline">\(\exists y \in \mathbb{R},\; \forall x \in \mathbb{R}: y &gt; x\)</span> is false.</li>
+<li><span class="math inline">\(\exists y \in \mathbb{R},\; \forall x \in \mathbb{R}: y &gt; x\)</span></li>
 </ul></li>
-<li>Write in logical symbols:
+</ol>
+<hr>
+<ol start="4" type="1">
+<li><p><strong>Translate into symbols:</strong></p>
+<p>Express the following in logical notation.</p>
 <ul>
 <li>“Every dataset has at least one outlier.”<br>
 </li>
 <li>“There exists a consistent estimator for every parameter.”</li>
+</ul></li>
+</ol>
+<hr>
+<ol start="5" type="1">
+<li><p><strong>Interpret the following statistical statements (no proof needed):</strong></p>
+<ul>
+<li><p><span class="math inline">\(\forall n \in \mathbb{N},\; \operatorname{Var}(\bar{X}_n) \geq 0\)</span><br>
+(<em>For every sample size <span class="math inline">\(n\)</span>, the variance of the sample mean is nonnegative.</em>)</p></li>
+<li><p><span class="math inline">\(\exists n \in \mathbb{N},\; \forall \epsilon &gt; 0:\; |\bar{X}_n - \mu| &lt; \epsilon\)</span><br>
+(<em>There exists a fixed sample size <span class="math inline">\(n\)</span> such that the sample mean is always arbitrarily close to <span class="math inline">\(\mu\)</span>.</em> Is this realistic?)</p></li>
+<li><p><span class="math inline">\(\forall \epsilon &gt; 0,\; \exists N \in \mathbb{N}:\; n &gt; N \;\to\; |\bar{X}_n - \mu| &lt; \epsilon\)</span><br>
+(<em>Interpretation:</em> This is the formal definition of <strong>consistency</strong> / the Law of Large Numbers).</p></li>
 </ul></li>
 </ol>
 <hr>

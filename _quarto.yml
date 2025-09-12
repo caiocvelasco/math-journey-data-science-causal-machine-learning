@@ -1,7 +1,31 @@
 project:
-  type: website
-  output-dir: _book
-  resources:
-    - en/**
-    - pt/**
-    - index.html
+  type: book
+  output-dir: ../_book/en
+
+book:
+  title: "Foundations of Data Science & Causal ML: A Mathematical Journey"
+  author: "Caio Velasco"
+  date: today
+  chapters:
+    - index.qmd
+    - chapters/01_ch01.qmd
+  sidebar:
+    style: docked        # left, fixed sidebar with chapters
+    search: true
+    collapse-level: 1
+
+number-sections: false
+
+format:
+  html:
+    theme: cosmo
+    code-link: true
+    math: true
+    toc: true
+    toc-location: right
+    service-workers: false
+    grid:
+      sidebar-width: 280px
+      body-width: 900px
+      margin-width: 280px
+      gutter-width: 1.5rem

@@ -1,4 +1,4 @@
-# Foundations of Data Science & Causal ML — Quarto Book
+# Foundations of Data Science & Causal ML
 
 This repository contains a [Quarto](https://quarto.org) book project. It uses a Python virtual environment (`venv`), `requirements.txt` for dependencies, and a `chapters/` folder to organize the content.
 

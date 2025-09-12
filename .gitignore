@@ -20,6 +20,7 @@ Thumbs.db
 .Rproj.user/
 
 # Quarto
+/.quarto/
 .quarto/
 _site/
 _book/
@@ -37,5 +38,3 @@ _publish/
 *.tmp
 *.bak
 *.swp
-
-/.quarto/

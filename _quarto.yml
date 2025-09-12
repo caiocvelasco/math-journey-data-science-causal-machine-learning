@@ -29,3 +29,4 @@ format:
       body-width: 900px
       margin-width: 280px
       gutter-width: 1.5rem
+    include-in-header: ga.html

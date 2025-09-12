@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://caiocvelasco.github.io/math-journey-data-science-causal-machine-learning/index.html</loc>
-    <lastmod>2025-09-12T09:22:51.748Z</lastmod>
+    <loc>https://caiocvelasco.github.io/math-journey-data-science-causal-machine-learning/pt/index.html</loc>
+    <lastmod>2025-09-11T19:19:33.428Z</lastmod>
+  </url>
+  <url>
+    <loc>https://caiocvelasco.github.io/math-journey-data-science-causal-machine-learning/en/index.html</loc>
+    <lastmod>2025-09-11T19:23:32.309Z</lastmod>
+  </url>
+  <url>
+    <loc>https://caiocvelasco.github.io/math-journey-data-science-causal-machine-learning/en/chapters/01_ch01.html</loc>
+    <lastmod>2025-09-11T14:41:57.022Z</lastmod>
+  </url>
+  <url>
+    <loc>https://caiocvelasco.github.io/math-journey-data-science-causal-machine-learning/pt/capitulos/01_cap01.html</loc>
+    <lastmod>2025-09-11T19:05:40.640Z</lastmod>
   </url>
 </urlset>

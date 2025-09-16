@@ -77,44 +77,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-B19JRNKWM0', { 'anonymize_ip': true});
 </script>
-<!-- Google Analytics 4 -->
-
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B19JRNKWM0"></script>
-
-<script>
-
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag(){ dataLayer.push(arguments); }
-
-
-
-  gtag('js', new Date());
-
-
-
-  // Send page_view and enable debug (shows in DebugView)
-
-  gtag('config', 'G-B19JRNKWM0', {
-
-    send_page_view: true,
-
-    anonymize_ip: true,
-
-    debug_mode: true,
-
-    page_path: location.pathname + location.search   // helps on GH Pages subpath
-
-  });
-
-
-
-  // Extra test event so we can see *something* instantly in DebugView
-
-  gtag('event', 'debug_ping', { debug_mode: true });
-
-</script>
-
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>

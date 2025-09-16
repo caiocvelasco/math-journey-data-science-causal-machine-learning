@@ -68,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics 4 -->
 
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B19JRNKWM0"></script>
 
@@ -76,15 +76,36 @@ ul.task-list li input[type="checkbox"] {
 
   window.dataLayer = window.dataLayer || [];
 
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){ dataLayer.push(arguments); }
+
+
 
   gtag('js', new Date());
 
 
 
-  gtag('config', 'G-B19JRNKWM0');
+  // Send page_view and enable debug (shows in DebugView)
+
+  gtag('config', 'G-B19JRNKWM0', {
+
+    send_page_view: true,
+
+    anonymize_ip: true,
+
+    debug_mode: true,
+
+    page_path: location.pathname + location.search   // helps on GH Pages subpath
+
+  });
+
+
+
+  // Extra test event so we can see *something* instantly in DebugView
+
+  gtag('event', 'debug_ping', { debug_mode: true });
 
 </script>
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>

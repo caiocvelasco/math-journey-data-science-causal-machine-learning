@@ -170,10 +170,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#phase-1-logic-set-theory" id="toc-phase-1-logic-set-theory" class="nav-link" data-scroll-target="#phase-1-logic-set-theory">Phase 1 – Logic &amp; Set Theory</a></li>
   <li><a href="#phase-2-real-analysis" id="toc-phase-2-real-analysis" class="nav-link" data-scroll-target="#phase-2-real-analysis">Phase 2 – Real Analysis</a></li>
-  <li><a href="#phase-3-topology-measure-theory" id="toc-phase-3-topology-measure-theory" class="nav-link" data-scroll-target="#phase-3-topology-measure-theory">Phase 3 – Topology &amp; Measure Theory</a></li>
-  <li><a href="#phase-4-probability" id="toc-phase-4-probability" class="nav-link" data-scroll-target="#phase-4-probability">Phase 4 – Probability</a></li>
-  <li><a href="#phase-5-mathematical-statistics" id="toc-phase-5-mathematical-statistics" class="nav-link" data-scroll-target="#phase-5-mathematical-statistics">Phase 5 – Mathematical Statistics</a></li>
-  <li><a href="#phase-6-causality" id="toc-phase-6-causality" class="nav-link" data-scroll-target="#phase-6-causality">Phase 6 – Causality</a></li>
+  <li><a href="#phase-3-linear-algebra" id="toc-phase-3-linear-algebra" class="nav-link" data-scroll-target="#phase-3-linear-algebra">Phase 3 – Linear Algebra</a></li>
+  <li><a href="#phase-4-functional-analysis-hilbert-spaces" id="toc-phase-4-functional-analysis-hilbert-spaces" class="nav-link" data-scroll-target="#phase-4-functional-analysis-hilbert-spaces">Phase 4 – Functional Analysis &amp; Hilbert Spaces</a></li>
+  <li><a href="#phase-5-topology-measure-theory" id="toc-phase-5-topology-measure-theory" class="nav-link" data-scroll-target="#phase-5-topology-measure-theory">Phase 5 – Topology &amp; Measure Theory</a></li>
+  <li><a href="#phase-6-probability" id="toc-phase-6-probability" class="nav-link" data-scroll-target="#phase-6-probability">Phase 6 – Probability</a></li>
+  <li><a href="#phase-7-mathematical-statistics" id="toc-phase-7-mathematical-statistics" class="nav-link" data-scroll-target="#phase-7-mathematical-statistics">Phase 7 – Mathematical Statistics</a></li>
+  <li><a href="#phase-8-causality" id="toc-phase-8-causality" class="nav-link" data-scroll-target="#phase-8-causality">Phase 8 – Causality</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -234,11 +236,23 @@ window.Quarto = {
 </section>
 <section id="phase-2-real-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="phase-2-real-analysis">Phase 2 – Real Analysis</h3>
-<p><strong>Goal:</strong> Rigorous calculus and convergence.<br>
-- Sequences, series, limits.<br>
-- Continuity, compactness, connectedness.<br>
-- Differentiation, Riemann integration (with rigor).<br>
-- Uniform convergence.</p>
+<p><strong>Goal:</strong> Rigorous calculus and convergence, revisiting classical calculus concepts with proofs.</p>
+<ul>
+<li>Sequences, series, limits.<br>
+</li>
+<li>Continuity, compactness, connectedness.<br>
+</li>
+<li>Differentiation: Mean Value Theorem, Taylor expansion.<br>
+</li>
+<li>Riemann integration (rigorous foundation).<br>
+</li>
+<li>Uniform convergence.</li>
+</ul>
+<p><strong>Applied Calculus Lens:</strong><br>
+- Multivariable calculus: partial derivatives, gradients, Jacobians, Hessians.<br>
+- Convexity and optimization.<br>
+- Taylor expansions for approximation.<br>
+- Fundamental Theorem of Calculus as link to probability expectations.</p>
 <p><strong>Theory Output:</strong> ε–δ proofs, compactness in ℝ, uniform convergence examples.<br>
 <strong>Application Project:</strong> Gradient descent convergence demo; connect convexity to logistic regression loss.</p>
 <p><strong>References:</strong><br>
@@ -246,8 +260,40 @@ window.Quarto = {
 - Tao – <em>Analysis I</em></p>
 <hr>
 </section>
-<section id="phase-3-topology-measure-theory" class="level3">
-<h3 class="anchored" data-anchor-id="phase-3-topology-measure-theory">Phase 3 – Topology &amp; Measure Theory</h3>
+<section id="phase-3-linear-algebra" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-linear-algebra">Phase 3 – Linear Algebra</h3>
+<p><strong>Goal:</strong> Move beyond computation to proofs and structure.<br>
+- Vector spaces, subspaces, linear independence, bases, dimension.<br>
+- Linear transformations and matrices.<br>
+- Inner product spaces, orthogonality, Gram–Schmidt.<br>
+- Determinants, eigenvalues, eigenvectors, diagonalization.<br>
+- Spectral theorem, singular value decomposition.<br>
+- Matrix norms and conditioning.</p>
+<p><strong>Theory Output:</strong> Proofs of rank–nullity theorem, spectral theorem for symmetric matrices, SVD existence.<br>
+<strong>Application Project:</strong> PCA from first principles — prove orthogonal diagonalization, then implement PCA via SVD.</p>
+<p><strong>References:</strong><br>
+- Axler – <em>Linear Algebra Done Right</em><br>
+- Friedberg, Insel &amp; Spence – <em>Linear Algebra</em><br>
+- Trefethen &amp; Bau – <em>Numerical Linear Algebra</em> (for computational aspects)</p>
+<hr>
+</section>
+<section id="phase-4-functional-analysis-hilbert-spaces" class="level3">
+<h3 class="anchored" data-anchor-id="phase-4-functional-analysis-hilbert-spaces">Phase 4 – Functional Analysis &amp; Hilbert Spaces</h3>
+<p><strong>Goal:</strong> Develop the tools to handle infinite-dimensional vector spaces, operators, and kernels.<br>
+- Normed vector spaces, Banach spaces.<br>
+- Hilbert spaces, orthogonality, projections.<br>
+- Bounded linear operators.<br>
+- Reproducing Kernel Hilbert Spaces (RKHS).</p>
+<p><strong>Theory Output:</strong> Prove projection theorem in Hilbert spaces, examples of bounded/unbounded operators, RKHS construction.<br>
+<strong>Application Project:</strong> Kernelized regression and SVMs — connect functional analysis with machine learning models.</p>
+<p><strong>References:</strong><br>
+- Kreyszig – <em>Introductory Functional Analysis with Applications</em><br>
+- Conway – <em>A Course in Functional Analysis</em><br>
+- Berlinet &amp; Thomas-Agnan – <em>Reproducing Kernel Hilbert Spaces in Probability and Statistics</em></p>
+<hr>
+</section>
+<section id="phase-5-topology-measure-theory" class="level3">
+<h3 class="anchored" data-anchor-id="phase-5-topology-measure-theory">Phase 5 – Topology &amp; Measure Theory</h3>
 <p><strong>Goal:</strong> Learn the structures that underlie probability theory.<br>
 - Metric spaces, open/closed sets.<br>
 - Compactness and product spaces.<br>
@@ -261,8 +307,8 @@ window.Quarto = {
 - Schilling – <em>Measures, Integrals and Martingales</em></p>
 <hr>
 </section>
-<section id="phase-4-probability" class="level3">
-<h3 class="anchored" data-anchor-id="phase-4-probability">Phase 4 – Probability</h3>
+<section id="phase-6-probability" class="level3">
+<h3 class="anchored" data-anchor-id="phase-6-probability">Phase 6 – Probability</h3>
 <p><strong>Goal:</strong> Define probability rigorously à la Kolmogorov.<br>
 - Probability spaces and random variables as measurable functions.<br>
 - Distributions, independence, product measures.<br>
@@ -276,8 +322,8 @@ window.Quarto = {
 - Klenke – <em>Probability Theory</em></p>
 <hr>
 </section>
-<section id="phase-5-mathematical-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="phase-5-mathematical-statistics">Phase 5 – Mathematical Statistics</h3>
+<section id="phase-7-mathematical-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="phase-7-mathematical-statistics">Phase 7 – Mathematical Statistics</h3>
 <p><strong>Goal:</strong> Connect probability → inference.<br>
 - Point estimation: MLE, method of moments.<br>
 - Properties: unbiasedness, consistency, efficiency.<br>
@@ -289,8 +335,8 @@ window.Quarto = {
 - Casella &amp; Berger – <em>Statistical Inference</em></p>
 <hr>
 </section>
-<section id="phase-6-causality" class="level3">
-<h3 class="anchored" data-anchor-id="phase-6-causality">Phase 6 – Causality</h3>
+<section id="phase-8-causality" class="level3">
+<h3 class="anchored" data-anchor-id="phase-8-causality">Phase 8 – Causality</h3>
 <p><strong>Goal:</strong> Enter causal inference with strong mathematical foundations.<br>
 - Pearl’s Structural Causal Models &amp; do-calculus.<br>
 - Rubin’s potential outcomes framework.<br>

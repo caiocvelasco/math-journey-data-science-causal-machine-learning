@@ -37,22 +37,66 @@ Here you can find both **mathematical foundations** and **applications**.
 ---
 
 ### Phase 2 – Real Analysis
-**Goal:** Rigorous calculus and convergence.  
+**Goal:** Rigorous calculus and convergence, revisiting classical calculus concepts with proofs.  
+
 - Sequences, series, limits.  
 - Continuity, compactness, connectedness.  
-- Differentiation, Riemann integration (with rigor).  
+- Differentiation: Mean Value Theorem, Taylor expansion.  
+- Riemann integration (rigorous foundation).  
 - Uniform convergence.  
+
+**Applied Calculus Lens:**  
+- Multivariable calculus: partial derivatives, gradients, Jacobians, Hessians.  
+- Convexity and optimization.  
+- Taylor expansions for approximation.  
+- Fundamental Theorem of Calculus as link to probability expectations.  
 
 **Theory Output:** ε–δ proofs, compactness in ℝ, uniform convergence examples.  
 **Application Project:** Gradient descent convergence demo; connect convexity to logistic regression loss.  
 
 **References:**  
 - Rudin – *Principles of Mathematical Analysis* (Baby Rudin)  
-- Tao – *Analysis I*  
+- Tao – *Analysis I*    
 
 ---
 
-### Phase 3 – Topology & Measure Theory
+### Phase 3 – Linear Algebra
+**Goal:** Move beyond computation to proofs and structure.  
+- Vector spaces, subspaces, linear independence, bases, dimension.  
+- Linear transformations and matrices.  
+- Inner product spaces, orthogonality, Gram–Schmidt.  
+- Determinants, eigenvalues, eigenvectors, diagonalization.  
+- Spectral theorem, singular value decomposition.  
+- Matrix norms and conditioning.  
+
+**Theory Output:** Proofs of rank–nullity theorem, spectral theorem for symmetric matrices, SVD existence.  
+**Application Project:** PCA from first principles — prove orthogonal diagonalization, then implement PCA via SVD.  
+
+**References:**  
+- Axler – *Linear Algebra Done Right*  
+- Friedberg, Insel & Spence – *Linear Algebra*  
+- Trefethen & Bau – *Numerical Linear Algebra* (for computational aspects)  
+
+---
+
+### Phase 4 – Functional Analysis & Hilbert Spaces
+**Goal:** Develop the tools to handle infinite-dimensional vector spaces, operators, and kernels.  
+- Normed vector spaces, Banach spaces.  
+- Hilbert spaces, orthogonality, projections.  
+- Bounded linear operators.  
+- Reproducing Kernel Hilbert Spaces (RKHS).  
+
+**Theory Output:** Prove projection theorem in Hilbert spaces, examples of bounded/unbounded operators, RKHS construction.  
+**Application Project:** Kernelized regression and SVMs — connect functional analysis with machine learning models.  
+
+**References:**  
+- Kreyszig – *Introductory Functional Analysis with Applications*  
+- Conway – *A Course in Functional Analysis*  
+- Berlinet & Thomas-Agnan – *Reproducing Kernel Hilbert Spaces in Probability and Statistics*  
+
+---
+
+### Phase 5 – Topology & Measure Theory
 **Goal:** Learn the structures that underlie probability theory.  
 - Metric spaces, open/closed sets.  
 - Compactness and product spaces.  
@@ -69,7 +113,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 4 – Probability
+### Phase 6 – Probability
 **Goal:** Define probability rigorously à la Kolmogorov.  
 - Probability spaces and random variables as measurable functions.  
 - Distributions, independence, product measures.  
@@ -86,7 +130,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 5 – Mathematical Statistics
+### Phase 7 – Mathematical Statistics
 **Goal:** Connect probability → inference.  
 - Point estimation: MLE, method of moments.  
 - Properties: unbiasedness, consistency, efficiency.  
@@ -101,7 +145,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 6 – Causality
+### Phase 8 – Causality
 **Goal:** Enter causal inference with strong mathematical foundations.  
 - Pearl’s Structural Causal Models & do-calculus.  
 - Rubin’s potential outcomes framework.  

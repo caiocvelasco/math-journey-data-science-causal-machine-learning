@@ -13,9 +13,11 @@ book:
     style: docked        # left, fixed sidebar with chapters
     search: true
     collapse-level: 1
-
-website:
-  google-analytics: "G-B19JRNKWM0"   # GA4 measurement ID for the book (Quarto will handle the gtag injection)
+    tools:
+      - text: "About Me"
+        href: "https://caiocvelasco.github.io/"
+        target: _blank
+  google-analytics: "GT-W6N7KSB2"   # "G-B19JRNKWM0" - GA4 measurement ID for the book (Quarto will handle the gtag injection)
 
 number-sections: false
 

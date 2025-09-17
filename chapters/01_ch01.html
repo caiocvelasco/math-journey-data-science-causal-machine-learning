@@ -218,20 +218,43 @@ This process of <strong>axiomatization</strong> is what gives mathematics its un
 - Axioms are not “true” in an absolute sense. They are starting points.<br>
 - What matters is whether the consequences drawn from them are <strong>logically consistent</strong> and <strong>useful</strong> for understanding the world.<br>
 - In practice, this makes mathematics a <em>language</em> in which science can express and test ideas.</p>
-<p>As Milton Friedman wrote in <em>Essays in Positive Economics</em> (<a href="https://sciencepolicy.colorado.edu/students/envs_5120/friedman_1966.pdf">1966 edition, PDF</a>),<br>
-the goal of science is to produce <em>“valid and meaningful predictions about phenomena not yet observed.”</em><br>
-Mathematics provides the rigorous framework for turning assumptions into predictions.</p>
+<p>Mathematics provides the rigorous framework for turning assumptions into predictions.</p>
 <p>For example, in <strong>Euclidean geometry</strong> we assume as an <strong>axiom</strong>:</p>
 <blockquote class="blockquote">
 <p><em>Through two distinct points, there is exactly one straight line.</em></p>
 </blockquote>
-<p>Is this “true” in an absolute sense? Not necessarily — in curved spaces (like the surface of a sphere), the axiom fails.</p>
-<p>But within its system, the consequences are <strong>logically consistent</strong> (no contradictions arise) and <strong>useful</strong> (we can design buildings, maps, and bridges).</p>
-<p>In the same way, in probability we may assume:</p>
+<p>But this depends on the “space” we are working in.</p>
+<ul>
+<li>On a flat plane (Euclidean space), the axiom works perfectly: two points uniquely determine a straight line.<br>
+</li>
+<li>On the surface of a sphere (non-Euclidean geometry), the analogue of a “straight line” is a <strong>geodesic</strong> — the shortest path between two points on the surface.<br>
+On a sphere, geodesics turn out to be <strong>arcs of great circles</strong> (circles centered at the sphere’s center, like the equator or any meridian).</li>
+</ul>
+<p>Intuitively: - if you fly from <em>New York</em> to <em>Paris</em>, the shortest route is not a line of latitude on a flat map, but rather a curved arc of a great circle — airplanes follow these routes because they minimize distance. - the airplane could in principle fly in a perfectly straight line — but only if it were allowed to go through the Earth’s interior. Since it’s constrained to stay on the surface of the sphere, the “straight line” within that space becomes a geodesic (the great circle).</p>
+<p>Now consider two points on the equator that are exactly opposite each other (say <em>Rio de Janeiro</em> and <em>Jakarta</em>).<br>
+- There isn’t a <strong>unique</strong> great circle through them — in fact, infinitely many great circles (all meridians) pass through both points.<br>
+- So the Euclidean axiom <strong>fails</strong> in this curved space.</p>
+<p>The key idea is that “straight line” really means <strong>shortest possible path</strong> given the geometry of the space.</p>
+<p>On a plane, that’s the familiar straight line; on a sphere, it’s a great circle.<br>
+The notion of a geodesic generalizes this idea: whatever the space, it tells us the natural way to connect two points as efficiently as possible.</p>
+<p>This illustrates a key point:</p>
+<blockquote class="blockquote">
+<p>axioms are not <em>“universally true”</em> in some absolute sense.</p>
+</blockquote>
+<p>They are <strong>conventions</strong> that <strong>define the system we are working in</strong>.<br>
+Within their proper context (e.g., Euclidean geometry), their consequences are <strong>logically consistent</strong> (no contradictions arise) and <strong>useful</strong> (for designing buildings, maps, and bridges). But in other contexts (e.g., spherical geometry), we need a different set of axioms.</p>
+<p>In the same way, in <strong>probability</strong> we may assume:</p>
 <blockquote class="blockquote">
 <p><em>Outcomes of an experiment are independent and identically distributed (i.i.d.).</em></p>
 </blockquote>
-<p>This is not always literally true of real data, but it is a <strong>useful starting axiom</strong>: it leads to powerful results like the <strong>Law of Large Numbers</strong> and the <strong>Central Limit Theorem</strong>.</p>
+<p>Real-world data often violates this (dependence in time series, non-identical distributions in heterogeneous populations).<br>
+But within the i.i.d. framework, the consequences are <strong>logically consistent</strong> and extremely <strong>useful</strong>: they give us fundamental results like the <strong>Law of Large Numbers</strong> and the <strong>Central Limit Theorem</strong>.</p>
+<p>The analogy with geometry is this:<br>
+- In flat Euclidean space, the “straight line” is the natural geodesic.<br>
+- On a sphere, the “straight line” is reinterpreted as a great circle.</p>
+<p>Similarly, in probability:<br>
+- For many problems, assuming i.i.d. is the <strong>natural starting point</strong> (the “straight line” of probability).<br>
+- In more complex contexts (time series, causal inference), we need to <strong>redefine the structure</strong> (like choosing geodesics on a sphere) with weaker or different axioms — e.g., mixing conditions, stationarity, or potential outcomes.</p>
 <p><strong>Why we begin with Logic and Set Theory</strong></p>
 <ol type="1">
 <li><p><strong>Logic</strong> gives us the rules of the game:<br>
@@ -251,6 +274,7 @@ They are not yet “about the real world” — but they give us the precise too
 <hr>
 <p>Thus, before diving into analysis and probability, we establish a foundation in logic and set theory. This is important to <strong>formalize assumptions, express mathematical objects precisely, and build proofs with rigor</strong>.</p>
 <p>Logic gives us the language <strong>to connect premises and conclusions</strong>, while Set Theory gives us <strong>the structure to define universes of discourse, events, functions, probability spaces, etc</strong>.</p>
+<p>Therefore: <strong>Yes, it would be essential to learn Logic and Set Theory!</strong></p>
 </section>
 <section id="sentential-logic" class="level1 unnumbered">
 <h1 class="unnumbered">1. Sentential Logic</h1>

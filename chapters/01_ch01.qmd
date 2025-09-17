@@ -24,7 +24,7 @@ But this depends on the “space” we are working in.
 - On the surface of a sphere (non-Euclidean geometry), the analogue of a “straight line” is a **geodesic** — the shortest path between two points on the surface.  
   On a sphere, geodesics turn out to be **arcs of great circles** (circles centered at the sphere’s center, like the equator or any meridian).  
 
-Intuitively: 
+Intuitively:  
 - if you fly from *New York* to *Paris*, the shortest route is not a line of latitude on a flat map, but rather a curved arc of a great circle — airplanes follow these routes because they minimize distance. 
 - the airplane could in principle fly in a perfectly straight line — but only if it were allowed to go through the Earth’s interior. Since it’s constrained to stay on the surface of the sphere, the “straight line” within that space becomes a geodesic (the great circle).
 

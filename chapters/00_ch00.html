@@ -179,6 +179,7 @@ window.Quarto = {
   <li><a href="#the-machine-learning-world" id="toc-the-machine-learning-world" class="nav-link" data-scroll-target="#the-machine-learning-world">The Machine Learning World</a></li>
   <li><a href="#why-causal-ml-is-a-synthesis" id="toc-why-causal-ml-is-a-synthesis" class="nav-link" data-scroll-target="#why-causal-ml-is-a-synthesis">Why Causal ML Is a Synthesis</a></li>
   </ul></li>
+  <li><a href="#focus" id="toc-focus" class="nav-link" data-scroll-target="#focus">Focus</a></li>
   </ul>
 </nav>
     </div>
@@ -210,7 +211,7 @@ window.Quarto = {
 <section id="the-statistics-and-econometrics-world" class="level2">
 <h2 class="anchored" data-anchor-id="the-statistics-and-econometrics-world">The Statistics (and Econometrics) World</h2>
 <p>Did you know that when you run a regression, you are implicitly making a very strong claim about how the world works?</p>
-<p>In this tradition, everything begins with the <strong>data-generating process (DGP)</strong> — what Aris Spanos calls a <em>stochastic mechanism</em>. Imagine it as a hidden machine tossing probabilistic dice, producing the data we observe. A statistical model is not just a tool; it is a <strong>story about that hidden mechanism</strong>. A story constructed with the mathematical <em>axiomatization</em> framework, which you will learn in the first phase of this project.</p>
+<p>In this tradition, everything begins with the <strong>data-generating process (DGP)</strong> — what <strong>Aris Spanos</strong> in his book <em>Probability Theory and Statistical Inference: Econometric Modeling with Observational Data</em> calls a <em>stochastic mechanism</em>. Imagine it as a hidden machine tossing probabilistic dice, producing the data we observe. A statistical model is not just a tool; it is a <strong>story about that hidden mechanism</strong> that is producing the outcomes we observe.</p>
 <p>Examples:<br>
 - A linear regression assumes wages, test scores, or prices are generated as a straight-line combination of inputs plus random noise.<br>
 - A Poisson model assumes counts come from a specific probabilistic law.<br>
@@ -256,21 +257,29 @@ A famous example comes from <strong>Online Advertising</strong>.<br>
 - From <strong>statistics and econometrics</strong>, we borrow tools that check whether we are uncovering <strong>cause-and-effect</strong> rather than just correlations.</p>
 <p>Techniques like <strong>sample splitting</strong> and <strong>cross-fitting</strong> might sound technical, but the intuition is clear: we let the algorithm “learn” patterns on one part of the data, and we <strong>keep another part untouched</strong> to see whether those patterns still hold when drawing <strong>causal</strong> conclusions. This helps us avoid fooling ourselves with spurious results.</p>
 <p>Causal thinking also pushes us beyond the tidy assumption that all observations are <strong>IID</strong> (independent and identically distributed). Real life changes: policies shift, markets move, and people adapt. Causal inference gives us language to reason about such changes — about <strong>interventions</strong> (“what if we changed X?”), <strong>counterfactuals</strong> (“what would have happened otherwise?”), and <strong>distribution shifts</strong> (“what if tomorrow doesn’t look like yesterday?”).</p>
-<hr>
-<p>Causal ML suggests a synthesis:</p>
-<ul>
-<li>From econometrics, we inherit the concern with stochastic mechanisms, identification, and rigorous inference.<br>
-</li>
-<li>From machine learning, we gain flexibility, robustness, and predictive accuracy.<br>
-</li>
-<li>From causality, we add the language to generalize beyond observation, to interventions and explanations.</li>
-</ul>
-<p>My goal in this project is not simply to study Causal Machine Learning as a field, <strong>but to go deep into the mathematics that underpins it</strong>. I am, of course, interested in Causal ML — it could even be the focus of my future research — but the broader point is that mathematical depth makes a difference.</p>
-<p>Too often, methods are applied skillfully yet without a full grasp of what is really happening underneath. By working through the logical and mathematical foundations, <strong>I hope to develop the kind of clarity that allows one not only to apply tools, but to truly understand them</strong> — and, in doing so, to bridge the cultures of explanation and prediction, and to contribute in some way to the broader effort of unifying them.</p>
-
-
-
+<p><strong>Causal ML suggests a synthesis</strong>:<br>
+- From statistics and econometrics, we inherit the concern with stochastic mechanisms, identification, and rigorous inference.<br>
+- From machine learning, we gain flexibility, robustness, and predictive accuracy.<br>
+- From causality, we add the language to generalize beyond observation, to interventions and explanations.</p>
 </section>
+</section>
+<section id="focus" class="level1">
+<h1>Focus</h1>
+<p>My main focus in this project is to <strong>learn — and become comfortable with — the mathematical foundations that underpin Causal Machine Learning</strong>.</p>
+<p>While Causal ML is an exciting and active field (and may well be my future research direction), the broader point is that <strong>mathematical depth makes a difference</strong>. Too often, methods are applied skillfully but without a full grasp of what is happening underneath.</p>
+<p>By working through the logical and mathematical foundations step by step, <strong>I aim to develop the clarity that allows not only the application of tools, but a genuine understanding of them</strong>. The goal is to bridge the cultures of explanation and prediction — and, in some small way, contribute to the ongoing effort to unify them.</p>
+<p><strong>What “foundations” means here</strong><br>
+- <strong>Logic &amp; Set Theory</strong> — the language of proofs and structures.<br>
+- <strong>Real Analysis</strong> — rigor of limits, continuity, convergence, integration.<br>
+- <strong>Linear Algebra</strong> — vector spaces, eigen-structure, decompositions.<br>
+- <strong>Functional Analysis &amp; Hilbert Spaces</strong> — norms, projections, RKHS.<br>
+- <strong>Topology &amp; Measure Theory</strong> — σ-algebras, Lebesgue integration, convergence theorems.<br>
+- <strong>Probability</strong> — Kolmogorov framework, LLN/CLT, conditional expectation.<br>
+- <strong>Mathematical Statistics</strong> — estimation, tests, asymptotics.<br>
+- <strong>Causality</strong> — SCMs, potential outcomes, identifiability, modern Causal ML.</p>
+
+
+
 </section>
 
 </main> <!-- /main -->

@@ -8,6 +8,7 @@ book:
   date: today
   chapters:
     - index.qmd
+    - chapters/00_ch00.qmd
     - chapters/01_ch01.qmd
   sidebar:
     style: docked        # left, fixed sidebar with chapters
@@ -19,18 +20,21 @@ book:
         target: _blank
   google-analytics: "GT-W6N7KSB2"   # "G-B19JRNKWM0" - GA4 measurement ID for the book (Quarto will handle the gtag injection)
 
-number-sections: false
-
 format:
   html:
-    theme: cosmo
+    theme: flatly    # cosmo or litera, simplex, flatly for readability
     code-link: true
     math: true
     toc: true
     toc-location: right
     service-workers: false
+    code-copy: true
+    fontsize: 1.1em
+    linestretch: 1.6
     grid:
       sidebar-width: 280px
       body-width: 900px
       margin-width: 280px
       gutter-width: 1.5rem
+
+number-sections: false

@@ -7,9 +7,13 @@ This is my structured learning roadmap to prepare for research in **causal machi
 
 Here you can find both **mathematical foundations** and **applications**.
 
----
+## Journey Phases {.unnumbered}
 
-## Journey Phases
+### Why I'm Interested in Causal ML?
+**Goal:** Show the reader the contrasts between two "Data Cultures".  
+- Statistics and econometrics build models on top of *stochastic mechanisms* (data-generating processes), aiming for explanation and inference.  
+- Machine learning often ignores mechanisms and focuses on prediction accuracy, generalization, and performance.  
+- Causal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.  
 
 ### Phase 1 – Logic & Set Theory
 **Goal:** Build comfort with the *language of mathematics*.  

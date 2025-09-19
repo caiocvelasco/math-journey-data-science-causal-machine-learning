@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Why I’m Interested in Causal ML – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
+<title>Why I’m Interested in Causal ML? – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ce869db8d954370230fc6f6331cc1229.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0965113be41e75e7a7efa4e46a86ce20.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,7 +120,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/00_ch00.html"><span class="chapter-title">Why I’m Interested in Causal ML</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/00_ch00.html"><span class="chapter-title">Why I’m Interested in Causal ML?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,12 +150,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Journey Phases</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Journey Phases</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/00_ch00.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Why I’m Interested in Causal ML</span></a>
+  <a href="../chapters/00_ch00.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Why I’m Interested in Causal ML?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -173,7 +174,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-2-worlds-or-cultures" id="toc-the-2-worlds-or-cultures" class="nav-link active" data-scroll-target="#the-2-worlds-or-cultures">The 2 Worlds (or “Cultures”)</a>
+  <li><a href="#the-2-worlds" id="toc-the-2-worlds" class="nav-link active" data-scroll-target="#the-2-worlds">The 2 Worlds</a>
   <ul class="collapse">
   <li><a href="#the-statistics-and-econometrics-world" id="toc-the-statistics-and-econometrics-world" class="nav-link" data-scroll-target="#the-statistics-and-econometrics-world">The Statistics (and Econometrics) World</a></li>
   <li><a href="#the-machine-learning-world" id="toc-the-machine-learning-world" class="nav-link" data-scroll-target="#the-machine-learning-world">The Machine Learning World</a></li>
@@ -188,7 +189,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Why I’m Interested in Causal ML</span></h1>
+<h1 class="title"><span class="chapter-title">Why I’m Interested in Causal ML?</span></h1>
 </div>
 
 
@@ -205,11 +206,16 @@ window.Quarto = {
 </header>
 
 
-<section id="the-2-worlds-or-cultures" class="level1">
-<h1>The 2 Worlds (or “Cultures”)</h1>
 <p>My interest in Causal Machine Learning arises from a long-standing divide in the way different worlds think about data.</p>
-<section id="the-statistics-and-econometrics-world" class="level2">
-<h2 class="anchored" data-anchor-id="the-statistics-and-econometrics-world">The Statistics (and Econometrics) World</h2>
+<section id="the-2-worlds" class="level2">
+<h2 class="anchored" data-anchor-id="the-2-worlds">The 2 Worlds</h2>
+<p>In his influential essay <em>Statistical Modeling: The Two Cultures (2001)</em>, <strong>Leo Breiman</strong> described two very different traditions.</p>
+<ul>
+<li><strong>Data Modeling</strong> culture (the dominant one in Statistics at the time): assumes data are generated by a stochastic model with explicit assumptions (e.g., linear regression, logistic regression). The focus is on inference and interpretability.</li>
+<li><strong>Algorithmic Modeling</strong> culture (rising in Machine Learning): does not assume a specific stochastic DGP, but uses flexible algorithms (e.g., random forests, neural networks) to directly optimize predictive accuracy.</li>
+</ul>
+<section id="the-statistics-and-econometrics-world" class="level3">
+<h3 class="anchored" data-anchor-id="the-statistics-and-econometrics-world">The Statistics (and Econometrics) World</h3>
 <p>Did you know that when you run a regression, you are implicitly making a very strong claim about how the world works?</p>
 <p>In this tradition, everything begins with the <strong>data-generating process (DGP)</strong> — what <strong>Aris Spanos</strong> in his book <em>Probability Theory and Statistical Inference: Econometric Modeling with Observational Data</em> calls a <em>stochastic mechanism</em>. Imagine it as a hidden machine tossing probabilistic dice, producing the data we observe. A statistical model is not just a tool; it is a <strong>story about that hidden mechanism</strong> that is producing the outcomes we observe.</p>
 <p>Examples:<br>
@@ -222,8 +228,8 @@ window.Quarto = {
 &gt; If I trust my assumptions about the DGP, then I can use my sample to make <strong>representative</strong> claims about the population.</p>
 <p>This is the heart of statistics and econometrics: <em>model</em> the <strong>hidden process</strong>, <em>estimate</em> its parameters, and <em>test</em> whether your story holds up against data. But — and this is crucial — <em>the DGP is always an assumption</em>. If it is wrong, the inference may be misleading.</p>
 </section>
-<section id="the-machine-learning-world" class="level2">
-<h2 class="anchored" data-anchor-id="the-machine-learning-world">The Machine Learning World</h2>
+<section id="the-machine-learning-world" class="level3">
+<h3 class="anchored" data-anchor-id="the-machine-learning-world">The Machine Learning World</h3>
 <p>Now comes the other world. The <strong>algorithmic modeling culture</strong>. Here, <strong>the hidden machine is ignored</strong>. No one asks whether wages are “truly linear” in education, or whether prices follow a Poisson law, or whether the dice is probabilistic. Instead, the question is brutally pragmatic: <em>Can I predict well?</em></p>
 <p>In this world, the central drama is not about whether the stochastic story is correct, but about whether <em>a model trained on one dataset</em> (<em>training set</em>) <strong>generalizes</strong> to unseen data (<em>the test set</em>). This is the <strong>training vs.&nbsp;testing problem</strong>.</p>
 <p>The classical core risks are:<br>
@@ -248,8 +254,8 @@ A famous example comes from <strong>Online Advertising</strong>.<br>
 </blockquote>
 <hr>
 </section>
-<section id="why-causal-ml-is-a-synthesis" class="level2">
-<h2 class="anchored" data-anchor-id="why-causal-ml-is-a-synthesis">Why Causal ML Is a Synthesis</h2>
+<section id="why-causal-ml-is-a-synthesis" class="level3">
+<h3 class="anchored" data-anchor-id="why-causal-ml-is-a-synthesis">Why Causal ML Is a Synthesis</h3>
 <p>✨ This is why Causal Machine Learning excites me.</p>
 <p>By combining machine learning with the discipline of causal inference, researchers such as <em>Victor Chernozhukov, Christian Hansen, Nathan Kallus, Martin Spindler, and Vasilis Syrgkanis</em> — co-authors of <em>Causal ML: Applied Causal Inference Powered by ML and AI</em> — show that we can take the best of both worlds.</p>
 <p>The basic idea is simple:<br>
@@ -263,8 +269,8 @@ A famous example comes from <strong>Online Advertising</strong>.<br>
 - From causality, we add the language to generalize beyond observation, to interventions and explanations.</p>
 </section>
 </section>
-<section id="focus" class="level1">
-<h1>Focus</h1>
+<section id="focus" class="level2">
+<h2 class="anchored" data-anchor-id="focus">Focus</h2>
 <p>My main focus in this project is to <strong>learn — and become comfortable with — the mathematical foundations that underpin Causal Machine Learning</strong>.</p>
 <p>While Causal ML is an exciting and active field (and may well be my future research direction), the broader point is that <strong>mathematical depth makes a difference</strong>. Too often, methods are applied skillfully but without a full grasp of what is happening underneath.</p>
 <p>By working through the logical and mathematical foundations step by step, <strong>I aim to develop the clarity that allows not only the application of tools, but a genuine understanding of them</strong>. The goal is to bridge the cultures of explanation and prediction — and, in some small way, contribute to the ongoing effort to unify them.</p>
@@ -685,7 +691,7 @@ A famous example comes from <strong>Online Advertising</strong>.<br>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../index.html" class="pagination-link" aria-label="Journey Phases">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Journey Phases</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Journey Phases</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

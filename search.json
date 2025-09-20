@@ -24,7 +24,7 @@
     "href": "chapters/about.html",
     "title": "About Me",
     "section": "",
-    "text": "Hi, I’m Caio Velasco 👋\nMechanical Engineer from Brazil with a Master’s in Economics & Public Policy (UCLA), thanks to a full scholarship from the Lemann Foundation. In 2021, I paused a PhD in Economics in the Netherlands to care for family during the pandemic and transitioned fully into Data Science.\nI work at the intersection of engineering, economics, and data—spanning Business Analysis, Consulting, Analytics Engineering, and Data Science across the US, UK, Spain, and Brazil. I enjoy turning messy, fragmented systems into robust end-to-end data platforms and pairing that with mathematical depth (statistics, econometrics, and causal ML) to drive real-world impact and avoid the correlation vs. causation dilemma.",
+    "text": "What I’m doing now\nHi, I’m Caio Velasco 👋. Mechanical Engineer from Brazil with a Master’s in Economics & Public Policy (UCLA), thanks to a full scholarship from the Lemann Foundation. In 2021, I paused a PhD in Economics in the Netherlands to care for family during the pandemic and transitioned fully into Data Science.\nI work at the intersection of engineering, economics, and data—spanning Business Analysis, Consulting, Analytics Engineering, and Data Science across the US, UK, Spain, and Brazil. I enjoy turning messy, fragmented systems into robust end-to-end data platforms and pairing that with mathematical depth (statistics, econometrics, and causal ML) to drive real-world impact and avoid the correlation vs. causation dilemma.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>About Me</span>"
     ]
@@ -33,8 +33,8 @@
     "objectID": "chapters/about.html#what-im-doing-now",
     "href": "chapters/about.html#what-im-doing-now",
     "title": "About Me",
-    "section": "What I’m doing now",
-    "text": "What I’m doing now\n\nBuilding an open book: Foundations of Data Science & Causal ML: A Mathematical Journey (mathematical rigor + applications).\nHelping teams modernize their stacks (ingestion → modeling with dbt → warehouses like Snowflake/Redshift → governance & Looker dashboards).\nDeepening foundations in real analysis, probability, statistics, and causal inference to support future research.",
+    "section": "",
+    "text": "Building an open book: Foundations of Data Science & Causal ML: A Mathematical Journey (mathematical rigor + applications).\nHelping teams modernize their stacks (ingestion → modeling with dbt → warehouses like Snowflake/Redshift → governance & Looker dashboards).\nDeepening foundations in real analysis, probability, statistics, and causal inference to support future research.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>About Me</span>"
     ]
@@ -74,7 +74,7 @@
     "href": "chapters/about.html#contact-links",
     "title": "About Me",
     "section": "Contact & links",
-    "text": "Contact & links\n\nPortfolio: https://caiocvelasco.github.io/\nGitHub: https://github.com/caiocvelasco\nLinkedIn: https://www.linkedin.com/in/caiocvelasco/\nEmail: mailto:caiocvelasco@gmail.com\n\n\n\nColophon\nThis page is rendered with Quarto. The portrait is expected at images/caio.jpg. Adjust the image path/size in the HTML above if your repo uses a different structure.",
+    "text": "Contact & links\n\nPortfolio: https://caiocvelasco.github.io/\nGitHub: https://github.com/caiocvelasco\nLinkedIn: https://www.linkedin.com/in/caiocvelasco/",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>About Me</span>"
     ]

@@ -3,19 +3,21 @@ author: "Caio Velasco"
 date: today
 ---
 
+> © 2025 Caio Velasco. All rights reserved.
+
 This is my structured learning roadmap to prepare for research in **causal machine learning** with mathematical rigor.
 
 Here you can find both **mathematical foundations** and **applications**.
 
-## Journey Phases {.unnumbered}
+# Journey Phases
 
-### Why I'm Interested in Causal ML?
+## Why I'm Interested in Causal ML?
 **Goal:** Show the reader the contrasts between two "Data Cultures".  
 - Statistics and econometrics build models on top of *stochastic mechanisms* (data-generating processes), aiming for explanation and inference.  
 - Machine learning often ignores mechanisms and focuses on prediction accuracy, generalization, and performance.  
 - Causal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.  
 
-### Phase 1 – Logic & Set Theory
+## Phase 1 – Logic & Set Theory
 **Goal:** Build comfort with the *language of mathematics*.  
 - Proof techniques: direct, contrapositive, contradiction, induction.  
 - Sets and families of sets, Cartesian products, power sets.  
@@ -40,7 +42,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 2 – Real Analysis
+## Phase 2 – Real Analysis
 **Goal:** Rigorous calculus and convergence, revisiting classical calculus concepts with proofs.  
 
 - Sequences, series, limits.  
@@ -64,7 +66,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 3 – Linear Algebra
+## Phase 3 – Linear Algebra
 **Goal:** Move beyond computation to proofs and structure.  
 - Vector spaces, subspaces, linear independence, bases, dimension.  
 - Linear transformations and matrices.  
@@ -83,7 +85,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 4 – Functional Analysis & Hilbert Spaces
+## Phase 4 – Functional Analysis & Hilbert Spaces
 **Goal:** Develop the tools to handle infinite-dimensional vector spaces, operators, and kernels.  
 - Normed vector spaces, Banach spaces.  
 - Hilbert spaces, orthogonality, projections.  
@@ -100,7 +102,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 5 – Topology & Measure Theory
+## Phase 5 – Topology & Measure Theory
 **Goal:** Learn the structures that underlie probability theory.  
 - Metric spaces, open/closed sets.  
 - Compactness and product spaces.  
@@ -117,7 +119,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 6 – Probability
+## Phase 6 – Probability
 **Goal:** Define probability rigorously à la Kolmogorov.  
 - Probability spaces and random variables as measurable functions.  
 - Distributions, independence, product measures.  
@@ -134,7 +136,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 7 – Mathematical Statistics
+## Phase 7 – Mathematical Statistics
 **Goal:** Connect probability → inference.  
 - Point estimation: MLE, method of moments.  
 - Properties: unbiasedness, consistency, efficiency.  
@@ -149,7 +151,7 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-### Phase 8 – Causality
+## Phase 8 – Causality
 **Goal:** Enter causal inference with strong mathematical foundations.  
 - Pearl’s Structural Causal Models & do-calculus.  
 - Rubin’s potential outcomes framework.  

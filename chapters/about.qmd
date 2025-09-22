@@ -1,0 +1,38 @@
+---
+title: "About Me"
+page-layout: article
+format:
+  html:
+    toc: false
+    code-fold: false
+---
+
+![](images/caio.jpg){width=200 .float-start .me-3 .mb-2 .rounded-circle .shadow}
+
+Hi, I’m Caio Velasco 👋. Mechanical Engineer from Brazil with a Master’s in Economics & Public Policy (UCLA), thanks to a full scholarship from the [Lemann Foundation](https://fundacaolemann.org.br/en/partners/universities/). In 2021, I stepped away from a PhD in Economics in the Netherlands to support my family during the pandemic and redirected my focus fully toward Data Science.
+
+I work at the intersection of **engineering, economics, and data**—spanning Business Analysis, Consulting, Analytics Engineering, and Data Science across the **US, UK, Spain, and Brazil**. I enjoy turning messy, fragmented systems into robust **end-to-end data platforms** and pairing that with **mathematical depth** (statistics, econometrics, and causal ML) to drive real-world impact and avoid the correlation vs. causation dilemma.
+
+## What I’m doing now
+- Building an open book: **Foundations of Data Science & Causal ML: A Mathematical Journey** (mathematical rigor + applications).
+- Helping teams modernize their stacks (ingestion → modeling with **dbt** → warehouses like **Snowflake/Redshift** → governance & **Looker** dashboards).
+- Deepening foundations in **real analysis, probability, statistics,** and **causal inference** to support future research.
+
+## Selected highlights
+- Awards & scholarships from **Yale University**, **UCLA**, **GE Foundation**, **Lemann Foundation**, and **The Club of Rome**.
+- Early career: helped build **Stone Payments (NASDAQ: STNE)** in Brazil from scratch and founded **MePrepara**, an online math prep platform with **140+ videos** supporting low-income Brazilian students.
+
+## Focus areas
+- **Data & Analytics Engineering:** Python · SQL · dbt · Snowflake/Redshift · AWS · Looker · best practices for modeling, tests, CI/CD.
+- **Stat/ML & Causality:** mathematical statistics, econometrics, causal inference.
+- **Education:** writing clear, didactic materials; mentoring; building bridges between theory and practice.
+
+## Values & approach
+- **Rigor + practicality.** Start from first principles, then ship value.
+- **Clarity.** Well-structured code and always documentating the process didacticaly.
+- **Impact.** Data and technology as tools to expand opportunity—because education changed my life.
+
+## Contact & links
+- Portfolio: <https://caiocvelasco.github.io/>
+- GitHub: <https://github.com/caiocvelasco>
+- LinkedIn: <https://www.linkedin.com/in/caiocvelasco/>

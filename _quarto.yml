@@ -8,16 +8,13 @@ book:
   date: today
   chapters:
     - index.qmd
+    - chapters/about.qmd
     - chapters/00_ch00.qmd
     - chapters/01_ch01.qmd
   sidebar:
     style: docked        # left, fixed sidebar with chapters
     search: true
     collapse-level: 1
-    tools:
-      - text: "About Me"
-        href: "https://caiocvelasco.github.io/"
-        target: _blank
   google-analytics: "GT-W6N7KSB2"   # "G-B19JRNKWM0" - GA4 measurement ID for the book (Quarto will handle the gtag injection)
 
 format:
@@ -33,7 +30,7 @@ format:
     linestretch: 1.6
     grid:
       sidebar-width: 280px
-      body-width: 900px
+      body-width: 1000px
       margin-width: 280px
       gutter-width: 1.5rem
 

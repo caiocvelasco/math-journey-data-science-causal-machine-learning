@@ -178,7 +178,10 @@ window.Quarto = {
   <li><a href="#sentential-logic" id="toc-sentential-logic" class="nav-link" data-scroll-target="#sentential-logic">1. Sentential Logic</a>
   <ul class="collapse">
   <li><a href="#statements-propositions-predicates-and-connectives" id="toc-statements-propositions-predicates-and-connectives" class="nav-link" data-scroll-target="#statements-propositions-predicates-and-connectives">1.1 Statements, Propositions, Predicates, and Connectives</a></li>
-  <li><a href="#truth-tables" id="toc-truth-tables" class="nav-link" data-scroll-target="#truth-tables">1.2 Truth Tables</a></li>
+  <li><a href="#truth-tables" id="toc-truth-tables" class="nav-link" data-scroll-target="#truth-tables">1.2 Truth Tables</a>
+  <ul class="collapse">
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  </ul></li>
   <li><a href="#tautologies-contradictions-and-logical-equivalence" id="toc-tautologies-contradictions-and-logical-equivalence" class="nav-link" data-scroll-target="#tautologies-contradictions-and-logical-equivalence">1.3 Tautologies, Contradictions, and Logical Equivalence</a></li>
   </ul></li>
   <li><a href="#quantificational-logic" id="toc-quantificational-logic" class="nav-link" data-scroll-target="#quantificational-logic">2. Quantificational Logic</a>
@@ -189,7 +192,7 @@ window.Quarto = {
   <li><a href="#multiple-quantifiers" id="toc-multiple-quantifiers" class="nav-link" data-scroll-target="#multiple-quantifiers">2.4 Multiple Quantifiers</a></li>
   <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">2.5 Why This Matters</a></li>
   <li><a href="#mathematical-interpretation" id="toc-mathematical-interpretation" class="nav-link" data-scroll-target="#mathematical-interpretation">2.6 Mathematical Interpretation</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">2.7 Exercises</a></li>
+  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">2.7 Exercises</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -237,11 +240,17 @@ This process of <strong>axiomatization</strong> is what gives mathematics its un
 <li>On the surface of a sphere (non-Euclidean geometry), the analogue of a “straight line” is a <strong>geodesic</strong> — the shortest path between two points on the surface.<br>
 On a sphere, geodesics turn out to be <strong>arcs of great circles</strong> (circles centered at the sphere’s center, like the equator or any meridian).</li>
 </ul>
-<p>Intuitively:<br>
-- if you fly from <em>New York</em> to <em>Paris</em>, the shortest route is not a line of latitude on a flat map, but rather a curved arc of a great circle — airplanes follow these routes because they minimize distance. - the airplane could in principle fly in a perfectly straight line — but only if it were allowed to go through the Earth’s interior. Since it’s constrained to stay on the surface of the sphere, the “straight line” within that space becomes a geodesic (the great circle).</p>
-<p>Now consider two points on the equator that are exactly opposite each other (say <em>Rio de Janeiro</em> and <em>Jakarta</em>).<br>
-- There isn’t a <strong>unique</strong> great circle through them — in fact, infinitely many great circles (all meridians) pass through both points.<br>
-- So the Euclidean axiom <strong>fails</strong> in this curved space.</p>
+<p>Intuitively:</p>
+<ul>
+<li>If you fly from <em>New York</em> to <em>Paris</em>, the shortest route is not a line of latitude on a flat map, but rather a curved arc of a great circle (airplanes follow these routes because they minimize distance).</li>
+<li>The airplane could in principle fly in a perfectly straight line, but only if it were allowed to go through the Earth’s interior. Since it’s constrained to stay on the surface of the sphere, the “straight line” within that space becomes a geodesic (the great circle).</li>
+</ul>
+<p>Now consider two points on the equator that are exactly opposite each other (say <em>Rio de Janeiro</em> and <em>Jakarta</em>).</p>
+<ul>
+<li>There isn’t a <strong>unique</strong> great circle through them — in fact, infinitely many great circles (all meridians) pass through both points.<br>
+</li>
+<li>So the Euclidean axiom <strong>fails</strong> in this curved space.</li>
+</ul>
 <p>The key idea is that “straight line” really means <strong>shortest possible path</strong> given the geometry of the space.</p>
 <p>On a plane, that’s the familiar straight line; on a sphere, it’s a great circle.<br>
 The notion of a geodesic generalizes this idea: whatever the space, it tells us the natural way to connect two points as efficiently as possible.</p>
@@ -257,12 +266,18 @@ Within their proper context (e.g., Euclidean geometry), their consequences are <
 </blockquote>
 <p>Real-world data often violates this (dependence in time series, non-identical distributions in heterogeneous populations).<br>
 But within the i.i.d. framework, the consequences are <strong>logically consistent</strong> and extremely <strong>useful</strong>: they give us fundamental results like the <strong>Law of Large Numbers</strong> and the <strong>Central Limit Theorem</strong>.</p>
-<p>The analogy with geometry is this:<br>
-- In flat Euclidean space, the “straight line” is the natural geodesic.<br>
-- On a sphere, the “straight line” is reinterpreted as a great circle.</p>
-<p>Similarly, in probability:<br>
-- For many problems, assuming i.i.d. is the <strong>natural starting point</strong> (the “straight line” of probability).<br>
-- In more complex contexts (time series, causal inference), we need to <strong>redefine the structure</strong> (like choosing geodesics on a sphere) with weaker or different axioms — e.g., mixing conditions, stationarity, or potential outcomes.</p>
+<p>The analogy with geometry is this:</p>
+<ul>
+<li>In flat Euclidean space, the “straight line” is the natural geodesic.<br>
+</li>
+<li>On a sphere, the “straight line” is reinterpreted as a great circle.</li>
+</ul>
+<p>Similarly, in probability:</p>
+<ul>
+<li>For many problems, assuming i.i.d. is the <strong>natural starting point</strong> (the “straight line” of probability).<br>
+</li>
+<li>In more complex contexts (time series, causal inference), we need to <strong>redefine the structure</strong> (like choosing geodesics on a sphere) with weaker or different axioms — e.g., mixing conditions, stationarity, or potential outcomes.</li>
+</ul>
 <p><strong>Why we begin with Logic and Set Theory</strong></p>
 <ol type="1">
 <li><p><strong>Logic</strong> gives us the rules of the game:<br>
@@ -292,29 +307,113 @@ They are not yet “about the real world” — but they give us the precise too
 Learning statements and connectives is like learning the <strong>alphabet of mathematics</strong>.<br>
 - If you cannot distinguish valid statements, you cannot even <em>start</em> a proof.</p>
 <p><em>Example in causal inference:</em><br>
-- <span class="math inline">\(p\)</span>: “Treatment is randomized.”<br>
-- <span class="math inline">\(q\)</span>: “Ignorability holds.”<br>
-- Then “If treatment is randomized, then ignorability holds” is <span class="math inline">\(p \to q\)</span>.</p>
+- <span class="math inline">\(p\)</span>: “The model includes all relevant confounders.”<br>
+- <span class="math inline">\(q\)</span>: “The conditional independence assumption holds.”<br>
+- Then “If the model includes all relevant confounders, then the conditional independence assumption holds” is <span class="math inline">\(p \to q\)</span>.</p>
 <p>Without connectives, we’d stay in informal language. With them, <strong>we can formalize statements and reason rigorously about consequences</strong>, such as proving that a set of assumptions implies consistency of an estimator, showing that ignorability implies identification of a treatment effect, or demonstrating that conditional independence leads to factorization of a probability distribution into simpler components.</p>
 <p>A <strong>Statement</strong> (or <strong>Proposition</strong>) is a declarative sentence that is either <em>true</em> or <em>false</em>.</p>
 <ul>
 <li>Example: “3 is even” (false), “Barcelona is in Spain” (true).</li>
 </ul>
 <p>A <strong>Predicate</strong> is like a “template” for a statement: it depends on a variable and becomes a statement once you specify the value. For example:<br>
-<span class="math inline">\(P(x): x &gt; 0\)</span><br>
-- <span class="math inline">\(P(2)\)</span> → “2 &gt; 0” (true).<br>
-- <span class="math inline">\(P(-1)\)</span> → “-1 &gt; 0” (false).</p>
-<p><strong>Connectives</strong> let us combine assumptions systematically. Logical connectives let us build compound statements:</p>
+<span class="math inline">\(P(x): x &gt; 0\)</span> (this is a <strong>Predicate</strong> or a “template”)<br>
+- <span class="math inline">\(P(2)\)</span> → “2 &gt; 0” (This is a <strong>Statement</strong>, with logic value “true”).<br>
+- <span class="math inline">\(P(-1)\)</span> → “-1 &gt; 0” (This is a <strong>Statement</strong>, with logic value “false”).</p>
+<p><strong>Connectives</strong> are logical “operators” that allow us to combine simple statements into more complex ones.<br>
+They let us reason systematically instead of relying on vague language.</p>
+<p><em>But why do we want to combine simple statements into more complex ones?</em></p>
+<p>Because in mathematics (and especially in statistics), we rarely deal with isolated facts.<br>
+We deal with <strong>assumptions</strong> and want to know what <strong>conclusions</strong> they imply.<br>
+Connectives give us the structure to move from “pieces of information” to a <strong>logical argument</strong>.</p>
+<p><strong>Example from statistics:</strong></p>
 <ul>
-<li>Negation: <span class="math inline">\(\lnot p\)</span> (“not <span class="math inline">\(p\)</span>”)<br>
+<li><span class="math inline">\(p\)</span>: “The sample is i.i.d.”<br>
 </li>
-<li>Conjunction: <span class="math inline">\(p \land q\)</span> (“<span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>”)<br>
+<li><span class="math inline">\(q\)</span>: “The variance of the sample is finite.”<br>
 </li>
-<li>Disjunction: <span class="math inline">\(p \lor q\)</span> (“<span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span>”)<br>
+<li><span class="math inline">\(r\)</span>: “The sample mean converges to the true mean (Law of Large Numbers).”</li>
+</ul>
+<p>In words:<br>
+“<strong>If</strong> the sample is i.i.d. <strong>and</strong> the variance is finite, <strong>then</strong> the sample mean converges.”</p>
+<p>Symbolically:<br>
+<span class="math display">\[
+(p \land q) \to r
+\]</span></p>
+<p>This is exactly how many theorems are written: <em>conditions</em> (joined with <span class="math inline">\(\land\)</span>) imply a <em>result</em> (<span class="math inline">\(\to\)</span>).</p>
+<p>So connectives are not just about making compound sentences longer.<br>
+They are about giving us a precise <strong>language of assumptions and consequences</strong>.</p>
+<blockquote class="blockquote">
+<p>This is the foundation of mathematical reasoning: <strong>once we can formalize, we can prove</strong>.</p>
+</blockquote>
+<p>Let’s see them one by one with examples:</p>
+<ul>
+<li><strong>Negation (<span class="math inline">\(\lnot p\)</span>)</strong><br>
+Meaning: “not <span class="math inline">\(p\)</span>”
+<ul>
+<li>If <span class="math inline">\(p\)</span> is: “The number 5 is even” (false),<br>
 </li>
-<li>Conditional: <span class="math inline">\(p \to q\)</span> (“if <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>”)<br>
+<li>Then <span class="math inline">\(\lnot p\)</span> is: “The number 5 is not even” (true).</li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Conjunction (<span class="math inline">\(p \land q\)</span>)</strong><br>
+Meaning: “<span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>” → true only when both are true.
+<ul>
+<li><span class="math inline">\(p\)</span>: “2 is even” (true)<br>
 </li>
-<li>Biconditional: <span class="math inline">\(p \leftrightarrow q\)</span> (“<span class="math inline">\(p\)</span> if and only if <span class="math inline">\(q\)</span>”)</li>
+<li><span class="math inline">\(q\)</span>: “3 is prime” (true)<br>
+</li>
+<li><span class="math inline">\(p \land q\)</span>: “2 is even and 3 is prime” (true).<br>
+</li>
+<li>If either part were false, the whole conjunction would be false.</li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Disjunction (<span class="math inline">\(p \lor q\)</span>)</strong><br>
+Meaning: “<span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span>” → true if at least one is true.
+<ul>
+<li><span class="math inline">\(p\)</span>: “Barcelona is in Spain” (true)<br>
+</li>
+<li><span class="math inline">\(q\)</span>: “Lisbon is in Brazil” (false)<br>
+</li>
+<li><span class="math inline">\(p \lor q\)</span>: “Barcelona is in Spain or Lisbon is in Brazil” (true).</li>
+</ul>
+<em>(Note: In logic, “or” usually means <strong>inclusive or</strong> — at least one true, possibly both.)</em></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Conditional (<span class="math inline">\(p \to q\)</span>)</strong><br>
+Meaning: “if <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>” → false only if <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is false.
+<ul>
+<li><span class="math inline">\(p\)</span>: “It rains.”<br>
+</li>
+<li><span class="math inline">\(q\)</span>: “The ground is wet.”<br>
+</li>
+<li><span class="math inline">\(p \to q\)</span>: “If it rains, then the ground is wet.”
+<ul>
+<li>True if it rains and the ground is wet (promise kept).<br>
+</li>
+<li>False if it rains but the ground is not wet (promise broken).<br>
+</li>
+<li>True if it doesn’t rain (vacuously true).</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Biconditional (<span class="math inline">\(p \leftrightarrow q\)</span>)</strong><br>
+Meaning: “<span class="math inline">\(p\)</span> if and only if <span class="math inline">\(q\)</span>” → true when <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> have the same truth value.
+<ul>
+<li><span class="math inline">\(p\)</span>: “Today is Saturday.”<br>
+</li>
+<li><span class="math inline">\(q\)</span>: “Tomorrow is Sunday.”<br>
+</li>
+<li><span class="math inline">\(p \leftrightarrow q\)</span>: “Today is Saturday if and only if tomorrow is Sunday.” → true.<br>
+</li>
+<li>If one part is true and the other false, the biconditional is false.</li>
+</ul></li>
 </ul>
 <p>Thus:<br>
 - <strong>Predicate</strong>: <em>general template</em> (open sentence, truth depends on a variable) -&gt; becomes true or false only when a variable is given a value.<br>
@@ -323,14 +422,51 @@ Learning statements and connectives is like learning the <strong>alphabet of mat
 </section>
 <section id="truth-tables" class="level2">
 <h2 class="anchored" data-anchor-id="truth-tables">1.2 Truth Tables</h2>
-<p><strong>💡Motivation</strong> Truth tables are the <strong>grammar checker</strong> of logic.<br>
-- They allow us to test whether two statements are equivalent (so we can swap one for another in a proof, probably to make life easier).<br>
-- They reveal tautologies (always true) and contradictions (always false).<br>
-- They give a mechanical way to check validity of deductive arguments.</p>
-<p><em>Example in statistics:</em><br>
-- “If the data behave nicely (i.i.d. + finite variance), then the sample mean is reliable (it will converge to the true mean)” (<span class="math inline">\(p \to q\)</span>).<br>
-- Equivalent contrapositive: “If effect is not identifiable, then ignorability does not hold” (<span class="math inline">\(\lnot q \to \lnot p\)</span>).<br>
-- Truth tables prove these are the same, so you can flip perspectives safely in a paper.</p>
+<p><strong>💡Motivation</strong><br>
+Now that we know connectives allow us to <strong>combine assumptions and conclusions into structured arguments</strong>, we need a way <strong>to check the consistency and behavior</strong> of these arguments.</p>
+<p>Why? Because once statements get more complex, our intuition alone isn’t reliable.</p>
+<p>For example, the conditional <span class="math inline">\(p \to q\)</span> often <strong>confuses beginners</strong>. Why? Because in everyday language, <em>“if… then…”</em> feels different from how logic defines it.</p>
+<p><strong>The Concept of “Promise”</strong><br>
+</p>
+<p>We <strong>naturally</strong> read a conditional like <span class="math inline">\(p \to q\)</span> as: <em>“If it rains, then the ground gets wet.”</em></p>
+<p>Think of <span class="math inline">\(p \to q\)</span> as a <strong>promise</strong>:</p>
+<ul>
+<li><span class="math inline">\(p\)</span>: <em>It rains.</em><br>
+</li>
+<li><span class="math inline">\(q\)</span>: <em>The ground gets wet.</em></li>
+</ul>
+<p>So <span class="math inline">\(p \to q\)</span> means: <em>“I promise that if it rains, then the ground will get wet.”</em></p>
+<p>We also naturally think that:<br>
+1. If it rains and the ground <strong>is</strong> wet → ✅ promise kept.<br>
+2. If it rains and the ground is <strong>not</strong> wet → ❌ promise broken.</p>
+<p>So far, this matches intuition.</p>
+<p>But what if it <strong>doesn’t rain</strong>?<br>
+- Logic says: the conditional is <strong>still true</strong>, no matter whether the ground is wet or dry.<br>
+- Why? Because the promise <em>“if it rains, then the ground gets wet”</em> has not been broken — the condition (<span class="math inline">\(p\)</span>) never happened in the first place.<br>
+- This is what we call <strong>vacuous truth</strong>.</p>
+<p>This feels counterintuitive, and that’s exactly why we need a systematic tool.</p>
+<p><strong>Why Truth Tables?</strong></p>
+<p>Truth tables are the <strong>grammar checker</strong> of logic. They resolve this confusion:</p>
+<ul>
+<li>They let us mechanically verify whether compound statements are <strong>valid, equivalent, tautological, or contradictory</strong>.<br>
+</li>
+<li>They are a first step toward building formal proofs, because they allow us to test the “mechanics” of logical structure before tackling deeper arguments.</li>
+</ul>
+<p>Think of them as a <strong>microscope for logical statements</strong>:<br>
+when connectives weave sentences together, truth tables let us zoom in and see <em>all possible truth scenarios at once</em>.</p>
+<p>They also let us test whether two statements are logically equivalent. For example:</p>
+<ul>
+<li>“If not <span class="math inline">\(p\)</span>, then not <span class="math inline">\(q\)</span>.”<br>
+</li>
+<li>“If <span class="math inline">\(q\)</span>, then <span class="math inline">\(p\)</span>.”</li>
+</ul>
+<p>Are these equivalent? Intuition may fail, but a <strong>Truth Table</strong> makes it crystal clear!</p>
+<p><em>Example in statistics:</em></p>
+<ul>
+<li><em>If the data behave nicely (i.i.d. + finite variance), then the sample mean is reliable (it will converge to the true mean)</em> (<span class="math inline">\(p \to q\)</span>).<br>
+</li>
+<li>Contrapositive: <em>If the sample mean does not converge to the true mean, then the data were not i.i.d. with finite variance</em> (<span class="math inline">\(\lnot q \to \lnot p\)</span>).</li>
+</ul>
 <p>A <strong>truth table</strong> shows how the truth value of a compound statement depends on its parts.</p>
 <p><strong>Example:</strong> Prove that an implication (<span class="math inline">\(p \to q\)</span>) is equivalent (<span class="math inline">\(\equiv\)</span>) to its contrapositive (<span class="math inline">\(\lnot q \to \lnot p\)</span>).</p>
 <p>We want to show: <span class="math inline">\(p \to q \;\equiv\; \lnot q \to \lnot p\)</span></p>
@@ -389,79 +525,9 @@ Learning statements and connectives is like learning the <strong>alphabet of mat
 </tbody>
 </table>
 <p>Since the last two columns match, the implication is equivalent to its contrapositive.</p>
-<p><strong>The Basic Connectives</strong></p>
-<p>Logical connectives are rules for combining simpler statements into compound ones.<br>
-Here are the five most common and some intuition:</p>
-<hr>
-<p><strong>Negation: <span class="math inline">\(\lnot p\)</span> (“not <span class="math inline">\(p\)</span>”)</strong></p>
-<ul>
-<li><strong>Rule:</strong> Negation flips the truth value.
-<ul>
-<li>If <span class="math inline">\(p\)</span> is true, <span class="math inline">\(\lnot p\)</span> is false.<br>
-</li>
-<li>If <span class="math inline">\(p\)</span> is false, <span class="math inline">\(\lnot p\)</span> is true.</li>
-</ul></li>
-<li><strong>Example:</strong><br>
-<span class="math inline">\(p\)</span>: “It is raining.”<br>
-<span class="math inline">\(\lnot p\)</span>: “It is not raining.”</li>
-</ul>
-<hr>
-<p><strong>Conjunction: <span class="math inline">\(p \land q\)</span> (“<span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>”)</strong></p>
-<ul>
-<li><p><strong>Rule:</strong> <span class="math inline">\(p \land q\)</span> is true only if <strong>both</strong> <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are true.</p></li>
-<li><p><strong>Example:</strong><br>
-<span class="math inline">\(p\)</span>: “It is raining.”<br>
-<span class="math inline">\(q\)</span>: “I am carrying an umbrella.”<br>
-<span class="math inline">\(p \land q\)</span>: “It is raining <strong>and</strong> I am carrying an umbrella.”</p></li>
-<li><p><strong>Truth check:</strong> If either part fails, the whole conjunction is false.</p></li>
-</ul>
-<hr>
-<p><strong>Disjunction: <span class="math inline">\(p \lor q\)</span> (“<span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span>”)</strong></p>
-<ul>
-<li><p><strong>Rule:</strong> <span class="math inline">\(p \lor q\)</span> is true if <strong>at least one</strong> of <span class="math inline">\(p, q\)</span> is true.<br>
-(This is the <strong>inclusive or</strong> used in logic.)</p></li>
-<li><p><strong>Example:</strong><br>
-<span class="math inline">\(p\)</span>: “I will drink coffee.”<br>
-<span class="math inline">\(q\)</span>: “I will drink tea.”<br>
-<span class="math inline">\(p \lor q\)</span>: “I will drink coffee or tea (or both).”</p></li>
-<li><p><strong>Note:</strong> In everyday language, “or” can be exclusive. Logic defaults to inclusive.</p></li>
-</ul>
-<hr>
-<p><strong>Conditional: <span class="math inline">\(p \to q\)</span> (“if <span class="math inline">\(p\)</span> then <span class="math inline">\(q\)</span>”)</strong></p>
-<ul>
-<li><p><strong>Rule:</strong> An implication is false <strong>only</strong> when <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is false.<br>
-<strong>In all other cases, it is true.</strong><br>
-Equivalent form:<br>
-<span class="math display">\[
-p \to q \;\equiv\; \lnot p \lor q
-\]</span></p></li>
-<li><p><strong>Example:</strong><br>
-<span class="math inline">\(p\)</span>: “It rains.”<br>
-<span class="math inline">\(q\)</span>: “The ground is wet.”<br>
-<span class="math inline">\(p \to q\)</span>: “If it rains, then the ground is wet.”</p></li>
-<li><p><strong>Case analysis:</strong>&nbsp;</p>
-<ul>
-<li>If it rains <strong>and</strong> the ground is wet → the statement “If it rains, then the ground is wet” has been <strong>kept</strong>. Both the condition and the consequence hold, so the implication is <strong>true</strong>.<br>
-</li>
-<li>If it rains <strong>but</strong> the ground is not wet → the statement has been <strong>broken</strong>. This is the <strong>only case</strong> where an implication is false: the condition was met but the promised result failed.<br>
-</li>
-<li>If it doesn’t rain → the statement never gets a chance to be tested. We cannot accuse it of being false, because the condition (“it rains”) never happened. By definition, logic treats this as <strong>vacuously true</strong>: the promise has not been broken, since there was nothing to check.<br>
-</li>
-<li>If it doesn’t rain <strong>and</strong> the ground is wet → still vacuously true. The implication didn’t say what should happen when it doesn’t rain; the ground being wet for other reasons (sprinklers, a bucket of water, etc.) doesn’t violate the promise.</li>
-</ul></li>
-</ul>
-<p><strong>Intuition and goal of the conditional</strong></p>
-<p>The statement <span class="math inline">\(p \to q\)</span> is read “if <span class="math inline">\(p\)</span> <em>holds</em> then <span class="math inline">\(q\)</span> <em>holds</em>” or even “if <span class="math inline">\(p\)</span> is <em>true</em> then <span class="math inline">\(q\)</span> is <em>true</em>.”&nbsp; At first glance, this seems strange because we must also handle cases when <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> are false.&nbsp; Why not just say it means “both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are true”?</p>
-<p>The key is that an implication is really a <strong>promise</strong> or <strong>rule</strong>:<br>
-- “Whenever <span class="math inline">\(p\)</span> happens, <span class="math inline">\(q\)</span> must also happen.”</p>
-<p>So we only judge the statement in the situations where the promise could actually be tested: <strong>when <span class="math inline">\(p\)</span> is true</strong>.</p>
-<ul>
-<li>If <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is true → the promise is kept → the implication is true.<br>
-</li>
-<li>If <span class="math inline">\(p\)</span> is true and <span class="math inline">\(q\)</span> is false → the promise is broken → the implication is false.</li>
-</ul>
-<p>But if <span class="math inline">\(p\)</span> is false, the situation that was promised <strong>never arises</strong>. In those cases, the rule is not violated. By convention (and to make logical systems consistent), we treat the implication as <strong>vacuously true</strong> whenever <span class="math inline">\(p\)</span> is false.</p>
-<p>This explains why the truth table looks the way it does:</p>
+<p><strong>Example: Analysis of a Conditional</strong></p>
+<p>Take <span class="math inline">\(p\)</span>: <em>It rains</em>, and <span class="math inline">\(q\)</span>: <em>The ground gets wet</em>.<br>
+The statement <span class="math inline">\(p \to q\)</span> is a <strong>promise</strong>: <em>“If it rains, then the ground gets wet.”</em></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -476,13 +542,13 @@ p \to q \;\equiv\; \lnot p \lor q
 <td>T</td>
 <td>T</td>
 <td>T</td>
-<td>promise kept</td>
+<td>✅ promise kept</td>
 </tr>
 <tr class="even">
 <td>T</td>
 <td>F</td>
 <td>F</td>
-<td>promise broken</td>
+<td>❌ promise broken</td>
 </tr>
 <tr class="odd">
 <td>F</td>
@@ -498,28 +564,100 @@ p \to q \;\equiv\; \lnot p \lor q
 </tr>
 </tbody>
 </table>
-<p><strong>Why is this important?</strong></p>
-<p>Understanding the conditional matters because:</p>
-<ol type="1">
-<li><p>It allows us to <strong>formalize logical rules</strong> like the contrapositive:<br>
-<span class="math display">\[
-p \to q \;\equiv\; \lnot q \to \lnot p
-\]</span> which is <em>central</em> in proofs.</p></li>
-<li><p>It prevents confusion when reading theorems:</p>
-<ul>
-<li>“If a sequence converges, then it is bounded” (<span class="math inline">\(p \to q\)</span>).<br>
-</li>
-<li>This is <strong>not</strong> claiming that all bounded sequences converge; the truth table guarantees the direction of the promise is clear.</li>
-</ul></li>
-<li><p>It highlights <strong>vacuous truth</strong>, which appears everywhere in math:</p>
-<ul>
-<li>“All unicorns have horns” is technically true, because there are no unicorns to provide a counterexample.<br>
-</li>
-<li>Similarly, in probability, if an event has probability zero, conditional statements given that event can be vacuously true.</li>
-</ul></li>
-</ol>
-<p>By appreciating this structure, the reader sees why the conditional is defined with its somewhat surprising truth table: it captures the idea of a promise that can only be broken in one very specific case.</p>
+<p>Key intuition:<br>
+- An implication is only <strong>false</strong> when the condition happens but the promised result fails.<br>
+- In all other cases, the promise has not been broken, so the implication is true.</p>
+<p>This is why statements like <em>“All unicorns have horns”</em> are technically true: since there are no unicorns, the condition never triggers, and the statement cannot be falsified.</p>
 <hr>
+<section id="exercises" class="level3">
+<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
+<blockquote class="blockquote">
+<p><strong>Exercise 1. Show that <span class="math inline">\(p \to q\)</span> is equivalent to <span class="math inline">\(\lnot p \lor q\)</span>.</strong><br>
+Step 1. Write the two statements side by side: <span class="math inline">\(p \to q\)</span> and <span class="math inline">\(\lnot p \lor q\)</span>.<br>
+Step 2. Build a truth table with columns for <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, <span class="math inline">\(\lnot p\)</span>, <span class="math inline">\(p \to q\)</span>, and <span class="math inline">\(\lnot p \lor q\)</span>.<br>
+Step 3. Compare the last two columns.<br>
+Step 4. Conclude: if they match in all rows, the statements are logically equivalent.</p>
+</blockquote>
+<p><strong>Solution</strong><br>
+</p>
+<p>Step 1: Write the two statements side by side: <span class="math inline">\(p \to q\)</span> and <span class="math inline">\(\lnot p \lor q\)</span>.<br>
+What we want to check is whether these two always mean the same thing.<br>
+- <span class="math inline">\(p \to q\)</span>: “If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span>.”<br>
+- <span class="math inline">\(\lnot p \lor q\)</span>: “Either not <span class="math inline">\(p\)</span>, or <span class="math inline">\(q\)</span>.”</p>
+<p>At first sight they look different, but we suspect they are really saying the same thing.<br>
+To confirm, we will compare their truth tables row by row.</p>
+<hr>
+<p>Step 2: Build a truth table with columns for <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, <span class="math inline">\(\lnot p\)</span>, <span class="math inline">\(p \to q\)</span>, and <span class="math inline">\(\lnot p \lor q\)</span>.<br>
+<em>(Didactic hint: to fill this correctly, recall the “grammar” of each connective.)</em><br>
+- <strong>Negation</strong> <span class="math inline">\(\lnot p\)</span>: flips the truth value (T→F, F→T).<br>
+- <strong>Disjunction</strong> <span class="math inline">\(A \lor B\)</span>: true if at least one of <span class="math inline">\(A,B\)</span> is true.<br>
+- <strong>Conditional</strong> <span class="math inline">\(p \to q\)</span>: think “promise” — it is false only when the promise is broken (i.e., <span class="math inline">\(p\)</span> is T but <span class="math inline">\(q\)</span> is F); otherwise true (including when <span class="math inline">\(p\)</span> is F: vacuous truth).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(p\)</span></th>
+<th><span class="math inline">\(q\)</span></th>
+<th><span class="math inline">\(\lnot p\)</span></th>
+<th><span class="math inline">\(p \to q\)</span></th>
+<th><span class="math inline">\(\lnot p \lor q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>How we filled it:<br>
+- <span class="math inline">\(\lnot p\)</span> is just the flip of <span class="math inline">\(p\)</span>.<br>
+- <span class="math inline">\(p \to q\)</span> is only F in the row <span class="math inline">\((p,q)=(T,F)\)</span> (promise broken).<br>
+- <span class="math inline">\(\lnot p \lor q\)</span> is true when either <span class="math inline">\(\lnot p\)</span> is T or <span class="math inline">\(q\)</span> is T.</p>
+<hr>
+<p>Step 3: Compare the last two columns.<br>
+The columns for <span class="math inline">\(p \to q\)</span> and <span class="math inline">\(\lnot p \lor q\)</span> are identical (T, F, T, T).<br>
+Therefore, the statements have the same truth value in every case.</p>
+<hr>
+<p>Step 4: Conclude.<br>
+We conclude:<br>
+<span class="math inline">\(p \to q \equiv \lnot p \lor q\)</span></p>
+<p>In words: an implication <em>“if <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span>”</em> always carries the same meaning as saying <em>“either <span class="math inline">\(p\)</span> does not happen, or <span class="math inline">\(q\)</span> happens.”</em></p>
+<hr>
+<blockquote class="blockquote">
+<p><strong>Exercise 2. Analyze the statement: “If a number is divisible by 4, then it is even.”</strong><br>
+Step 1. Define <span class="math inline">\(p\)</span>: “number is divisible by 4”, and <span class="math inline">\(q\)</span>: “number is even.”<br>
+Step 2. Translate into logic: <span class="math inline">\(p \to q\)</span>.<br>
+Step 3. Think through cases:<br>
+- A number divisible by 4 (say 12) → it is even → promise kept.<br>
+- A number divisible by 4 but not even → impossible case → promise broken.<br>
+- A number not divisible by 4 (say 9) → nothing promised, implication vacuously true.<br>
+Step 4. Verify with a truth table if needed.<br>
+Step 5. Conclude: the statement holds logically.</p>
+</blockquote>
 <p><strong>Biconditional: <span class="math inline">\(p \leftrightarrow q\)</span> (“<span class="math inline">\(p\)</span> if and only if <span class="math inline">\(q\)</span>”)</strong></p>
 <ul>
 <li><p><strong>Rule:</strong> <span class="math inline">\(p \leftrightarrow q\)</span> is true exactly when <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> have the <strong>same truth value</strong><br>
@@ -654,6 +792,7 @@ It is stronger than a one-way implication: both <span class="math inline">\(p \t
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 <section id="tautologies-contradictions-and-logical-equivalence" class="level2">
 <h2 class="anchored" data-anchor-id="tautologies-contradictions-and-logical-equivalence">1.3 Tautologies, Contradictions, and Logical Equivalence</h2>
@@ -935,8 +1074,8 @@ This interpretative skill is essential for reading theorems correctly and avoidi
 </ul>
 <hr>
 </section>
-<section id="exercises" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="exercises">2.7 Exercises</h2>
+<section id="exercises-1" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises-1">2.7 Exercises</h2>
 <p><strong>Goal of these exercises:</strong><br>
 - Practice <strong>evaluating truth values</strong>.<br>
 - Practice <strong>negating</strong> quantified statements.<br>

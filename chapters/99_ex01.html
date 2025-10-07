@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Why I’m Interested in Causal ML? – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
+<title>Phase 4: The Mathematical Truth: Linear vs Logistic Regression – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/01_ch01.html" rel="next">
-<link href="../chapters/about.html" rel="prev">
+<link href="../chapters/01_ch01.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -120,7 +119,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/00_ch00.html"><span class="chapter-title">Why I’m Interested in Causal ML?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/99_ex01.html"><span class="chapter-title">Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -157,7 +156,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/00_ch00.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Why I’m Interested in Causal ML?</span></a>
+  <a href="../chapters/00_ch00.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Why I’m Interested in Causal ML?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -167,7 +166,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/99_ex01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span></a>
+  <a href="../chapters/99_ex01.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span></a>
   </div>
 </li>
     </ul>
@@ -180,13 +179,21 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-2-worlds" id="toc-the-2-worlds" class="nav-link active" data-scroll-target="#the-2-worlds">The 2 Worlds</a>
+  <li><a href="#how-to-beautifully-explain-the-mathematical-truth-behind-linear-and-logistic-regression" id="toc-how-to-beautifully-explain-the-mathematical-truth-behind-linear-and-logistic-regression" class="nav-link active" data-scroll-target="#how-to-beautifully-explain-the-mathematical-truth-behind-linear-and-logistic-regression">How to beautifully explain the mathematical truth behind Linear and Logistic regression</a>
   <ul class="collapse">
-  <li><a href="#the-statistics-and-econometrics-world" id="toc-the-statistics-and-econometrics-world" class="nav-link" data-scroll-target="#the-statistics-and-econometrics-world">The Statistics (and Econometrics) World</a></li>
-  <li><a href="#the-machine-learning-world" id="toc-the-machine-learning-world" class="nav-link" data-scroll-target="#the-machine-learning-world">The Machine Learning World</a></li>
-  <li><a href="#why-causal-ml-is-a-synthesis" id="toc-why-causal-ml-is-a-synthesis" class="nav-link" data-scroll-target="#why-causal-ml-is-a-synthesis">Why Causal ML Is a Synthesis</a></li>
+  <li><a href="#the-theoretical-world-the-full-data-generating-process" id="toc-the-theoretical-world-the-full-data-generating-process" class="nav-link" data-scroll-target="#the-theoretical-world-the-full-data-generating-process">1. The Theoretical World: The Full Data-Generating Process</a></li>
+  <li><a href="#the-linear-regression-case-deterministic-dgp-incomplete-knowledge" id="toc-the-linear-regression-case-deterministic-dgp-incomplete-knowledge" class="nav-link" data-scroll-target="#the-linear-regression-case-deterministic-dgp-incomplete-knowledge">2. The Linear Regression Case: Deterministic DGP, Incomplete Knowledge</a>
+  <ul class="collapse">
+  <li><a href="#from-theory-to-practice" id="toc-from-theory-to-practice" class="nav-link" data-scroll-target="#from-theory-to-practice">2.1. From Theory to Practice</a></li>
+  <li><a href="#conceptual-picture-slicing-the-joint-distribution" id="toc-conceptual-picture-slicing-the-joint-distribution" class="nav-link" data-scroll-target="#conceptual-picture-slicing-the-joint-distribution">2.2. Conceptual Picture: “Slicing” the Joint Distribution</a></li>
   </ul></li>
-  <li><a href="#focus" id="toc-focus" class="nav-link" data-scroll-target="#focus">Focus</a></li>
+  <li><a href="#the-logistic-regression-case-a-probabilistic-dgp" id="toc-the-logistic-regression-case-a-probabilistic-dgp" class="nav-link" data-scroll-target="#the-logistic-regression-case-a-probabilistic-dgp">3. The Logistic Regression Case: A Probabilistic DGP</a>
+  <ul class="collapse">
+  <li><a href="#example-the-hiring-probability" id="toc-example-the-hiring-probability" class="nav-link" data-scroll-target="#example-the-hiring-probability">3.1. Example: The Hiring Probability</a></li>
+  </ul></li>
+  <li><a href="#the-fundamental-distinction" id="toc-the-fundamental-distinction" class="nav-link" data-scroll-target="#the-fundamental-distinction">4. The Fundamental Distinction</a></li>
+  <li><a href="#appendix-conditioning-as-projection-on-subspaces-optional" id="toc-appendix-conditioning-as-projection-on-subspaces-optional" class="nav-link" data-scroll-target="#appendix-conditioning-as-projection-on-subspaces-optional">5. Appendix — Conditioning as Projection on Subspaces (Optional)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -195,7 +202,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Why I’m Interested in Causal ML?</span></h1>
+<h1 class="title"><span class="chapter-title">Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span></h1>
 </div>
 
 
@@ -212,86 +219,260 @@ window.Quarto = {
 </header>
 
 
-<p>My interest in Causal Machine Learning arises from a long-standing divide in the way different worlds think about data.</p>
-<section id="the-2-worlds" class="level2">
-<h2 class="anchored" data-anchor-id="the-2-worlds">The 2 Worlds</h2>
-<p>In his influential essay <em>Statistical Modeling: The Two Cultures (2001)</em>, <strong>Leo Breiman</strong> described two very different traditions.</p>
-<ul>
-<li><strong>Data Modeling</strong> culture (the dominant one in Statistics at the time): assumes data are generated by a stochastic model with explicit assumptions (e.g., linear regression, logistic regression). The focus is on inference and interpretability.</li>
-<li><strong>Algorithmic Modeling</strong> culture (rising in Machine Learning): does not assume a specific stochastic DGP, but uses flexible algorithms (e.g., random forests, neural networks) to directly optimize predictive accuracy.</li>
-</ul>
-<section id="the-statistics-and-econometrics-world" class="level3">
-<h3 class="anchored" data-anchor-id="the-statistics-and-econometrics-world">The Statistics (and Econometrics) World</h3>
-<p>Did you know that when you run a regression, you are implicitly making a very strong claim about how the world works?</p>
-<p>In this tradition, everything begins with the <strong>data-generating process (DGP)</strong> — what <strong>Aris Spanos</strong> in his book <em>Probability Theory and Statistical Inference: Econometric Modeling with Observational Data</em> calls a <em>stochastic mechanism</em>. Imagine it as a hidden machine tossing probabilistic dice, producing the data we observe. A statistical model is not just a tool; it is a <strong>story about that hidden mechanism</strong> that is producing the outcomes we observe.</p>
-<p>Examples:<br>
-- A linear regression assumes wages, test scores, or prices are generated as a straight-line combination of inputs plus random noise.<br>
-- A Poisson model assumes counts come from a specific probabilistic law.<br>
-- A time-series AR(1) model assumes today’s value depends on yesterday’s value with some random shock added in.</p>
-<p>If the <strong>DGP</strong> is hidden, what do you think we want to do? <strong>To uncover its truth</strong>.</p>
-<p>That is why introductory statistics courses begin with the notion of a <strong>Population</strong> and then introduce <strong>Samples</strong>. Since we cannot observe the entire population, we study samples and rely on probabilistic laws — the Law of Large Numbers (LLN), the Central Limit Theorem (CLT) — to argue that <em>repeated samples will “stabilize” around the truth</em> about some population parameters (mean, median, variance…).</p>
-<p>From there comes <strong>Inference</strong>:<br>
-&gt; If I trust my assumptions about the DGP, then I can use my sample to make <strong>representative</strong> claims about the population.</p>
-<p>This is the heart of statistics and econometrics: <em>model</em> the <strong>hidden process</strong>, <em>estimate</em> its parameters, and <em>test</em> whether your story holds up against data. But — and this is crucial — <em>the DGP is always an assumption</em>. If it is wrong, the inference may be misleading.</p>
-</section>
-<section id="the-machine-learning-world" class="level3">
-<h3 class="anchored" data-anchor-id="the-machine-learning-world">The Machine Learning World</h3>
-<p>Now comes the other world. The <strong>algorithmic modeling culture</strong>. Here, <strong>the hidden machine is ignored</strong>. No one asks whether wages are “truly linear” in education, or whether prices follow a Poisson law, or whether the dice is probabilistic. Instead, the question is brutally pragmatic: <em>Can I predict well?</em></p>
-<p>In this world, the central drama is not about whether the stochastic story is correct, but about whether <em>a model trained on one dataset</em> (<em>training set</em>) <strong>generalizes</strong> to unseen data (<em>the test set</em>). This is the <strong>training vs.&nbsp;testing problem</strong>.</p>
-<p>The classical core risks are:<br>
-- <strong>Underfitting</strong>: the model is too simple, missing patterns (high bias).<br>
-- <strong>Overfitting</strong>: the model is too complex, capturing noise instead of signal (high variance).</p>
-<p>Success here is measured by <strong>predictive accuracy</strong>, not by <strong>unbiasedness</strong> or <strong>efficiency</strong> of estimators, like in the Statistics world. Interpretability is optional (if you don’t know what is inside a black box, you cannot “read” it and “interpret” it); performance is everything. Predictions may work well in stable environments but fail when the underlying data distribution shifts.</p>
+<section id="how-to-beautifully-explain-the-mathematical-truth-behind-linear-and-logistic-regression" class="level1">
+<h1>How to beautifully explain the mathematical truth behind Linear and Logistic regression</h1>
+<p><em>(Still under construction)</em></p>
+<section id="the-theoretical-world-the-full-data-generating-process" class="level2">
+<h2 class="anchored" data-anchor-id="the-theoretical-world-the-full-data-generating-process">1. The Theoretical World: The Full Data-Generating Process</h2>
+<p>In the idealized mathematical world, we assume the existence of a <strong>Data-Generating Process (DGP)</strong> —<br>
+a mechanism that maps all causal inputs in the universe to the variable of interest <span class="math inline">\(Y\)</span>:</p>
+<p><span class="math display">\[
+Y = f(X_1, X_2, X_3, \ldots)
+\]</span></p>
+<p>Each <span class="math inline">\(X_j\)</span> represents a different characteristic or influence (education, experience, intelligence, etc.),<br>
+and together they fully determine the value of <span class="math inline">\(Y\)</span>.</p>
+<p>If we had complete access to this <span class="math inline">\(f(\cdot)\)</span> and to all relevant <span class="math inline">\(X_j\)</span>’s, the process would be <strong>deterministic</strong>:<br>
+given the inputs, we could predict <span class="math inline">\(Y\)</span> exactly.</p>
+<p>Formally, the joint distribution of all variables is</p>
+<p><span class="math display">\[
+(Y, X_1, X_2, X_3, \ldots) \sim F_{Y, X_1, X_2, X_3, \ldots}
+\]</span></p>
+<p>and the DGP defines the conditional distribution</p>
+<p><span class="math display">\[
+F_{Y \mid X_1, X_2, X_3, \ldots}(y \mid x_1, x_2, x_3, \ldots)
+\]</span></p>
+<p>which would be perfectly <strong>degenerate</strong> (a Dirac delta) if the world were truly deterministic.</p>
 <hr>
-<p>A concrete example makes the distinction clearer — and shows how each culture fails where the other succeeds:</p>
-<ul>
-<li><p><strong>Estimating the causal effect of education on wages.</strong><br>
-In econometrics and statistics, I would model wages as generated by a stochastic mechanism involving education, experience, and other covariates. My goal is to isolate the effect of education from confounders. <em>If I only used a machine learning model, it might predict wages very well — but it would not tell me the causal role of education</em> (maybe it is not education itself that raises wages, but family wealth that enables both schooling and better jobs), because prediction does not separate correlation from causation. ML excels at <em>prediction</em>, but fails to deliver interpretability and identification here.</p></li>
-<li><p><strong>Predicting house prices.</strong><br>
-Econometrics might specify a linear model with a few chosen variables and assumptions about errors. But this DGP is likely too simplistic: house prices depend on thousands of complex, nonlinear factors (location, amenities, school ratings, neighborhood trends). <em>An econometric model here may fail badly in predictive accuracy</em>. By contrast, ML models like gradient boosting can capture these nonlinearities and achieve much higher predictive power — even though they may not explain <em>why</em> prices are high.</p></li>
-</ul>
-<p>So each culture shines in one domain and struggles in the other. Together, they suggest the need for a synthesis.</p>
+</section>
+<section id="the-linear-regression-case-deterministic-dgp-incomplete-knowledge" class="level2">
+<h2 class="anchored" data-anchor-id="the-linear-regression-case-deterministic-dgp-incomplete-knowledge">2. The Linear Regression Case: Deterministic DGP, Incomplete Knowledge</h2>
+<section id="from-theory-to-practice" class="level3">
+<h3 class="anchored" data-anchor-id="from-theory-to-practice">2.1. From Theory to Practice</h3>
+<p>In the real world, we rarely observe all the variables that influence <span class="math inline">\(Y\)</span>.<br>
+Suppose the true DGP is</p>
+<p><span class="math display">\[
+Y = 20 + 3X_1 + 2X_2
+\]</span></p>
+<p>where <span class="math inline">\(X_1\)</span> is <strong>years of education</strong> and <span class="math inline">\(X_2\)</span> is <strong>years of experience</strong>.<br>
+If we knew both <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, the model would be deterministic:<br>
+for <span class="math inline">\(X_1=10, X_2=5\)</span>, we know <span class="math inline">\(Y=20+3(10)+2(5)=50\)</span>.</p>
+<p>But imagine we only measure <span class="math inline">\(X_1\)</span>.<br>
+We must then approximate the conditional behavior of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X_1\)</span>:</p>
+<p><span class="math display">\[
+Y = \beta_0 + \beta_1 X_1 + \varepsilon
+\]</span></p>
+<p>The term <span class="math inline">\(\varepsilon\)</span> now captures the influence of <span class="math inline">\(X_2\)</span> (and any other unobserved factors):</p>
+<p><span class="math display">\[
+\varepsilon = 2X_2
+\]</span></p>
+<p>and since <span class="math inline">\(X_2\)</span> varies randomly in the population, <span class="math inline">\(\varepsilon\)</span> is random to us.</p>
+<p>This motivates the probabilistic model</p>
+<p><span class="math display">\[
+Y \mid X_1 = x_1 \sim \mathcal{N}(\beta_0 + \beta_1 x_1, \sigma^2)
+\]</span></p>
+<p>where the conditional variance <span class="math inline">\(\sigma^2\)</span> reflects <strong>epistemic randomness</strong> — randomness due to our ignorance about unobserved determinants.<br>
+In other words, the world might be deterministic, but our model is not.</p>
+<hr>
+</section>
+<section id="conceptual-picture-slicing-the-joint-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="conceptual-picture-slicing-the-joint-distribution">2.2. Conceptual Picture: “Slicing” the Joint Distribution</h3>
+<p>The true DGP defines a high-dimensional surface in the space of all variables.<br>
+By conditioning on only one variable (<span class="math inline">\(X_1\)</span>), we take a <strong>slice</strong> through that surface:</p>
+<p><span class="math display">\[
+F_{Y \mid X_1}(y \mid x_1)
+\]</span></p>
+<p>This slice still contains variation from the omitted axes (<span class="math inline">\(X_2, X_3, \ldots\)</span>).<br>
+That variation appears as the <strong>random scatter</strong> of points around the regression line.</p>
+<p>Hence, in linear regression:</p>
 <blockquote class="blockquote">
-<p><strong>Causal ML in Action</strong><br>
-A famous example comes from <strong>Online Advertising</strong>.<br>
-- A standard supervised ML model might predict that showing more ads <em>increases</em> purchases, because ads and purchases are positively correlated in the data.<br>
-- But when economists ran randomized experiments, they found the causal effect was often much smaller — sometimes <strong>zero</strong>. Why? Because people who were already likely to buy were also the ones most likely to be targeted with ads.</p>
-<p>This is a case where prediction looked strong, but causality revealed the true relationship and new decisions had to be made.</p>
+<p>Randomness arises because our model conditions on an incomplete subset of the true DGP.</p>
+</blockquote>
+<p>If we had access to all the relevant <span class="math inline">\(X_j\)</span>’s and the true functional form <span class="math inline">\(f\)</span>,<br>
+the process would become deterministic and <span class="math inline">\(Y\)</span> would be known with certainty.</p>
+<hr>
+</section>
+</section>
+<section id="the-logistic-regression-case-a-probabilistic-dgp" class="level2">
+<h2 class="anchored" data-anchor-id="the-logistic-regression-case-a-probabilistic-dgp">3. The Logistic Regression Case: A Probabilistic DGP</h2>
+<p>Now consider a fundamentally different scenario.<br>
+Let <span class="math inline">\(Y\)</span> represent whether a person <strong>gets hired</strong> (<span class="math inline">\(Y=1\)</span>) or <strong>not hired</strong> (<span class="math inline">\(Y=0\)</span>).<br>
+We still have predictors such as education <span class="math inline">\(X_1\)</span> and experience <span class="math inline">\(X_2\)</span>.</p>
+<p>Even if we could measure every possible factor, two people with identical <span class="math inline">\((X_1, X_2)\)</span> might still face different outcomes.<br>
+The process of hiring, medical recovery, or clicking an ad is <strong>inherently random</strong> at the individual level.<br>
+Here, the DGP itself is <strong>stochastic</strong>:</p>
+<p><span class="math display">\[
+Y \mid X_1, X_2 \sim \text{Bernoulli}(p(X_1, X_2))
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+p(X_1, X_2) = P(Y=1 \mid X_1, X_2)
+\]</span></p>
+<p>This means that the <strong>theoretical DGP</strong> is not a deterministic function <span class="math inline">\(f(\cdot)\)</span> but a <strong>probability law</strong> describing how likely each outcome is.</p>
+<p>We specify the probability function <span class="math inline">\(p(\cdot)\)</span> using a logistic form:</p>
+<p><span class="math display">\[
+p(x_1, x_2) = \frac{e^{\beta_0 + \beta_1 x_1 + \beta_2 x_2}}{1 + e^{\beta_0 + \beta_1 x_1 + \beta_2 x_2}}
+\]</span></p>
+<hr>
+<section id="example-the-hiring-probability" class="level3">
+<h3 class="anchored" data-anchor-id="example-the-hiring-probability">3.1. Example: The Hiring Probability</h3>
+<p>Let</p>
+<p><span class="math display">\[
+\beta_0 = -8, \quad \beta_1 = 0.5, \quad \beta_2 = 0.2
+\]</span></p>
+<p>For a candidate with 12 years of education (<span class="math inline">\(X_1=12\)</span>) and 5 years of experience (<span class="math inline">\(X_2=5\)</span>):</p>
+<p><span class="math display">\[
+p = \frac{e^{-8 + 0.5(12) + 0.2(5)}}{1 + e^{-8 + 0.5(12) + 0.2(5)}}
+   = \frac{e^{-1}}{1 + e^{-1}} \approx 0.27
+\]</span></p>
+<p>Thus, even knowing all the predictors and parameters,</p>
+<p><span class="math display">\[
+P(Y=1 \mid X_1=12, X_2=5) = 0.27
+\]</span></p>
+<p>means that among 100 identical candidates (same <span class="math inline">\(X_1, X_2\)</span>),<br>
+around 27 would be hired and 73 would not — but we cannot know <em>which</em> ones.</p>
+<p>Each individual outcome is generated by an independent <strong>Bernoulli(0.27)</strong> draw.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Candidate</th>
+<th style="text-align: left;">Education <span class="math inline">\(X_1\)</span></th>
+<th style="text-align: left;">Experience <span class="math inline">\(X_2\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(p_i\)</span></th>
+<th style="text-align: left;">Realized <span class="math inline">\(Y_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.27</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.27</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.27</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.27</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.27</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Even with complete knowledge of the DGP, <span class="math inline">\(Y\)</span> remains random.</p>
+<p>This randomness is <strong>ontological</strong> — it comes from the probabilistic nature of the DGP itself,<br>
+not from ignorance about missing variables.</p>
+<hr>
+</section>
+</section>
+<section id="the-fundamental-distinction" class="level2">
+<h2 class="anchored" data-anchor-id="the-fundamental-distinction">4. The Fundamental Distinction</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;"><strong>Linear Regression</strong></th>
+<th style="text-align: left;"><strong>Logistic Regression</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Nature of DGP</td>
+<td style="text-align: left;">Deterministic function of all relevant <span class="math inline">\(X_j\)</span></td>
+<td style="text-align: left;">Intrinsically probabilistic (Bernoulli process)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Conditional distribution</td>
+<td style="text-align: left;"><span class="math inline">\(Y \mid X \sim \mathcal{N}(\mu(X), \sigma^2)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Y \mid X \sim \text{Bernoulli}(p(X))\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Randomness arises from</td>
+<td style="text-align: left;">Omitted or unobserved variables (<em>epistemic</em>)</td>
+<td style="text-align: left;">The event-generation mechanism itself (<em>ontological</em>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">What the model approximates</td>
+<td style="text-align: left;">Conditional mean <span class="math inline">\(E[Y\mid X] = \mu(X)\)</span></td>
+<td style="text-align: left;">Success probability <span class="math inline">\(P(Y=1\mid X) = p(X)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">If we knew all of <span class="math inline">\(X\)</span> and the true DGP</td>
+<td style="text-align: left;"><span class="math inline">\(Y\)</span> becomes deterministic</td>
+<td style="text-align: left;"><span class="math inline">\(Y\)</span> remains random</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Limiting case (<span class="math inline">\(p=0\)</span> or <span class="math inline">\(1\)</span>)</td>
+<td style="text-align: left;">Perfect prediction possible</td>
+<td style="text-align: left;">Becomes deterministic, but no longer logistic</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Conceptual analogy</td>
+<td style="text-align: left;">“The world is deterministic but we can’t see it all.”</td>
+<td style="text-align: left;">“The world itself flips a weighted coin.”</td>
+</tr>
+</tbody>
+</table>
+<p>Hence:</p>
+<blockquote class="blockquote">
+<p>🔹 <strong>Linear regression</strong> models a deterministic world we only partially see.<br>
+🔹 <strong>Logistic regression</strong> models a probabilistic world whose outcomes remain random even when all causes are known.</p>
 </blockquote>
 <hr>
 </section>
-<section id="why-causal-ml-is-a-synthesis" class="level3">
-<h3 class="anchored" data-anchor-id="why-causal-ml-is-a-synthesis">Why Causal ML Is a Synthesis</h3>
-<p>✨ This is why Causal Machine Learning excites me.</p>
-<p>By combining machine learning with the discipline of causal inference, researchers such as <em>Victor Chernozhukov, Christian Hansen, Nathan Kallus, Martin Spindler, and Vasilis Syrgkanis</em> — co-authors of <em>Causal ML: Applied Causal Inference Powered by ML and AI</em> — show that we can take the best of both worlds.</p>
-<p>The basic idea is simple:<br>
-- From <strong>machine learning</strong>, we borrow flexible algorithms that can handle many variables and complex patterns.<br>
-- From <strong>statistics and econometrics</strong>, we borrow tools that check whether we are uncovering <strong>cause-and-effect</strong> rather than just correlations.</p>
-<p>Techniques like <strong>sample splitting</strong> and <strong>cross-fitting</strong> might sound technical, but the intuition is clear: we let the algorithm “learn” patterns on one part of the data, and we <strong>keep another part untouched</strong> to see whether those patterns still hold when drawing <strong>causal</strong> conclusions. This helps us avoid fooling ourselves with spurious results.</p>
-<p>Causal thinking also pushes us beyond the tidy assumption that all observations are <strong>IID</strong> (independent and identically distributed). Real life changes: policies shift, markets move, and people adapt. Causal inference gives us language to reason about such changes — about <strong>interventions</strong> (“what if we changed X?”), <strong>counterfactuals</strong> (“what would have happened otherwise?”), and <strong>distribution shifts</strong> (“what if tomorrow doesn’t look like yesterday?”).</p>
-<p><strong>Causal ML suggests a synthesis</strong>:<br>
-- From statistics and econometrics, we inherit the concern with stochastic mechanisms, identification, and rigorous inference.<br>
-- From machine learning, we gain flexibility, robustness, and predictive accuracy.<br>
-- From causality, we add the language to generalize beyond observation, to interventions and explanations.</p>
+<section id="appendix-conditioning-as-projection-on-subspaces-optional" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-conditioning-as-projection-on-subspaces-optional">5. Appendix — Conditioning as Projection on Subspaces (Optional)</h2>
+<p>In the theoretical world, the joint distribution <span class="math inline">\(F_{Y,X_1,X_2,\ldots}\)</span> defines a high-dimensional space of relationships between all variables. Conditioning on a subset of them — for instance, only <span class="math inline">\(X_1\)</span> — corresponds to taking a <strong>projection</strong> of that space onto a lower-dimensional subspace.</p>
+<p>In linear algebraic terms, if we represent <span class="math inline">\(Y\)</span> and the <span class="math inline">\(X_j\)</span>’s as elements of a vector space of random variables with an inner product <span class="math inline">\(\langle A,B \rangle = E[AB]\)</span>, then the conditional expectation <span class="math inline">\(E[Y \mid X_1]\)</span> is precisely the <strong>orthogonal projection</strong> of <span class="math inline">\(Y\)</span> onto the subspace spanned by <span class="math inline">\(X_1\)</span>.</p>
+<p>The residual <span class="math inline">\(\varepsilon = Y - E[Y \mid X_1]\)</span> is orthogonal to that subspace:</p>
+<p><span class="math display">\[
+E[\varepsilon X_1] = 0
+\]</span></p>
+<p>This provides a geometric interpretation of “taking a slice” of the DGP: we restrict our attention to one axis (one subspace) of the full theoretical space, and the remaining variation appears as randomness in the orthogonal complement.</p>
+<hr>
+<blockquote class="blockquote">
+<p><strong>Summary Insight:</strong><br>
+Linear regression transforms deterministic complexity into stochastic simplicity<br>
+by conditioning on incomplete information.<br>
+Logistic regression models inherent probabilistic events,<br>
+where randomness persists even when all causes are known.</p>
+</blockquote>
+
+
+
 </section>
-</section>
-<section id="focus" class="level2">
-<h2 class="anchored" data-anchor-id="focus">Focus</h2>
-<p>My main focus in this project is to <strong>learn — and become comfortable with — the mathematical foundations that underpin Causal Machine Learning</strong>.</p>
-<p>While Causal ML is an exciting and active field (and may well be my future research direction), the broader point is that <strong>mathematical depth makes a difference</strong>. Too often, methods are applied skillfully but without a full grasp of what is happening underneath.</p>
-<p>By working through the logical and mathematical foundations step by step, <strong>I aim to develop the clarity that allows not only the application of tools, but a genuine understanding of them</strong>. The goal is to bridge the cultures of explanation and prediction — and, in some small way, contribute to the ongoing effort to unify them.</p>
-<p><strong>What “foundations” means here</strong><br>
-- <strong>Logic &amp; Set Theory</strong> — the language of proofs and structures.<br>
-- <strong>Real Analysis</strong> — rigor of limits, continuity, convergence, integration.<br>
-- <strong>Linear Algebra</strong> — vector spaces, eigen-structure, decompositions.<br>
-- <strong>Functional Analysis &amp; Hilbert Spaces</strong> — norms, projections, RKHS.<br>
-- <strong>Topology &amp; Measure Theory</strong> — σ-algebras, Lebesgue integration, convergence theorems.<br>
-- <strong>Probability</strong> — Kolmogorov framework, LLN/CLT, conditional expectation.<br>
-- <strong>Mathematical Statistics</strong> — estimation, tests, asymptotics.<br>
-- <strong>Causality</strong> — SCMs, potential outcomes, identifiability, modern Causal ML.</p>
-
-
-
 </section>
 
 </main> <!-- /main -->
@@ -696,14 +877,11 @@ A famous example comes from <strong>Online Advertising</strong>.<br>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/about.html" class="pagination-link" aria-label="About Me">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">About Me</span></span>
+      <a href="../chapters/01_ch01.html" class="pagination-link" aria-label="Phase 1: Logic &amp; Set Theory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Phase 1: Logic &amp; Set Theory</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/01_ch01.html" class="pagination-link" aria-label="Phase 1: Logic &amp; Set Theory">
-        <span class="nav-page-text"><span class="chapter-title">Phase 1: Logic &amp; Set Theory</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

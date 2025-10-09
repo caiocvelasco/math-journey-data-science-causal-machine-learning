@@ -90,11 +90,21 @@
     ]
   },
   {
-    "objectID": "index.html#phase-8-causality",
-    "href": "index.html#phase-8-causality",
+    "objectID": "index.html#phase-8-statistical-learning-theory",
+    "href": "index.html#phase-8-statistical-learning-theory",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 8 – Causality",
-    "text": "Phase 8 – Causality\nGoal: Enter causal inference with strong mathematical foundations.\n- Pearl’s Structural Causal Models & do-calculus.\n- Rubin’s potential outcomes framework.\n- Invariant causal prediction (Peters, Janzing, Schölkopf).\n- Identifiability proofs.\n- Axiomatic frameworks (Park & Muandet).\nTheory Output: Worked proofs of identifiability, back-door/front-door criteria, do-calculus rules.\nApplication Project: Uplift modeling for churn retention OR reproduction of Chernozhukov’s Double Machine Learning estimator with Python.\nReferences:\n- Pearl – Causality\n- Peters, Janzing, Schölkopf – Elements of Causal Inference\n- Chernozhukov et al. – Causal Machine Learning papers",
+    "section": "Phase 8 – Statistical Learning Theory",
+    "text": "Phase 8 – Statistical Learning Theory\nGoal: Bridge inference and prediction by introducing the statistical foundations of machine learning.\nShow how algorithms that learn from data can be rigorously analyzed using probability and measure theory—without assuming a fixed data-generating model.\n\nLearning as an inference problem: i.i.d. samples ((X_i, Y_i) P(X, Y)).\n\nLoss functions and the notion of risk (R(f) = [L(Y, f(X))]).\n\nEmpirical Risk Minimization (ERM): minimize training loss (R_n(f)) as an estimator of true risk.\n\nGeneralization: understanding why (R_n(f)) ≈ (R(f)) as (n ).\n\nUniform convergence and capacity control (VC dimension, Rademacher complexity).\n\nStructural Risk Minimization (SRM): balance fit and complexity with a penalty term.\n\nRegularization in RKHS: connect to Phase 4’s Hilbert-space framework via\n[ = _{f } [R_n(f) + |f|_{}^2]. ]\nBias–variance decomposition: interpret overfitting and underfitting statistically.\n\nContrast Breiman’s two cultures—data modeling vs. algorithmic modeling—and show how Vapnik’s learning theory formalizes the latter.\n\nTheory Output:\n- Derive a simple generalization bound using Hoeffding’s inequality and the union bound.\n- Compute VC dimension for linear separators.\n- Prove that L2 regularization corresponds to minimizing empirical risk under a bounded-norm constraint.\nApplication Project:\n- Simulate empirical vs. generalization error on synthetic data.\n- Train classifiers with varying complexity (polynomial degree or kernel width) and plot training/test errors.\n- Show visually how regularization reduces overfitting and aligns with theoretical bounds.\nReferences:\n- Vapnik – The Nature of Statistical Learning Theory\n- Bousquet, Boucheron & Lugosi – Introduction to Statistical Learning Theory\n- Hastie, Tibshirani & Friedman – The Elements of Statistical Learning\n- Shalev-Shwartz & Ben-David – Understanding Machine Learning: From Theory to Algorithms\n- Breiman – Statistical Modeling: The Two Cultures",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#phase-9-causality",
+    "href": "index.html#phase-9-causality",
+    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "section": "Phase 9 – Causality",
+    "text": "Phase 9 – Causality\nGoal: Enter causal inference with strong mathematical foundations.\n- Pearl’s Structural Causal Models & do-calculus.\n- Rubin’s potential outcomes framework.\n- Invariant causal prediction (Peters, Janzing, Schölkopf).\n- Identifiability proofs.\n- Axiomatic frameworks (Park & Muandet).\nTheory Output: Worked proofs of identifiability, back-door/front-door criteria, do-calculus rules.\nApplication Project: Uplift modeling for churn retention OR reproduction of Chernozhukov’s Double Machine Learning estimator with Python.\nReferences:\n- Pearl – Causality\n- Peters, Janzing, Schölkopf – Elements of Causal Inference\n- Chernozhukov et al. – Causal Machine Learning papers",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
@@ -164,27 +174,97 @@
     "href": "chapters/00_ch00.html",
     "title": "Why I’m Interested in Causal ML?",
     "section": "",
-    "text": "The 2 Worlds\nMy interest in Causal Machine Learning arises from a long-standing divide in the way different worlds think about data.\nIn his influential essay Statistical Modeling: The Two Cultures (2001), Leo Breiman described two very different traditions.",
+    "text": "Overview\nMy interest in Causal Machine Learning (Causal ML) arises from a long-standing divide in how different scientific and data communities think about data.\nStatistics and econometrics have traditionally aimed to explain the world, while machine learning has focused on predicting it. Causal ML is where these worlds meet — combining the interpretability and rigor of econometrics with the flexibility and scalability of machine learning.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
     ]
   },
   {
-    "objectID": "chapters/00_ch00.html#the-2-worlds",
-    "href": "chapters/00_ch00.html#the-2-worlds",
+    "objectID": "chapters/00_ch00.html#the-two-worlds-at-a-glance",
+    "href": "chapters/00_ch00.html#the-two-worlds-at-a-glance",
     "title": "Why I’m Interested in Causal ML?",
-    "section": "",
-    "text": "Data Modeling culture (the dominant one in Statistics at the time): assumes data are generated by a stochastic model with explicit assumptions (e.g., linear regression, logistic regression). The focus is on inference and interpretability.\nAlgorithmic Modeling culture (rising in Machine Learning): does not assume a specific stochastic DGP, but uses flexible algorithms (e.g., random forests, neural networks) to directly optimize predictive accuracy.\n\n\nThe Statistics (and Econometrics) World\nDid you know that when you run a regression, you are implicitly making a very strong claim about how the world works?\nIn this tradition, everything begins with the data-generating process (DGP) — what Aris Spanos in his book Probability Theory and Statistical Inference: Econometric Modeling with Observational Data calls a stochastic mechanism. Imagine it as a hidden machine tossing probabilistic dice, producing the data we observe. A statistical model is not just a tool; it is a story about that hidden mechanism that is producing the outcomes we observe.\nExamples:\n- A linear regression assumes wages, test scores, or prices are generated as a straight-line combination of inputs plus random noise.\n- A Poisson model assumes counts come from a specific probabilistic law.\n- A time-series AR(1) model assumes today’s value depends on yesterday’s value with some random shock added in.\nIf the DGP is hidden, what do you think we want to do? To uncover its truth.\nThat is why introductory statistics courses begin with the notion of a Population and then introduce Samples. Since we cannot observe the entire population, we study samples and rely on probabilistic laws — the Law of Large Numbers (LLN), the Central Limit Theorem (CLT) — to argue that repeated samples will “stabilize” around the truth about some population parameters (mean, median, variance…).\nFrom there comes Inference:\n&gt; If I trust my assumptions about the DGP, then I can use my sample to make representative claims about the population.\nThis is the heart of statistics and econometrics: model the hidden process, estimate its parameters, and test whether your story holds up against data. But — and this is crucial — the DGP is always an assumption. If it is wrong, the inference may be misleading.\n\n\nThe Machine Learning World\nNow comes the other world. The algorithmic modeling culture. Here, the hidden machine is ignored. No one asks whether wages are “truly linear” in education, or whether prices follow a Poisson law, or whether the dice is probabilistic. Instead, the question is brutally pragmatic: Can I predict well?\nIn this world, the central drama is not about whether the stochastic story is correct, but about whether a model trained on one dataset (training set) generalizes to unseen data (the test set). This is the training vs. testing problem.\nThe classical core risks are:\n- Underfitting: the model is too simple, missing patterns (high bias).\n- Overfitting: the model is too complex, capturing noise instead of signal (high variance).\nSuccess here is measured by predictive accuracy, not by unbiasedness or efficiency of estimators, like in the Statistics world. Interpretability is optional (if you don’t know what is inside a black box, you cannot “read” it and “interpret” it); performance is everything. Predictions may work well in stable environments but fail when the underlying data distribution shifts.\n\nA concrete example makes the distinction clearer — and shows how each culture fails where the other succeeds:\n\nEstimating the causal effect of education on wages.\nIn econometrics and statistics, I would model wages as generated by a stochastic mechanism involving education, experience, and other covariates. My goal is to isolate the effect of education from confounders. If I only used a machine learning model, it might predict wages very well — but it would not tell me the causal role of education (maybe it is not education itself that raises wages, but family wealth that enables both schooling and better jobs), because prediction does not separate correlation from causation. ML excels at prediction, but fails to deliver interpretability and identification here.\nPredicting house prices.\nEconometrics might specify a linear model with a few chosen variables and assumptions about errors. But this DGP is likely too simplistic: house prices depend on thousands of complex, nonlinear factors (location, amenities, school ratings, neighborhood trends). An econometric model here may fail badly in predictive accuracy. By contrast, ML models like gradient boosting can capture these nonlinearities and achieve much higher predictive power — even though they may not explain why prices are high.\n\nSo each culture shines in one domain and struggles in the other. Together, they suggest the need for a synthesis.\n\nCausal ML in Action\nA famous example comes from Online Advertising.\n- A standard supervised ML model might predict that showing more ads increases purchases, because ads and purchases are positively correlated in the data.\n- But when economists ran randomized experiments, they found the causal effect was often much smaller — sometimes zero. Why? Because people who were already likely to buy were also the ones most likely to be targeted with ads.\nThis is a case where prediction looked strong, but causality revealed the true relationship and new decisions had to be made.\n\n\n\n\nWhy Causal ML Is a Synthesis\n✨ This is why Causal Machine Learning excites me.\nBy combining machine learning with the discipline of causal inference, researchers such as Victor Chernozhukov, Christian Hansen, Nathan Kallus, Martin Spindler, and Vasilis Syrgkanis — co-authors of Causal ML: Applied Causal Inference Powered by ML and AI — show that we can take the best of both worlds.\nThe basic idea is simple:\n- From machine learning, we borrow flexible algorithms that can handle many variables and complex patterns.\n- From statistics and econometrics, we borrow tools that check whether we are uncovering cause-and-effect rather than just correlations.\nTechniques like sample splitting and cross-fitting might sound technical, but the intuition is clear: we let the algorithm “learn” patterns on one part of the data, and we keep another part untouched to see whether those patterns still hold when drawing causal conclusions. This helps us avoid fooling ourselves with spurious results.\nCausal thinking also pushes us beyond the tidy assumption that all observations are IID (independent and identically distributed). Real life changes: policies shift, markets move, and people adapt. Causal inference gives us language to reason about such changes — about interventions (“what if we changed X?”), counterfactuals (“what would have happened otherwise?”), and distribution shifts (“what if tomorrow doesn’t look like yesterday?”).\nCausal ML suggests a synthesis:\n- From statistics and econometrics, we inherit the concern with stochastic mechanisms, identification, and rigorous inference.\n- From machine learning, we gain flexibility, robustness, and predictive accuracy.\n- From causality, we add the language to generalize beyond observation, to interventions and explanations.",
+    "section": "The Two Worlds (at a Glance)",
+    "text": "The Two Worlds (at a Glance)\nIn his influential essay Statistical Modeling: The Two Cultures (2001), Leo Breiman described two very different traditions.\n\n\n\n\n\n\n\n\n\nLens\nWhat you assume\nWhat you optimize\nTypical outputs\n\n\n\n\nData Modeling (Statistics/Econometrics)\nA stochastic data-generating process (DGP)\nValid inference under assumptions\nParameters, confidence intervals, p-values\n\n\nAlgorithmic Modeling (Machine Learning)\nDGP is unknown; data are i.i.d.\nPredictive accuracy & generalization\nPredictions, cross-validation scores, error curves\n\n\n\nBoth cultures ask: what can we learn from data? — but their answers differ profoundly.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
     ]
   },
   {
-    "objectID": "chapters/00_ch00.html#focus",
-    "href": "chapters/00_ch00.html#focus",
+    "objectID": "chapters/00_ch00.html#world-1-the-statistics-and-econometrics-tradition",
+    "href": "chapters/00_ch00.html#world-1-the-statistics-and-econometrics-tradition",
     "title": "Why I’m Interested in Causal ML?",
-    "section": "Focus",
-    "text": "Focus\nMy main focus in this project is to learn — and become comfortable with — the mathematical foundations that underpin Causal Machine Learning.\nWhile Causal ML is an exciting and active field (and may well be my future research direction), the broader point is that mathematical depth makes a difference. Too often, methods are applied skillfully but without a full grasp of what is happening underneath.\nBy working through the logical and mathematical foundations step by step, I aim to develop the clarity that allows not only the application of tools, but a genuine understanding of them. The goal is to bridge the cultures of explanation and prediction — and, in some small way, contribute to the ongoing effort to unify them.\nWhat “foundations” means here\n- Logic & Set Theory — the language of proofs and structures.\n- Real Analysis — rigor of limits, continuity, convergence, integration.\n- Linear Algebra — vector spaces, eigen-structure, decompositions.\n- Functional Analysis & Hilbert Spaces — norms, projections, RKHS.\n- Topology & Measure Theory — σ-algebras, Lebesgue integration, convergence theorems.\n- Probability — Kolmogorov framework, LLN/CLT, conditional expectation.\n- Mathematical Statistics — estimation, tests, asymptotics.\n- Causality — SCMs, potential outcomes, identifiability, modern Causal ML.",
+    "section": "World 1 — The Statistics and Econometrics Tradition",
+    "text": "World 1 — The Statistics and Econometrics Tradition\n(Model → Inference)\nDid you know that when you run a regression, you are implicitly making a strong claim about how the world works?\nIn this tradition, everything begins with the data-generating process (DGP) — what Aris Spanos in Probability Theory and Statistical Inference calls a stochastic mechanism. Imagine it as a hidden machine tossing probabilistic dice, producing the data we observe.\nA statistical model is not just a tool; it’s a story about that hidden mechanism — a simplified mathematical narrative about how outcomes arise.\nExamples:\n- A linear regression assumes wages, test scores, or prices are generated as a straight-line combination of inputs plus random noise.\n- A Poisson model assumes counts follow a specific probabilistic law.\n- A time-series AR(1) assumes today’s value depends on yesterday’s, plus a random shock.\nIf the DGP is hidden, what do we do? — We try to uncover its truth.\nThat’s why introductory statistics begins with the idea of a Population and then introduces Samples. Since we can’t observe the whole population, we rely on probabilistic laws like the Law of Large Numbers (LLN) and the Central Limit Theorem (CLT) to argue that sample averages approximate population truths.\nFrom here arises Inference:\n&gt; If I trust my assumptions about the DGP, I can use my sample to make representative claims about the population.\nThis is the heart of classical statistics and econometrics:\n1. Model the hidden process.\n2. Estimate its parameters.\n3. Test whether your story holds up against data.\nBut remember: the DGP is always an assumption. If it’s wrong, inference can mislead.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#world-2-the-machine-learning-tradition",
+    "href": "chapters/00_ch00.html#world-2-the-machine-learning-tradition",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "World 2 — The Machine Learning Tradition",
+    "text": "World 2 — The Machine Learning Tradition\n(Data → Prediction)\nNow comes the other world — the algorithmic modeling culture.\nHere, the hidden mechanism is ignored. No one asks whether wages are “truly linear” or if prices follow a Poisson law. The question is brutally pragmatic:\n\nCan I predict well?\n\nThe central challenge here is generalization — ensuring that a model trained on one dataset (the training set) performs well on unseen data (the test set).\nKey trade-offs: - Underfitting: model too simple → high bias, low accuracy.\n- Overfitting: model too complex → captures noise, poor generalization.\nSuccess is measured by predictive accuracy, not by unbiasedness or efficiency.\nInterpretability is optional; performance is everything.\nBut this comes with risks — strong predictions may fail when the underlying data distribution shifts.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#when-each-culture-wins-and-loses",
+    "href": "chapters/00_ch00.html#when-each-culture-wins-and-loses",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "When Each Culture Wins — and Loses",
+    "text": "When Each Culture Wins — and Loses\nLet’s make this distinction concrete.\n\nExample 1 — Estimating the causal effect of education on wages\nIn econometrics, I’d model wages as a function of education, experience, and other covariates to isolate the causal effect of education.\nA pure ML model might predict wages well, but it wouldn’t reveal whether education causes higher wages — maybe it’s just correlated with family wealth or job networks.\nML excels at prediction, but fails at interpretation and identification.\n\n\nExample 2 — Predicting house prices\nAn econometrician might specify a linear model with a few variables and strong assumptions — too simplistic to capture reality.\nML models like gradient boosting can handle thousands of variables and complex nonlinearities, achieving far higher predictive accuracy — even if they can’t “explain” why.\nSo:\n- Statistics shines when we seek mechanistic understanding.\n- ML shines when we need accurate prediction.\n- Each fails where the other succeeds.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#why-causal-ml-is-the-synthesis",
+    "href": "chapters/00_ch00.html#why-causal-ml-is-the-synthesis",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "Why Causal ML Is the Synthesis",
+    "text": "Why Causal ML Is the Synthesis\n✨ This is why Causal Machine Learning excites me.\nIt’s the bridge — combining ML’s flexibility with econometrics’ discipline of identification.\nResearchers like Victor Chernozhukov, Christian Hansen, Nathan Kallus, Martin Spindler, and Vasilis Syrgkanis show that we can merge both worlds:\n- From machine learning, borrow flexible algorithms for complex patterns.\n- From econometrics, borrow identification strategies to isolate causality.\n- From statistics, borrow inference tools for uncertainty and robustness.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#a-real-world-case-online-advertising",
+    "href": "chapters/00_ch00.html#a-real-world-case-online-advertising",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "A Real-World Case — Online Advertising",
+    "text": "A Real-World Case — Online Advertising\n\nA standard supervised ML model might predict that showing more ads increases purchases, because ads and purchases are positively correlated.\nBut randomized experiments revealed a much smaller — sometimes zero — causal effect.\nWhy? Because users likely to purchase were already targeted with more ads.\n\nPrediction looked strong.\nCausality revealed the truth.\nThis illustrates why prediction ≠ causation — and why combining both is powerful.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#how-causal-ml-works-intuition-first",
+    "href": "chapters/00_ch00.html#how-causal-ml-works-intuition-first",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "How Causal ML Works (Intuition First)",
+    "text": "How Causal ML Works (Intuition First)\nCausal ML methods are sophisticated, but their core intuitions are simple.\n\nSample splitting / cross-fitting: train nuisance models on one part of the data, test causal relations on another — prevents “reusing” the same information and overfitting.\n\nOrthogonalization (Double ML): construct estimators that remain unbiased even if nuisance models are imperfect.\n\nHeterogeneous treatment effects: use trees, forests, or boosting to uncover who benefits most.\n\nBeyond IID: Causal inference helps reason about distribution shifts, interventions, and counterfactuals — what if tomorrow doesn’t look like today?\n\nTogether, these ideas unify prediction and inference under one theoretical umbrella.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#focus-of-this-project",
+    "href": "chapters/00_ch00.html#focus-of-this-project",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "Focus of This Project",
+    "text": "Focus of This Project\nMy main focus is to master the mathematical foundations that underpin Causal ML — to move beyond using tools, and toward understanding why they work.\nMathematical depth transforms intuition into clarity. Too often, methods are applied skillfully but without true comprehension. This project aims to bridge that gap.\n\n“Mathematical maturity is not about memorizing formulas,\nbut about seeing how different ideas connect.”",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#the-foundational-path-the-journey-ahead",
+    "href": "chapters/00_ch00.html#the-foundational-path-the-journey-ahead",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "The Foundational Path (The Journey Ahead)",
+    "text": "The Foundational Path (The Journey Ahead)\nTo understand Causal ML properly, we’ll build the entire mathematical backbone step by step:\n\nLogic & Set Theory — precision and proof techniques.\n\nReal Analysis — limits, continuity, optimization.\n\nLinear Algebra — geometry of models and data.\n\nFunctional Analysis & Hilbert Spaces — kernels, projections, and RKHS.\n\nTopology & Measure Theory — σ-algebras and integration.\n\nProbability — rigorous uncertainty, LLN/CLT, expectations.\n\nMathematical Statistics — estimation, hypothesis testing, asymptotics.\n\nStatistical Learning Theory (Interlude) — generalization, VC dimension, ERM.\n\nCausality — SCMs, potential outcomes, identifiability, and Causal ML methods.\n\nEach phase builds a bridge — from logic to learning, from inference to causation.\n\n\nCausal ML is not just a toolkit.\nIt’s a synthesis — the meeting point of mathematical rigor, algorithmic flexibility, and causal reasoning.\nUnderstanding its foundations is the first step toward using it wisely.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
     ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Caio Velasco">
-<meta name="dcterms.date" content="2025-10-07">
+<meta name="dcterms.date" content="2025-10-09">
 
 <title>Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
@@ -191,7 +191,8 @@ window.Quarto = {
   <li><a href="#phase-5-topology-measure-theory" id="toc-phase-5-topology-measure-theory" class="nav-link" data-scroll-target="#phase-5-topology-measure-theory">Phase 5 – Topology &amp; Measure Theory</a></li>
   <li><a href="#phase-6-probability" id="toc-phase-6-probability" class="nav-link" data-scroll-target="#phase-6-probability">Phase 6 – Probability</a></li>
   <li><a href="#phase-7-mathematical-statistics" id="toc-phase-7-mathematical-statistics" class="nav-link" data-scroll-target="#phase-7-mathematical-statistics">Phase 7 – Mathematical Statistics</a></li>
-  <li><a href="#phase-8-causality" id="toc-phase-8-causality" class="nav-link" data-scroll-target="#phase-8-causality">Phase 8 – Causality</a></li>
+  <li><a href="#phase-8-statistical-learning-theory" id="toc-phase-8-statistical-learning-theory" class="nav-link" data-scroll-target="#phase-8-statistical-learning-theory">Phase 8 – Statistical Learning Theory</a></li>
+  <li><a href="#phase-9-causality" id="toc-phase-9-causality" class="nav-link" data-scroll-target="#phase-9-causality">Phase 9 – Causality</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -218,7 +219,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 7, 2025</p>
+      <p class="date">October 9, 2025</p>
     </div>
   </div>
   
@@ -360,8 +361,47 @@ window.Quarto = {
 - Casella &amp; Berger – <em>Statistical Inference</em></p>
 <hr>
 </section>
-<section id="phase-8-causality" class="level2">
-<h2 class="anchored" data-anchor-id="phase-8-causality">Phase 8 – Causality</h2>
+<section id="phase-8-statistical-learning-theory" class="level2">
+<h2 class="anchored" data-anchor-id="phase-8-statistical-learning-theory">Phase 8 – Statistical Learning Theory</h2>
+<p><strong>Goal:</strong> Bridge <em>inference</em> and <em>prediction</em> by introducing the statistical foundations of machine learning.<br>
+Show how algorithms that learn from data can be rigorously analyzed using probability and measure theory—without assuming a fixed data-generating model.</p>
+<ul>
+<li>Learning as an inference problem: i.i.d. samples ((X_i, Y_i) P(X, Y)).<br>
+</li>
+<li>Loss functions and the notion of <strong>risk</strong> (R(f) = [L(Y, f(X))]).<br>
+</li>
+<li><strong>Empirical Risk Minimization (ERM):</strong> minimize training loss (R_n(f)) as an estimator of true risk.<br>
+</li>
+<li><strong>Generalization:</strong> understanding why (R_n(f)) ≈ (R(f)) as (n ).<br>
+</li>
+<li><strong>Uniform convergence</strong> and <strong>capacity control</strong> (VC dimension, Rademacher complexity).<br>
+</li>
+<li><strong>Structural Risk Minimization (SRM):</strong> balance fit and complexity with a penalty term.<br>
+</li>
+<li><strong>Regularization in RKHS:</strong> connect to Phase 4’s Hilbert-space framework via<br>
+[ = _{f } [R_n(f) + |f|_{}^2]. ]</li>
+<li><strong>Bias–variance decomposition:</strong> interpret overfitting and underfitting statistically.<br>
+</li>
+<li>Contrast Breiman’s <em>two cultures</em>—data modeling vs.&nbsp;algorithmic modeling—and show how Vapnik’s learning theory formalizes the latter.</li>
+</ul>
+<p><strong>Theory Output:</strong><br>
+- Derive a simple <strong>generalization bound</strong> using Hoeffding’s inequality and the union bound.<br>
+- Compute <strong>VC dimension</strong> for linear separators.<br>
+- Prove that <strong>L2 regularization</strong> corresponds to minimizing empirical risk under a bounded-norm constraint.</p>
+<p><strong>Application Project:</strong><br>
+- Simulate empirical vs.&nbsp;generalization error on synthetic data.<br>
+- Train classifiers with varying complexity (polynomial degree or kernel width) and plot training/test errors.<br>
+- Show visually how regularization reduces overfitting and aligns with theoretical bounds.</p>
+<p><strong>References:</strong><br>
+- Vapnik – <em>The Nature of Statistical Learning Theory</em><br>
+- Bousquet, Boucheron &amp; Lugosi – <em>Introduction to Statistical Learning Theory</em><br>
+- Hastie, Tibshirani &amp; Friedman – <em>The Elements of Statistical Learning</em><br>
+- Shalev-Shwartz &amp; Ben-David – <em>Understanding Machine Learning: From Theory to Algorithms</em><br>
+- Breiman – <em>Statistical Modeling: The Two Cultures</em></p>
+<hr>
+</section>
+<section id="phase-9-causality" class="level2">
+<h2 class="anchored" data-anchor-id="phase-9-causality">Phase 9 – Causality</h2>
 <p><strong>Goal:</strong> Enter causal inference with strong mathematical foundations.<br>
 - Pearl’s Structural Causal Models &amp; do-calculus.<br>
 - Rubin’s potential outcomes framework.<br>

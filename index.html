@@ -366,23 +366,23 @@ window.Quarto = {
 <p><strong>Goal:</strong> Bridge <em>inference</em> and <em>prediction</em> by introducing the statistical foundations of machine learning.<br>
 Show how algorithms that learn from data can be rigorously analyzed using probability and measure theory—without assuming a fixed data-generating model.</p>
 <ul>
-<li>Learning as an inference problem: i.i.d. samples ((X_i, Y_i) P(X, Y)).<br>
+<li>Learning as an inference problem: from data pairs of inputs and outputs, we learn a rule that performs well on unseen data.<br>
 </li>
-<li>Loss functions and the notion of <strong>risk</strong> (R(f) = [L(Y, f(X))]).<br>
+<li>Loss and risk: evaluate models by how well predictions match reality, on average.<br>
 </li>
-<li><strong>Empirical Risk Minimization (ERM):</strong> minimize training loss (R_n(f)) as an estimator of true risk.<br>
+<li>Empirical Risk Minimization (ERM): choose the model that best fits the observed data.<br>
 </li>
-<li><strong>Generalization:</strong> understanding why (R_n(f)) ≈ (R(f)) as (n ).<br>
+<li>Generalization: ensure models trained on one sample also perform well on new data.<br>
 </li>
-<li><strong>Uniform convergence</strong> and <strong>capacity control</strong> (VC dimension, Rademacher complexity).<br>
+<li>Capacity control: limit model flexibility (via VC dimension or similar) to avoid overfitting.<br>
 </li>
-<li><strong>Structural Risk Minimization (SRM):</strong> balance fit and complexity with a penalty term.<br>
+<li>Structural Risk Minimization (SRM): balance fit and simplicity with a complexity penalty.<br>
 </li>
-<li><strong>Regularization in RKHS:</strong> connect to Phase 4’s Hilbert-space framework via<br>
-[ = _{f } [R_n(f) + |f|_{}^2]. ]</li>
-<li><strong>Bias–variance decomposition:</strong> interpret overfitting and underfitting statistically.<br>
+<li>Regularization: constrain solutions to remain smooth or stable, as in Hilbert-space norms.<br>
 </li>
-<li>Contrast Breiman’s <em>two cultures</em>—data modeling vs.&nbsp;algorithmic modeling—and show how Vapnik’s learning theory formalizes the latter.</li>
+<li>Bias–variance trade-off: find the sweet spot between underfitting and overfitting.<br>
+</li>
+<li>Bridge: Breiman’s “two cultures” meet in Vapnik’s framework, unifying inference and prediction.</li>
 </ul>
 <p><strong>Theory Output:</strong><br>
 - Derive a simple <strong>generalization bound</strong> using Hoeffding’s inequality and the union bound.<br>

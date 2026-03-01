@@ -152,7 +152,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">About Me</span></a>
+  <a href="../chapters/about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -163,11 +163,6 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01_ch01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Phase 1: Logic &amp; Set Theory</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/99_ex01.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span></a>
   </div>
 </li>
     </ul>
@@ -181,19 +176,10 @@ window.Quarto = {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#the-two-worlds-at-a-glance" id="toc-the-two-worlds-at-a-glance" class="nav-link" data-scroll-target="#the-two-worlds-at-a-glance">The Two Worlds (at a Glance)</a></li>
-  <li><a href="#world-1-the-statistics-and-econometrics-tradition" id="toc-world-1-the-statistics-and-econometrics-tradition" class="nav-link" data-scroll-target="#world-1-the-statistics-and-econometrics-tradition">World 1 — The Statistics and Econometrics Tradition</a></li>
-  <li><a href="#world-2-the-machine-learning-tradition" id="toc-world-2-the-machine-learning-tradition" class="nav-link" data-scroll-target="#world-2-the-machine-learning-tradition">World 2 — The Machine Learning Tradition</a></li>
-  <li><a href="#when-each-culture-wins-and-loses" id="toc-when-each-culture-wins-and-loses" class="nav-link" data-scroll-target="#when-each-culture-wins-and-loses">When Each Culture Wins — and Loses</a>
-  <ul class="collapse">
-  <li><a href="#example-1-estimating-the-causal-effect-of-education-on-wages" id="toc-example-1-estimating-the-causal-effect-of-education-on-wages" class="nav-link" data-scroll-target="#example-1-estimating-the-causal-effect-of-education-on-wages">Example 1 — Estimating the causal effect of education on wages</a></li>
-  <li><a href="#example-2-predicting-house-prices" id="toc-example-2-predicting-house-prices" class="nav-link" data-scroll-target="#example-2-predicting-house-prices">Example 2 — Predicting house prices</a></li>
-  </ul></li>
-  <li><a href="#why-causal-ml-is-the-synthesis" id="toc-why-causal-ml-is-the-synthesis" class="nav-link" data-scroll-target="#why-causal-ml-is-the-synthesis">Why Causal ML Is the Synthesis</a></li>
-  <li><a href="#a-real-world-case-online-advertising" id="toc-a-real-world-case-online-advertising" class="nav-link" data-scroll-target="#a-real-world-case-online-advertising">A Real-World Case — Online Advertising</a></li>
-  <li><a href="#how-causal-ml-works-intuition-first" id="toc-how-causal-ml-works-intuition-first" class="nav-link" data-scroll-target="#how-causal-ml-works-intuition-first">How Causal ML Works (Intuition First)</a></li>
-  <li><a href="#focus-of-this-project" id="toc-focus-of-this-project" class="nav-link" data-scroll-target="#focus-of-this-project">Focus of This Project</a></li>
-  <li><a href="#the-foundational-path-the-journey-ahead" id="toc-the-foundational-path-the-journey-ahead" class="nav-link" data-scroll-target="#the-foundational-path-the-journey-ahead">The Foundational Path (The Journey Ahead)</a></li>
+  <li><a href="#focus-of-this-book" id="toc-focus-of-this-book" class="nav-link" data-scroll-target="#focus-of-this-book">Focus of This Book</a></li>
+  <li><a href="#the-foundational-path" id="toc-the-foundational-path" class="nav-link" data-scroll-target="#the-foundational-path">The Foundational Path</a></li>
+  <li><a href="#the-foundational-path-1" id="toc-the-foundational-path-1" class="nav-link" data-scroll-target="#the-foundational-path-1">The Foundational Path</a></li>
+  <li><a href="#why-mathematical-rigor-matters-to-me" id="toc-why-mathematical-rigor-matters-to-me" class="nav-link" data-scroll-target="#why-mathematical-rigor-matters-to-me">Why Mathematical Rigor Matters to Me</a></li>
   </ul>
 </nav>
     </div>
@@ -221,179 +207,159 @@ window.Quarto = {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>My interest in <strong>Causal Machine Learning (Causal ML)</strong> arises from a long-standing divide in how different scientific and data communities think about data.</p>
-<p>Statistics and econometrics have traditionally aimed to <strong>explain</strong> the world, while machine learning has focused on <strong>predicting</strong> it. Causal ML is where these worlds meet — combining the interpretability and rigor of econometrics with the flexibility and scalability of machine learning.</p>
-<hr>
-</section>
-<section id="the-two-worlds-at-a-glance" class="level2">
-<h2 class="anchored" data-anchor-id="the-two-worlds-at-a-glance">The Two Worlds (at a Glance)</h2>
-<p>In his influential essay <em>Statistical Modeling: The Two Cultures (2001)</em>, <strong>Leo Breiman</strong> described two very different traditions.</p>
+<p>My interest in <strong>Causal Machine Learning (Causal ML)</strong> comes from a simple tension: many models can predict well, but prediction alone does not answer the questions I care about - <em>what happens if we intervene?</em> and <em>how sure are we?</em></p>
+<p>In <em>Statistical Modeling: The Two Cultures (2001)</em>, <strong>Leo Breiman</strong> described two traditions that often talk past each other:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Lens</th>
-<th>What you assume</th>
-<th>What you optimize</th>
-<th>Typical outputs</th>
+<th>Culture</th>
+<th>Primary goal</th>
+<th>Typical focus</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Data Modeling (Statistics/Econometrics)</strong></td>
-<td>A stochastic <strong>data-generating process (DGP)</strong></td>
-<td>Valid inference under assumptions</td>
-<td>Parameters, confidence intervals, p-values</td>
+<td><strong>Data modeling (statistics/econometrics)</strong></td>
+<td>explanation + inference</td>
+<td>assumptions, parameters, uncertainty</td>
 </tr>
 <tr class="even">
-<td><strong>Algorithmic Modeling (Machine Learning)</strong></td>
-<td>DGP is unknown; data are i.i.d.</td>
-<td><strong>Predictive accuracy</strong> &amp; <strong>generalization</strong></td>
-<td>Predictions, cross-validation scores, error curves</td>
+<td><strong>Algorithmic modeling (machine learning)</strong></td>
+<td>prediction + generalization</td>
+<td>performance on unseen data</td>
 </tr>
 </tbody>
 </table>
-<p>Both cultures ask: <em>what can we learn from data?</em> — but their answers differ profoundly.</p>
-<hr>
+<p>Causal ML is compelling to me because it aims to combine the strengths of both: <strong>flexible prediction models</strong> with <strong>principled causal questions</strong> and <strong>uncertainty quantification</strong>.</p>
 </section>
-<section id="world-1-the-statistics-and-econometrics-tradition" class="level2">
-<h2 class="anchored" data-anchor-id="world-1-the-statistics-and-econometrics-tradition">World 1 — The Statistics and Econometrics Tradition</h2>
-<p><em>(Model → Inference)</em></p>
-<p>Did you know that when you run a regression, you are implicitly making a <strong>strong claim</strong> about how the world works?</p>
-<p>In this tradition, everything begins with the <strong>data-generating process (DGP)</strong> — what <strong>Aris Spanos</strong> in <em>Probability Theory and Statistical Inference</em> calls a <em>stochastic mechanism</em>. Imagine it as a hidden machine tossing probabilistic dice, producing the data we observe.</p>
-<p>A statistical model is not just a tool; it’s a <strong>story about that hidden mechanism</strong> — a simplified mathematical narrative about how outcomes arise.</p>
-<p><strong>Examples:</strong><br>
-- A <strong>linear regression</strong> assumes wages, test scores, or prices are generated as a straight-line combination of inputs plus random noise.<br>
-- A <strong>Poisson model</strong> assumes counts follow a specific probabilistic law.<br>
-- A <strong>time-series AR(1)</strong> assumes today’s value depends on yesterday’s, plus a random shock.</p>
-<p>If the DGP is hidden, what do we do? — <strong>We try to uncover its truth.</strong></p>
-<p>That’s why introductory statistics begins with the idea of a <strong>Population</strong> and then introduces <strong>Samples</strong>. Since we can’t observe the whole population, we rely on probabilistic laws like the <strong>Law of Large Numbers (LLN)</strong> and the <strong>Central Limit Theorem (CLT)</strong> to argue that sample averages approximate population truths.</p>
-<p>From here arises <strong>Inference</strong>:<br>
-&gt; If I trust my assumptions about the DGP, I can use my sample to make <strong>representative claims</strong> about the population.</p>
-<p>This is the heart of classical statistics and econometrics:<br>
-1. <em>Model</em> the hidden process.<br>
-2. <em>Estimate</em> its parameters.<br>
-3. <em>Test</em> whether your story holds up against data.</p>
-<p>But remember: <strong>the DGP is always an assumption</strong>. If it’s wrong, inference can mislead.</p>
-<hr>
+<section id="focus-of-this-book" class="level2">
+<h2 class="anchored" data-anchor-id="focus-of-this-book">Focus of This Book</h2>
+<p>This online book is my <strong>mathematical learning journey</strong> toward understanding Causal ML from first principles. My goal is to rebuild the foundations carefully and honestly - writing only what I have actually studied - so that later I can read and use causal methods with clarity and rigor.</p>
 </section>
-<section id="world-2-the-machine-learning-tradition" class="level2">
-<h2 class="anchored" data-anchor-id="world-2-the-machine-learning-tradition">World 2 — The Machine Learning Tradition</h2>
-<p><em>(Data → Prediction)</em></p>
-<p>Now comes the other world — the <strong>algorithmic modeling culture</strong>.</p>
-<p>Here, <strong>the hidden mechanism is ignored</strong>. No one asks whether wages are “truly linear” or if prices follow a Poisson law. The question is brutally pragmatic:</p>
+<section id="the-foundational-path" class="level2">
+<h2 class="anchored" data-anchor-id="the-foundational-path">The Foundational Path</h2>
+<p>This book is my mathematical learning journey toward understanding Causal ML from first principles.<br>
+Each step builds exactly the structure required for the next - nothing ornamental, nothing skipped.</p>
+</section>
+<section id="the-foundational-path-1" class="level2">
+<h2 class="anchored" data-anchor-id="the-foundational-path-1">The Foundational Path</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Phase</th>
+<th>Topic</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><strong>Logic &amp; Set Theory</strong></td>
+<td>Proof techniques, quantifiers, mathematical language</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><strong>Linear Algebra</strong></td>
+<td>Inner products, projections, spectral ideas; geometry of estimation</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><strong>Real Analysis (ℝ)</strong></td>
+<td>Limits, continuity, differentiation, compactness</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><strong>Metric Spaces</strong></td>
+<td>Convergence, open/closed sets, completeness; minimal topology</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><strong>Measure Theory</strong></td>
+<td>σ-algebras, integration, product measures</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><strong>Probability (measure-theoretic)</strong></td>
+<td>Convergence modes, LLN/CLT, conditional expectation</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><strong>Mathematical Statistics</strong></td>
+<td>Likelihood, asymptotics, efficiency, influence functions</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><strong>Decision &amp; Risk</strong></td>
+<td>Loss, optimality, statistical decision theory</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><strong>Uncertainty Quantification</strong></td>
+<td>Parameter uncertainty, predictive distributions, bootstrap, conformal inference, robustness</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><strong>Statistical Learning Theory</strong></td>
+<td>ERM, generalization, regularization, high-dimensional behavior</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><strong>Causal Inference + Causal ML</strong></td>
+<td>Identifiability, orthogonality, double ML, valid uncertainty for treatment effects</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="why-mathematical-rigor-matters-to-me" class="level2">
+<h2 class="anchored" data-anchor-id="why-mathematical-rigor-matters-to-me">Why Mathematical Rigor Matters to Me</h2>
+<p>In a short interview often titled <em>“Why?”</em>, <strong>Richard Feynman</strong> is asked a seemingly simple question:</p>
 <blockquote class="blockquote">
-<p><em>Can I predict well?</em></p>
+<p>“Why do magnets repel each other?”</p>
 </blockquote>
-<p>The central challenge here is <strong>generalization</strong> — ensuring that a model trained on one dataset (the training set) performs well on unseen data (the test set).</p>
-<p><strong>Key trade-offs:</strong> - <strong>Underfitting:</strong> model too simple → high bias, low accuracy.<br>
-- <strong>Overfitting:</strong> model too complex → captures noise, poor generalization.</p>
-<p>Success is measured by <strong>predictive accuracy</strong>, not by unbiasedness or efficiency.<br>
-Interpretability is optional; performance is everything.</p>
-<p>But this comes with risks — strong predictions may fail when the underlying data distribution shifts.</p>
-<hr>
-</section>
-<section id="when-each-culture-wins-and-loses" class="level2">
-<h2 class="anchored" data-anchor-id="when-each-culture-wins-and-loses">When Each Culture Wins — and Loses</h2>
-<p>Let’s make this distinction concrete.</p>
-<section id="example-1-estimating-the-causal-effect-of-education-on-wages" class="level3">
-<h3 class="anchored" data-anchor-id="example-1-estimating-the-causal-effect-of-education-on-wages">Example 1 — Estimating the causal effect of education on wages</h3>
-<p>In <strong>econometrics</strong>, I’d model wages as a function of education, experience, and other covariates to isolate the <em>causal effect</em> of education.</p>
-<p>A pure <strong>ML model</strong> might predict wages well, but it wouldn’t reveal whether education <em>causes</em> higher wages — maybe it’s just correlated with family wealth or job networks.</p>
-<p><strong>ML excels at prediction</strong>, but fails at <strong>interpretation and identification</strong>.</p>
-</section>
-<section id="example-2-predicting-house-prices" class="level3">
-<h3 class="anchored" data-anchor-id="example-2-predicting-house-prices">Example 2 — Predicting house prices</h3>
-<p>An econometrician might specify a linear model with a few variables and strong assumptions — too simplistic to capture reality.</p>
-<p><strong>ML models</strong> like gradient boosting can handle thousands of variables and complex nonlinearities, achieving far higher predictive accuracy — even if they can’t “explain” why.</p>
-<p>So:<br>
-- Statistics shines when we seek <strong>mechanistic understanding</strong>.<br>
-- ML shines when we need <strong>accurate prediction</strong>.<br>
-- Each fails where the other succeeds.</p>
-<hr>
-</section>
-</section>
-<section id="why-causal-ml-is-the-synthesis" class="level2">
-<h2 class="anchored" data-anchor-id="why-causal-ml-is-the-synthesis">Why Causal ML Is the Synthesis</h2>
-<p>✨ This is why <strong>Causal Machine Learning</strong> excites me.</p>
-<p>It’s the bridge — combining ML’s flexibility with econometrics’ discipline of identification.</p>
-<p>Researchers like <strong>Victor Chernozhukov, Christian Hansen, Nathan Kallus, Martin Spindler, and Vasilis Syrgkanis</strong> show that we can merge both worlds:<br>
-- From <strong>machine learning</strong>, borrow flexible algorithms for complex patterns.<br>
-- From <strong>econometrics</strong>, borrow identification strategies to isolate causality.<br>
-- From <strong>statistics</strong>, borrow inference tools for uncertainty and robustness.</p>
-<hr>
-</section>
-<section id="a-real-world-case-online-advertising" class="level2">
-<h2 class="anchored" data-anchor-id="a-real-world-case-online-advertising">A Real-World Case — Online Advertising</h2>
+<p>If you’re curious, you can watch the clip here (optional):<br>
+https://www.youtube.com/watch?v=36GT2zI8lVA</p>
+<p>Instead of giving a comforting mechanical story, he does something deeper.</p>
+<p>He explains that every answer depends on what you are willing to accept as fundamental.</p>
+<p>If he says:</p>
 <blockquote class="blockquote">
-<p>A standard supervised ML model might predict that showing more ads <em>increases</em> purchases, because ads and purchases are positively correlated.</p>
-<p>But randomized experiments revealed a much smaller — sometimes <strong>zero</strong> — causal effect.<br>
-Why? Because users likely to purchase were <strong>already targeted</strong> with more ads.</p>
+<p>“Because of electromagnetic forces,”</p>
 </blockquote>
-<p>Prediction looked strong.<br>
-Causality revealed the truth.</p>
-<p>This illustrates why <strong>prediction ≠ causation</strong> — and why combining both is powerful.</p>
-<hr>
-</section>
-<section id="how-causal-ml-works-intuition-first" class="level2">
-<h2 class="anchored" data-anchor-id="how-causal-ml-works-intuition-first">How Causal ML Works (Intuition First)</h2>
-<p>Causal ML methods are sophisticated, but their core intuitions are simple.</p>
-<ul>
-<li><strong>Sample splitting / cross-fitting:</strong> train nuisance models on one part of the data, test causal relations on another — prevents “reusing” the same information and overfitting.<br>
-</li>
-<li><strong>Orthogonalization (Double ML):</strong> construct estimators that remain unbiased even if nuisance models are imperfect.<br>
-</li>
-<li><strong>Heterogeneous treatment effects:</strong> use trees, forests, or boosting to uncover <em>who benefits most</em>.<br>
-</li>
-<li><strong>Beyond IID:</strong> Causal inference helps reason about distribution shifts, interventions, and counterfactuals — what if tomorrow doesn’t look like today?</li>
-</ul>
-<p>Together, these ideas <strong>unify prediction and inference</strong> under one theoretical umbrella.</p>
-<hr>
-</section>
-<section id="focus-of-this-project" class="level2">
-<h2 class="anchored" data-anchor-id="focus-of-this-project">Focus of This Project</h2>
-<p>My main focus is to <strong>master the mathematical foundations that underpin Causal ML</strong> — to move beyond using tools, and toward understanding <em>why</em> they work.</p>
-<p>Mathematical depth transforms intuition into clarity. Too often, methods are applied skillfully but without true comprehension. This project aims to bridge that gap.</p>
+<p>the interviewer can still ask:</p>
 <blockquote class="blockquote">
-<p>“Mathematical maturity is not about memorizing formulas,<br>
-but about seeing how different ideas connect.”</p>
+<p>“Why electromagnetic forces?”</p>
 </blockquote>
-<hr>
-</section>
-<section id="the-foundational-path-the-journey-ahead" class="level2">
-<h2 class="anchored" data-anchor-id="the-foundational-path-the-journey-ahead">The Foundational Path (The Journey Ahead)</h2>
-<p>To understand Causal ML properly, we’ll build the entire mathematical backbone step by step:</p>
-<ol type="1">
-<li><strong>Logic &amp; Set Theory</strong> — precision and proof techniques.<br>
-</li>
-<li><strong>Real Analysis</strong> — limits, continuity, optimization.<br>
-</li>
-<li><strong>Linear Algebra</strong> — geometry of models and data.<br>
-</li>
-<li><strong>Functional Analysis &amp; Hilbert Spaces</strong> — kernels, projections, and RKHS.<br>
-</li>
-<li><strong>Topology &amp; Measure Theory</strong> — σ-algebras and integration.<br>
-</li>
-<li><strong>Probability</strong> — rigorous uncertainty, LLN/CLT, expectations.<br>
-</li>
-<li><strong>Mathematical Statistics</strong> — estimation, hypothesis testing, asymptotics.<br>
-</li>
-<li><strong>Statistical Learning Theory (Interlude)</strong> — generalization, VC dimension, ERM.<br>
-</li>
-<li><strong>Causality</strong> — SCMs, potential outcomes, identifiability, and Causal ML methods.</li>
-</ol>
-<p>Each phase builds a bridge — from logic to learning, from inference to causation.</p>
-<hr>
+<p>If he explains using quantum electrodynamics:</p>
 <blockquote class="blockquote">
-<p><strong>Causal ML</strong> is not just a toolkit.<br>
-It’s a synthesis — the meeting point of <strong>mathematical rigor</strong>, <strong>algorithmic flexibility</strong>, and <strong>causal reasoning</strong>.<br>
-Understanding its foundations is the first step toward using it wisely.</p>
+<p>“Because of exchange particles,”</p>
 </blockquote>
+<p>one can still ask:</p>
+<blockquote class="blockquote">
+<p>“Why that law?”</p>
+</blockquote>
+<p>Eventually, explanation stops being reduction and becomes:</p>
+<blockquote class="blockquote">
+<p>“This is how nature behaves. This is the framework.”</p>
+</blockquote>
+<p>Feynman’s key insight is subtle but profound:</p>
+<blockquote class="blockquote">
+<p>There is no explanation without a conceptual framework.<br>
+Every “why” presupposes some deeper structure that we are not questioning.</p>
+</blockquote>
+<p>This resonates deeply with me.</p>
+<p>In data science and machine learning, it is possible to use powerful tools without fully understanding the structures that justify them. A model may perform well, an estimator may seem stable, an interval may look convincing.</p>
+<p>But if I cannot explain <em>why</em> it works - in terms of convergence, projection, identifiability, or probability - then I am operating at a surface layer.</p>
+<p>For me, mathematical rigor is not about abstraction for its own sake.<br>
+It is about knowing which layer I am standing on.</p>
 
 
 
@@ -801,8 +767,8 @@ Understanding its foundations is the first step toward using it wisely.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/about.html" class="pagination-link" aria-label="About Me">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">About Me</span></span>
+      <a href="../chapters/about.html" class="pagination-link" aria-label="About">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">About</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

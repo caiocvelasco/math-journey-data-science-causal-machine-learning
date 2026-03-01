@@ -112,61 +112,31 @@
   {
     "objectID": "chapters/about.html",
     "href": "chapters/about.html",
-    "title": "About Me",
+    "title": "About",
     "section": "",
-    "text": "What I’m doing now\nHi, I’m Caio Velasco 👋. Mechanical Engineer from Brazil with a Master’s in Economics & Public Policy (UCLA), thanks to a full scholarship from the Lemann Foundation. In 2021, I stepped away from a PhD in Economics in the Netherlands to support my family during the pandemic and redirected my focus fully toward Data Science.\nI work at the intersection of engineering, economics, and data—spanning Business Analysis, Consulting, Analytics Engineering, and Data Science across the US, UK, Spain, and Brazil. I enjoy turning messy, fragmented systems into robust end-to-end data platforms and pairing that with mathematical depth (statistics, econometrics, and causal ML) to drive real-world impact and avoid the correlation vs. causation dilemma.",
+    "text": "Why This Book Exists\nHi, I’m Caio Velasco 👋\nI’m originally from Brazil. I studied Mechanical Engineering at the Federal University of Rio de Janeiro (UFRJ) and later completed a 2-year Master in Economics & Public Policy at the University of California Los Angeles (UCLA), supported by a full scholarship from the Lemann Foundation.\nDuring my academic path, I was drawn increasingly toward quantitative reasoning - probability, econometrics, statistical inference - and to the deeper question behind them: Why do these methods work?\nAt some point, applying models was no longer enough. I wanted to understand more. This book is the result of that shift.\nThroughout my studies, I encountered powerful tools: regression, asymptotics, optimization, machine learning, causal inference.\nBut I realized that true clarity requires something deeper:\nThis project is my attempt to rebuild the mathematical backbone behind data science and causal machine learning - slowly, rigorously, and honestly.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About Me</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About</span>"
     ]
   },
   {
-    "objectID": "chapters/about.html#what-im-doing-now",
-    "href": "chapters/about.html#what-im-doing-now",
-    "title": "About Me",
+    "objectID": "chapters/about.html#why-this-book-exists",
+    "href": "chapters/about.html#why-this-book-exists",
+    "title": "About",
     "section": "",
-    "text": "Building an open book: Foundations of Data Science & Causal ML: A Mathematical Journey (mathematical rigor + applications).\nHelping teams modernize their stacks (ingestion → modeling with dbt → warehouses like Snowflake/Redshift → governance & Looker dashboards).\nDeepening foundations in real analysis, probability, statistics, and causal inference to support future research.",
+    "text": "Understanding convergence, not just using estimators.\n\nUnderstanding probability spaces, not just distributions.\n\nUnderstanding identifiability, not just running models.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About Me</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About</span>"
     ]
   },
   {
-    "objectID": "chapters/about.html#selected-highlights",
-    "href": "chapters/about.html#selected-highlights",
-    "title": "About Me",
-    "section": "Selected highlights",
-    "text": "Selected highlights\n\nAwards & scholarships from Yale University, UCLA, GE Foundation, Lemann Foundation, and The Club of Rome.\nEarly career: helped build Stone Payments (NASDAQ: STNE) in Brazil from scratch and founded MePrepara, an online math prep platform with 140+ videos supporting low-income Brazilian students.",
+    "objectID": "chapters/about.html#what-drives-me",
+    "href": "chapters/about.html#what-drives-me",
+    "title": "About",
+    "section": "What Drives Me",
+    "text": "What Drives Me\n\nRigor. I care about knowing where assumptions live.\n\nStructure. I like seeing how ideas connect across layers.\n\nClarity. I prefer fewer tools, understood deeply.\n\nIntellectual honesty. This book reflects what I have actually studied to get here.\n\nSharing. I am motivated by learning in public and helping demystify ideas that often appear more complex than they need to be.\n\nI believe that prediction without foundations is fragile, and causal claims without structure are dangerous.\nSo this journey begins at the base: - logic, linear algebra, analysis, measure, probability and builds upward toward causal reasoning.\nIf this book does anything well, I hope it shows that mathematical depth is not about abstraction for its own sake, but about understanding the layer you are standing on.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About Me</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/about.html#focus-areas",
-    "href": "chapters/about.html#focus-areas",
-    "title": "About Me",
-    "section": "Focus areas",
-    "text": "Focus areas\n\nData & Analytics Engineering: Python · SQL · dbt · Snowflake/Redshift · AWS · Looker · best practices for modeling, tests, CI/CD.\nStat/ML & Causality: mathematical statistics, econometrics, causal inference.\nEducation: writing clear, didactic materials; mentoring; building bridges between theory and practice.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About Me</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/about.html#values-approach",
-    "href": "chapters/about.html#values-approach",
-    "title": "About Me",
-    "section": "Values & approach",
-    "text": "Values & approach\n\nRigor + practicality. Start from first principles, then ship value.\nClarity. Well-structured code and always documentating the process didacticaly.\nImpact. Data and technology as tools to expand opportunity—because education changed my life.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About Me</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/about.html#contact-links",
-    "href": "chapters/about.html#contact-links",
-    "title": "About Me",
-    "section": "Contact & links",
-    "text": "Contact & links\n\nPortfolio: https://caiocvelasco.github.io/\nGitHub: https://github.com/caiocvelasco\nLinkedIn: https://www.linkedin.com/in/caiocvelasco/",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About Me</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About</span>"
     ]
   },
   {
@@ -174,97 +144,57 @@
     "href": "chapters/00_ch00.html",
     "title": "Why I’m Interested in Causal ML?",
     "section": "",
-    "text": "Overview\nMy interest in Causal Machine Learning (Causal ML) arises from a long-standing divide in how different scientific and data communities think about data.\nStatistics and econometrics have traditionally aimed to explain the world, while machine learning has focused on predicting it. Causal ML is where these worlds meet — combining the interpretability and rigor of econometrics with the flexibility and scalability of machine learning.",
+    "text": "Overview\nMy interest in Causal Machine Learning (Causal ML) comes from a simple tension: many models can predict well, but prediction alone does not answer the questions I care about - what happens if we intervene? and how sure are we?\nIn Statistical Modeling: The Two Cultures (2001), Leo Breiman described two traditions that often talk past each other:\nCausal ML is compelling to me because it aims to combine the strengths of both: flexible prediction models with principled causal questions and uncertainty quantification.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
     ]
   },
   {
-    "objectID": "chapters/00_ch00.html#the-two-worlds-at-a-glance",
-    "href": "chapters/00_ch00.html#the-two-worlds-at-a-glance",
+    "objectID": "chapters/00_ch00.html#overview",
+    "href": "chapters/00_ch00.html#overview",
     "title": "Why I’m Interested in Causal ML?",
-    "section": "The Two Worlds (at a Glance)",
-    "text": "The Two Worlds (at a Glance)\nIn his influential essay Statistical Modeling: The Two Cultures (2001), Leo Breiman described two very different traditions.\n\n\n\n\n\n\n\n\n\nLens\nWhat you assume\nWhat you optimize\nTypical outputs\n\n\n\n\nData Modeling (Statistics/Econometrics)\nA stochastic data-generating process (DGP)\nValid inference under assumptions\nParameters, confidence intervals, p-values\n\n\nAlgorithmic Modeling (Machine Learning)\nDGP is unknown; data are i.i.d.\nPredictive accuracy & generalization\nPredictions, cross-validation scores, error curves\n\n\n\nBoth cultures ask: what can we learn from data? — but their answers differ profoundly.",
+    "section": "",
+    "text": "Culture\nPrimary goal\nTypical focus\n\n\n\n\nData modeling (statistics/econometrics)\nexplanation + inference\nassumptions, parameters, uncertainty\n\n\nAlgorithmic modeling (machine learning)\nprediction + generalization\nperformance on unseen data",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
     ]
   },
   {
-    "objectID": "chapters/00_ch00.html#world-1-the-statistics-and-econometrics-tradition",
-    "href": "chapters/00_ch00.html#world-1-the-statistics-and-econometrics-tradition",
+    "objectID": "chapters/00_ch00.html#focus-of-this-book",
+    "href": "chapters/00_ch00.html#focus-of-this-book",
     "title": "Why I’m Interested in Causal ML?",
-    "section": "World 1 — The Statistics and Econometrics Tradition",
-    "text": "World 1 — The Statistics and Econometrics Tradition\n(Model → Inference)\nDid you know that when you run a regression, you are implicitly making a strong claim about how the world works?\nIn this tradition, everything begins with the data-generating process (DGP) — what Aris Spanos in Probability Theory and Statistical Inference calls a stochastic mechanism. Imagine it as a hidden machine tossing probabilistic dice, producing the data we observe.\nA statistical model is not just a tool; it’s a story about that hidden mechanism — a simplified mathematical narrative about how outcomes arise.\nExamples:\n- A linear regression assumes wages, test scores, or prices are generated as a straight-line combination of inputs plus random noise.\n- A Poisson model assumes counts follow a specific probabilistic law.\n- A time-series AR(1) assumes today’s value depends on yesterday’s, plus a random shock.\nIf the DGP is hidden, what do we do? — We try to uncover its truth.\nThat’s why introductory statistics begins with the idea of a Population and then introduces Samples. Since we can’t observe the whole population, we rely on probabilistic laws like the Law of Large Numbers (LLN) and the Central Limit Theorem (CLT) to argue that sample averages approximate population truths.\nFrom here arises Inference:\n&gt; If I trust my assumptions about the DGP, I can use my sample to make representative claims about the population.\nThis is the heart of classical statistics and econometrics:\n1. Model the hidden process.\n2. Estimate its parameters.\n3. Test whether your story holds up against data.\nBut remember: the DGP is always an assumption. If it’s wrong, inference can mislead.",
+    "section": "Focus of This Book",
+    "text": "Focus of This Book\nThis online book is my mathematical learning journey toward understanding Causal ML from first principles. My goal is to rebuild the foundations carefully and honestly - writing only what I have actually studied - so that later I can read and use causal methods with clarity and rigor.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
     ]
   },
   {
-    "objectID": "chapters/00_ch00.html#world-2-the-machine-learning-tradition",
-    "href": "chapters/00_ch00.html#world-2-the-machine-learning-tradition",
+    "objectID": "chapters/00_ch00.html#the-foundational-path",
+    "href": "chapters/00_ch00.html#the-foundational-path",
     "title": "Why I’m Interested in Causal ML?",
-    "section": "World 2 — The Machine Learning Tradition",
-    "text": "World 2 — The Machine Learning Tradition\n(Data → Prediction)\nNow comes the other world — the algorithmic modeling culture.\nHere, the hidden mechanism is ignored. No one asks whether wages are “truly linear” or if prices follow a Poisson law. The question is brutally pragmatic:\n\nCan I predict well?\n\nThe central challenge here is generalization — ensuring that a model trained on one dataset (the training set) performs well on unseen data (the test set).\nKey trade-offs: - Underfitting: model too simple → high bias, low accuracy.\n- Overfitting: model too complex → captures noise, poor generalization.\nSuccess is measured by predictive accuracy, not by unbiasedness or efficiency.\nInterpretability is optional; performance is everything.\nBut this comes with risks — strong predictions may fail when the underlying data distribution shifts.",
+    "section": "The Foundational Path",
+    "text": "The Foundational Path\nThis book is my mathematical learning journey toward understanding Causal ML from first principles.\nEach step builds exactly the structure required for the next - nothing ornamental, nothing skipped.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
     ]
   },
   {
-    "objectID": "chapters/00_ch00.html#when-each-culture-wins-and-loses",
-    "href": "chapters/00_ch00.html#when-each-culture-wins-and-loses",
+    "objectID": "chapters/00_ch00.html#the-foundational-path-1",
+    "href": "chapters/00_ch00.html#the-foundational-path-1",
     "title": "Why I’m Interested in Causal ML?",
-    "section": "When Each Culture Wins — and Loses",
-    "text": "When Each Culture Wins — and Loses\nLet’s make this distinction concrete.\n\nExample 1 — Estimating the causal effect of education on wages\nIn econometrics, I’d model wages as a function of education, experience, and other covariates to isolate the causal effect of education.\nA pure ML model might predict wages well, but it wouldn’t reveal whether education causes higher wages — maybe it’s just correlated with family wealth or job networks.\nML excels at prediction, but fails at interpretation and identification.\n\n\nExample 2 — Predicting house prices\nAn econometrician might specify a linear model with a few variables and strong assumptions — too simplistic to capture reality.\nML models like gradient boosting can handle thousands of variables and complex nonlinearities, achieving far higher predictive accuracy — even if they can’t “explain” why.\nSo:\n- Statistics shines when we seek mechanistic understanding.\n- ML shines when we need accurate prediction.\n- Each fails where the other succeeds.",
+    "section": "The Foundational Path",
+    "text": "The Foundational Path\n\n\n\n\n\n\n\n\nPhase\nTopic\nFocus\n\n\n\n\n1\nLogic & Set Theory\nProof techniques, quantifiers, mathematical language\n\n\n2\nLinear Algebra\nInner products, projections, spectral ideas; geometry of estimation\n\n\n3\nReal Analysis (ℝ)\nLimits, continuity, differentiation, compactness\n\n\n4\nMetric Spaces\nConvergence, open/closed sets, completeness; minimal topology\n\n\n5\nMeasure Theory\nσ-algebras, integration, product measures\n\n\n6\nProbability (measure-theoretic)\nConvergence modes, LLN/CLT, conditional expectation\n\n\n7\nMathematical Statistics\nLikelihood, asymptotics, efficiency, influence functions\n\n\n8\nDecision & Risk\nLoss, optimality, statistical decision theory\n\n\n9\nUncertainty Quantification\nParameter uncertainty, predictive distributions, bootstrap, conformal inference, robustness\n\n\n10\nStatistical Learning Theory\nERM, generalization, regularization, high-dimensional behavior\n\n\n11\nCausal Inference + Causal ML\nIdentifiability, orthogonality, double ML, valid uncertainty for treatment effects",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
     ]
   },
   {
-    "objectID": "chapters/00_ch00.html#why-causal-ml-is-the-synthesis",
-    "href": "chapters/00_ch00.html#why-causal-ml-is-the-synthesis",
+    "objectID": "chapters/00_ch00.html#why-mathematical-rigor-matters-to-me",
+    "href": "chapters/00_ch00.html#why-mathematical-rigor-matters-to-me",
     "title": "Why I’m Interested in Causal ML?",
-    "section": "Why Causal ML Is the Synthesis",
-    "text": "Why Causal ML Is the Synthesis\n✨ This is why Causal Machine Learning excites me.\nIt’s the bridge — combining ML’s flexibility with econometrics’ discipline of identification.\nResearchers like Victor Chernozhukov, Christian Hansen, Nathan Kallus, Martin Spindler, and Vasilis Syrgkanis show that we can merge both worlds:\n- From machine learning, borrow flexible algorithms for complex patterns.\n- From econometrics, borrow identification strategies to isolate causality.\n- From statistics, borrow inference tools for uncertainty and robustness.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/00_ch00.html#a-real-world-case-online-advertising",
-    "href": "chapters/00_ch00.html#a-real-world-case-online-advertising",
-    "title": "Why I’m Interested in Causal ML?",
-    "section": "A Real-World Case — Online Advertising",
-    "text": "A Real-World Case — Online Advertising\n\nA standard supervised ML model might predict that showing more ads increases purchases, because ads and purchases are positively correlated.\nBut randomized experiments revealed a much smaller — sometimes zero — causal effect.\nWhy? Because users likely to purchase were already targeted with more ads.\n\nPrediction looked strong.\nCausality revealed the truth.\nThis illustrates why prediction ≠ causation — and why combining both is powerful.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/00_ch00.html#how-causal-ml-works-intuition-first",
-    "href": "chapters/00_ch00.html#how-causal-ml-works-intuition-first",
-    "title": "Why I’m Interested in Causal ML?",
-    "section": "How Causal ML Works (Intuition First)",
-    "text": "How Causal ML Works (Intuition First)\nCausal ML methods are sophisticated, but their core intuitions are simple.\n\nSample splitting / cross-fitting: train nuisance models on one part of the data, test causal relations on another — prevents “reusing” the same information and overfitting.\n\nOrthogonalization (Double ML): construct estimators that remain unbiased even if nuisance models are imperfect.\n\nHeterogeneous treatment effects: use trees, forests, or boosting to uncover who benefits most.\n\nBeyond IID: Causal inference helps reason about distribution shifts, interventions, and counterfactuals — what if tomorrow doesn’t look like today?\n\nTogether, these ideas unify prediction and inference under one theoretical umbrella.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/00_ch00.html#focus-of-this-project",
-    "href": "chapters/00_ch00.html#focus-of-this-project",
-    "title": "Why I’m Interested in Causal ML?",
-    "section": "Focus of This Project",
-    "text": "Focus of This Project\nMy main focus is to master the mathematical foundations that underpin Causal ML — to move beyond using tools, and toward understanding why they work.\nMathematical depth transforms intuition into clarity. Too often, methods are applied skillfully but without true comprehension. This project aims to bridge that gap.\n\n“Mathematical maturity is not about memorizing formulas,\nbut about seeing how different ideas connect.”",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/00_ch00.html#the-foundational-path-the-journey-ahead",
-    "href": "chapters/00_ch00.html#the-foundational-path-the-journey-ahead",
-    "title": "Why I’m Interested in Causal ML?",
-    "section": "The Foundational Path (The Journey Ahead)",
-    "text": "The Foundational Path (The Journey Ahead)\nTo understand Causal ML properly, we’ll build the entire mathematical backbone step by step:\n\nLogic & Set Theory — precision and proof techniques.\n\nReal Analysis — limits, continuity, optimization.\n\nLinear Algebra — geometry of models and data.\n\nFunctional Analysis & Hilbert Spaces — kernels, projections, and RKHS.\n\nTopology & Measure Theory — σ-algebras and integration.\n\nProbability — rigorous uncertainty, LLN/CLT, expectations.\n\nMathematical Statistics — estimation, hypothesis testing, asymptotics.\n\nStatistical Learning Theory (Interlude) — generalization, VC dimension, ERM.\n\nCausality — SCMs, potential outcomes, identifiability, and Causal ML methods.\n\nEach phase builds a bridge — from logic to learning, from inference to causation.\n\n\nCausal ML is not just a toolkit.\nIt’s a synthesis — the meeting point of mathematical rigor, algorithmic flexibility, and causal reasoning.\nUnderstanding its foundations is the first step toward using it wisely.",
+    "section": "Why Mathematical Rigor Matters to Me",
+    "text": "Why Mathematical Rigor Matters to Me\nIn a short interview often titled “Why?”, Richard Feynman is asked a seemingly simple question:\n\n“Why do magnets repel each other?”\n\nIf you’re curious, you can watch the clip here (optional):\nhttps://www.youtube.com/watch?v=36GT2zI8lVA\nInstead of giving a comforting mechanical story, he does something deeper.\nHe explains that every answer depends on what you are willing to accept as fundamental.\nIf he says:\n\n“Because of electromagnetic forces,”\n\nthe interviewer can still ask:\n\n“Why electromagnetic forces?”\n\nIf he explains using quantum electrodynamics:\n\n“Because of exchange particles,”\n\none can still ask:\n\n“Why that law?”\n\nEventually, explanation stops being reduction and becomes:\n\n“This is how nature behaves. This is the framework.”\n\nFeynman’s key insight is subtle but profound:\n\nThere is no explanation without a conceptual framework.\nEvery “why” presupposes some deeper structure that we are not questioning.\n\nThis resonates deeply with me.\nIn data science and machine learning, it is possible to use powerful tools without fully understanding the structures that justify them. A model may perform well, an estimator may seem stable, an interval may look convincing.\nBut if I cannot explain why it works - in terms of convergence, projection, identifiability, or probability - then I am operating at a surface layer.\nFor me, mathematical rigor is not about abstraction for its own sake.\nIt is about knowing which layer I am standing on.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
     ]
@@ -387,66 +317,6 @@
     "text": "References\n\nVelleman, D. J. (2006). How to Prove It: A Structured Approach.\n\nRosen, K. H. (2011). Discrete Mathematics and Its Applications.\n\nSpanos, A. (1999, 2010). Probability Theory and Statistical Inference.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/99_ex01.html",
-    "href": "chapters/99_ex01.html",
-    "title": "Phase 4: The Mathematical Truth: Linear vs Logistic Regression",
-    "section": "",
-    "text": "How to beautifully explain the mathematical truth behind Linear and Logistic regression\n(Still under construction)",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/99_ex01.html#the-theoretical-world-the-full-data-generating-process",
-    "href": "chapters/99_ex01.html#the-theoretical-world-the-full-data-generating-process",
-    "title": "Phase 4: The Mathematical Truth: Linear vs Logistic Regression",
-    "section": "1. The Theoretical World: The Full Data-Generating Process",
-    "text": "1. The Theoretical World: The Full Data-Generating Process\nIn the idealized mathematical world, we assume the existence of a Data-Generating Process (DGP) —\na mechanism that maps all causal inputs in the universe to the variable of interest \\(Y\\):\n\\[\nY = f(X_1, X_2, X_3, \\ldots)\n\\]\nEach \\(X_j\\) represents a different characteristic or influence (education, experience, intelligence, etc.),\nand together they fully determine the value of \\(Y\\).\nIf we had complete access to this \\(f(\\cdot)\\) and to all relevant \\(X_j\\)’s, the process would be deterministic:\ngiven the inputs, we could predict \\(Y\\) exactly.\nFormally, the joint distribution of all variables is\n\\[\n(Y, X_1, X_2, X_3, \\ldots) \\sim F_{Y, X_1, X_2, X_3, \\ldots}\n\\]\nand the DGP defines the conditional distribution\n\\[\nF_{Y \\mid X_1, X_2, X_3, \\ldots}(y \\mid x_1, x_2, x_3, \\ldots)\n\\]\nwhich would be perfectly degenerate (a Dirac delta) if the world were truly deterministic.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/99_ex01.html#the-linear-regression-case-deterministic-dgp-incomplete-knowledge",
-    "href": "chapters/99_ex01.html#the-linear-regression-case-deterministic-dgp-incomplete-knowledge",
-    "title": "Phase 4: The Mathematical Truth: Linear vs Logistic Regression",
-    "section": "2. The Linear Regression Case: Deterministic DGP, Incomplete Knowledge",
-    "text": "2. The Linear Regression Case: Deterministic DGP, Incomplete Knowledge\n\n2.1. From Theory to Practice\nIn the real world, we rarely observe all the variables that influence \\(Y\\).\nSuppose the true DGP is\n\\[\nY = 20 + 3X_1 + 2X_2\n\\]\nwhere \\(X_1\\) is years of education and \\(X_2\\) is years of experience.\nIf we knew both \\(X_1\\) and \\(X_2\\), the model would be deterministic:\nfor \\(X_1=10, X_2=5\\), we know \\(Y=20+3(10)+2(5)=50\\).\nBut imagine we only measure \\(X_1\\).\nWe must then approximate the conditional behavior of \\(Y\\) given \\(X_1\\):\n\\[\nY = \\beta_0 + \\beta_1 X_1 + \\varepsilon\n\\]\nThe term \\(\\varepsilon\\) now captures the influence of \\(X_2\\) (and any other unobserved factors):\n\\[\n\\varepsilon = 2X_2\n\\]\nand since \\(X_2\\) varies randomly in the population, \\(\\varepsilon\\) is random to us.\nThis motivates the probabilistic model\n\\[\nY \\mid X_1 = x_1 \\sim \\mathcal{N}(\\beta_0 + \\beta_1 x_1, \\sigma^2)\n\\]\nwhere the conditional variance \\(\\sigma^2\\) reflects epistemic randomness — randomness due to our ignorance about unobserved determinants.\nIn other words, the world might be deterministic, but our model is not.\n\n\n\n2.2. Conceptual Picture: “Slicing” the Joint Distribution\nThe true DGP defines a high-dimensional surface in the space of all variables.\nBy conditioning on only one variable (\\(X_1\\)), we take a slice through that surface:\n\\[\nF_{Y \\mid X_1}(y \\mid x_1)\n\\]\nThis slice still contains variation from the omitted axes (\\(X_2, X_3, \\ldots\\)).\nThat variation appears as the random scatter of points around the regression line.\nHence, in linear regression:\n\nRandomness arises because our model conditions on an incomplete subset of the true DGP.\n\nIf we had access to all the relevant \\(X_j\\)’s and the true functional form \\(f\\),\nthe process would become deterministic and \\(Y\\) would be known with certainty.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/99_ex01.html#the-logistic-regression-case-a-probabilistic-dgp",
-    "href": "chapters/99_ex01.html#the-logistic-regression-case-a-probabilistic-dgp",
-    "title": "Phase 4: The Mathematical Truth: Linear vs Logistic Regression",
-    "section": "3. The Logistic Regression Case: A Probabilistic DGP",
-    "text": "3. The Logistic Regression Case: A Probabilistic DGP\nNow consider a fundamentally different scenario.\nLet \\(Y\\) represent whether a person gets hired (\\(Y=1\\)) or not hired (\\(Y=0\\)).\nWe still have predictors such as education \\(X_1\\) and experience \\(X_2\\).\nEven if we could measure every possible factor, two people with identical \\((X_1, X_2)\\) might still face different outcomes.\nThe process of hiring, medical recovery, or clicking an ad is inherently random at the individual level.\nHere, the DGP itself is stochastic:\n\\[\nY \\mid X_1, X_2 \\sim \\text{Bernoulli}(p(X_1, X_2))\n\\]\nwhere\n\\[\np(X_1, X_2) = P(Y=1 \\mid X_1, X_2)\n\\]\nThis means that the theoretical DGP is not a deterministic function \\(f(\\cdot)\\) but a probability law describing how likely each outcome is.\nWe specify the probability function \\(p(\\cdot)\\) using a logistic form:\n\\[\np(x_1, x_2) = \\frac{e^{\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2}}{1 + e^{\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2}}\n\\]\n\n\n3.1. Example: The Hiring Probability\nLet\n\\[\n\\beta_0 = -8, \\quad \\beta_1 = 0.5, \\quad \\beta_2 = 0.2\n\\]\nFor a candidate with 12 years of education (\\(X_1=12\\)) and 5 years of experience (\\(X_2=5\\)):\n\\[\np = \\frac{e^{-8 + 0.5(12) + 0.2(5)}}{1 + e^{-8 + 0.5(12) + 0.2(5)}}\n   = \\frac{e^{-1}}{1 + e^{-1}} \\approx 0.27\n\\]\nThus, even knowing all the predictors and parameters,\n\\[\nP(Y=1 \\mid X_1=12, X_2=5) = 0.27\n\\]\nmeans that among 100 identical candidates (same \\(X_1, X_2\\)),\naround 27 would be hired and 73 would not — but we cannot know which ones.\nEach individual outcome is generated by an independent Bernoulli(0.27) draw.\n\n\n\n\n\n\n\n\n\n\nCandidate\nEducation \\(X_1\\)\nExperience \\(X_2\\)\n\\(p_i\\)\nRealized \\(Y_i\\)\n\n\n\n\n1\n12\n5\n0.27\n0\n\n\n2\n12\n5\n0.27\n1\n\n\n3\n12\n5\n0.27\n0\n\n\n4\n12\n5\n0.27\n0\n\n\n5\n12\n5\n0.27\n1\n\n\n\nEven with complete knowledge of the DGP, \\(Y\\) remains random.\nThis randomness is ontological — it comes from the probabilistic nature of the DGP itself,\nnot from ignorance about missing variables.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/99_ex01.html#the-fundamental-distinction",
-    "href": "chapters/99_ex01.html#the-fundamental-distinction",
-    "title": "Phase 4: The Mathematical Truth: Linear vs Logistic Regression",
-    "section": "4. The Fundamental Distinction",
-    "text": "4. The Fundamental Distinction\n\n\n\n\n\n\n\n\nFeature\nLinear Regression\nLogistic Regression\n\n\n\n\nNature of DGP\nDeterministic function of all relevant \\(X_j\\)\nIntrinsically probabilistic (Bernoulli process)\n\n\nConditional distribution\n\\(Y \\mid X \\sim \\mathcal{N}(\\mu(X), \\sigma^2)\\)\n\\(Y \\mid X \\sim \\text{Bernoulli}(p(X))\\)\n\n\nRandomness arises from\nOmitted or unobserved variables (epistemic)\nThe event-generation mechanism itself (ontological)\n\n\nWhat the model approximates\nConditional mean \\(E[Y\\mid X] = \\mu(X)\\)\nSuccess probability \\(P(Y=1\\mid X) = p(X)\\)\n\n\nIf we knew all of \\(X\\) and the true DGP\n\\(Y\\) becomes deterministic\n\\(Y\\) remains random\n\n\nLimiting case (\\(p=0\\) or \\(1\\))\nPerfect prediction possible\nBecomes deterministic, but no longer logistic\n\n\nConceptual analogy\n“The world is deterministic but we can’t see it all.”\n“The world itself flips a weighted coin.”\n\n\n\nHence:\n\n🔹 Linear regression models a deterministic world we only partially see.\n🔹 Logistic regression models a probabilistic world whose outcomes remain random even when all causes are known.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/99_ex01.html#appendix-conditioning-as-projection-on-subspaces-optional",
-    "href": "chapters/99_ex01.html#appendix-conditioning-as-projection-on-subspaces-optional",
-    "title": "Phase 4: The Mathematical Truth: Linear vs Logistic Regression",
-    "section": "5. Appendix — Conditioning as Projection on Subspaces (Optional)",
-    "text": "5. Appendix — Conditioning as Projection on Subspaces (Optional)\nIn the theoretical world, the joint distribution \\(F_{Y,X_1,X_2,\\ldots}\\) defines a high-dimensional space of relationships between all variables. Conditioning on a subset of them — for instance, only \\(X_1\\) — corresponds to taking a projection of that space onto a lower-dimensional subspace.\nIn linear algebraic terms, if we represent \\(Y\\) and the \\(X_j\\)’s as elements of a vector space of random variables with an inner product \\(\\langle A,B \\rangle = E[AB]\\), then the conditional expectation \\(E[Y \\mid X_1]\\) is precisely the orthogonal projection of \\(Y\\) onto the subspace spanned by \\(X_1\\).\nThe residual \\(\\varepsilon = Y - E[Y \\mid X_1]\\) is orthogonal to that subspace:\n\\[\nE[\\varepsilon X_1] = 0\n\\]\nThis provides a geometric interpretation of “taking a slice” of the DGP: we restrict our attention to one axis (one subspace) of the full theoretical space, and the remaining variation appears as randomness in the orthogonal complement.\n\n\nSummary Insight:\nLinear regression transforms deterministic complexity into stochastic simplicity\nby conditioning on incomplete information.\nLogistic regression models inherent probabilistic events,\nwhere randomness persists even when all causes are known.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Phase 4: The Mathematical Truth: Linear vs Logistic Regression</span>"
     ]
   }
 ]

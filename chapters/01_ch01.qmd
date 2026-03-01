@@ -25,10 +25,12 @@ But this depends on the “space” we are working in.
   On a sphere, geodesics turn out to be **arcs of great circles** (circles centered at the sphere’s center, like the equator or any meridian).  
 
 Intuitively:  
-- if you fly from *New York* to *Paris*, the shortest route is not a line of latitude on a flat map, but rather a curved arc of a great circle — airplanes follow these routes because they minimize distance. 
-- the airplane could in principle fly in a perfectly straight line — but only if it were allowed to go through the Earth’s interior. Since it’s constrained to stay on the surface of the sphere, the “straight line” within that space becomes a geodesic (the great circle).
+
+- If you fly from *New York* to *Paris*, the shortest route is not a line of latitude on a flat map, but rather a curved arc of a great circle (airplanes follow these routes because they minimize distance). 
+- The airplane could in principle fly in a perfectly straight line, but only if it were allowed to go through the Earth’s interior. Since it’s constrained to stay on the surface of the sphere, the “straight line” within that space becomes a geodesic (the great circle).
 
 Now consider two points on the equator that are exactly opposite each other (say *Rio de Janeiro* and *Jakarta*).  
+
 - There isn’t a **unique** great circle through them — in fact, infinitely many great circles (all meridians) pass through both points.  
 - So the Euclidean axiom **fails** in this curved space.  
 
@@ -51,11 +53,13 @@ In the same way, in **probability** we may assume:
 Real-world data often violates this (dependence in time series, non-identical distributions in heterogeneous populations).  
 But within the i.i.d. framework, the consequences are **logically consistent** and extremely **useful**: they give us fundamental results like the **Law of Large Numbers** and the **Central Limit Theorem**.  
 
-The analogy with geometry is this:  
+The analogy with geometry is this:    
+
 - In flat Euclidean space, the “straight line” is the natural geodesic.  
 - On a sphere, the “straight line” is reinterpreted as a great circle.  
 
 Similarly, in probability:  
+
 - For many problems, assuming i.i.d. is the **natural starting point** (the “straight line” of probability).  
 - In more complex contexts (time series, causal inference), we need to **redefine the structure** (like choosing geodesics on a sphere) with weaker or different axioms — e.g., mixing conditions, stationarity, or potential outcomes.  
 
@@ -97,10 +101,10 @@ Therefore: **Yes, it would be essential to learn Logic and Set Theory!**
 Learning statements and connectives is like learning the **alphabet of mathematics**.\
 - If you cannot distinguish valid statements, you cannot even *start* a proof.
 
-*Example in causal inference:*\
-- $p$: “Treatment is randomized.”\
-- $q$: “Ignorability holds.”\
-- Then “If treatment is randomized, then ignorability holds” is $p \to q$.
+*Example in causal inference:*  
+- $p$: “The model includes all relevant confounders.”  
+- $q$: “The conditional independence assumption holds.”  
+- Then “If the model includes all relevant confounders, then the conditional independence assumption holds” is $p \to q$.  
 
 Without connectives, we’d stay in informal language. With them, **we can formalize statements and reason rigorously about consequences**, such as proving that a set of assumptions implies consistency of an estimator, showing that ignorability implies identification of a treatment effect, or demonstrating that conditional independence leads to factorization of a probability distribution into simpler components.
 
@@ -109,17 +113,85 @@ A **Statement** (or **Proposition**) is a declarative sentence that is either *t
 -   Example: “3 is even” (false), “Barcelona is in Spain” (true).
 
 A **Predicate** is like a “template” for a statement: it depends on a variable and becomes a statement once you specify the value. For example:\
-$P(x): x > 0$\
-- $P(2)$ → “2 \> 0” (true).\
-- $P(-1)$ → “-1 \> 0” (false).
+$P(x): x > 0$ (this is a **Predicate** or a "template")\
+- $P(2)$ → “2 \> 0” (This is a **Statement**, with logic value "true").\
+- $P(-1)$ → “-1 \> 0” (This is a **Statement**, with logic value "false").
 
-**Connectives** let us combine assumptions systematically. Logical connectives let us build compound statements:
+**Connectives** are logical “operators” that allow us to combine simple statements into more complex ones.  
+They let us reason systematically instead of relying on vague language. 
 
--   Negation: $\lnot p$ (“not $p$”)\
--   Conjunction: $p \land q$ (“$p$ and $q$”)\
--   Disjunction: $p \lor q$ (“$p$ or $q$”)\
--   Conditional: $p \to q$ (“if $p$ then $q$”)\
--   Biconditional: $p \leftrightarrow q$ (“$p$ if and only if $q$”)
+*But why do we want to combine simple statements into more complex ones?*  
+
+Because in mathematics (and especially in statistics), we rarely deal with isolated facts.  
+We deal with **assumptions** and want to know what **conclusions** they imply.  
+Connectives give us the structure to move from “pieces of information” to a **logical argument**.  
+
+**Example from statistics:**  
+
+- $p$: “The sample is i.i.d.”  
+- $q$: “The variance of the sample is finite.”  
+- $r$: “The sample mean converges to the true mean (Law of Large Numbers).”  
+
+In words:  
+“**If** the sample is i.i.d. **and** the variance is finite, **then** the sample mean converges.”  
+
+Symbolically:  
+$$
+(p \land q) \to r
+$$  
+
+This is exactly how many theorems are written: *conditions* (joined with $\land$) imply a *result* ($\to$).  
+
+So connectives are not just about making compound sentences longer.  
+They are about giving us a precise **language of assumptions and consequences**.  
+
+> This is the foundation of mathematical reasoning: **once we can formalize, we can prove**.
+
+Let’s see them one by one with examples:
+
+- **Negation ($\lnot p$)**  
+  Meaning: “not $p$”  
+  - If $p$ is: “The number 5 is even” (false),  
+  - Then $\lnot p$ is: “The number 5 is not even” (true).  
+
+---
+
+- **Conjunction ($p \land q$)**  
+  Meaning: “$p$ and $q$” → true only when both are true.  
+  - $p$: “2 is even” (true)  
+  - $q$: “3 is prime” (true)  
+  - $p \land q$: “2 is even and 3 is prime” (true).  
+  - If either part were false, the whole conjunction would be false.  
+
+---
+
+- **Disjunction ($p \lor q$)**  
+  Meaning: “$p$ or $q$” → true if at least one is true.  
+  - $p$: “Barcelona is in Spain” (true)  
+  - $q$: “Lisbon is in Brazil” (false)  
+  - $p \lor q$: “Barcelona is in Spain or Lisbon is in Brazil” (true).  
+
+  *(Note: In logic, “or” usually means **inclusive or** — at least one true, possibly both.)*  
+
+---
+
+- **Conditional ($p \to q$)**  
+  Meaning: “if $p$ then $q$” → false only if $p$ is true and $q$ is false.  
+  - $p$: “It rains.”  
+  - $q$: “The ground is wet.”  
+  - $p \to q$: “If it rains, then the ground is wet.”  
+    - True if it rains and the ground is wet (promise kept).  
+    - False if it rains but the ground is not wet (promise broken).  
+    - True if it doesn’t rain (vacuously true).  
+
+---
+
+- **Biconditional ($p \leftrightarrow q$)**  
+  Meaning: “$p$ if and only if $q$” → true when $p$ and $q$ have the same truth value.  
+  - $p$: “Today is Saturday.”  
+  - $q$: “Tomorrow is Sunday.”  
+  - $p \leftrightarrow q$: “Today is Saturday if and only if tomorrow is Sunday.” → true.  
+  - If one part is true and the other false, the biconditional is false.  
 
 Thus:\
 -   **Predicate**: *general template* (open sentence, truth depends on a variable) -\> becomes true or false only when a variable is given a value.\
@@ -128,19 +200,62 @@ Thus:\
 
 ## 1.2 Truth Tables
 
-**💡Motivation** Truth tables are the **grammar checker** of logic.\
-- They allow us to test whether two statements are equivalent (so we can swap one for another in a proof, probably to make life easier).\
-- They reveal tautologies (always true) and contradictions (always false).\
-- They give a mechanical way to check validity of deductive arguments.
+**💡Motivation**\
+Now that we know connectives allow us to **combine assumptions and conclusions into structured arguments**, we need a way **to check the consistency and behavior** of these arguments.
 
-*Example in statistics:*\
-- “If the data behave nicely (i.i.d. + finite variance), then the sample mean is reliable (it will converge to the true mean)” ($p \to q$).\
-- Equivalent contrapositive: “If effect is not identifiable, then ignorability does not hold” ($\lnot q \to \lnot p$).\
-- Truth tables prove these are the same, so you can flip perspectives safely in a paper.
+Why? Because once statements get more complex, our intuition alone isn’t reliable.  
 
-A **truth table** shows how the truth value of a compound statement depends on its parts.
+For example, the conditional $p \to q$ often **confuses beginners**.  Why? Because in everyday language, *“if… then…”* feels different from how logic defines it.  
 
-**Example:** Prove that an implication ($p \to q$) is equivalent ($\equiv$) to its contrapositive ($\lnot q \to \lnot p$).
+**The Concept of "Promise"**\
+
+We **naturally** read a conditional like $p \to q$ as: *“If it rains, then the ground gets wet.”*  
+
+Think of $p \to q$ as a **promise**:  
+
+- $p$: *It rains.*  
+- $q$: *The ground gets wet.*  
+
+So $p \to q$ means: *“I promise that if it rains, then the ground will get wet.”*  
+
+We also naturally think that:  
+1. If it rains and the ground **is** wet → ✅ promise kept.  
+2. If it rains and the ground is **not** wet → ❌ promise broken.  
+
+So far, this matches intuition.  
+
+But what if it **doesn’t rain**?  
+- Logic says: the conditional is **still true**, no matter whether the ground is wet or dry.  
+- Why? Because the promise *“if it rains, then the ground gets wet”* has not been broken — the condition ($p$) never happened in the first place.  
+- This is what we call **vacuous truth**.  
+
+This feels counterintuitive, and that’s exactly why we need a systematic tool.
+
+**Why Truth Tables?**
+
+Truth tables are the **grammar checker** of logic. They resolve this confusion:  
+
+- They let us mechanically verify whether compound statements are **valid, equivalent, tautological, or contradictory**.  
+- They are a first step toward building formal proofs, because they allow us to test the “mechanics” of logical structure before tackling deeper arguments.  
+
+Think of them as a **microscope for logical statements**:  
+when connectives weave sentences together, truth tables let us zoom in and see *all possible truth scenarios at once*.  
+
+They also let us test whether two statements are logically equivalent. For example:  
+
+- “If not $p$, then not $q$.”  
+- “If $q$, then $p$.”  
+
+Are these equivalent? Intuition may fail, but a **Truth Table** makes it crystal clear!
+
+*Example in statistics:*  
+
+- *If the data behave nicely (i.i.d. + finite variance), then the sample mean is reliable (it will converge to the true mean)* ($p \to q$).  
+- Contrapositive: *If the sample mean does not converge to the true mean, then the data were not i.i.d. with finite variance* ($\lnot q \to \lnot p$).  
+
+A **truth table** shows how the truth value of a compound statement depends on its parts.  
+
+**Example:** Prove that an implication ($p \to q$) is equivalent ($\equiv$) to its contrapositive ($\lnot q \to \lnot p$).  
 
 We want to show: $p \to q \;\equiv\; \lnot q \to \lnot p$
 
@@ -153,118 +268,90 @@ We want to show: $p \to q \;\equiv\; \lnot q \to \lnot p$
 
 Since the last two columns match, the implication is equivalent to its contrapositive.
 
-**The Basic Connectives**
+**Example: Analysis of a Conditional**  
 
-Logical connectives are rules for combining simpler statements into compound ones.  
-Here are the five most common and some intuition:
-
----
-
-**Negation: $\lnot p$ (“not $p$”)**
-
-- **Rule:** Negation flips the truth value.  
-  - If $p$ is true, $\lnot p$ is false.  
-  - If $p$ is false, $\lnot p$ is true.  
-
-- **Example:**  
-  $p$: “It is raining.”  
-  $\lnot p$: “It is not raining.”  
-
----
-
-**Conjunction: $p \land q$ (“$p$ and $q$”)**
-
-- **Rule:** $p \land q$ is true only if **both** $p$ and $q$ are true.  
-
-- **Example:**  
-  $p$: “It is raining.”  
-  $q$: “I am carrying an umbrella.”  
-  $p \land q$: “It is raining **and** I am carrying an umbrella.”  
-
-- **Truth check:** If either part fails, the whole conjunction is false.  
-
----
-
-**Disjunction: $p \lor q$ (“$p$ or $q$”)**
-
-- **Rule:** $p \lor q$ is true if **at least one** of $p, q$ is true.  
-  (This is the **inclusive or** used in logic.)  
-
-- **Example:**  
-  $p$: “I will drink coffee.”  
-  $q$: “I will drink tea.”  
-  $p \lor q$: “I will drink coffee or tea (or both).”  
-
-- **Note:** In everyday language, “or” can be exclusive. Logic defaults to inclusive.  
-
----
-
-**Conditional: $p \to q$ (“if $p$ then $q$”)**
-
-- **Rule:** An implication is false **only** when $p$ is true and $q$ is false.  
-  **In all other cases, it is true.**  
-  Equivalent form:  
-  $$
-  p \to q \;\equiv\; \lnot p \lor q
-  $$  
-
-- **Example:**  
-  $p$: “It rains.”  
-  $q$: “The ground is wet.”  
-  $p \to q$: “If it rains, then the ground is wet.”  
-
-- **Case analysis:**\  
-  - If it rains **and** the ground is wet → the statement “If it rains, then the ground is wet” has been **kept**. Both the condition and the consequence hold, so the implication is **true**.  
-  - If it rains **but** the ground is not wet → the statement has been **broken**. This is the **only case** where an implication is false: the condition was met but the promised result failed.  
-  - If it doesn’t rain → the statement never gets a chance to be tested. We cannot accuse it of being false, because the condition (“it rains”) never happened. By definition, logic treats this as **vacuously true**: the promise has not been broken, since there was nothing to check.  
-  - If it doesn’t rain **and** the ground is wet → still vacuously true. The implication didn’t say what should happen when it doesn’t rain; the ground being wet for other reasons (sprinklers, a bucket of water, etc.) doesn’t violate the promise.
-
-**Intuition and goal of the conditional**
-
-The statement $p \to q$ is read "if $p$ *holds* then $q$ *holds*" or even "if $p$ is *true* then $q$ is *true*."\  
-At first glance, this seems strange because we must also handle cases when $p$ or $q$ are false.\  
-Why not just say it means “both $p$ and $q$ are true”?  
-
-The key is that an implication is really a **promise** or **rule**:  
-- “Whenever $p$ happens, $q$ must also happen.”  
-
-So we only judge the statement in the situations where the promise could actually be tested: **when $p$ is true**.  
-
-- If $p$ is true and $q$ is true  → the promise is kept   → the implication is true.  
-- If $p$ is true and $q$ is false → the promise is broken → the implication is false.  
-
-But if $p$ is false, the situation that was promised **never arises**. In those cases, the rule is not violated. By convention (and to make logical systems consistent), we treat the implication as **vacuously true** whenever $p$ is false.  
-
-This explains why the truth table looks the way it does:  
+Take $p$: *It rains*, and $q$: *The ground gets wet*.  
+The statement $p \to q$ is a **promise**: *“If it rains, then the ground gets wet.”*
 
 | $p$ | $q$ | $p \to q$ | Explanation |
 |-----|-----|-----------|-------------|
-| T   | T   | T         | promise kept |
-| T   | F   | F         | promise broken |
+| T   | T   | T         | ✅ promise kept |
+| T   | F   | F         | ❌ promise broken |
 | F   | T   | T         | vacuously true (*condition never triggered*) |
 | F   | F   | T         | vacuously true (*condition never triggered*) |
 
-**Why is this important?**
+Key intuition:  
+- An implication is only **false** when the condition happens but the promised result fails.  
+- In all other cases, the promise has not been broken, so the implication is true.
 
-Understanding the conditional matters because:  
-
-1. It allows us to **formalize logical rules** like the contrapositive:  
-   $$
-   p \to q \;\equiv\; \lnot q \to \lnot p
-   $$
-   which is *central* in proofs.  
-
-2. It prevents confusion when reading theorems:  
-   - “If a sequence converges, then it is bounded” ($p \to q$).  
-   - This is **not** claiming that all bounded sequences converge; the truth table guarantees the direction of the promise is clear.  
-
-3. It highlights **vacuous truth**, which appears everywhere in math:  
-   - “All unicorns have horns” is technically true, because there are no unicorns to provide a counterexample.  
-   - Similarly, in probability, if an event has probability zero, conditional statements given that event can be vacuously true.  
-
-By appreciating this structure, the reader sees why the conditional is defined with its somewhat surprising truth table: it captures the idea of a promise that can only be broken in one very specific case.
+This is why statements like *“All unicorns have horns”* are technically true: since there are no unicorns, the condition never triggers, and the statement cannot be falsified.  
 
 ---
+
+### Exercises
+
+> **Exercise 1. Show that $p \to q$ is equivalent to $\lnot p \lor q$.**  
+> Step 1. Write the two statements side by side: $p \to q$ and $\lnot p \lor q$.  
+> Step 2. Build a truth table with columns for $p$, $q$, $\lnot p$, $p \to q$, and $\lnot p \lor q$.  
+> Step 3. Compare the last two columns.  
+> Step 4. Conclude: if they match in all rows, the statements are logically equivalent.  
+
+**Solution**\
+
+Step 1: Write the two statements side by side: $p \to q$ and $\lnot p \lor q$.  
+What we want to check is whether these two always mean the same thing.  
+- $p \to q$: “If $p$, then $q$.”  
+- $\lnot p \lor q$: “Either not $p$, or $q$.”  
+
+At first sight they look different, but we suspect they are really saying the same thing.  
+To confirm, we will compare their truth tables row by row.  
+
+---
+
+Step 2: Build a truth table with columns for $p$, $q$, $\lnot p$, $p \to q$, and $\lnot p \lor q$.  
+*(Didactic hint: to fill this correctly, recall the “grammar” of each connective.)*  
+- **Negation** $\lnot p$: flips the truth value (T→F, F→T).  
+- **Disjunction** $A \lor B$: true if at least one of $A,B$ is true.  
+- **Conditional** $p \to q$: think “promise” — it is false only when the promise is broken (i.e., $p$ is T but $q$ is F); otherwise true (including when $p$ is F: vacuous truth).  
+
+| $p$ | $q$ | $\lnot p$ | $p \to q$ | $\lnot p \lor q$ |
+|-----|-----|-----------|-----------|------------------|
+| T   | T   | F         | T         | T                |
+| T   | F   | F         | F         | F                |
+| F   | T   | T         | T         | T                |
+| F   | F   | T         | T         | T                |
+
+How we filled it:  
+- $\lnot p$ is just the flip of $p$.  
+- $p \to q$ is only F in the row $(p,q)=(T,F)$ (promise broken).  
+- $\lnot p \lor q$ is true when either $\lnot p$ is T or $q$ is T.  
+
+---
+
+Step 3: Compare the last two columns.  
+The columns for $p \to q$ and $\lnot p \lor q$ are identical (T, F, T, T).  
+Therefore, the statements have the same truth value in every case.  
+
+---
+
+Step 4: Conclude.  
+We conclude:  
+$p \to q \equiv \lnot p \lor q$  
+
+In words: an implication *“if $p$, then $q$”* always carries the same meaning as saying *“either $p$ does not happen, or $q$ happens.”*  
+
+
+---
+
+> **Exercise 2. Analyze the statement: “If a number is divisible by 4, then it is even.”**  
+> Step 1. Define $p$: “number is divisible by 4”, and $q$: “number is even.”  
+> Step 2. Translate into logic: $p \to q$.  
+> Step 3. Think through cases:  
+> - A number divisible by 4 (say 12) → it is even → promise kept.  
+> - A number divisible by 4 but not even → impossible case → promise broken.  
+> - A number not divisible by 4 (say 9) → nothing promised, implication vacuously true.  
+> Step 4. Verify with a truth table if needed.  
+> Step 5. Conclude: the statement holds logically.  
 
 **Biconditional: $p \leftrightarrow q$ (“$p$ if and only if $q$”)**
 

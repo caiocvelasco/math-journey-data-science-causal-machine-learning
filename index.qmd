@@ -151,7 +151,40 @@ Here you can find both **mathematical foundations** and **applications**.
 
 ---
 
-## Phase 8 – Causality
+## Phase 8 – Statistical Learning Theory  
+**Goal:** Bridge *inference* and *prediction* by introducing the statistical foundations of machine learning.  
+Show how algorithms that learn from data can be rigorously analyzed using probability and measure theory—without assuming a fixed data-generating model.
+
+- Learning as an inference problem: from data pairs of inputs and outputs, we learn a rule that performs well on unseen data.  
+- Loss and risk: evaluate models by how well predictions match reality, on average.  
+- Empirical Risk Minimization (ERM): choose the model that best fits the observed data.  
+- Generalization: ensure models trained on one sample also perform well on new data.  
+- Capacity control: limit model flexibility (via VC dimension or similar) to avoid overfitting.  
+- Structural Risk Minimization (SRM): balance fit and simplicity with a complexity penalty.  
+- Regularization: constrain solutions to remain smooth or stable, as in Hilbert-space norms.  
+- Bias–variance trade-off: find the sweet spot between underfitting and overfitting.  
+- Bridge: Breiman’s “two cultures” meet in Vapnik’s framework, unifying inference and prediction.
+
+**Theory Output:**  
+- Derive a simple **generalization bound** using Hoeffding’s inequality and the union bound.  
+- Compute **VC dimension** for linear separators.  
+- Prove that **L2 regularization** corresponds to minimizing empirical risk under a bounded-norm constraint.
+
+**Application Project:**  
+- Simulate empirical vs. generalization error on synthetic data.  
+- Train classifiers with varying complexity (polynomial degree or kernel width) and plot training/test errors.  
+- Show visually how regularization reduces overfitting and aligns with theoretical bounds.
+
+**References:**  
+- Vapnik – *The Nature of Statistical Learning Theory*  
+- Bousquet, Boucheron & Lugosi – *Introduction to Statistical Learning Theory*  
+- Hastie, Tibshirani & Friedman – *The Elements of Statistical Learning*  
+- Shalev-Shwartz & Ben-David – *Understanding Machine Learning: From Theory to Algorithms*  
+- Breiman – *Statistical Modeling: The Two Cultures*  
+
+---
+
+## Phase 9 – Causality
 **Goal:** Enter causal inference with strong mathematical foundations.  
 - Pearl’s Structural Causal Models & do-calculus.  
 - Rubin’s potential outcomes framework.  

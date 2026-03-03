@@ -12,190 +12,196 @@ Here you can find both **mathematical foundations** and **applications**.
 # Journey Phases
 
 ## Why I'm Interested in Causal ML?
-**Goal:** Show the reader the contrasts between two "Data Cultures".  
-- Statistics and econometrics build models on top of *stochastic mechanisms* (data-generating processes), aiming for explanation and inference.  
-- Machine learning often ignores mechanisms and focuses on prediction accuracy, generalization, and performance.  
-- Causal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.  
-
-## Phase 1 – Logic & Set Theory
-**Goal:** Build comfort with the *language of mathematics*.  
-- Proof techniques: direct, contrapositive, contradiction, induction.  
-- Sets and families of sets, Cartesian products, power sets.  
-- Functions: injective, surjective, bijective.  
-- Relations: equivalence relations, partial orders.  
-- Cardinality: countable vs. uncountable sets.  
-
-**Theory Output:**
-- Sentential logic (Velleman Ch. 1)
-- Predicate logic & quantifiers (Ch. 2)
-- Proof techniques (direct, contrapositive, contradiction, induction) (Ch. 3)
-- Sets, relations, functions (Ch. 4–6)
-- Countability, infinity (Ch. 9 selected, Tao’s appendix)  
-
-**Application Project:** 
-- SQL/database operations as set theory (joins, unions, intersections).
-- Prove/discuss equivalences (e.g., idempotency: SELECT DISTINCT twice = once)
-
-**References:**  
-- Velleman – *How to Prove It*  
-- Enderton – *Set Theory*  
+- Statistics and econometrics build models on top of *stochastic mechanisms* (data-generating processes - DGPs), aiming for explanation and inference.  
+- Machine learning often ignores those mechanisms and focuses on prediction accuracy, generalization, and performance.  
+- Causal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.
 
 ---
 
-## Phase 2 – Real Analysis
-**Goal:** Rigorous calculus and convergence, revisiting classical calculus concepts with proofs.  
+## Phase 1 - Logic & Set Theory
+**Goal:** Build comfort with the *language of mathematics*.  
 
-- Sequences, series, limits.  
-- Continuity, compactness, connectedness.  
-- Differentiation: Mean Value Theorem, Taylor expansion.  
-- Riemann integration (rigorous foundation).  
+- Proof techniques: direct, contrapositive, contradiction, induction.  
+- Sets, Cartesian products, power sets.  
+- Functions and relations.  
+- Cardinality: countable vs. uncountable sets.
+
+**Theory Output:** Formal proofs and mathematical maturity.  
+**Application Project:** Formalize simple statistical statements using logical quantifiers and analyze which assumptions are required for conclusions to hold. (not very hands-on, I know, but having mathematical maturity **will change your life**!)
+
+**References:**  
+- Velleman - *How to Prove It*  
+
+---
+
+## Phase 2 - Linear Algebra
+**Goal:** Understand the geometry underlying estimation and projection.  
+
+- Vector spaces, bases, dimension.  
+- Linear transformations and matrices.  
+- Inner product spaces and orthogonality.  
+- Eigenvalues, spectral theorem (finite-dimensional).  
+- Singular value decomposition.
+
+**Theory Output:** Proof of spectral theorem (symmetric case), rank-nullity theorem.  
+**Application Project:** Derive and implement PCA via SVD.
+
+**References:**  
+- Axler - *Linear Algebra Done Right*  
+
+---
+
+## Phase 3 - Real Analysis (ℝ)
+**Goal:** Rigorous calculus and convergence.  
+
+- Sequences and limits.  
+- Continuity and compactness in ℝ.  
+- Differentiation and Mean Value Theorem.  
 - Uniform convergence.  
 
-**Applied Calculus Lens:**  
-- Multivariable calculus: partial derivatives, gradients, Jacobians, Hessians.  
-- Convexity and optimization.  
-- Taylor expansions for approximation.  
-- Fundamental Theorem of Calculus as link to probability expectations.  
-
-**Theory Output:** ε–δ proofs, compactness in ℝ, uniform convergence examples.  
-**Application Project:** Gradient descent convergence demo; connect convexity to logistic regression loss.  
+**Theory Output:** ε-δ proofs, compactness arguments.  
+**Application Project:** Analyze convergence of gradient descent under convexity assumptions.
 
 **References:**  
-- Rudin – *Principles of Mathematical Analysis* (Baby Rudin)  
-- Tao – *Analysis I*    
+- Rudin - *Principles of Mathematical Analysis*  
+- Tao - *Analysis I*
 
 ---
 
-## Phase 3 – Linear Algebra
-**Goal:** Move beyond computation to proofs and structure.  
-- Vector spaces, subspaces, linear independence, bases, dimension.  
-- Linear transformations and matrices.  
-- Inner product spaces, orthogonality, Gram–Schmidt.  
-- Determinants, eigenvalues, eigenvectors, diagonalization.  
-- Spectral theorem, singular value decomposition.  
-- Matrix norms and conditioning.  
+## Phase 4 - Metric Spaces
+**Goal:** Introduce minimal topology needed for probability and asymptotics.  
 
-**Theory Output:** Proofs of rank–nullity theorem, spectral theorem for symmetric matrices, SVD existence.  
-**Application Project:** PCA from first principles — prove orthogonal diagonalization, then implement PCA via SVD.  
+- Metric spaces and convergence.  
+- Open/closed sets.  
+- Completeness.  
+- Compactness in metric spaces.
+
+**Theory Output:** General convergence beyond ℝ.  
+**Application Project:** Compare different notions of convergence in simulated estimators.
 
 **References:**  
-- Axler – *Linear Algebra Done Right*  
-- Friedberg, Insel & Spence – *Linear Algebra*  
-- Trefethen & Bau – *Numerical Linear Algebra* (for computational aspects)  
+- Rudin - *Principles of Mathematical Analysis* (Ch. 2)  
+- Abbott - *Understanding Analysis*  
+- Munkres - *Topology* (selected sections on metric spaces only)
 
 ---
 
-## Phase 4 – Functional Analysis & Hilbert Spaces
-**Goal:** Develop the tools to handle infinite-dimensional vector spaces, operators, and kernels.  
-- Normed vector spaces, Banach spaces.  
-- Hilbert spaces, orthogonality, projections.  
-- Bounded linear operators.  
-- Reproducing Kernel Hilbert Spaces (RKHS).  
+## Phase 5 - Measure Theory
+**Goal:** Build the foundation of integration and probability.  
 
-**Theory Output:** Prove projection theorem in Hilbert spaces, examples of bounded/unbounded operators, RKHS construction.  
-**Application Project:** Kernelized regression and SVMs — connect functional analysis with machine learning models.  
-
-**References:**  
-- Kreyszig – *Introductory Functional Analysis with Applications*  
-- Conway – *A Course in Functional Analysis*  
-- Berlinet & Thomas-Agnan – *Reproducing Kernel Hilbert Spaces in Probability and Statistics*  
-
----
-
-## Phase 5 – Topology & Measure Theory
-**Goal:** Learn the structures that underlie probability theory.  
-- Metric spaces, open/closed sets.  
-- Compactness and product spaces.  
-- σ-algebras, measurable functions.  
+- σ-algebras and measurable functions.  
 - Lebesgue measure and integration.  
-- Convergence theorems: MCT, DCT.  
+- Convergence theorems (MCT, DCT).  
+- Product measures and Fubini.
 
-**Theory Output:** Worked examples of σ-algebras, Lebesgue integral, and convergence theorems.  
-**Application Project:** Fraud detection via Monte Carlo — rare events and measure-zero sets in anomaly detection.  
+**Theory Output:** Construction of Lebesgue integral and convergence theorems.  
+**Application Project:** Monte Carlo integration and convergence analysis.
 
 **References:**  
-- Munkres – *Topology*  
-- Schilling – *Measures, Integrals and Martingales*  
+- Schilling - *Measures, Integrals and Martingales*
 
 ---
 
-## Phase 6 – Probability
-**Goal:** Define probability rigorously à la Kolmogorov.  
-- Probability spaces and random variables as measurable functions.  
-- Distributions, independence, product measures.  
-- Conditional expectation as L² projection.  
-- Laws of large numbers, central limit theorem.  
-- Intro to martingales.  
+## Phase 6 - Probability (Measure-Theoretic)
+**Goal:** Define uncertainty rigorously.  
 
-**Theory Output:** Probability space construction, LLN/CLT proofs, conditional expectation as projection.  
-**Application Project:** A/B testing simulation — CLT and confidence intervals for conversion rates.  
+- Probability spaces and random variables.  
+- Modes of convergence.  
+- LLN and CLT.  
+- Conditional expectation as L² projection.
+
+**Theory Output:** Proof sketches of LLN/CLT; conditional expectation as projection.  
+**Application Project:** A/B testing simulation with asymptotic confidence intervals.
 
 **References:**  
-- Durrett – *Probability: Theory and Examples*  
-- Klenke – *Probability Theory*  
+- Durrett - *Probability: Theory and Examples*
 
 ---
 
-## Phase 7 – Mathematical Statistics
-**Goal:** Connect probability → inference.  
-- Point estimation: MLE, method of moments.  
-- Properties: unbiasedness, consistency, efficiency.  
-- Hypothesis testing and likelihood ratio tests.  
-- Asymptotic results: convergence in probability/distribution, delta method.  
+## Phase 7 - Mathematical Statistics
+**Goal:** Move from probability to inference.  
 
-**Theory Output:** Consistency of MLE, hypothesis testing framework, asymptotic normality proofs.  
-**Application Project:** Logistic regression for churn prediction — prove Bernoulli MLE consistency, simulate convergence, apply to real dataset.  
+- Likelihood and estimation (MLE).  
+- Consistency and asymptotic normality.  
+- Delta method.  
+- Efficiency and influence functions.
+
+**Theory Output:** Consistency of MLE; asymptotic normality.  
+**Application Project:** Logistic regression - prove Bernoulli MLE consistency and simulate convergence.
 
 **References:**  
-- Casella & Berger – *Statistical Inference*  
+- Casella & Berger - *Statistical Inference*
 
 ---
 
-## Phase 8 – Statistical Learning Theory  
-**Goal:** Bridge *inference* and *prediction* by introducing the statistical foundations of machine learning.  
-Show how algorithms that learn from data can be rigorously analyzed using probability and measure theory—without assuming a fixed data-generating model.
+## Phase 8 - Decision & Risk
+**Goal:** Formalize optimal decisions under uncertainty.  
 
-- Learning as an inference problem: from data pairs of inputs and outputs, we learn a rule that performs well on unseen data.  
-- Loss and risk: evaluate models by how well predictions match reality, on average.  
-- Empirical Risk Minimization (ERM): choose the model that best fits the observed data.  
-- Generalization: ensure models trained on one sample also perform well on new data.  
-- Capacity control: limit model flexibility (via VC dimension or similar) to avoid overfitting.  
-- Structural Risk Minimization (SRM): balance fit and simplicity with a complexity penalty.  
-- Regularization: constrain solutions to remain smooth or stable, as in Hilbert-space norms.  
-- Bias–variance trade-off: find the sweet spot between underfitting and overfitting.  
-- Bridge: Breiman’s “two cultures” meet in Vapnik’s framework, unifying inference and prediction.
+- Loss functions.  
+- Risk and Bayes risk.  
+- Minimax and admissibility.  
+- Connection between estimation and decision rules.
 
-**Theory Output:**  
-- Derive a simple **generalization bound** using Hoeffding’s inequality and the union bound.  
-- Compute **VC dimension** for linear separators.  
-- Prove that **L2 regularization** corresponds to minimizing empirical risk under a bounded-norm constraint.
-
-**Application Project:**  
-- Simulate empirical vs. generalization error on synthetic data.  
-- Train classifiers with varying complexity (polynomial degree or kernel width) and plot training/test errors.  
-- Show visually how regularization reduces overfitting and aligns with theoretical bounds.
+**Theory Output:** Basic optimality results under quadratic loss.  
+**Application Project:** Compare decision rules under different loss functions.
 
 **References:**  
-- Vapnik – *The Nature of Statistical Learning Theory*  
-- Bousquet, Boucheron & Lugosi – *Introduction to Statistical Learning Theory*  
-- Hastie, Tibshirani & Friedman – *The Elements of Statistical Learning*  
-- Shalev-Shwartz & Ben-David – *Understanding Machine Learning: From Theory to Algorithms*  
-- Breiman – *Statistical Modeling: The Two Cultures*  
+- Berger - *Statistical Decision Theory and Bayesian Analysis*  
+- Lehmann & Casella - *Theory of Point Estimation*  
+- Ferguson - *Mathematical Statistics: A Decision Theoretic Approach*
 
 ---
 
-## Phase 9 – Causality
-**Goal:** Enter causal inference with strong mathematical foundations.  
-- Pearl’s Structural Causal Models & do-calculus.  
-- Rubin’s potential outcomes framework.  
-- Invariant causal prediction (Peters, Janzing, Schölkopf).  
-- Identifiability proofs.  
-- Axiomatic frameworks (Park & Muandet).  
+## Phase 9 - Uncertainty Quantification
+**Goal:** Make uncertainty explicit and operational.  
 
-**Theory Output:** Worked proofs of identifiability, back-door/front-door criteria, do-calculus rules.  
-**Application Project:** Uplift modeling for churn retention OR reproduction of Chernozhukov’s Double Machine Learning estimator with Python.  
+- Parameter uncertainty (confidence intervals, bootstrap).  
+- Predictive distributions.  
+- Robustness under misspecification.  
+- Conformal inference (distribution-free guarantees).  
+- Uncertainty propagation.
+
+**Theory Output:** Coverage guarantees and bootstrap consistency.  
+**Application Project:** Implement bootstrap intervals and conformal prediction for regression.
 
 **References:**  
-- Pearl – *Causality*  
-- Peters, Janzing, Schölkopf – *Elements of Causal Inference*  
-- Chernozhukov et al. – *Causal Machine Learning papers*  
+- Efron & Tibshirani - *An Introduction to the Bootstrap*  
+- Wasserman - *All of Statistics* (bootstrap & nonparametrics sections)  
+- van der Vaart - *Asymptotic Statistics* (confidence sets & efficiency)  
+- Romano, Shafer & Candès - Conformal inference papers  
+- Rasmussen & Williams - *Gaussian Processes for Machine Learning* (predictive uncertainty perspective)
+
+---
+
+## Phase 10 - Statistical Learning Theory
+**Goal:** Bridge inference and prediction rigorously.  
+
+- Empirical Risk Minimization (ERM).  
+- Generalization bounds.  
+- VC dimension and capacity control.  
+- Regularization and bias-variance tradeoff.
+
+**Theory Output:** Derive simple generalization bound via Hoeffding’s inequality.  
+**Application Project:** Simulate empirical vs. generalization error under increasing model complexity.
+
+**References:**  
+- Shalev-Shwartz & Ben-David - *Understanding Machine Learning*  
+- Breiman - *Statistical Modeling: The Two Cultures*
+
+---
+
+## Phase 11 - Causal Inference + Causal ML
+**Goal:** Reason about interventions with statistical guarantees.  
+
+- Structural Causal Models and potential outcomes.  
+- Identifiability (backdoor/frontdoor).  
+- Orthogonalization and Double ML.  
+- Valid uncertainty for treatment effects.
+
+**Theory Output:** Proof sketches of backdoor criterion and Neyman orthogonality.  
+**Application Project:** Implement Double ML for heterogeneous treatment effects.
+
+**References:**  
+- Pearl - *Causality*  
+- Peters, Janzing, Schölkopf - *Elements of Causal Inference*  
+- Chernozhukov et al. - Causal ML papers

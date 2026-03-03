@@ -39,7 +39,8 @@ This project is my attempt to rebuild the mathematical backbone behind data scie
 
 I believe that prediction without foundations is fragile, and causal claims without structure are dangerous.
 
-So this journey begins at the base:
+So this journey begins at the base:  
+
 - logic, linear algebra, analysis, measure, probability and builds upward toward causal reasoning.
 
 If this book does anything well, I hope it shows that mathematical depth is not about abstraction for its own sake, but about understanding the layer you are standing on.

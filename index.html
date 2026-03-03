@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Caio Velasco">
-<meta name="dcterms.date" content="2026-03-01">
+<meta name="dcterms.date" content="2026-03-03">
 
 <title>Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
@@ -179,15 +179,17 @@ window.Quarto = {
   <li><a href="#journey-phases" id="toc-journey-phases" class="nav-link active" data-scroll-target="#journey-phases">Journey Phases</a>
   <ul class="collapse">
   <li><a href="#why-im-interested-in-causal-ml" id="toc-why-im-interested-in-causal-ml" class="nav-link" data-scroll-target="#why-im-interested-in-causal-ml">Why I’m Interested in Causal ML?</a></li>
-  <li><a href="#phase-1-logic-set-theory" id="toc-phase-1-logic-set-theory" class="nav-link" data-scroll-target="#phase-1-logic-set-theory">Phase 1 – Logic &amp; Set Theory</a></li>
-  <li><a href="#phase-2-real-analysis" id="toc-phase-2-real-analysis" class="nav-link" data-scroll-target="#phase-2-real-analysis">Phase 2 – Real Analysis</a></li>
-  <li><a href="#phase-3-linear-algebra" id="toc-phase-3-linear-algebra" class="nav-link" data-scroll-target="#phase-3-linear-algebra">Phase 3 – Linear Algebra</a></li>
-  <li><a href="#phase-4-functional-analysis-hilbert-spaces" id="toc-phase-4-functional-analysis-hilbert-spaces" class="nav-link" data-scroll-target="#phase-4-functional-analysis-hilbert-spaces">Phase 4 – Functional Analysis &amp; Hilbert Spaces</a></li>
-  <li><a href="#phase-5-topology-measure-theory" id="toc-phase-5-topology-measure-theory" class="nav-link" data-scroll-target="#phase-5-topology-measure-theory">Phase 5 – Topology &amp; Measure Theory</a></li>
-  <li><a href="#phase-6-probability" id="toc-phase-6-probability" class="nav-link" data-scroll-target="#phase-6-probability">Phase 6 – Probability</a></li>
-  <li><a href="#phase-7-mathematical-statistics" id="toc-phase-7-mathematical-statistics" class="nav-link" data-scroll-target="#phase-7-mathematical-statistics">Phase 7 – Mathematical Statistics</a></li>
-  <li><a href="#phase-8-statistical-learning-theory" id="toc-phase-8-statistical-learning-theory" class="nav-link" data-scroll-target="#phase-8-statistical-learning-theory">Phase 8 – Statistical Learning Theory</a></li>
-  <li><a href="#phase-9-causality" id="toc-phase-9-causality" class="nav-link" data-scroll-target="#phase-9-causality">Phase 9 – Causality</a></li>
+  <li><a href="#phase-1---logic-set-theory" id="toc-phase-1---logic-set-theory" class="nav-link" data-scroll-target="#phase-1---logic-set-theory">Phase 1 - Logic &amp; Set Theory</a></li>
+  <li><a href="#phase-2---linear-algebra" id="toc-phase-2---linear-algebra" class="nav-link" data-scroll-target="#phase-2---linear-algebra">Phase 2 - Linear Algebra</a></li>
+  <li><a href="#phase-3---real-analysis-ℝ" id="toc-phase-3---real-analysis-ℝ" class="nav-link" data-scroll-target="#phase-3---real-analysis-ℝ">Phase 3 - Real Analysis (ℝ)</a></li>
+  <li><a href="#phase-4---metric-spaces" id="toc-phase-4---metric-spaces" class="nav-link" data-scroll-target="#phase-4---metric-spaces">Phase 4 - Metric Spaces</a></li>
+  <li><a href="#phase-5---measure-theory" id="toc-phase-5---measure-theory" class="nav-link" data-scroll-target="#phase-5---measure-theory">Phase 5 - Measure Theory</a></li>
+  <li><a href="#phase-6---probability-measure-theoretic" id="toc-phase-6---probability-measure-theoretic" class="nav-link" data-scroll-target="#phase-6---probability-measure-theoretic">Phase 6 - Probability (Measure-Theoretic)</a></li>
+  <li><a href="#phase-7---mathematical-statistics" id="toc-phase-7---mathematical-statistics" class="nav-link" data-scroll-target="#phase-7---mathematical-statistics">Phase 7 - Mathematical Statistics</a></li>
+  <li><a href="#phase-8---decision-risk" id="toc-phase-8---decision-risk" class="nav-link" data-scroll-target="#phase-8---decision-risk">Phase 8 - Decision &amp; Risk</a></li>
+  <li><a href="#phase-9---uncertainty-quantification" id="toc-phase-9---uncertainty-quantification" class="nav-link" data-scroll-target="#phase-9---uncertainty-quantification">Phase 9 - Uncertainty Quantification</a></li>
+  <li><a href="#phase-10---statistical-learning-theory" id="toc-phase-10---statistical-learning-theory" class="nav-link" data-scroll-target="#phase-10---statistical-learning-theory">Phase 10 - Statistical Learning Theory</a></li>
+  <li><a href="#phase-11---causal-inference-causal-ml" id="toc-phase-11---causal-inference-causal-ml" class="nav-link" data-scroll-target="#phase-11---causal-inference-causal-ml">Phase 11 - Causal Inference + Causal ML</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -214,7 +216,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 1, 2026</p>
+      <p class="date">March 3, 2026</p>
     </div>
   </div>
   
@@ -235,180 +237,227 @@ window.Quarto = {
 <h1>Journey Phases</h1>
 <section id="why-im-interested-in-causal-ml" class="level2">
 <h2 class="anchored" data-anchor-id="why-im-interested-in-causal-ml">Why I’m Interested in Causal ML?</h2>
-<p><strong>Goal:</strong> Show the reader the contrasts between two “Data Cultures”.<br>
-- Statistics and econometrics build models on top of <em>stochastic mechanisms</em> (data-generating processes), aiming for explanation and inference.<br>
-- Machine learning often ignores mechanisms and focuses on prediction accuracy, generalization, and performance.<br>
-- Causal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.</p>
-</section>
-<section id="phase-1-logic-set-theory" class="level2">
-<h2 class="anchored" data-anchor-id="phase-1-logic-set-theory">Phase 1 – Logic &amp; Set Theory</h2>
-<p><strong>Goal:</strong> Build comfort with the <em>language of mathematics</em>.<br>
-- Proof techniques: direct, contrapositive, contradiction, induction.<br>
-- Sets and families of sets, Cartesian products, power sets.<br>
-- Functions: injective, surjective, bijective.<br>
-- Relations: equivalence relations, partial orders.<br>
-- Cardinality: countable vs.&nbsp;uncountable sets.</p>
-<p><strong>Theory Output:</strong> - Sentential logic (Velleman Ch. 1) - Predicate logic &amp; quantifiers (Ch. 2) - Proof techniques (direct, contrapositive, contradiction, induction) (Ch. 3) - Sets, relations, functions (Ch. 4–6) - Countability, infinity (Ch. 9 selected, Tao’s appendix)</p>
-<p><strong>Application Project:</strong> - SQL/database operations as set theory (joins, unions, intersections). - Prove/discuss equivalences (e.g., idempotency: SELECT DISTINCT twice = once)</p>
-<p><strong>References:</strong><br>
-- Velleman – <em>How to Prove It</em><br>
-- Enderton – <em>Set Theory</em></p>
+<ul>
+<li>Statistics and econometrics build models on top of <em>stochastic mechanisms</em> (data-generating processes - DGPs), aiming for explanation and inference.<br>
+</li>
+<li>Machine learning often ignores those mechanisms and focuses on prediction accuracy, generalization, and performance.<br>
+</li>
+<li>Causal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.</li>
+</ul>
 <hr>
 </section>
-<section id="phase-2-real-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="phase-2-real-analysis">Phase 2 – Real Analysis</h2>
-<p><strong>Goal:</strong> Rigorous calculus and convergence, revisiting classical calculus concepts with proofs.</p>
+<section id="phase-1---logic-set-theory" class="level2">
+<h2 class="anchored" data-anchor-id="phase-1---logic-set-theory">Phase 1 - Logic &amp; Set Theory</h2>
+<p><strong>Goal:</strong> Build comfort with the <em>language of mathematics</em>.</p>
 <ul>
-<li>Sequences, series, limits.<br>
+<li>Proof techniques: direct, contrapositive, contradiction, induction.<br>
 </li>
-<li>Continuity, compactness, connectedness.<br>
+<li>Sets, Cartesian products, power sets.<br>
 </li>
-<li>Differentiation: Mean Value Theorem, Taylor expansion.<br>
+<li>Functions and relations.<br>
 </li>
-<li>Riemann integration (rigorous foundation).<br>
+<li>Cardinality: countable vs.&nbsp;uncountable sets.</li>
+</ul>
+<p><strong>Theory Output:</strong> Formal proofs and mathematical maturity.<br>
+<strong>Application Project:</strong> Formalize simple statistical statements using logical quantifiers and analyze which assumptions are required for conclusions to hold. (not very hands-on, I know, but having mathematical maturity <strong>will change your life</strong>!)</p>
+<p><strong>References:</strong><br>
+- Velleman - <em>How to Prove It</em></p>
+<hr>
+</section>
+<section id="phase-2---linear-algebra" class="level2">
+<h2 class="anchored" data-anchor-id="phase-2---linear-algebra">Phase 2 - Linear Algebra</h2>
+<p><strong>Goal:</strong> Understand the geometry underlying estimation and projection.</p>
+<ul>
+<li>Vector spaces, bases, dimension.<br>
+</li>
+<li>Linear transformations and matrices.<br>
+</li>
+<li>Inner product spaces and orthogonality.<br>
+</li>
+<li>Eigenvalues, spectral theorem (finite-dimensional).<br>
+</li>
+<li>Singular value decomposition.</li>
+</ul>
+<p><strong>Theory Output:</strong> Proof of spectral theorem (symmetric case), rank-nullity theorem.<br>
+<strong>Application Project:</strong> Derive and implement PCA via SVD.</p>
+<p><strong>References:</strong><br>
+- Axler - <em>Linear Algebra Done Right</em></p>
+<hr>
+</section>
+<section id="phase-3---real-analysis-ℝ" class="level2">
+<h2 class="anchored" data-anchor-id="phase-3---real-analysis-ℝ">Phase 3 - Real Analysis (ℝ)</h2>
+<p><strong>Goal:</strong> Rigorous calculus and convergence.</p>
+<ul>
+<li>Sequences and limits.<br>
+</li>
+<li>Continuity and compactness in ℝ.<br>
+</li>
+<li>Differentiation and Mean Value Theorem.<br>
 </li>
 <li>Uniform convergence.</li>
 </ul>
-<p><strong>Applied Calculus Lens:</strong><br>
-- Multivariable calculus: partial derivatives, gradients, Jacobians, Hessians.<br>
-- Convexity and optimization.<br>
-- Taylor expansions for approximation.<br>
-- Fundamental Theorem of Calculus as link to probability expectations.</p>
-<p><strong>Theory Output:</strong> ε–δ proofs, compactness in ℝ, uniform convergence examples.<br>
-<strong>Application Project:</strong> Gradient descent convergence demo; connect convexity to logistic regression loss.</p>
+<p><strong>Theory Output:</strong> ε-δ proofs, compactness arguments.<br>
+<strong>Application Project:</strong> Analyze convergence of gradient descent under convexity assumptions.</p>
 <p><strong>References:</strong><br>
-- Rudin – <em>Principles of Mathematical Analysis</em> (Baby Rudin)<br>
-- Tao – <em>Analysis I</em></p>
+- Rudin - <em>Principles of Mathematical Analysis</em><br>
+- Tao - <em>Analysis I</em></p>
 <hr>
 </section>
-<section id="phase-3-linear-algebra" class="level2">
-<h2 class="anchored" data-anchor-id="phase-3-linear-algebra">Phase 3 – Linear Algebra</h2>
-<p><strong>Goal:</strong> Move beyond computation to proofs and structure.<br>
-- Vector spaces, subspaces, linear independence, bases, dimension.<br>
-- Linear transformations and matrices.<br>
-- Inner product spaces, orthogonality, Gram–Schmidt.<br>
-- Determinants, eigenvalues, eigenvectors, diagonalization.<br>
-- Spectral theorem, singular value decomposition.<br>
-- Matrix norms and conditioning.</p>
-<p><strong>Theory Output:</strong> Proofs of rank–nullity theorem, spectral theorem for symmetric matrices, SVD existence.<br>
-<strong>Application Project:</strong> PCA from first principles — prove orthogonal diagonalization, then implement PCA via SVD.</p>
-<p><strong>References:</strong><br>
-- Axler – <em>Linear Algebra Done Right</em><br>
-- Friedberg, Insel &amp; Spence – <em>Linear Algebra</em><br>
-- Trefethen &amp; Bau – <em>Numerical Linear Algebra</em> (for computational aspects)</p>
-<hr>
-</section>
-<section id="phase-4-functional-analysis-hilbert-spaces" class="level2">
-<h2 class="anchored" data-anchor-id="phase-4-functional-analysis-hilbert-spaces">Phase 4 – Functional Analysis &amp; Hilbert Spaces</h2>
-<p><strong>Goal:</strong> Develop the tools to handle infinite-dimensional vector spaces, operators, and kernels.<br>
-- Normed vector spaces, Banach spaces.<br>
-- Hilbert spaces, orthogonality, projections.<br>
-- Bounded linear operators.<br>
-- Reproducing Kernel Hilbert Spaces (RKHS).</p>
-<p><strong>Theory Output:</strong> Prove projection theorem in Hilbert spaces, examples of bounded/unbounded operators, RKHS construction.<br>
-<strong>Application Project:</strong> Kernelized regression and SVMs — connect functional analysis with machine learning models.</p>
-<p><strong>References:</strong><br>
-- Kreyszig – <em>Introductory Functional Analysis with Applications</em><br>
-- Conway – <em>A Course in Functional Analysis</em><br>
-- Berlinet &amp; Thomas-Agnan – <em>Reproducing Kernel Hilbert Spaces in Probability and Statistics</em></p>
-<hr>
-</section>
-<section id="phase-5-topology-measure-theory" class="level2">
-<h2 class="anchored" data-anchor-id="phase-5-topology-measure-theory">Phase 5 – Topology &amp; Measure Theory</h2>
-<p><strong>Goal:</strong> Learn the structures that underlie probability theory.<br>
-- Metric spaces, open/closed sets.<br>
-- Compactness and product spaces.<br>
-- σ-algebras, measurable functions.<br>
-- Lebesgue measure and integration.<br>
-- Convergence theorems: MCT, DCT.</p>
-<p><strong>Theory Output:</strong> Worked examples of σ-algebras, Lebesgue integral, and convergence theorems.<br>
-<strong>Application Project:</strong> Fraud detection via Monte Carlo — rare events and measure-zero sets in anomaly detection.</p>
-<p><strong>References:</strong><br>
-- Munkres – <em>Topology</em><br>
-- Schilling – <em>Measures, Integrals and Martingales</em></p>
-<hr>
-</section>
-<section id="phase-6-probability" class="level2">
-<h2 class="anchored" data-anchor-id="phase-6-probability">Phase 6 – Probability</h2>
-<p><strong>Goal:</strong> Define probability rigorously à la Kolmogorov.<br>
-- Probability spaces and random variables as measurable functions.<br>
-- Distributions, independence, product measures.<br>
-- Conditional expectation as L² projection.<br>
-- Laws of large numbers, central limit theorem.<br>
-- Intro to martingales.</p>
-<p><strong>Theory Output:</strong> Probability space construction, LLN/CLT proofs, conditional expectation as projection.<br>
-<strong>Application Project:</strong> A/B testing simulation — CLT and confidence intervals for conversion rates.</p>
-<p><strong>References:</strong><br>
-- Durrett – <em>Probability: Theory and Examples</em><br>
-- Klenke – <em>Probability Theory</em></p>
-<hr>
-</section>
-<section id="phase-7-mathematical-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="phase-7-mathematical-statistics">Phase 7 – Mathematical Statistics</h2>
-<p><strong>Goal:</strong> Connect probability → inference.<br>
-- Point estimation: MLE, method of moments.<br>
-- Properties: unbiasedness, consistency, efficiency.<br>
-- Hypothesis testing and likelihood ratio tests.<br>
-- Asymptotic results: convergence in probability/distribution, delta method.</p>
-<p><strong>Theory Output:</strong> Consistency of MLE, hypothesis testing framework, asymptotic normality proofs.<br>
-<strong>Application Project:</strong> Logistic regression for churn prediction — prove Bernoulli MLE consistency, simulate convergence, apply to real dataset.</p>
-<p><strong>References:</strong><br>
-- Casella &amp; Berger – <em>Statistical Inference</em></p>
-<hr>
-</section>
-<section id="phase-8-statistical-learning-theory" class="level2">
-<h2 class="anchored" data-anchor-id="phase-8-statistical-learning-theory">Phase 8 – Statistical Learning Theory</h2>
-<p><strong>Goal:</strong> Bridge <em>inference</em> and <em>prediction</em> by introducing the statistical foundations of machine learning.<br>
-Show how algorithms that learn from data can be rigorously analyzed using probability and measure theory—without assuming a fixed data-generating model.</p>
+<section id="phase-4---metric-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="phase-4---metric-spaces">Phase 4 - Metric Spaces</h2>
+<p><strong>Goal:</strong> Introduce minimal topology needed for probability and asymptotics.</p>
 <ul>
-<li>Learning as an inference problem: from data pairs of inputs and outputs, we learn a rule that performs well on unseen data.<br>
+<li>Metric spaces and convergence.<br>
 </li>
-<li>Loss and risk: evaluate models by how well predictions match reality, on average.<br>
+<li>Open/closed sets.<br>
 </li>
-<li>Empirical Risk Minimization (ERM): choose the model that best fits the observed data.<br>
+<li>Completeness.<br>
 </li>
-<li>Generalization: ensure models trained on one sample also perform well on new data.<br>
-</li>
-<li>Capacity control: limit model flexibility (via VC dimension or similar) to avoid overfitting.<br>
-</li>
-<li>Structural Risk Minimization (SRM): balance fit and simplicity with a complexity penalty.<br>
-</li>
-<li>Regularization: constrain solutions to remain smooth or stable, as in Hilbert-space norms.<br>
-</li>
-<li>Bias–variance trade-off: find the sweet spot between underfitting and overfitting.<br>
-</li>
-<li>Bridge: Breiman’s “two cultures” meet in Vapnik’s framework, unifying inference and prediction.</li>
+<li>Compactness in metric spaces.</li>
 </ul>
-<p><strong>Theory Output:</strong><br>
-- Derive a simple <strong>generalization bound</strong> using Hoeffding’s inequality and the union bound.<br>
-- Compute <strong>VC dimension</strong> for linear separators.<br>
-- Prove that <strong>L2 regularization</strong> corresponds to minimizing empirical risk under a bounded-norm constraint.</p>
-<p><strong>Application Project:</strong><br>
-- Simulate empirical vs.&nbsp;generalization error on synthetic data.<br>
-- Train classifiers with varying complexity (polynomial degree or kernel width) and plot training/test errors.<br>
-- Show visually how regularization reduces overfitting and aligns with theoretical bounds.</p>
+<p><strong>Theory Output:</strong> General convergence beyond ℝ.<br>
+<strong>Application Project:</strong> Compare different notions of convergence in simulated estimators.</p>
 <p><strong>References:</strong><br>
-- Vapnik – <em>The Nature of Statistical Learning Theory</em><br>
-- Bousquet, Boucheron &amp; Lugosi – <em>Introduction to Statistical Learning Theory</em><br>
-- Hastie, Tibshirani &amp; Friedman – <em>The Elements of Statistical Learning</em><br>
-- Shalev-Shwartz &amp; Ben-David – <em>Understanding Machine Learning: From Theory to Algorithms</em><br>
-- Breiman – <em>Statistical Modeling: The Two Cultures</em></p>
+- Rudin - <em>Principles of Mathematical Analysis</em> (Ch. 2)<br>
+- Abbott - <em>Understanding Analysis</em><br>
+- Munkres - <em>Topology</em> (selected sections on metric spaces only)</p>
 <hr>
 </section>
-<section id="phase-9-causality" class="level2">
-<h2 class="anchored" data-anchor-id="phase-9-causality">Phase 9 – Causality</h2>
-<p><strong>Goal:</strong> Enter causal inference with strong mathematical foundations.<br>
-- Pearl’s Structural Causal Models &amp; do-calculus.<br>
-- Rubin’s potential outcomes framework.<br>
-- Invariant causal prediction (Peters, Janzing, Schölkopf).<br>
-- Identifiability proofs.<br>
-- Axiomatic frameworks (Park &amp; Muandet).</p>
-<p><strong>Theory Output:</strong> Worked proofs of identifiability, back-door/front-door criteria, do-calculus rules.<br>
-<strong>Application Project:</strong> Uplift modeling for churn retention OR reproduction of Chernozhukov’s Double Machine Learning estimator with Python.</p>
+<section id="phase-5---measure-theory" class="level2">
+<h2 class="anchored" data-anchor-id="phase-5---measure-theory">Phase 5 - Measure Theory</h2>
+<p><strong>Goal:</strong> Build the foundation of integration and probability.</p>
+<ul>
+<li>σ-algebras and measurable functions.<br>
+</li>
+<li>Lebesgue measure and integration.<br>
+</li>
+<li>Convergence theorems (MCT, DCT).<br>
+</li>
+<li>Product measures and Fubini.</li>
+</ul>
+<p><strong>Theory Output:</strong> Construction of Lebesgue integral and convergence theorems.<br>
+<strong>Application Project:</strong> Monte Carlo integration and convergence analysis.</p>
 <p><strong>References:</strong><br>
-- Pearl – <em>Causality</em><br>
-- Peters, Janzing, Schölkopf – <em>Elements of Causal Inference</em><br>
-- Chernozhukov et al.&nbsp;– <em>Causal Machine Learning papers</em></p>
+- Schilling - <em>Measures, Integrals and Martingales</em></p>
+<hr>
+</section>
+<section id="phase-6---probability-measure-theoretic" class="level2">
+<h2 class="anchored" data-anchor-id="phase-6---probability-measure-theoretic">Phase 6 - Probability (Measure-Theoretic)</h2>
+<p><strong>Goal:</strong> Define uncertainty rigorously.</p>
+<ul>
+<li>Probability spaces and random variables.<br>
+</li>
+<li>Modes of convergence.<br>
+</li>
+<li>LLN and CLT.<br>
+</li>
+<li>Conditional expectation as L² projection.</li>
+</ul>
+<p><strong>Theory Output:</strong> Proof sketches of LLN/CLT; conditional expectation as projection.<br>
+<strong>Application Project:</strong> A/B testing simulation with asymptotic confidence intervals.</p>
+<p><strong>References:</strong><br>
+- Durrett - <em>Probability: Theory and Examples</em></p>
+<hr>
+</section>
+<section id="phase-7---mathematical-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="phase-7---mathematical-statistics">Phase 7 - Mathematical Statistics</h2>
+<p><strong>Goal:</strong> Move from probability to inference.</p>
+<ul>
+<li>Likelihood and estimation (MLE).<br>
+</li>
+<li>Consistency and asymptotic normality.<br>
+</li>
+<li>Delta method.<br>
+</li>
+<li>Efficiency and influence functions.</li>
+</ul>
+<p><strong>Theory Output:</strong> Consistency of MLE; asymptotic normality.<br>
+<strong>Application Project:</strong> Logistic regression - prove Bernoulli MLE consistency and simulate convergence.</p>
+<p><strong>References:</strong><br>
+- Casella &amp; Berger - <em>Statistical Inference</em></p>
+<hr>
+</section>
+<section id="phase-8---decision-risk" class="level2">
+<h2 class="anchored" data-anchor-id="phase-8---decision-risk">Phase 8 - Decision &amp; Risk</h2>
+<p><strong>Goal:</strong> Formalize optimal decisions under uncertainty.</p>
+<ul>
+<li>Loss functions.<br>
+</li>
+<li>Risk and Bayes risk.<br>
+</li>
+<li>Minimax and admissibility.<br>
+</li>
+<li>Connection between estimation and decision rules.</li>
+</ul>
+<p><strong>Theory Output:</strong> Basic optimality results under quadratic loss.<br>
+<strong>Application Project:</strong> Compare decision rules under different loss functions.</p>
+<p><strong>References:</strong><br>
+- Berger - <em>Statistical Decision Theory and Bayesian Analysis</em><br>
+- Lehmann &amp; Casella - <em>Theory of Point Estimation</em><br>
+- Ferguson - <em>Mathematical Statistics: A Decision Theoretic Approach</em></p>
+<hr>
+</section>
+<section id="phase-9---uncertainty-quantification" class="level2">
+<h2 class="anchored" data-anchor-id="phase-9---uncertainty-quantification">Phase 9 - Uncertainty Quantification</h2>
+<p><strong>Goal:</strong> Make uncertainty explicit and operational.</p>
+<ul>
+<li>Parameter uncertainty (confidence intervals, bootstrap).<br>
+</li>
+<li>Predictive distributions.<br>
+</li>
+<li>Robustness under misspecification.<br>
+</li>
+<li>Conformal inference (distribution-free guarantees).<br>
+</li>
+<li>Uncertainty propagation.</li>
+</ul>
+<p><strong>Theory Output:</strong> Coverage guarantees and bootstrap consistency.<br>
+<strong>Application Project:</strong> Implement bootstrap intervals and conformal prediction for regression.</p>
+<p><strong>References:</strong><br>
+- Efron &amp; Tibshirani - <em>An Introduction to the Bootstrap</em><br>
+- Wasserman - <em>All of Statistics</em> (bootstrap &amp; nonparametrics sections)<br>
+- van der Vaart - <em>Asymptotic Statistics</em> (confidence sets &amp; efficiency)<br>
+- Romano, Shafer &amp; Candès - Conformal inference papers<br>
+- Rasmussen &amp; Williams - <em>Gaussian Processes for Machine Learning</em> (predictive uncertainty perspective)</p>
+<hr>
+</section>
+<section id="phase-10---statistical-learning-theory" class="level2">
+<h2 class="anchored" data-anchor-id="phase-10---statistical-learning-theory">Phase 10 - Statistical Learning Theory</h2>
+<p><strong>Goal:</strong> Bridge inference and prediction rigorously.</p>
+<ul>
+<li>Empirical Risk Minimization (ERM).<br>
+</li>
+<li>Generalization bounds.<br>
+</li>
+<li>VC dimension and capacity control.<br>
+</li>
+<li>Regularization and bias-variance tradeoff.</li>
+</ul>
+<p><strong>Theory Output:</strong> Derive simple generalization bound via Hoeffding’s inequality.<br>
+<strong>Application Project:</strong> Simulate empirical vs.&nbsp;generalization error under increasing model complexity.</p>
+<p><strong>References:</strong><br>
+- Shalev-Shwartz &amp; Ben-David - <em>Understanding Machine Learning</em><br>
+- Breiman - <em>Statistical Modeling: The Two Cultures</em></p>
+<hr>
+</section>
+<section id="phase-11---causal-inference-causal-ml" class="level2">
+<h2 class="anchored" data-anchor-id="phase-11---causal-inference-causal-ml">Phase 11 - Causal Inference + Causal ML</h2>
+<p><strong>Goal:</strong> Reason about interventions with statistical guarantees.</p>
+<ul>
+<li>Structural Causal Models and potential outcomes.<br>
+</li>
+<li>Identifiability (backdoor/frontdoor).<br>
+</li>
+<li>Orthogonalization and Double ML.<br>
+</li>
+<li>Valid uncertainty for treatment effects.</li>
+</ul>
+<p><strong>Theory Output:</strong> Proof sketches of backdoor criterion and Neyman orthogonality.<br>
+<strong>Application Project:</strong> Implement Double ML for heterogeneous treatment effects.</p>
+<p><strong>References:</strong><br>
+- Pearl - <em>Causality</em><br>
+- Peters, Janzing, Schölkopf - <em>Elements of Causal Inference</em><br>
+- Chernozhukov et al.&nbsp;- Causal ML papers</p>
 
 
 

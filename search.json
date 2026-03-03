@@ -14,97 +14,117 @@
     "href": "index.html#why-im-interested-in-causal-ml",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
     "section": "Why I’m Interested in Causal ML?",
-    "text": "Why I’m Interested in Causal ML?\nGoal: Show the reader the contrasts between two “Data Cultures”.\n- Statistics and econometrics build models on top of stochastic mechanisms (data-generating processes), aiming for explanation and inference.\n- Machine learning often ignores mechanisms and focuses on prediction accuracy, generalization, and performance.\n- Causal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.",
+    "text": "Why I’m Interested in Causal ML?\n\nStatistics and econometrics build models on top of stochastic mechanisms (data-generating processes - DGPs), aiming for explanation and inference.\n\nMachine learning often ignores those mechanisms and focuses on prediction accuracy, generalization, and performance.\n\nCausal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
   },
   {
-    "objectID": "index.html#phase-1-logic-set-theory",
-    "href": "index.html#phase-1-logic-set-theory",
+    "objectID": "index.html#phase-1---logic-set-theory",
+    "href": "index.html#phase-1---logic-set-theory",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 1 – Logic & Set Theory",
-    "text": "Phase 1 – Logic & Set Theory\nGoal: Build comfort with the language of mathematics.\n- Proof techniques: direct, contrapositive, contradiction, induction.\n- Sets and families of sets, Cartesian products, power sets.\n- Functions: injective, surjective, bijective.\n- Relations: equivalence relations, partial orders.\n- Cardinality: countable vs. uncountable sets.\nTheory Output: - Sentential logic (Velleman Ch. 1) - Predicate logic & quantifiers (Ch. 2) - Proof techniques (direct, contrapositive, contradiction, induction) (Ch. 3) - Sets, relations, functions (Ch. 4–6) - Countability, infinity (Ch. 9 selected, Tao’s appendix)\nApplication Project: - SQL/database operations as set theory (joins, unions, intersections). - Prove/discuss equivalences (e.g., idempotency: SELECT DISTINCT twice = once)\nReferences:\n- Velleman – How to Prove It\n- Enderton – Set Theory",
+    "section": "Phase 1 - Logic & Set Theory",
+    "text": "Phase 1 - Logic & Set Theory\nGoal: Build comfort with the language of mathematics.\n\nProof techniques: direct, contrapositive, contradiction, induction.\n\nSets, Cartesian products, power sets.\n\nFunctions and relations.\n\nCardinality: countable vs. uncountable sets.\n\nTheory Output: Formal proofs and mathematical maturity.\nApplication Project: Formalize simple statistical statements using logical quantifiers and analyze which assumptions are required for conclusions to hold. (not very hands-on, I know, but having mathematical maturity will change your life!)\nReferences:\n- Velleman - How to Prove It",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
   },
   {
-    "objectID": "index.html#phase-2-real-analysis",
-    "href": "index.html#phase-2-real-analysis",
+    "objectID": "index.html#phase-2---linear-algebra",
+    "href": "index.html#phase-2---linear-algebra",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 2 – Real Analysis",
-    "text": "Phase 2 – Real Analysis\nGoal: Rigorous calculus and convergence, revisiting classical calculus concepts with proofs.\n\nSequences, series, limits.\n\nContinuity, compactness, connectedness.\n\nDifferentiation: Mean Value Theorem, Taylor expansion.\n\nRiemann integration (rigorous foundation).\n\nUniform convergence.\n\nApplied Calculus Lens:\n- Multivariable calculus: partial derivatives, gradients, Jacobians, Hessians.\n- Convexity and optimization.\n- Taylor expansions for approximation.\n- Fundamental Theorem of Calculus as link to probability expectations.\nTheory Output: ε–δ proofs, compactness in ℝ, uniform convergence examples.\nApplication Project: Gradient descent convergence demo; connect convexity to logistic regression loss.\nReferences:\n- Rudin – Principles of Mathematical Analysis (Baby Rudin)\n- Tao – Analysis I",
+    "section": "Phase 2 - Linear Algebra",
+    "text": "Phase 2 - Linear Algebra\nGoal: Understand the geometry underlying estimation and projection.\n\nVector spaces, bases, dimension.\n\nLinear transformations and matrices.\n\nInner product spaces and orthogonality.\n\nEigenvalues, spectral theorem (finite-dimensional).\n\nSingular value decomposition.\n\nTheory Output: Proof of spectral theorem (symmetric case), rank-nullity theorem.\nApplication Project: Derive and implement PCA via SVD.\nReferences:\n- Axler - Linear Algebra Done Right",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
   },
   {
-    "objectID": "index.html#phase-3-linear-algebra",
-    "href": "index.html#phase-3-linear-algebra",
+    "objectID": "index.html#phase-3---real-analysis-ℝ",
+    "href": "index.html#phase-3---real-analysis-ℝ",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 3 – Linear Algebra",
-    "text": "Phase 3 – Linear Algebra\nGoal: Move beyond computation to proofs and structure.\n- Vector spaces, subspaces, linear independence, bases, dimension.\n- Linear transformations and matrices.\n- Inner product spaces, orthogonality, Gram–Schmidt.\n- Determinants, eigenvalues, eigenvectors, diagonalization.\n- Spectral theorem, singular value decomposition.\n- Matrix norms and conditioning.\nTheory Output: Proofs of rank–nullity theorem, spectral theorem for symmetric matrices, SVD existence.\nApplication Project: PCA from first principles — prove orthogonal diagonalization, then implement PCA via SVD.\nReferences:\n- Axler – Linear Algebra Done Right\n- Friedberg, Insel & Spence – Linear Algebra\n- Trefethen & Bau – Numerical Linear Algebra (for computational aspects)",
+    "section": "Phase 3 - Real Analysis (ℝ)",
+    "text": "Phase 3 - Real Analysis (ℝ)\nGoal: Rigorous calculus and convergence.\n\nSequences and limits.\n\nContinuity and compactness in ℝ.\n\nDifferentiation and Mean Value Theorem.\n\nUniform convergence.\n\nTheory Output: ε-δ proofs, compactness arguments.\nApplication Project: Analyze convergence of gradient descent under convexity assumptions.\nReferences:\n- Rudin - Principles of Mathematical Analysis\n- Tao - Analysis I",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
   },
   {
-    "objectID": "index.html#phase-4-functional-analysis-hilbert-spaces",
-    "href": "index.html#phase-4-functional-analysis-hilbert-spaces",
+    "objectID": "index.html#phase-4---metric-spaces",
+    "href": "index.html#phase-4---metric-spaces",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 4 – Functional Analysis & Hilbert Spaces",
-    "text": "Phase 4 – Functional Analysis & Hilbert Spaces\nGoal: Develop the tools to handle infinite-dimensional vector spaces, operators, and kernels.\n- Normed vector spaces, Banach spaces.\n- Hilbert spaces, orthogonality, projections.\n- Bounded linear operators.\n- Reproducing Kernel Hilbert Spaces (RKHS).\nTheory Output: Prove projection theorem in Hilbert spaces, examples of bounded/unbounded operators, RKHS construction.\nApplication Project: Kernelized regression and SVMs — connect functional analysis with machine learning models.\nReferences:\n- Kreyszig – Introductory Functional Analysis with Applications\n- Conway – A Course in Functional Analysis\n- Berlinet & Thomas-Agnan – Reproducing Kernel Hilbert Spaces in Probability and Statistics",
+    "section": "Phase 4 - Metric Spaces",
+    "text": "Phase 4 - Metric Spaces\nGoal: Introduce minimal topology needed for probability and asymptotics.\n\nMetric spaces and convergence.\n\nOpen/closed sets.\n\nCompleteness.\n\nCompactness in metric spaces.\n\nTheory Output: General convergence beyond ℝ.\nApplication Project: Compare different notions of convergence in simulated estimators.\nReferences:\n- Rudin - Principles of Mathematical Analysis (Ch. 2)\n- Abbott - Understanding Analysis\n- Munkres - Topology (selected sections on metric spaces only)",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
   },
   {
-    "objectID": "index.html#phase-5-topology-measure-theory",
-    "href": "index.html#phase-5-topology-measure-theory",
+    "objectID": "index.html#phase-5---measure-theory",
+    "href": "index.html#phase-5---measure-theory",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 5 – Topology & Measure Theory",
-    "text": "Phase 5 – Topology & Measure Theory\nGoal: Learn the structures that underlie probability theory.\n- Metric spaces, open/closed sets.\n- Compactness and product spaces.\n- σ-algebras, measurable functions.\n- Lebesgue measure and integration.\n- Convergence theorems: MCT, DCT.\nTheory Output: Worked examples of σ-algebras, Lebesgue integral, and convergence theorems.\nApplication Project: Fraud detection via Monte Carlo — rare events and measure-zero sets in anomaly detection.\nReferences:\n- Munkres – Topology\n- Schilling – Measures, Integrals and Martingales",
+    "section": "Phase 5 - Measure Theory",
+    "text": "Phase 5 - Measure Theory\nGoal: Build the foundation of integration and probability.\n\nσ-algebras and measurable functions.\n\nLebesgue measure and integration.\n\nConvergence theorems (MCT, DCT).\n\nProduct measures and Fubini.\n\nTheory Output: Construction of Lebesgue integral and convergence theorems.\nApplication Project: Monte Carlo integration and convergence analysis.\nReferences:\n- Schilling - Measures, Integrals and Martingales",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
   },
   {
-    "objectID": "index.html#phase-6-probability",
-    "href": "index.html#phase-6-probability",
+    "objectID": "index.html#phase-6---probability-measure-theoretic",
+    "href": "index.html#phase-6---probability-measure-theoretic",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 6 – Probability",
-    "text": "Phase 6 – Probability\nGoal: Define probability rigorously à la Kolmogorov.\n- Probability spaces and random variables as measurable functions.\n- Distributions, independence, product measures.\n- Conditional expectation as L² projection.\n- Laws of large numbers, central limit theorem.\n- Intro to martingales.\nTheory Output: Probability space construction, LLN/CLT proofs, conditional expectation as projection.\nApplication Project: A/B testing simulation — CLT and confidence intervals for conversion rates.\nReferences:\n- Durrett – Probability: Theory and Examples\n- Klenke – Probability Theory",
+    "section": "Phase 6 - Probability (Measure-Theoretic)",
+    "text": "Phase 6 - Probability (Measure-Theoretic)\nGoal: Define uncertainty rigorously.\n\nProbability spaces and random variables.\n\nModes of convergence.\n\nLLN and CLT.\n\nConditional expectation as L² projection.\n\nTheory Output: Proof sketches of LLN/CLT; conditional expectation as projection.\nApplication Project: A/B testing simulation with asymptotic confidence intervals.\nReferences:\n- Durrett - Probability: Theory and Examples",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
   },
   {
-    "objectID": "index.html#phase-7-mathematical-statistics",
-    "href": "index.html#phase-7-mathematical-statistics",
+    "objectID": "index.html#phase-7---mathematical-statistics",
+    "href": "index.html#phase-7---mathematical-statistics",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 7 – Mathematical Statistics",
-    "text": "Phase 7 – Mathematical Statistics\nGoal: Connect probability → inference.\n- Point estimation: MLE, method of moments.\n- Properties: unbiasedness, consistency, efficiency.\n- Hypothesis testing and likelihood ratio tests.\n- Asymptotic results: convergence in probability/distribution, delta method.\nTheory Output: Consistency of MLE, hypothesis testing framework, asymptotic normality proofs.\nApplication Project: Logistic regression for churn prediction — prove Bernoulli MLE consistency, simulate convergence, apply to real dataset.\nReferences:\n- Casella & Berger – Statistical Inference",
+    "section": "Phase 7 - Mathematical Statistics",
+    "text": "Phase 7 - Mathematical Statistics\nGoal: Move from probability to inference.\n\nLikelihood and estimation (MLE).\n\nConsistency and asymptotic normality.\n\nDelta method.\n\nEfficiency and influence functions.\n\nTheory Output: Consistency of MLE; asymptotic normality.\nApplication Project: Logistic regression - prove Bernoulli MLE consistency and simulate convergence.\nReferences:\n- Casella & Berger - Statistical Inference",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
   },
   {
-    "objectID": "index.html#phase-8-statistical-learning-theory",
-    "href": "index.html#phase-8-statistical-learning-theory",
+    "objectID": "index.html#phase-8---decision-risk",
+    "href": "index.html#phase-8---decision-risk",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 8 – Statistical Learning Theory",
-    "text": "Phase 8 – Statistical Learning Theory\nGoal: Bridge inference and prediction by introducing the statistical foundations of machine learning.\nShow how algorithms that learn from data can be rigorously analyzed using probability and measure theory—without assuming a fixed data-generating model.\n\nLearning as an inference problem: from data pairs of inputs and outputs, we learn a rule that performs well on unseen data.\n\nLoss and risk: evaluate models by how well predictions match reality, on average.\n\nEmpirical Risk Minimization (ERM): choose the model that best fits the observed data.\n\nGeneralization: ensure models trained on one sample also perform well on new data.\n\nCapacity control: limit model flexibility (via VC dimension or similar) to avoid overfitting.\n\nStructural Risk Minimization (SRM): balance fit and simplicity with a complexity penalty.\n\nRegularization: constrain solutions to remain smooth or stable, as in Hilbert-space norms.\n\nBias–variance trade-off: find the sweet spot between underfitting and overfitting.\n\nBridge: Breiman’s “two cultures” meet in Vapnik’s framework, unifying inference and prediction.\n\nTheory Output:\n- Derive a simple generalization bound using Hoeffding’s inequality and the union bound.\n- Compute VC dimension for linear separators.\n- Prove that L2 regularization corresponds to minimizing empirical risk under a bounded-norm constraint.\nApplication Project:\n- Simulate empirical vs. generalization error on synthetic data.\n- Train classifiers with varying complexity (polynomial degree or kernel width) and plot training/test errors.\n- Show visually how regularization reduces overfitting and aligns with theoretical bounds.\nReferences:\n- Vapnik – The Nature of Statistical Learning Theory\n- Bousquet, Boucheron & Lugosi – Introduction to Statistical Learning Theory\n- Hastie, Tibshirani & Friedman – The Elements of Statistical Learning\n- Shalev-Shwartz & Ben-David – Understanding Machine Learning: From Theory to Algorithms\n- Breiman – Statistical Modeling: The Two Cultures",
+    "section": "Phase 8 - Decision & Risk",
+    "text": "Phase 8 - Decision & Risk\nGoal: Formalize optimal decisions under uncertainty.\n\nLoss functions.\n\nRisk and Bayes risk.\n\nMinimax and admissibility.\n\nConnection between estimation and decision rules.\n\nTheory Output: Basic optimality results under quadratic loss.\nApplication Project: Compare decision rules under different loss functions.\nReferences:\n- Berger - Statistical Decision Theory and Bayesian Analysis\n- Lehmann & Casella - Theory of Point Estimation\n- Ferguson - Mathematical Statistics: A Decision Theoretic Approach",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]
   },
   {
-    "objectID": "index.html#phase-9-causality",
-    "href": "index.html#phase-9-causality",
+    "objectID": "index.html#phase-9---uncertainty-quantification",
+    "href": "index.html#phase-9---uncertainty-quantification",
     "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
-    "section": "Phase 9 – Causality",
-    "text": "Phase 9 – Causality\nGoal: Enter causal inference with strong mathematical foundations.\n- Pearl’s Structural Causal Models & do-calculus.\n- Rubin’s potential outcomes framework.\n- Invariant causal prediction (Peters, Janzing, Schölkopf).\n- Identifiability proofs.\n- Axiomatic frameworks (Park & Muandet).\nTheory Output: Worked proofs of identifiability, back-door/front-door criteria, do-calculus rules.\nApplication Project: Uplift modeling for churn retention OR reproduction of Chernozhukov’s Double Machine Learning estimator with Python.\nReferences:\n- Pearl – Causality\n- Peters, Janzing, Schölkopf – Elements of Causal Inference\n- Chernozhukov et al. – Causal Machine Learning papers",
+    "section": "Phase 9 - Uncertainty Quantification",
+    "text": "Phase 9 - Uncertainty Quantification\nGoal: Make uncertainty explicit and operational.\n\nParameter uncertainty (confidence intervals, bootstrap).\n\nPredictive distributions.\n\nRobustness under misspecification.\n\nConformal inference (distribution-free guarantees).\n\nUncertainty propagation.\n\nTheory Output: Coverage guarantees and bootstrap consistency.\nApplication Project: Implement bootstrap intervals and conformal prediction for regression.\nReferences:\n- Efron & Tibshirani - An Introduction to the Bootstrap\n- Wasserman - All of Statistics (bootstrap & nonparametrics sections)\n- van der Vaart - Asymptotic Statistics (confidence sets & efficiency)\n- Romano, Shafer & Candès - Conformal inference papers\n- Rasmussen & Williams - Gaussian Processes for Machine Learning (predictive uncertainty perspective)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#phase-10---statistical-learning-theory",
+    "href": "index.html#phase-10---statistical-learning-theory",
+    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "section": "Phase 10 - Statistical Learning Theory",
+    "text": "Phase 10 - Statistical Learning Theory\nGoal: Bridge inference and prediction rigorously.\n\nEmpirical Risk Minimization (ERM).\n\nGeneralization bounds.\n\nVC dimension and capacity control.\n\nRegularization and bias-variance tradeoff.\n\nTheory Output: Derive simple generalization bound via Hoeffding’s inequality.\nApplication Project: Simulate empirical vs. generalization error under increasing model complexity.\nReferences:\n- Shalev-Shwartz & Ben-David - Understanding Machine Learning\n- Breiman - Statistical Modeling: The Two Cultures",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#phase-11---causal-inference-causal-ml",
+    "href": "index.html#phase-11---causal-inference-causal-ml",
+    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "section": "Phase 11 - Causal Inference + Causal ML",
+    "text": "Phase 11 - Causal Inference + Causal ML\nGoal: Reason about interventions with statistical guarantees.\n\nStructural Causal Models and potential outcomes.\n\nIdentifiability (backdoor/frontdoor).\n\nOrthogonalization and Double ML.\n\nValid uncertainty for treatment effects.\n\nTheory Output: Proof sketches of backdoor criterion and Neyman orthogonality.\nApplication Project: Implement Double ML for heterogeneous treatment effects.\nReferences:\n- Pearl - Causality\n- Peters, Janzing, Schölkopf - Elements of Causal Inference\n- Chernozhukov et al. - Causal ML papers",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
     ]

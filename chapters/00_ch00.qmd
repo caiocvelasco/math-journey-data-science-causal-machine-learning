@@ -24,16 +24,14 @@ This online book is my **mathematical learning journey** toward understanding Ca
 This book is my mathematical learning journey toward understanding Causal ML from first principles.  
 Each step builds exactly the structure required for the next - nothing ornamental, nothing skipped.
 
-## The Foundational Path
-
 | Phase | Topic | Focus |
 |------|------|------------|
 | 1 | **Logic & Set Theory** | Proof techniques, quantifiers, mathematical language |
 | 2 | **Linear Algebra** | Inner products, projections, spectral ideas; geometry of estimation |
-| 3 | **Real Analysis (ℝ)** | Limits, continuity, differentiation, compactness |
+| 3 | **Real Analysis (ℝ)** | Limits, continuity, differentiation, compactness - aka: _Calculus_ |
 | 4 | **Metric Spaces** | Convergence, open/closed sets, completeness; minimal topology |
 | 5 | **Measure Theory** | σ-algebras, integration, product measures |
-| 6 | **Probability (measure-theoretic)** | Convergence modes, LLN/CLT, conditional expectation |
+| 6 | **Probability (measure-theoretic)** | Probability spaces, random variables, convergence modes, LLN/CLT, conditional expectation |
 | 7 | **Mathematical Statistics** | Likelihood, asymptotics, efficiency, influence functions |
 | 8 | **Decision & Risk** | Loss, optimality, statistical decision theory |
 | 9 | **Uncertainty Quantification** | Parameter uncertainty, predictive distributions, bootstrap, conformal inference, robustness |
@@ -46,8 +44,7 @@ In a short interview often titled *“Why?”*, **Richard Feynman** is asked a s
 
 > “Why do magnets repel each other?”
 
-If you’re curious, you can watch the clip here (optional):  
-https://www.youtube.com/watch?v=36GT2zI8lVA
+{{< video https://www.youtube.com/watch?v=36GT2zI8lVA width="400" height="300" >}}
 
 Instead of giving a comforting mechanical story, he does something deeper.
 
@@ -78,7 +75,7 @@ Feynman’s key insight is subtle but profound:
 > There is no explanation without a conceptual framework.  
 > Every “why” presupposes some deeper structure that we are not questioning.
 
-This resonates deeply with me.
+**This resonates deeply with me.**
 
 In data science and machine learning, it is possible to use powerful tools without fully understanding the structures that justify them. A model may perform well, an estimator may seem stable, an interval may look convincing.
 

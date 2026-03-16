@@ -2,6 +2,6 @@
   description: The probabilistic mechanism that generates the observed data.
   path: terms/dgp.html
 
-- title: IID
-  description: Independent and identically distributed.
-  path: terms/iid.html
+- title: Stratified Sampling
+  description: A sampling technique that divides the population into subgroups (strata) and samples from each stratum to ensure representative coverage.
+  path: terms/stratified_sampling.html

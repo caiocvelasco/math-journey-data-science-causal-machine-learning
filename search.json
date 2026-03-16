@@ -376,7 +376,7 @@
     "href": "glossary/glossary.html",
     "title": "Glossary",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nData Generating Process (DGP)\n\n\nThe probabilistic mechanism that generates the observed data.\n\n\n\n\n\n\nIID\n\n\nIndependent and identically distributed.\n\n\n\n\n\n\nNo matching items",
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nData Generating Process (DGP)\n\n\nThe probabilistic mechanism that generates the observed data.\n\n\n\n\n\n\nStratified Sampling\n\n\nA sampling technique that divides the population into subgroups (strata) and samples from each stratum to ensure representative coverage.\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Glossary"
     ]

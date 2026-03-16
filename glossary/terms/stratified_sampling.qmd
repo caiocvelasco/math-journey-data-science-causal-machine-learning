@@ -3,6 +3,10 @@ title: "Stratified Sampling"
 description: "A practical explanation of stratified sampling and why preserving variable distributions matters when splitting datasets for machine learning."
 ---
 
+In simple terms, in Stratified Sampling you:
+- Split the dataset into subgroups (_strata_)
+- Apply _random sampling_ on each subgroup
+
 ## Connection to the Data Generating Process
 
 In statistics and machine learning, we usually assume that the observed data are realizations from a [Data Generating Process (DGP)](dgp.qmd).

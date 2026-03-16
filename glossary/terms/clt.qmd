@@ -1,0 +1,4 @@
+---
+title: "Central Limit Theorem (CLT)"
+description: "A fundamental result stating that the sampling distribution of the sample mean becomes approximately normal as the sample size increases, regardless of the original distribution."
+---

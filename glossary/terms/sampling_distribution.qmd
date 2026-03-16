@@ -1,0 +1,70 @@
+---
+title: "Sampling Distribution"
+description: "The probability distribution of a statistic (such as the sample mean) computed from many repeated samples drawn from the same data-generating process."
+---
+
+In probability, we usually start by studying the distribution of a **random variable**.
+
+For example, when rolling a fair die, we may ask:
+
+> What is the probability that the outcome is 4?
+
+Here the object of interest is the **distribution of the random variable** that represents the outcome of the die.
+
+In statistical inference, however, the question changes.
+
+Instead of studying the distribution of a single observation, we study **statistics computed from samples**.
+
+A useful way to think about this shift is the following:
+
+> When you roll one die, the natural question is about the distribution of the random variable.  
+> When you roll several dice and compute a statistic, the question becomes the distribution of that statistic.
+
+For example, suppose we roll a die **four times** and compute the **sample mean** of the outcomes.
+
+Each set of four rolls produces a different value for the sample mean.
+
+If we repeated this experiment many times - each time rolling four dice and computing the mean - we would obtain many possible values of that statistic.
+
+The distribution of those possible values is called the **sampling distribution**.
+
+Formally, a **sampling distribution** is the probability distribution of a statistic computed from a random sample drawn from a population or from a [Data Generating Process (DGP)](dgp.qmd).
+
+Sampling distributions play a central role in statistical inference because they allow us to understand how statistics behave across repeated samples.
+
+Many of the most important results in statistics - such as confidence intervals, hypothesis tests, and the **[Central Limit Theorem](clt.qmd)** - rely on properties of sampling distributions.
+
+## Connection to the Central Limit Theorem
+
+In many practical situations, deriving the exact sampling distribution of a statistic can be difficult.
+
+A fundamental result in statistics helps us in this situation: the **[Central Limit Theorem](clt.qmd)**.
+
+The Central Limit Theorem states that, under fairly general conditions, the sampling distribution of the **sample mean** becomes approximately **normal (Gaussian)** as the sample size increases, regardless of the shape of the original distribution.
+
+In other words, even if the underlying data-generating process is not normally distributed, the distribution of the sample mean tends to become approximately normal when the sample size is sufficiently large.
+
+This result explains why the normal distribution appears so frequently in statistical inference and why it is widely used for constructing confidence intervals and hypothesis tests.
+
+A more detailed discussion of the Central Limit Theorem is provided in the dedicated section on the **[Central Limit Theorem](clt.qmd)**.
+
+## Where Sampling Distributions Appear in Data Science and Machine Learning
+
+Although the concept originates in classical statistics, sampling distributions appear frequently in modern data science and machine learning.
+
+Some common examples include:
+
+- **Model evaluation**  
+  Metrics such as accuracy, AUC, precision, or recall are statistics computed from a test dataset.  
+  Their variability across different samples reflects the **sampling distribution of the evaluation metric**.
+
+- **Cross-validation**  
+  When a model is trained and evaluated across multiple folds, the resulting scores approximate the **sampling distribution of the model's performance**.
+
+- **Bootstrap methods**  
+  Bootstrapping repeatedly resamples the dataset and recomputes a statistic (such as a coefficient or prediction error) to approximate its **sampling distribution**.
+
+- **Uncertainty quantification**  
+  Confidence intervals and standard errors used in regression or causal inference rely on theoretical results about sampling distributions.
+
+Even in predictive machine learning pipelines, whenever we compute statistics from data - such as model parameters, evaluation metrics, or feature importance measures - their variability across samples is governed by **sampling distributions**.

@@ -130,46 +130,25 @@
     ]
   },
   {
-    "objectID": "glossary/terms/dgp.html",
-    "href": "glossary/terms/dgp.html",
-    "title": "Data Generating Process (DGP)",
+    "objectID": "glossary/terms/sampling_distribution.html",
+    "href": "glossary/terms/sampling_distribution.html",
+    "title": "Sampling Distribution",
     "section": "",
-    "text": "The data generating process (DGP) is the stochastic mechanism operated by Nature that gives rise to the observable data.\nIn statistical learning and econometrics, we assume that this mechanism can be represented by a probability law, namely the joint probability distribution\n\\[\nP(X,Y)\n\\]\nof the random variables involved in the problem, where:\nThis probability law describes the probabilistic structure governing how the data are generated.\nEquivalently, we express that the random vector \\((X,Y)\\) follows this distribution by writing\n\\[\n(X,Y) \\sim P(X,Y)\n\\]\nImportant points:\nBelow, we show a few ideas to make the DGP concept more concrete."
+    "text": "In probability, we usually start by studying the distribution of a random variable.\nFor example, when rolling a fair die, we may ask:\nHere the object of interest is the distribution of the random variable that represents the outcome of the die.\nIn statistical inference, however, the question changes.\nInstead of studying the distribution of a single observation, we study statistics computed from samples.\nA useful way to think about this shift is the following:\nFor example, suppose we roll a die four times and compute the sample mean of the outcomes.\nEach set of four rolls produces a different value for the sample mean.\nIf we repeated this experiment many times - each time rolling four dice and computing the mean - we would obtain many possible values of that statistic.\nThe distribution of those possible values is called the sampling distribution.\nFormally, a sampling distribution is the probability distribution of a statistic computed from a random sample drawn from a population or from a Data Generating Process (DGP).\nSampling distributions play a central role in statistical inference because they allow us to understand how statistics behave across repeated samples.\nMany of the most important results in statistics - such as confidence intervals, hypothesis tests, and the Central Limit Theorem - rely on properties of sampling distributions."
   },
   {
-    "objectID": "glossary/terms/dgp.html#realizations-of-the-random-variables",
-    "href": "glossary/terms/dgp.html#realizations-of-the-random-variables",
-    "title": "Data Generating Process (DGP)",
-    "section": "Realizations of the random variables",
-    "text": "Realizations of the random variables\nThe distribution \\(P(X,Y)\\) describes the random variables \\(X\\) and \\(Y\\).\nWhen we write\n\\[\nP(X = x, Y = y)\n\\]\nwe are evaluating the same probability law at a specific realization \\((x,y)\\) of those random variables.\nIn other words:\n\n\n\nExpression\nMeaning\n\n\n\n\n\\(P(X,Y)\\)\nthe joint probability law governing the variables\n\n\n\\(P(X=x,Y=y)\\)\nthe probability of observing the realization \\((x,y)\\)\n\n\n\n\nExample\nSuppose\n\n\\(X\\) = days since last purchase\n\n\\(Y\\) = customer reactivates (1 = yes, 0 = no)\n\nThen\n\\[\nP(X=10, Y=1)\n\\]\nrepresents the probability that a customer who has not purchased for 10 days reactivates their subscription."
+    "objectID": "glossary/terms/sampling_distribution.html#connection-to-the-central-limit-theorem",
+    "href": "glossary/terms/sampling_distribution.html#connection-to-the-central-limit-theorem",
+    "title": "Sampling Distribution",
+    "section": "Connection to the Central Limit Theorem",
+    "text": "Connection to the Central Limit Theorem\nIn many practical situations, deriving the exact sampling distribution of a statistic can be difficult.\nA fundamental result in statistics helps us in this situation: the Central Limit Theorem.\nThe Central Limit Theorem states that, under fairly general conditions, the sampling distribution of the sample mean becomes approximately normal (Gaussian) as the sample size increases, regardless of the shape of the original distribution.\nIn other words, even if the underlying data-generating process is not normally distributed, the distribution of the sample mean tends to become approximately normal when the sample size is sufficiently large.\nThis result explains why the normal distribution appears so frequently in statistical inference and why it is widely used for constructing confidence intervals and hypothesis tests.\nA more detailed discussion of the Central Limit Theorem is provided in the dedicated section on the Central Limit Theorem."
   },
   {
-    "objectID": "glossary/terms/dgp.html#random-sample-from-the-dgp",
-    "href": "glossary/terms/dgp.html#random-sample-from-the-dgp",
-    "title": "Data Generating Process (DGP)",
-    "section": "Random Sample from the DGP",
-    "text": "Random Sample from the DGP\nA dataset is assumed to be a random sample from the DGP:\n\\[\n(X_1,Y_1),\\dots,(X_n,Y_n) \\overset{iid}{\\sim} P(X,Y)\n\\]\nThis means the observations are:\n\nIndependent → one observation does not influence another\n\nIdentically distributed → all observations follow the same probability law \\(P(X,Y)\\)\n\nEach row in the dataset is therefore a realization of the random vector \\((X,Y)\\) generated by Nature’s stochastic mechanism.\nUnderstanding this assumption is crucial: most statistical learning methods rely on the idea that the observed dataset is a representative sample from the same underlying DGP."
-  },
-  {
-    "objectID": "glossary/terms/dgp.html#real-world-example-1-connection-to-training-and-test-sets",
-    "href": "glossary/terms/dgp.html#real-world-example-1-connection-to-training-and-test-sets",
-    "title": "Data Generating Process (DGP)",
-    "section": "Real-world example 1: Connection to Training and Test Sets",
-    "text": "Real-world example 1: Connection to Training and Test Sets\nIn machine learning we typically split the dataset into training and test sets.\nBoth sets are assumed to be samples from the same DGP:\n\nTraining set → used to fit the model\nTest set → used to evaluate how the model performs on unseen data\n\nIdeally,\n\\[\n\\text{Training set} \\sim P(X,Y)\n\\]\n\\[\n\\text{Test set} \\sim P(X,Y)\n\\]\nThe test set therefore acts as a proxy for future observations generated by the same stochastic mechanism.\nIf the training and test sets come from different distributions, model evaluation can become misleading."
-  },
-  {
-    "objectID": "glossary/terms/dgp.html#real-world-example-2-observations-from-the-dgp",
-    "href": "glossary/terms/dgp.html#real-world-example-2-observations-from-the-dgp",
-    "title": "Data Generating Process (DGP)",
-    "section": "Real-world example 2: Observations from the DGP",
-    "text": "Real-world example 2: Observations from the DGP\nSuppose we are modeling whether a customer reactivates a coffee subscription.\n\n\n\ncustomer_id\ncountry\ndays_since_last_purchase\nreactivated\n\n\n\n\n101\nBrazil\n15\n1\n\n\n102\nUSA\n240\n0\n\n\n103\nBrazil\n40\n1\n\n\n104\nColombia\n180\n0\n\n\n105\nUSA\n20\n1\n\n\n\nHere,\n\\[\nX = (\\text{country}, \\text{days\\_since\\_last\\_purchase})\n\\]\n\\[\nY = \\text{reactivated}\n\\]\nEach row is a realization drawn from the unknown joint probability law \\(P(X,Y)\\)\nwhich governs how the business data are generated.\nThe dataset is therefore not the phenomenon itself, but rather a finite sample generated by the underlying stochastic mechanism."
-  },
-  {
-    "objectID": "glossary/terms/dgp.html#real-world-example-3-cross-validation-and-the-dgp",
-    "href": "glossary/terms/dgp.html#real-world-example-3-cross-validation-and-the-dgp",
-    "title": "Data Generating Process (DGP)",
-    "section": "Real-world example 3: Cross-Validation and the DGP",
-    "text": "Real-world example 3: Cross-Validation and the DGP\nCross-validation also relies on the assumption that the dataset is a random sample from the same data generating process (DGP).\nFormally,\n\\[\n(X_1,Y_1),\\dots,(X_n,Y_n) \\overset{iid}{\\sim} P(X,Y)\n\\]\nBecause of this assumption, we treat different subsets of the data as if they were new observations generated by the same probability law.\n\nDataset\n\n\n\nid\ndays_since_last_purchase\nreactivated\n\n\n\n\n1\n10\n1\n\n\n2\n200\n0\n\n\n3\n40\n1\n\n\n4\n300\n0\n\n\n5\n20\n1\n\n\n6\n100\n0\n\n\n\nEach row satisfies\n\\[\n(X_i,Y_i) \\sim P(X,Y)\n\\]\nmeaning every observation is a realization generated by the same DGP.\n\n\n3-fold cross-validation split\nThe numbers below refer to the row identifiers (id) of the dataset above, indicating which observations are used in each training and validation split.\n\n\n\nFold\nTraining data (ids)\nValidation data (ids)\n\n\n\n\n1\n3,4,5,6\n1,2\n\n\n2\n1,2,5,6\n3,4\n\n\n3\n1,2,3,4\n5,6\n\n\n\nFor example, in Fold 1:\n\nthe model is trained on observations 3,4,5,6\nit is evaluated on observations 1,2\n\nAt each iteration:\n\nthe model is trained on the training subset\nits performance is evaluated on the validation subset\n\nBecause all observations are assumed to come from the same DGP, each validation fold acts as a proxy for new data generated by Nature.\nCross-validation therefore repeats the train/test logic multiple times, providing a more stable estimate of model performance."
+    "objectID": "glossary/terms/sampling_distribution.html#where-sampling-distributions-appear-in-data-science-and-machine-learning",
+    "href": "glossary/terms/sampling_distribution.html#where-sampling-distributions-appear-in-data-science-and-machine-learning",
+    "title": "Sampling Distribution",
+    "section": "Where Sampling Distributions Appear in Data Science and Machine Learning",
+    "text": "Where Sampling Distributions Appear in Data Science and Machine Learning\nAlthough the concept originates in classical statistics, sampling distributions appear frequently in modern data science and machine learning.\nSome common examples include:\n\nModel evaluation\nMetrics such as accuracy, AUC, precision, or recall are statistics computed from a test dataset.\nTheir variability across different samples reflects the sampling distribution of the evaluation metric.\nCross-validation\nWhen a model is trained and evaluated across multiple folds, the resulting scores approximate the sampling distribution of the model’s performance.\nBootstrap methods\nBootstrapping repeatedly resamples the dataset and recomputes a statistic (such as a coefficient or prediction error) to approximate its sampling distribution.\nUncertainty quantification\nConfidence intervals and standard errors used in regression or causal inference rely on theoretical results about sampling distributions.\n\nEven in predictive machine learning pipelines, whenever we compute statistics from data - such as model parameters, evaluation metrics, or feature importance measures - their variability across samples is governed by sampling distributions."
   },
   {
     "objectID": "chapters/about.html",
@@ -376,24 +355,66 @@
     "href": "glossary/glossary.html",
     "title": "Glossary",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nData Generating Process (DGP)\n\n\nThe probabilistic mechanism that generates the observed data.\n\n\n\n\n\n\nStratified Sampling\n\n\nA sampling technique that divides the population into subgroups (strata) and samples from each stratum to ensure representative coverage.\n\n\n\n\n\n\nNo matching items",
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCentral Limit Theorem (CLT)\n\n\nA fundamental result stating that the sampling distribution of the sample mean becomes approximately normal as the sample size increases, regardless of the original distribution.\n\n\n\n\n\n\nData Generating Process (DGP)\n\n\nThe probabilistic mechanism that generates the observed data.\n\n\n\n\n\n\nSampling Distribution\n\n\nThe probability distribution of a statistic (such as the sample mean) computed from many repeated samples drawn from the same data-generating process.\n\n\n\n\n\n\nStratified Sampling\n\n\nA sampling technique that divides the population into subgroups (strata) and samples from each stratum to ensure representative coverage.\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Glossary"
     ]
+  },
+  {
+    "objectID": "glossary/terms/dgp.html",
+    "href": "glossary/terms/dgp.html",
+    "title": "Data Generating Process (DGP)",
+    "section": "",
+    "text": "The data generating process (DGP) is the stochastic mechanism operated by Nature that gives rise to the observable data.\nIn statistical learning and econometrics, we assume that this mechanism can be represented by a probability law, namely the joint probability distribution\n\\[\nP(X,Y)\n\\]\nof the random variables involved in the problem, where:\nThis probability law describes the probabilistic structure governing how the data are generated.\nEquivalently, we express that the random vector \\((X,Y)\\) follows this distribution by writing\n\\[\n(X,Y) \\sim P(X,Y)\n\\]\nImportant points:\nBelow, we show a few ideas to make the DGP concept more concrete."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#realizations-of-the-random-variables",
+    "href": "glossary/terms/dgp.html#realizations-of-the-random-variables",
+    "title": "Data Generating Process (DGP)",
+    "section": "Realizations of the random variables",
+    "text": "Realizations of the random variables\nThe distribution \\(P(X,Y)\\) describes the random variables \\(X\\) and \\(Y\\).\nWhen we write\n\\[\nP(X = x, Y = y)\n\\]\nwe are evaluating the same probability law at a specific realization \\((x,y)\\) of those random variables.\nIn other words:\n\n\n\nExpression\nMeaning\n\n\n\n\n\\(P(X,Y)\\)\nthe joint probability law governing the variables\n\n\n\\(P(X=x,Y=y)\\)\nthe probability of observing the realization \\((x,y)\\)\n\n\n\n\nExample\nSuppose\n\n\\(X\\) = days since last purchase\n\n\\(Y\\) = customer reactivates (1 = yes, 0 = no)\n\nThen\n\\[\nP(X=10, Y=1)\n\\]\nrepresents the probability that a customer who has not purchased for 10 days reactivates their subscription."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#random-sample-from-the-dgp",
+    "href": "glossary/terms/dgp.html#random-sample-from-the-dgp",
+    "title": "Data Generating Process (DGP)",
+    "section": "Random Sample from the DGP",
+    "text": "Random Sample from the DGP\nA dataset is assumed to be a random sample from the DGP:\n\\[\n(X_1,Y_1),\\dots,(X_n,Y_n) \\overset{iid}{\\sim} P(X,Y)\n\\]\nThis means the observations are:\n\nIndependent → one observation does not influence another\n\nIdentically distributed → all observations follow the same probability law \\(P(X,Y)\\)\n\nEach row in the dataset is therefore a realization of the random vector \\((X,Y)\\) generated by Nature’s stochastic mechanism.\nUnderstanding this assumption is crucial: most statistical learning methods rely on the idea that the observed dataset is a representative sample from the same underlying DGP."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#real-world-example-1-connection-to-training-and-test-sets",
+    "href": "glossary/terms/dgp.html#real-world-example-1-connection-to-training-and-test-sets",
+    "title": "Data Generating Process (DGP)",
+    "section": "Real-world example 1: Connection to Training and Test Sets",
+    "text": "Real-world example 1: Connection to Training and Test Sets\nIn machine learning we typically split the dataset into training and test sets.\nBoth sets are assumed to be samples from the same DGP:\n\nTraining set → used to fit the model\nTest set → used to evaluate how the model performs on unseen data\n\nIdeally,\n\\[\n\\text{Training set} \\sim P(X,Y)\n\\]\n\\[\n\\text{Test set} \\sim P(X,Y)\n\\]\nThe test set therefore acts as a proxy for future observations generated by the same stochastic mechanism.\nIf the training and test sets come from different distributions, model evaluation can become misleading."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#real-world-example-2-observations-from-the-dgp",
+    "href": "glossary/terms/dgp.html#real-world-example-2-observations-from-the-dgp",
+    "title": "Data Generating Process (DGP)",
+    "section": "Real-world example 2: Observations from the DGP",
+    "text": "Real-world example 2: Observations from the DGP\nSuppose we are modeling whether a customer reactivates a coffee subscription.\n\n\n\ncustomer_id\ncountry\ndays_since_last_purchase\nreactivated\n\n\n\n\n101\nBrazil\n15\n1\n\n\n102\nUSA\n240\n0\n\n\n103\nBrazil\n40\n1\n\n\n104\nColombia\n180\n0\n\n\n105\nUSA\n20\n1\n\n\n\nHere,\n\\[\nX = (\\text{country}, \\text{days\\_since\\_last\\_purchase})\n\\]\n\\[\nY = \\text{reactivated}\n\\]\nEach row is a realization drawn from the unknown joint probability law \\(P(X,Y)\\)\nwhich governs how the business data are generated.\nThe dataset is therefore not the phenomenon itself, but rather a finite sample generated by the underlying stochastic mechanism."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#real-world-example-3-cross-validation-and-the-dgp",
+    "href": "glossary/terms/dgp.html#real-world-example-3-cross-validation-and-the-dgp",
+    "title": "Data Generating Process (DGP)",
+    "section": "Real-world example 3: Cross-Validation and the DGP",
+    "text": "Real-world example 3: Cross-Validation and the DGP\nCross-validation also relies on the assumption that the dataset is a random sample from the same data generating process (DGP).\nFormally,\n\\[\n(X_1,Y_1),\\dots,(X_n,Y_n) \\overset{iid}{\\sim} P(X,Y)\n\\]\nBecause of this assumption, we treat different subsets of the data as if they were new observations generated by the same probability law.\n\nDataset\n\n\n\nid\ndays_since_last_purchase\nreactivated\n\n\n\n\n1\n10\n1\n\n\n2\n200\n0\n\n\n3\n40\n1\n\n\n4\n300\n0\n\n\n5\n20\n1\n\n\n6\n100\n0\n\n\n\nEach row satisfies\n\\[\n(X_i,Y_i) \\sim P(X,Y)\n\\]\nmeaning every observation is a realization generated by the same DGP.\n\n\n3-fold cross-validation split\nThe numbers below refer to the row identifiers (id) of the dataset above, indicating which observations are used in each training and validation split.\n\n\n\nFold\nTraining data (ids)\nValidation data (ids)\n\n\n\n\n1\n3,4,5,6\n1,2\n\n\n2\n1,2,5,6\n3,4\n\n\n3\n1,2,3,4\n5,6\n\n\n\nFor example, in Fold 1:\n\nthe model is trained on observations 3,4,5,6\nit is evaluated on observations 1,2\n\nAt each iteration:\n\nthe model is trained on the training subset\nits performance is evaluated on the validation subset\n\nBecause all observations are assumed to come from the same DGP, each validation fold acts as a proxy for new data generated by Nature.\nCross-validation therefore repeats the train/test logic multiple times, providing a more stable estimate of model performance."
   },
   {
     "objectID": "glossary/terms/stratified_sampling.html",
     "href": "glossary/terms/stratified_sampling.html",
     "title": "Stratified Sampling",
     "section": "",
-    "text": "In statistics and machine learning, we usually assume that the observed data are realizations from a Data Generating Process (DGP).\nYou can think of the DGP as the probabilistic mechanism that produces the data we observe.\nThe DGP defines a joint probability distribution over all variables in the population.\nIn practice, however, we rarely observe the entire population generated by the DGP. Instead, we collect a dataset, which is itself a sample from that population.\nIdeally, this dataset should preserve the probabilistic structure of the DGP. If the sampling procedure distorts the distribution of key variables, the dataset may no longer represent the process that generated the data.\nThis is where sampling methods become important.\nBefore introducing stratified sampling, it is useful to start with the most basic assumption used in statistics: random sampling."
+    "text": "In simple terms, in Stratified Sampling you: - Split the dataset into subgroups (strata) - Apply random sampling on each subgroup"
   },
   {
     "objectID": "glossary/terms/stratified_sampling.html#connection-to-the-data-generating-process",
     "href": "glossary/terms/stratified_sampling.html#connection-to-the-data-generating-process",
     "title": "Stratified Sampling",
-    "section": "",
-    "text": "In statistics and machine learning, we usually assume that the observed data are realizations from a Data Generating Process (DGP).\nYou can think of the DGP as the probabilistic mechanism that produces the data we observe.\nThe DGP defines a joint probability distribution over all variables in the population.\nIn practice, however, we rarely observe the entire population generated by the DGP. Instead, we collect a dataset, which is itself a sample from that population.\nIdeally, this dataset should preserve the probabilistic structure of the DGP. If the sampling procedure distorts the distribution of key variables, the dataset may no longer represent the process that generated the data.\nThis is where sampling methods become important.\nBefore introducing stratified sampling, it is useful to start with the most basic assumption used in statistics: random sampling."
+    "section": "Connection to the Data Generating Process",
+    "text": "Connection to the Data Generating Process\nIn statistics and machine learning, we usually assume that the observed data are realizations from a Data Generating Process (DGP).\nYou can think of the DGP as the probabilistic mechanism that produces the data we observe.\nThe DGP defines a joint probability distribution over all variables in the population.\nIn practice, however, we rarely observe the entire population generated by the DGP. Instead, we collect a dataset, which is itself a sample from that population.\nIdeally, this dataset should preserve the probabilistic structure of the DGP. If the sampling procedure distorts the distribution of key variables, the dataset may no longer represent the process that generated the data.\nThis is where sampling methods become important.\nBefore introducing stratified sampling, it is useful to start with the most basic assumption used in statistics: random sampling."
   },
   {
     "objectID": "glossary/terms/stratified_sampling.html#random-sampling",

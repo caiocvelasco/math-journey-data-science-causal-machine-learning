@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A practical explanation of stratified sampling and why preserving variable distributions matters when splitting datasets for machine learning.">
+<meta name="description" content="The probability distribution of a statistic (such as the sample mean) computed from many repeated samples drawn from the same data-generating process.">
 
-<title>Stratified Sampling – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
+<title>Sampling Distribution – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,18 +186,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#connection-to-the-data-generating-process" id="toc-connection-to-the-data-generating-process" class="nav-link active" data-scroll-target="#connection-to-the-data-generating-process">Connection to the Data Generating Process</a></li>
-  <li><a href="#random-sampling" id="toc-random-sampling" class="nav-link" data-scroll-target="#random-sampling">Random Sampling</a>
-  <ul class="collapse">
-  <li><a href="#empirical-distribution" id="toc-empirical-distribution" class="nav-link" data-scroll-target="#empirical-distribution">Empirical Distribution</a></li>
-  <li><a href="#the-asymptotic-idea" id="toc-the-asymptotic-idea" class="nav-link" data-scroll-target="#the-asymptotic-idea">The Asymptotic Idea</a></li>
-  </ul></li>
-  <li><a href="#why-random-sampling-is-not-always-enough" id="toc-why-random-sampling-is-not-always-enough" class="nav-link" data-scroll-target="#why-random-sampling-is-not-always-enough">Why Random Sampling Is Not Always Enough</a></li>
-  <li><a href="#stratified-sampling" id="toc-stratified-sampling" class="nav-link" data-scroll-target="#stratified-sampling">Stratified Sampling</a></li>
-  <li><a href="#connection-to-marginal-distributions" id="toc-connection-to-marginal-distributions" class="nav-link" data-scroll-target="#connection-to-marginal-distributions">Connection to Marginal Distributions</a></li>
-  <li><a href="#example-1---class-imbalance-in-machine-learning" id="toc-example-1---class-imbalance-in-machine-learning" class="nav-link" data-scroll-target="#example-1---class-imbalance-in-machine-learning">Example 1 - Class Imbalance in Machine Learning</a></li>
-  <li><a href="#example-2---country-distribution-in-an-e-commerce-dataset" id="toc-example-2---country-distribution-in-an-e-commerce-dataset" class="nav-link" data-scroll-target="#example-2---country-distribution-in-an-e-commerce-dataset">Example 2 - Country Distribution in an E-commerce Dataset</a></li>
-  <li><a href="#when-is-stratified-sampling-important" id="toc-when-is-stratified-sampling-important" class="nav-link" data-scroll-target="#when-is-stratified-sampling-important">When Is Stratified Sampling Important?</a></li>
+  <li><a href="#connection-to-the-central-limit-theorem" id="toc-connection-to-the-central-limit-theorem" class="nav-link active" data-scroll-target="#connection-to-the-central-limit-theorem">Connection to the Central Limit Theorem</a></li>
+  <li><a href="#where-sampling-distributions-appear-in-data-science-and-machine-learning" id="toc-where-sampling-distributions-appear-in-data-science-and-machine-learning" class="nav-link" data-scroll-target="#where-sampling-distributions-appear-in-data-science-and-machine-learning">Where Sampling Distributions Appear in Data Science and Machine Learning</a></li>
   </ul>
 </nav>
     </div>
@@ -206,12 +196,12 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Stratified Sampling</h1>
+<h1 class="title">Sampling Distribution</h1>
 </div>
 
 <div>
   <div class="description">
-    A practical explanation of stratified sampling and why preserving variable distributions matters when splitting datasets for machine learning.
+    The probability distribution of a statistic (such as the sample mean) computed from many repeated samples drawn from the same data-generating process.
   </div>
 </div>
 
@@ -228,244 +218,51 @@ window.Quarto = {
 </header>
 
 
-<p>In simple terms, in Stratified Sampling you: - Split the dataset into subgroups (<em>strata</em>) - Apply <em>random sampling</em> on each subgroup</p>
-<section id="connection-to-the-data-generating-process" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-the-data-generating-process">Connection to the Data Generating Process</h2>
-<p>In statistics and machine learning, we usually assume that the observed data are realizations from a <a href="../../glossary/terms/dgp.html">Data Generating Process (DGP)</a>.</p>
-<p>You can think of the DGP as the probabilistic mechanism that produces the data we observe.</p>
-<p>The DGP defines a <strong>joint probability distribution</strong> over all variables in the population.</p>
-<p>In practice, however, we rarely observe the entire population generated by the DGP. Instead, we collect a <strong>dataset</strong>, which is itself a <strong>sample from that population</strong>.</p>
-<p>Ideally, this dataset should preserve the probabilistic structure of the DGP. If the sampling procedure distorts the distribution of key variables, the dataset may no longer represent the process that generated the data.</p>
-<p>This is where <strong>sampling methods</strong> become important.</p>
-<p>Before introducing stratified sampling, it is useful to start with the most basic assumption used in statistics: <strong>random sampling</strong>.</p>
-<hr>
-</section>
-<section id="random-sampling" class="level2">
-<h2 class="anchored" data-anchor-id="random-sampling">Random Sampling</h2>
-<p><strong>Random sampling</strong> means that every observation in the population has the same probability of being selected.</p>
-<p>Under this assumption, the dataset behaves like a miniature version of the population generated by the DGP.</p>
-<section id="empirical-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="empirical-distribution">Empirical Distribution</h3>
-<p>When we collect a dataset, we can compute what is called the <strong>empirical distribution</strong> of the variables.</p>
-<p>The empirical distribution is simply the distribution observed in the data. For example, if we have a dataset of customers and:</p>
-<ul>
-<li>56% are from Brazil<br>
-</li>
-<li>30% are from the United States<br>
-</li>
-<li>14% are from Germany</li>
-</ul>
-<p>then those percentages represent the <strong>empirical distribution of the variable “country” in the dataset</strong>.</p>
-<p>In statistics, one of the key ideas is that <strong>if the dataset is randomly drawn</strong> from the population, the empirical distribution tends to approximate the true distribution of the DGP as the sample size increases.</p>
-</section>
-<section id="the-asymptotic-idea" class="level3">
-<h3 class="anchored" data-anchor-id="the-asymptotic-idea">The Asymptotic Idea</h3>
-<p>This idea comes from results such as the <strong>Law of Large Numbers</strong>.</p>
-<p>Intuitively:</p>
-<ul>
-<li>small samples can fluctuate a lot<br>
-</li>
-<li>larger samples stabilize over time</li>
-</ul>
-<p>The expectation is that as the sample size grows, the empirical distribution gets closer to the true distribution generated by the DGP.</p>
-<p>This is why <strong>random sampling</strong> is such a fundamental assumption in statistics and machine learning: it allows the data we observe to approximate the probabilistic structure of the underlying process.</p>
-<hr>
-</section>
-</section>
-<section id="why-random-sampling-is-not-always-enough" class="level2">
-<h2 class="anchored" data-anchor-id="why-random-sampling-is-not-always-enough">Why Random Sampling Is Not Always Enough</h2>
-<p>However, real-world datasets often contain <strong>important subgroups whose proportions matter for analysis or model evaluation</strong>.</p>
-<p>If we rely purely on random sampling, these groups might end up <strong>underrepresented</strong> in the dataset due to random fluctuations.</p>
-<p>This issue becomes more likely when:</p>
-<ul>
-<li>the dataset is <strong>small</strong>, or<br>
-</li>
-<li>the subgroup of interest is <strong>rare</strong>.</li>
-</ul>
-<p>In these situations, <strong>stratified sampling</strong> becomes useful because it stabilizes the proportions of important variables when creating smaller samples from the dataset.</p>
-<hr>
-</section>
-<section id="stratified-sampling" class="level2">
-<h2 class="anchored" data-anchor-id="stratified-sampling">Stratified Sampling</h2>
-<p><strong>Stratified sampling</strong> is a technique where the population (or dataset) is divided into <strong>strata</strong>, and observations are sampled from each stratum.</p>
-<p>The word <strong>strata</strong> is statistical jargon for <strong>groups</strong>. In practice, it simply means splitting the data according to a variable of interest.</p>
-<p>This idea is very similar to:</p>
-<ul>
-<li><strong>GROUP BY</strong> in SQL<br>
-</li>
-<li><strong>groupby()</strong> in pandas</li>
-</ul>
-<p>Once the dataset is divided into groups, we sample observations <strong>within each group</strong> instead of sampling from the whole dataset.</p>
-<p>The goal is to ensure that the sample preserves the <strong>proportions of those groups</strong> found in the original data.</p>
-<p>In practice, stratified sampling is mainly used to <strong>reduce sampling variability</strong> when the number of observations in some groups is small.</p>
-<hr>
-</section>
-<section id="connection-to-marginal-distributions" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-marginal-distributions">Connection to Marginal Distributions</h2>
-<p>When we stratify on a variable, we are trying to preserve the <strong>marginal distribution</strong> of that variable.</p>
-<p>Recall that the <strong>data generating process (DGP)</strong> defines a <strong>joint probability distribution</strong> over all variables in the population.</p>
-<p>For example, suppose we observe two variables:</p>
-<ul>
-<li><span class="math inline">\(X =\)</span> country<br>
-</li>
-<li><span class="math inline">\(Y =\)</span> purchase amount</li>
-</ul>
-<p>The DGP defines the <strong>joint distribution</strong></p>
-<p><span class="math display">\[
-P(X, Y)
-\]</span></p>
-<p>which describes how both variables occur together in the population.</p>
-<p>From the joint distribution, we can obtain the <strong>marginal distribution</strong> of a variable by ignoring the other variable.</p>
-<p>For example, the marginal distribution of <span class="math inline">\(X\)</span> is</p>
-<p><span class="math display">\[
-P(X) = \sum_{y} P(X, Y = y)
-\]</span></p>
-<p>Intuitively, the marginal distribution tells us <strong>how often each value of a variable appears in the population</strong>, regardless of the other variables.</p>
-<p>So if we look only at the variable <em>country</em>, ignoring purchase amount, the <strong>population distribution</strong> might be:</p>
-<ul>
-<li>Brazil: 56%<br>
-</li>
-<li>United States: 30%<br>
-</li>
-<li>Germany: 14%</li>
-</ul>
-<p>However, the <strong>population</strong> is a theoretical object defined by the <strong>DGP</strong>. In practice, we almost never observe the entire population.</p>
-<p>Instead, we collect a <strong>dataset</strong>, which is a finite sample of observations drawn from that population.</p>
-<p>From this dataset, we compute the <strong>empirical distribution</strong>, which is simply the distribution of the values observed in the dataset.</p>
-<p>For example, in our dataset we might observe:</p>
-<ul>
-<li>Brazil: 55%<br>
-</li>
-<li>United States: 31%<br>
-</li>
-<li>Germany: 14%</li>
-</ul>
-<p>Let <span class="math inline">\(X\)</span> denote the variable <strong>country</strong>, whose possible values are categories such as Brazil, United States, and Germany.</p>
-<p>These percentages represent the <strong>empirical marginal distribution of <span class="math inline">\(X\)</span> in the dataset</strong>, which we use as an estimate of the true population distribution <span class="math inline">\(P(X)\)</span>.</p>
-<p>In many data science or machine learning workflows, we then create <strong>smaller samples from the dataset</strong>, such as:</p>
-<ul>
-<li>a <strong>training dataset</strong></li>
-<li>a <strong>test dataset</strong></li>
-</ul>
-<p>Stratified sampling aims to ensure that these <strong>smaller samples preserve the distribution observed in the original dataset</strong>.</p>
-<p>In other words, if the marginal distribution of <span class="math inline">\(X\)</span> in the population is <span class="math inline">\(P(X)\)</span>, we would like the empirical distribution in the sampled dataset to satisfy</p>
-<p><span class="math display">\[
-\hat{P}_{sample}(X) \approx P(X)
-\]</span></p>
-<p>so that the sampled data behaves as if it were generated by the same underlying process.</p>
-<hr>
-</section>
-<section id="example-1---class-imbalance-in-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="example-1---class-imbalance-in-machine-learning">Example 1 - Class Imbalance in Machine Learning</h2>
-<p>Suppose you are building a model to detect fraudulent transactions.</p>
-<p>Your dataset contains:</p>
-<ul>
-<li>98% legitimate transactions<br>
-</li>
-<li>2% fraudulent transactions</li>
-</ul>
-<p>If we randomly split the dataset into training and test datasets, the <strong>expected proportion</strong> of fraud cases in the test dataset is still 2%.</p>
-<p>However, when the test dataset is relatively small, random sampling can produce noticeable deviations from this proportion.</p>
-<p>For example, the test dataset might end up containing:</p>
-<ul>
-<li>1% fraud cases<br>
-</li>
-<li>or 4% fraud cases</li>
-</ul>
-<p>even though the true fraud rate in the population is 2%.</p>
-<p>This can create instability in <strong>model evaluation</strong>. In machine learning, model performance refers to how well a model’s predictions match the <strong>true outcomes</strong> observed in a test dataset.</p>
-<p>For classification problems such as fraud detection, this comparison is typically summarized using a <strong>confusion matrix</strong>.</p>
-<p>A confusion matrix is a table that compares the <strong>predicted class</strong> with the <strong>true class</strong> of each observation.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Actual Fraud</strong></th>
-<th><strong>Actual Legitimate</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Predicted Fraud</strong></td>
-<td>True Positive (TP)</td>
-<td>False Positive (FP)</td>
-</tr>
-<tr class="even">
-<td><strong>Predicted Legitimate</strong></td>
-<td>False Negative (FN)</td>
-<td>True Negative (TN)</td>
-</tr>
-</tbody>
-</table>
-<p>Many performance metrics are computed directly from these counts.</p>
-<p>For example:</p>
-<p><span class="math display">\[
-\text{Recall} = \frac{TP}{TP + FN}
-\]</span></p>
-<p>The denominator <span class="math inline">\((TP + FN)\)</span> represents <strong>all observations that are truly positive</strong>.</p>
-<p>In the fraud example, this means <strong>all transactions that were actually fraudulent</strong>, regardless of whether the model detected them or not.</p>
-<p><em>Recall</em> therefore measures <strong>the proportion of actual fraud cases that the model successfully detected</strong>.</p>
-<p>In other words:</p>
+<p>In probability, we usually start by studying the distribution of a <strong>random variable</strong>.</p>
+<p>For example, when rolling a fair die, we may ask:</p>
 <blockquote class="blockquote">
-<p>Of all the fraudulent transactions that actually occurred, how many did the model correctly identify?</p>
+<p>What is the probability that the outcome is 4?</p>
 </blockquote>
-<hr>
-<p><span class="math display">\[
-\text{Precision} = \frac{TP}{TP + FP}
-\]</span></p>
-<p>The denominator <span class="math inline">\((TP + FP)\)</span> represents <strong>all observations that the model predicted as positive</strong>.</p>
-<p>In the fraud example, this means <strong>all transactions that the model flagged as fraud</strong>, whether the prediction was correct or not.</p>
-<p><em>Precision</em> therefore measures <strong>how reliable the model’s fraud predictions are</strong>.</p>
-<p>In other words:</p>
+<p>Here the object of interest is the <strong>distribution of the random variable</strong> that represents the outcome of the die.</p>
+<p>In statistical inference, however, the question changes.</p>
+<p>Instead of studying the distribution of a single observation, we study <strong>statistics computed from samples</strong>.</p>
+<p>A useful way to think about this shift is the following:</p>
 <blockquote class="blockquote">
-<p>Of all the transactions that the model labeled as fraud, how many were truly fraudulent?</p>
+<p>When you roll one die, the natural question is about the distribution of the random variable.<br>
+When you roll several dice and compute a statistic, the question becomes the distribution of that statistic.</p>
 </blockquote>
-<p>If the test dataset contains very few fraud cases, then the values of <span class="math inline">\(TP\)</span> and <span class="math inline">\(FN\)</span> are based on a small number of observations.</p>
-<p>For example, if the test dataset contains only <strong>10 fraud cases</strong>, correctly detecting one additional case changes recall by <strong>10 percentage points</strong>.</p>
-<p>Using <strong>stratified sampling on the fraud variable (<span class="math inline">\(Y\)</span>)</strong> ensures that both the training and test datasets preserve the same proportion of fraud and non-fraud cases observed in the original dataset.</p>
-<p>This reduces random fluctuations in the class distribution and makes model evaluation more stable.</p>
-<hr>
+<p>For example, suppose we roll a die <strong>four times</strong> and compute the <strong>sample mean</strong> of the outcomes.</p>
+<p>Each set of four rolls produces a different value for the sample mean.</p>
+<p>If we repeated this experiment many times - each time rolling four dice and computing the mean - we would obtain many possible values of that statistic.</p>
+<p>The distribution of those possible values is called the <strong>sampling distribution</strong>.</p>
+<p>Formally, a <strong>sampling distribution</strong> is the probability distribution of a statistic computed from a random sample drawn from a population or from a <a href="../../glossary/terms/dgp.html">Data Generating Process (DGP)</a>.</p>
+<p>Sampling distributions play a central role in statistical inference because they allow us to understand how statistics behave across repeated samples.</p>
+<p>Many of the most important results in statistics - such as confidence intervals, hypothesis tests, and the <strong><a href="../../glossary/terms/clt.html">Central Limit Theorem</a></strong> - rely on properties of sampling distributions.</p>
+<section id="connection-to-the-central-limit-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-the-central-limit-theorem">Connection to the Central Limit Theorem</h2>
+<p>In many practical situations, deriving the exact sampling distribution of a statistic can be difficult.</p>
+<p>A fundamental result in statistics helps us in this situation: the <strong><a href="../../glossary/terms/clt.html">Central Limit Theorem</a></strong>.</p>
+<p>The Central Limit Theorem states that, under fairly general conditions, the sampling distribution of the <strong>sample mean</strong> becomes approximately <strong>normal (Gaussian)</strong> as the sample size increases, regardless of the shape of the original distribution.</p>
+<p>In other words, even if the underlying data-generating process is not normally distributed, the distribution of the sample mean tends to become approximately normal when the sample size is sufficiently large.</p>
+<p>This result explains why the normal distribution appears so frequently in statistical inference and why it is widely used for constructing confidence intervals and hypothesis tests.</p>
+<p>A more detailed discussion of the Central Limit Theorem is provided in the dedicated section on the <strong><a href="../../glossary/terms/clt.html">Central Limit Theorem</a></strong>.</p>
 </section>
-<section id="example-2---country-distribution-in-an-e-commerce-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="example-2---country-distribution-in-an-e-commerce-dataset">Example 2 - Country Distribution in an E-commerce Dataset</h2>
-<p>Imagine you are building a model using customer data from several countries.</p>
-<p>Your dataset contains:</p>
+<section id="where-sampling-distributions-appear-in-data-science-and-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="where-sampling-distributions-appear-in-data-science-and-machine-learning">Where Sampling Distributions Appear in Data Science and Machine Learning</h2>
+<p>Although the concept originates in classical statistics, sampling distributions appear frequently in modern data science and machine learning.</p>
+<p>Some common examples include:</p>
 <ul>
-<li>56% Brazil<br>
-</li>
-<li>30% United States<br>
-</li>
-<li>14% Germany</li>
+<li><p><strong>Model evaluation</strong><br>
+Metrics such as accuracy, AUC, precision, or recall are statistics computed from a test dataset.<br>
+Their variability across different samples reflects the <strong>sampling distribution of the evaluation metric</strong>.</p></li>
+<li><p><strong>Cross-validation</strong><br>
+When a model is trained and evaluated across multiple folds, the resulting scores approximate the <strong>sampling distribution of the model’s performance</strong>.</p></li>
+<li><p><strong>Bootstrap methods</strong><br>
+Bootstrapping repeatedly resamples the dataset and recomputes a statistic (such as a coefficient or prediction error) to approximate its <strong>sampling distribution</strong>.</p></li>
+<li><p><strong>Uncertainty quantification</strong><br>
+Confidence intervals and standard errors used in regression or causal inference rely on theoretical results about sampling distributions.</p></li>
 </ul>
-<p>If we randomly sample observations from the dataset to create a smaller dataset, one country might become overrepresented due to random fluctuations.</p>
-<p>Suppose the sampled dataset ends up looking like this:</p>
-<ul>
-<li>40% Brazil<br>
-</li>
-<li>45% United States<br>
-</li>
-<li>15% Germany</li>
-</ul>
-<p>Now suppose customers in the United States tend to spend more on average than customers from other countries.</p>
-<p>If the sampled dataset contains too many U.S. customers, the estimated <strong>average purchase amount</strong> in the sample will be artificially inflated.</p>
-<p>As a result, you might conclude that customers in this dataset spend more than expected.</p>
-<p>However, this conclusion would partly reflect a <strong>sampling distortion</strong>, not the true structure of the population generated by the DGP.</p>
-<p>Using <strong>stratified sampling on the country variable (<span class="math inline">\(X\)</span>)</strong> ensures that the sample preserves the original proportions observed in the dataset.</p>
-<p>This helps ensure that the sampled dataset remains representative of the original data.</p>
-<hr>
-</section>
-<section id="when-is-stratified-sampling-important" class="level2">
-<h2 class="anchored" data-anchor-id="when-is-stratified-sampling-important">When Is Stratified Sampling Important?</h2>
-<p>The main reason for using stratified sampling is <strong>sampling variability</strong>.</p>
-<p>When the dataset is small or the event of interest is rare, random splits can produce large deviations in class proportions when creating training and test datasets.</p>
-<p>However, when the dataset is <strong>large</strong>, class proportions tend to stabilize automatically due to the <strong>Law of Large Numbers</strong>.</p>
-<p>In these cases, random sampling often preserves class proportions reasonably well, and stratified sampling becomes less critical.</p>
-<p>In practice, stratified sampling is most useful when:</p>
-<ul>
-<li>the dataset is <strong>small</strong></li>
-<li>the event of interest is <strong>rare</strong></li>
-<li>evaluation metrics depend heavily on the <strong>number of positive cases</strong></li>
-</ul>
+<p>Even in predictive machine learning pipelines, whenever we compute statistics from data - such as model parameters, evaluation metrics, or feature importance measures - their variability across samples is governed by <strong>sampling distributions</strong>.</p>
 
 
 

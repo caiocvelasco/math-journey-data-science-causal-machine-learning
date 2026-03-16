@@ -2,151 +2,193 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "",
-    "text": "Journey Phases\nThis is my structured learning roadmap to prepare for research in causal machine learning with mathematical rigor.\nHere you can find both mathematical foundations and applications.",
+    "text": "© 2025 Caio Velasco. All rights reserved.\nThis is my structured learning roadmap to prepare for research in causal machine learning with mathematical rigor.\nHere you can find both mathematical foundations and applications.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#why-im-interested-in-causal-ml",
     "href": "index.html#why-im-interested-in-causal-ml",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Why I’m Interested in Causal ML?",
     "text": "Why I’m Interested in Causal ML?\n\nStatistics and econometrics build models on top of stochastic mechanisms (data-generating processes - DGPs), aiming for explanation and inference.\n\nMachine learning often ignores those mechanisms and focuses on prediction accuracy, generalization, and performance.\n\nCausal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-1---logic-set-theory",
     "href": "index.html#phase-1---logic-set-theory",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 1 - Logic & Set Theory",
     "text": "Phase 1 - Logic & Set Theory\nGoal: Build comfort with the language of mathematics.\n\nProof techniques: direct, contrapositive, contradiction, induction.\n\nSets, Cartesian products, power sets.\n\nFunctions and relations.\n\nCardinality: countable vs. uncountable sets.\n\nTheory Output: Formal proofs and mathematical maturity.\nApplication Project: Formalize simple statistical statements using logical quantifiers and analyze which assumptions are required for conclusions to hold. (not very hands-on, I know, but having mathematical maturity will change your life!)\nReferences:\n- Velleman - How to Prove It",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-2---linear-algebra",
     "href": "index.html#phase-2---linear-algebra",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 2 - Linear Algebra",
     "text": "Phase 2 - Linear Algebra\nGoal: Understand the geometry underlying estimation and projection.\n\nVector spaces, bases, dimension.\n\nLinear transformations and matrices.\n\nInner product spaces and orthogonality.\n\nEigenvalues, spectral theorem (finite-dimensional).\n\nSingular value decomposition.\n\nTheory Output: Proof of spectral theorem (symmetric case), rank-nullity theorem.\nApplication Project: Derive and implement PCA via SVD.\nReferences:\n- Axler - Linear Algebra Done Right",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-3---real-analysis-ℝ",
     "href": "index.html#phase-3---real-analysis-ℝ",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 3 - Real Analysis (ℝ)",
     "text": "Phase 3 - Real Analysis (ℝ)\nGoal: Rigorous calculus and convergence.\n\nSequences and limits.\n\nContinuity and compactness in ℝ.\n\nDifferentiation and Mean Value Theorem.\n\nUniform convergence.\n\nTheory Output: ε-δ proofs, compactness arguments.\nApplication Project: Analyze convergence of gradient descent under convexity assumptions.\nReferences:\n- Rudin - Principles of Mathematical Analysis\n- Tao - Analysis I",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-4---metric-spaces",
     "href": "index.html#phase-4---metric-spaces",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 4 - Metric Spaces",
     "text": "Phase 4 - Metric Spaces\nGoal: Introduce minimal topology needed for probability and asymptotics.\n\nMetric spaces and convergence.\n\nOpen/closed sets.\n\nCompleteness.\n\nCompactness in metric spaces.\n\nTheory Output: General convergence beyond ℝ.\nApplication Project: Compare different notions of convergence in simulated estimators.\nReferences:\n- Rudin - Principles of Mathematical Analysis (Ch. 2)\n- Abbott - Understanding Analysis\n- Munkres - Topology (selected sections on metric spaces only)",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-5---measure-theory",
     "href": "index.html#phase-5---measure-theory",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 5 - Measure Theory",
     "text": "Phase 5 - Measure Theory\nGoal: Build the foundation of integration and probability.\n\nσ-algebras and measurable functions.\n\nLebesgue measure and integration.\n\nConvergence theorems (MCT, DCT).\n\nProduct measures and Fubini.\n\nTheory Output: Construction of Lebesgue integral and convergence theorems.\nApplication Project: Monte Carlo integration and convergence analysis.\nReferences:\n- Schilling - Measures, Integrals and Martingales",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-6---probability-measure-theoretic",
     "href": "index.html#phase-6---probability-measure-theoretic",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 6 - Probability (Measure-Theoretic)",
     "text": "Phase 6 - Probability (Measure-Theoretic)\nGoal: Define uncertainty rigorously.\n\nProbability spaces and random variables.\n\nModes of convergence.\n\nLLN and CLT.\n\nConditional expectation as L² projection.\n\nTheory Output: Proof sketches of LLN/CLT; conditional expectation as projection.\nApplication Project: A/B testing simulation with asymptotic confidence intervals.\nReferences:\n- Durrett - Probability: Theory and Examples",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-7---mathematical-statistics",
     "href": "index.html#phase-7---mathematical-statistics",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 7 - Mathematical Statistics",
     "text": "Phase 7 - Mathematical Statistics\nGoal: Move from probability to inference.\n\nLikelihood and estimation (MLE).\n\nConsistency and asymptotic normality.\n\nDelta method.\n\nEfficiency and influence functions.\n\nTheory Output: Consistency of MLE; asymptotic normality.\nApplication Project: Logistic regression - prove Bernoulli MLE consistency and simulate convergence.\nReferences:\n- Casella & Berger - Statistical Inference",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-8---decision-risk",
     "href": "index.html#phase-8---decision-risk",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 8 - Decision & Risk",
     "text": "Phase 8 - Decision & Risk\nGoal: Formalize optimal decisions under uncertainty.\n\nLoss functions.\n\nRisk and Bayes risk.\n\nMinimax and admissibility.\n\nConnection between estimation and decision rules.\n\nTheory Output: Basic optimality results under quadratic loss.\nApplication Project: Compare decision rules under different loss functions.\nReferences:\n- Berger - Statistical Decision Theory and Bayesian Analysis\n- Lehmann & Casella - Theory of Point Estimation\n- Ferguson - Mathematical Statistics: A Decision Theoretic Approach",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-9---uncertainty-quantification",
     "href": "index.html#phase-9---uncertainty-quantification",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 9 - Uncertainty Quantification",
     "text": "Phase 9 - Uncertainty Quantification\nGoal: Make uncertainty explicit and operational.\n\nParameter uncertainty (confidence intervals, bootstrap).\n\nPredictive distributions.\n\nRobustness under misspecification.\n\nConformal inference (distribution-free guarantees).\n\nUncertainty propagation.\n\nTheory Output: Coverage guarantees and bootstrap consistency.\nApplication Project: Implement bootstrap intervals and conformal prediction for regression.\nReferences:\n- Efron & Tibshirani - An Introduction to the Bootstrap\n- Wasserman - All of Statistics (bootstrap & nonparametrics sections)\n- van der Vaart - Asymptotic Statistics (confidence sets & efficiency)\n- Romano, Shafer & Candès - Conformal inference papers\n- Rasmussen & Williams - Gaussian Processes for Machine Learning (predictive uncertainty perspective)",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-10---statistical-learning-theory",
     "href": "index.html#phase-10---statistical-learning-theory",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 10 - Statistical Learning Theory",
     "text": "Phase 10 - Statistical Learning Theory\nGoal: Bridge inference and prediction rigorously.\n\nEmpirical Risk Minimization (ERM).\n\nGeneralization bounds.\n\nVC dimension and capacity control.\n\nRegularization and bias-variance tradeoff.\n\nTheory Output: Derive simple generalization bound via Hoeffding’s inequality.\nApplication Project: Simulate empirical vs. generalization error under increasing model complexity.\nReferences:\n- Shalev-Shwartz & Ben-David - Understanding Machine Learning\n- Breiman - Statistical Modeling: The Two Cultures",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
   },
   {
     "objectID": "index.html#phase-11---causal-inference-causal-ml",
     "href": "index.html#phase-11---causal-inference-causal-ml",
-    "title": "Foundations of Data Science & Causal ML: A Mathematical Journey",
+    "title": "Journey Phases",
     "section": "Phase 11 - Causal Inference + Causal ML",
     "text": "Phase 11 - Causal Inference + Causal ML\nGoal: Reason about interventions with statistical guarantees.\n\nStructural Causal Models and potential outcomes.\n\nIdentifiability (backdoor/frontdoor).\n\nOrthogonalization and Double ML.\n\nValid uncertainty for treatment effects.\n\nTheory Output: Proof sketches of backdoor criterion and Neyman orthogonality.\nApplication Project: Implement Double ML for heterogeneous treatment effects.\nReferences:\n- Pearl - Causality\n- Peters, Janzing, Schölkopf - Elements of Causal Inference\n- Chernozhukov et al. - Causal ML papers",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Journey Phases</span>"
+      "Journey Phases"
     ]
+  },
+  {
+    "objectID": "glossary/terms/dgp.html",
+    "href": "glossary/terms/dgp.html",
+    "title": "Data Generating Process (DGP)",
+    "section": "",
+    "text": "The data generating process (DGP) is the stochastic mechanism operated by Nature that gives rise to the observable data.\nIn statistical learning and econometrics, we assume that this mechanism can be represented by a probability law, namely the joint probability distribution\n\\[\nP(X,Y)\n\\]\nof the random variables involved in the problem, where:\nThis probability law describes the probabilistic structure governing how the data are generated.\nEquivalently, we express that the random vector \\((X,Y)\\) follows this distribution by writing\n\\[\n(X,Y) \\sim P(X,Y)\n\\]\nImportant points:\nBelow, we show a few ideas to make the DGP concept more concrete."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#realizations-of-the-random-variables",
+    "href": "glossary/terms/dgp.html#realizations-of-the-random-variables",
+    "title": "Data Generating Process (DGP)",
+    "section": "Realizations of the random variables",
+    "text": "Realizations of the random variables\nThe distribution \\(P(X,Y)\\) describes the random variables \\(X\\) and \\(Y\\).\nWhen we write\n\\[\nP(X = x, Y = y)\n\\]\nwe are evaluating the same probability law at a specific realization \\((x,y)\\) of those random variables.\nIn other words:\n\n\n\nExpression\nMeaning\n\n\n\n\n\\(P(X,Y)\\)\nthe joint probability law governing the variables\n\n\n\\(P(X=x,Y=y)\\)\nthe probability of observing the realization \\((x,y)\\)\n\n\n\n\nExample\nSuppose\n\n\\(X\\) = days since last purchase\n\n\\(Y\\) = customer reactivates (1 = yes, 0 = no)\n\nThen\n\\[\nP(X=10, Y=1)\n\\]\nrepresents the probability that a customer who has not purchased for 10 days reactivates their subscription."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#random-sample-from-the-dgp",
+    "href": "glossary/terms/dgp.html#random-sample-from-the-dgp",
+    "title": "Data Generating Process (DGP)",
+    "section": "Random Sample from the DGP",
+    "text": "Random Sample from the DGP\nA dataset is assumed to be a random sample from the DGP:\n\\[\n(X_1,Y_1),\\dots,(X_n,Y_n) \\overset{iid}{\\sim} P(X,Y)\n\\]\nThis means the observations are:\n\nIndependent → one observation does not influence another\n\nIdentically distributed → all observations follow the same probability law \\(P(X,Y)\\)\n\nEach row in the dataset is therefore a realization of the random vector \\((X,Y)\\) generated by Nature’s stochastic mechanism.\nUnderstanding this assumption is crucial: most statistical learning methods rely on the idea that the observed dataset is a representative sample from the same underlying DGP."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#real-world-example-1-connection-to-training-and-test-sets",
+    "href": "glossary/terms/dgp.html#real-world-example-1-connection-to-training-and-test-sets",
+    "title": "Data Generating Process (DGP)",
+    "section": "Real-world example 1: Connection to Training and Test Sets",
+    "text": "Real-world example 1: Connection to Training and Test Sets\nIn machine learning we typically split the dataset into training and test sets.\nBoth sets are assumed to be samples from the same DGP:\n\nTraining set → used to fit the model\nTest set → used to evaluate how the model performs on unseen data\n\nIdeally,\n\\[\n\\text{Training set} \\sim P(X,Y)\n\\]\n\\[\n\\text{Test set} \\sim P(X,Y)\n\\]\nThe test set therefore acts as a proxy for future observations generated by the same stochastic mechanism.\nIf the training and test sets come from different distributions, model evaluation can become misleading."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#real-world-example-2-observations-from-the-dgp",
+    "href": "glossary/terms/dgp.html#real-world-example-2-observations-from-the-dgp",
+    "title": "Data Generating Process (DGP)",
+    "section": "Real-world example 2: Observations from the DGP",
+    "text": "Real-world example 2: Observations from the DGP\nSuppose we are modeling whether a customer reactivates a coffee subscription.\n\n\n\ncustomer_id\ncountry\ndays_since_last_purchase\nreactivated\n\n\n\n\n101\nBrazil\n15\n1\n\n\n102\nUSA\n240\n0\n\n\n103\nBrazil\n40\n1\n\n\n104\nColombia\n180\n0\n\n\n105\nUSA\n20\n1\n\n\n\nHere,\n\\[\nX = (\\text{country}, \\text{days\\_since\\_last\\_purchase})\n\\]\n\\[\nY = \\text{reactivated}\n\\]\nEach row is a realization drawn from the unknown joint probability law \\(P(X,Y)\\)\nwhich governs how the business data are generated.\nThe dataset is therefore not the phenomenon itself, but rather a finite sample generated by the underlying stochastic mechanism."
+  },
+  {
+    "objectID": "glossary/terms/dgp.html#real-world-example-3-cross-validation-and-the-dgp",
+    "href": "glossary/terms/dgp.html#real-world-example-3-cross-validation-and-the-dgp",
+    "title": "Data Generating Process (DGP)",
+    "section": "Real-world example 3: Cross-Validation and the DGP",
+    "text": "Real-world example 3: Cross-Validation and the DGP\nCross-validation also relies on the assumption that the dataset is a random sample from the same data generating process (DGP).\nFormally,\n\\[\n(X_1,Y_1),\\dots,(X_n,Y_n) \\overset{iid}{\\sim} P(X,Y)\n\\]\nBecause of this assumption, we treat different subsets of the data as if they were new observations generated by the same probability law.\n\nDataset\n\n\n\nid\ndays_since_last_purchase\nreactivated\n\n\n\n\n1\n10\n1\n\n\n2\n200\n0\n\n\n3\n40\n1\n\n\n4\n300\n0\n\n\n5\n20\n1\n\n\n6\n100\n0\n\n\n\nEach row satisfies\n\\[\n(X_i,Y_i) \\sim P(X,Y)\n\\]\nmeaning every observation is a realization generated by the same DGP.\n\n\n3-fold cross-validation split\nThe numbers below refer to the row identifiers (id) of the dataset above, indicating which observations are used in each training and validation split.\n\n\n\nFold\nTraining data (ids)\nValidation data (ids)\n\n\n\n\n1\n3,4,5,6\n1,2\n\n\n2\n1,2,5,6\n3,4\n\n\n3\n1,2,3,4\n5,6\n\n\n\nFor example, in Fold 1:\n\nthe model is trained on observations 3,4,5,6\nit is evaluated on observations 1,2\n\nAt each iteration:\n\nthe model is trained on the training subset\nits performance is evaluated on the validation subset\n\nBecause all observations are assumed to come from the same DGP, each validation fold acts as a proxy for new data generated by Nature.\nCross-validation therefore repeats the train/test logic multiple times, providing a more stable estimate of model performance."
   },
   {
     "objectID": "chapters/about.html",
     "href": "chapters/about.html",
     "title": "About",
     "section": "",
-    "text": "Why This Book Exists\nHi, I’m Caio Velasco 👋\nI’m originally from Brazil. I studied Mechanical Engineering at the Federal University of Rio de Janeiro (UFRJ) and later completed a 2-year Master in Economics & Public Policy at the University of California Los Angeles (UCLA), supported by a full scholarship from the Lemann Foundation.\nDuring my academic path, I was drawn increasingly toward quantitative reasoning - probability, econometrics, statistical inference - and to the deeper question behind them: Why do these methods work?\nAt some point, applying models was no longer enough. I wanted to understand more. This book is the result of that shift.\nThroughout my studies, I encountered powerful tools: regression, asymptotics, optimization, machine learning, causal inference.\nBut I realized that true clarity requires something deeper:\nThis project is my attempt to rebuild the mathematical backbone behind data science and causal machine learning - slowly, rigorously, and honestly.",
+    "text": "Hi, I’m Caio Velasco 👋\nI’m originally from Brazil. I studied Mechanical Engineering at the Federal University of Rio de Janeiro (UFRJ) and later completed a 2-year Master in Economics & Public Policy at the University of California Los Angeles (UCLA), supported by a full scholarship from the Lemann Foundation.\nDuring my academic path, I was drawn increasingly toward quantitative reasoning - probability, econometrics, statistical inference - and to the deeper question behind them: Why do these methods work?\nAt some point, applying models was no longer enough. I wanted to understand more. This book is the result of that shift.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About</span>"
+      "About"
     ]
   },
   {
     "objectID": "chapters/about.html#why-this-book-exists",
     "href": "chapters/about.html#why-this-book-exists",
     "title": "About",
-    "section": "",
-    "text": "Understanding convergence, not just using estimators.\n\nUnderstanding probability spaces, not just distributions.\n\nUnderstanding identifiability, not just running models.",
+    "section": "Why This Book Exists",
+    "text": "Why This Book Exists\nThroughout my studies, I encountered powerful tools: regression, asymptotics, optimization, machine learning, causal inference.\nBut I realized that true clarity requires something deeper:\n\nUnderstanding convergence, not just using estimators.\n\nUnderstanding probability spaces, not just distributions.\n\nUnderstanding identifiability, not just running models.\n\nThis project is my attempt to rebuild the mathematical backbone behind data science and causal machine learning - slowly, rigorously, and honestly.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About</span>"
+      "About"
     ]
   },
   {
@@ -156,7 +198,7 @@
     "section": "What Drives Me",
     "text": "What Drives Me\n\nRigor. I care about knowing where assumptions live.\n\nStructure. I like seeing how ideas connect across layers.\n\nClarity. I prefer fewer tools, understood deeply.\n\nIntellectual honesty. This book reflects what I have actually studied to get here.\n\nSharing. I am motivated by learning in public and helping demystify ideas that often appear more complex than they need to be.\n\nI believe that prediction without foundations is fragile, and causal claims without structure are dangerous.\nSo this journey begins at the base:\n\nlogic, linear algebra, analysis, measure, probability and builds upward toward causal reasoning.\n\nIf this book does anything well, I hope it shows that mathematical depth is not about abstraction for its own sake, but about understanding the layer you are standing on.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>About</span>"
+      "About"
     ]
   },
   {
@@ -164,9 +206,9 @@
     "href": "chapters/00_ch00.html",
     "title": "Why I’m Interested in Causal ML?",
     "section": "",
-    "text": "Overview\nMy interest in Causal Machine Learning (Causal ML) comes from a simple tension: many models can predict well, but prediction alone does not answer the questions I care about - what happens if we intervene? and how sure are we?\nIn Statistical Modeling: The Two Cultures (2001), Leo Breiman described two traditions that often talk past each other:\nCausal ML is compelling to me because it aims to combine the strengths of both: flexible prediction models with principled causal questions and uncertainty quantification.",
+    "text": "My interest in Causal Machine Learning (Causal ML) comes from a simple tension: many models can predict well, but prediction alone does not answer the questions I care about - what happens if we intervene? and how sure are we?\nIn Statistical Modeling: The Two Cultures (2001), Leo Breiman described two traditions that often talk past each other:\n\n\n\n\n\n\n\n\nCulture\nPrimary goal\nTypical focus\n\n\n\n\nData modeling (statistics/econometrics)\nexplanation + inference\nassumptions, parameters, uncertainty\n\n\nAlgorithmic modeling (machine learning)\nprediction + generalization\nperformance on unseen data\n\n\n\nCausal ML is compelling to me because it aims to combine the strengths of both: flexible prediction models with principled causal questions and uncertainty quantification.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+      "Why I'm Interested in Causal ML?"
     ]
   },
   {
@@ -174,9 +216,9 @@
     "href": "chapters/00_ch00.html#overview",
     "title": "Why I’m Interested in Causal ML?",
     "section": "",
-    "text": "Culture\nPrimary goal\nTypical focus\n\n\n\n\nData modeling (statistics/econometrics)\nexplanation + inference\nassumptions, parameters, uncertainty\n\n\nAlgorithmic modeling (machine learning)\nprediction + generalization\nperformance on unseen data",
+    "text": "My interest in Causal Machine Learning (Causal ML) comes from a simple tension: many models can predict well, but prediction alone does not answer the questions I care about - what happens if we intervene? and how sure are we?\nIn Statistical Modeling: The Two Cultures (2001), Leo Breiman described two traditions that often talk past each other:\n\n\n\n\n\n\n\n\nCulture\nPrimary goal\nTypical focus\n\n\n\n\nData modeling (statistics/econometrics)\nexplanation + inference\nassumptions, parameters, uncertainty\n\n\nAlgorithmic modeling (machine learning)\nprediction + generalization\nperformance on unseen data\n\n\n\nCausal ML is compelling to me because it aims to combine the strengths of both: flexible prediction models with principled causal questions and uncertainty quantification.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+      "Why I'm Interested in Causal ML?"
     ]
   },
   {
@@ -186,7 +228,7 @@
     "section": "Focus of This Book",
     "text": "Focus of This Book\nThis online book is my mathematical learning journey toward understanding Causal ML from first principles. My goal is to rebuild the foundations carefully and honestly - writing only what I have actually studied - so that later I can read and use causal methods with clarity and rigor.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+      "Why I'm Interested in Causal ML?"
     ]
   },
   {
@@ -196,7 +238,7 @@
     "section": "The Foundational Path",
     "text": "The Foundational Path\nThis book is my mathematical learning journey toward understanding Causal ML from first principles.\nEach step builds exactly the structure required for the next - nothing ornamental, nothing skipped.\n\n\n\n\n\n\n\n\nPhase\nTopic\nFocus\n\n\n\n\n1\nLogic & Set Theory\nProof techniques, quantifiers, mathematical language\n\n\n2\nLinear Algebra\nInner products, projections, spectral ideas; geometry of estimation\n\n\n3\nReal Analysis (ℝ)\nLimits, continuity, differentiation, compactness - aka: Calculus\n\n\n4\nMetric Spaces\nConvergence, open/closed sets, completeness; minimal topology\n\n\n5\nMeasure Theory\nσ-algebras, integration, product measures\n\n\n6\nProbability (measure-theoretic)\nProbability spaces, random variables, convergence modes, LLN/CLT, conditional expectation\n\n\n7\nMathematical Statistics\nLikelihood, asymptotics, efficiency, influence functions\n\n\n8\nDecision & Risk\nLoss, optimality, statistical decision theory\n\n\n9\nUncertainty Quantification\nParameter uncertainty, predictive distributions, bootstrap, conformal inference, robustness\n\n\n10\nStatistical Learning Theory\nERM, generalization, regularization, high-dimensional behavior\n\n\n11\nCausal Inference + Causal ML\nIdentifiability, orthogonality, double ML, valid uncertainty for treatment effects",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+      "Why I'm Interested in Causal ML?"
     ]
   },
   {
@@ -206,7 +248,7 @@
     "section": "Why Mathematical Rigor Matters to Me",
     "text": "Why Mathematical Rigor Matters to Me\nIn a short interview often titled “Why?”, Richard Feynman is asked a seemingly simple question:\n\n“Why do magnets repel each other?”\n\n\nInstead of giving a comforting mechanical story, he does something deeper.\nHe explains that every answer depends on what you are willing to accept as fundamental.\nIf he says:\n\n“Because of electromagnetic forces,”\n\nthe interviewer can still ask:\n\n“Why electromagnetic forces?”\n\nIf he explains using quantum electrodynamics:\n\n“Because of exchange particles,”\n\none can still ask:\n\n“Why that law?”\n\nEventually, explanation stops being reduction and becomes:\n\n“This is how nature behaves. This is the framework.”\n\nFeynman’s key insight is subtle but profound:\n\nThere is no explanation without a conceptual framework.\nEvery “why” presupposes some deeper structure that we are not questioning.\n\nThis resonates deeply with me.\nIn data science and machine learning, it is possible to use powerful tools without fully understanding the structures that justify them. A model may perform well, an estimator may seem stable, an interval may look convincing.\nBut if I cannot explain why it works - in terms of convergence, projection, identifiability, or probability - then I am operating at a surface layer.\nFor me, mathematical rigor is not about abstraction for its own sake.\nIt is about knowing which layer I am standing on.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why I'm Interested in Causal ML?</span>"
+      "Why I'm Interested in Causal ML?"
     ]
   },
   {
@@ -214,9 +256,9 @@
     "href": "chapters/01_ch01.html",
     "title": "Phase 1: Logic & Set Theory",
     "section": "",
-    "text": "0. Mathematics, Axioms, and Science\nMathematics begins with axioms — assumptions we agree to accept without proof — and builds everything else from them using precise rules of logic.\nThis process of axiomatization is what gives mathematics its unique clarity: starting from simple, explicit principles, we construct entire theories.\nWhy is this important?\n- Axioms are not “true” in an absolute sense. They are starting points.\n- What matters is whether the consequences drawn from them are logically consistent and useful for understanding the world.\n- In practice, this makes mathematics a language in which science can express and test ideas.\nMathematics provides the rigorous framework for turning assumptions into predictions.\nFor example, in Euclidean geometry we assume as an axiom:\nBut this depends on the “space” we are working in.\nIntuitively:\nNow consider two points on the equator that are exactly opposite each other (say Rio de Janeiro and Jakarta).\nThe key idea is that “straight line” really means shortest possible path given the geometry of the space.\nOn a plane, that’s the familiar straight line; on a sphere, it’s a great circle.\nThe notion of a geodesic generalizes this idea: whatever the space, it tells us the natural way to connect two points as efficiently as possible.\nThis illustrates a key point:\nThey are conventions that define the system we are working in.\nWithin their proper context (e.g., Euclidean geometry), their consequences are logically consistent (no contradictions arise) and useful (for designing buildings, maps, and bridges). But in other contexts (e.g., spherical geometry), we need a different set of axioms.\nIn the same way, in probability we may assume:\nReal-world data often violates this (dependence in time series, non-identical distributions in heterogeneous populations).\nBut within the i.i.d. framework, the consequences are logically consistent and extremely useful: they give us fundamental results like the Law of Large Numbers and the Central Limit Theorem.\nThe analogy with geometry is this:\nSimilarly, in probability:\nWhy we begin with Logic and Set Theory\nTogether, Logic and Set Theory form the grammar and vocabulary of mathematics.\nThey are not yet “about the real world” — but they give us the precise tools to state assumptions and derive consequences.\nIntuition for research\nWhen you see theoretical work in physics, economics, or causal machine learning, it often starts by axiomatizing the problem:\n- Define the objects (e.g. random variables, causal spaces).\n- Specify assumptions as axioms (e.g. independence, stability, interventions).\n- Derive results rigorously from there.\nBy starting here, we are learning how to speak the language of mathematics before applying it to inference, probability, and causality.\nThus, before diving into analysis and probability, we establish a foundation in logic and set theory. This is important to formalize assumptions, express mathematical objects precisely, and build proofs with rigor.\nLogic gives us the language to connect premises and conclusions, while Set Theory gives us the structure to define universes of discourse, events, functions, probability spaces, etc.\nTherefore: Yes, it would be essential to learn Logic and Set Theory!",
+    "text": "Mathematics begins with axioms — assumptions we agree to accept without proof — and builds everything else from them using precise rules of logic.\nThis process of axiomatization is what gives mathematics its unique clarity: starting from simple, explicit principles, we construct entire theories.\nWhy is this important?\n- Axioms are not “true” in an absolute sense. They are starting points.\n- What matters is whether the consequences drawn from them are logically consistent and useful for understanding the world.\n- In practice, this makes mathematics a language in which science can express and test ideas.\nMathematics provides the rigorous framework for turning assumptions into predictions.\nFor example, in Euclidean geometry we assume as an axiom:\n\nThrough two distinct points, there is exactly one straight line.\n\nBut this depends on the “space” we are working in.\n\nOn a flat plane (Euclidean space), the axiom works perfectly: two points uniquely determine a straight line.\n\nOn the surface of a sphere (non-Euclidean geometry), the analogue of a “straight line” is a geodesic — the shortest path between two points on the surface.\nOn a sphere, geodesics turn out to be arcs of great circles (circles centered at the sphere’s center, like the equator or any meridian).\n\nIntuitively:\n\nIf you fly from New York to Paris, the shortest route is not a line of latitude on a flat map, but rather a curved arc of a great circle (airplanes follow these routes because they minimize distance).\nThe airplane could in principle fly in a perfectly straight line, but only if it were allowed to go through the Earth’s interior. Since it’s constrained to stay on the surface of the sphere, the “straight line” within that space becomes a geodesic (the great circle).\n\nNow consider two points on the equator that are exactly opposite each other (say Rio de Janeiro and Jakarta).\n\nThere isn’t a unique great circle through them — in fact, infinitely many great circles (all meridians) pass through both points.\n\nSo the Euclidean axiom fails in this curved space.\n\nThe key idea is that “straight line” really means shortest possible path given the geometry of the space.\nOn a plane, that’s the familiar straight line; on a sphere, it’s a great circle.\nThe notion of a geodesic generalizes this idea: whatever the space, it tells us the natural way to connect two points as efficiently as possible.\nThis illustrates a key point:\n\naxioms are not “universally true” in some absolute sense.\n\nThey are conventions that define the system we are working in.\nWithin their proper context (e.g., Euclidean geometry), their consequences are logically consistent (no contradictions arise) and useful (for designing buildings, maps, and bridges). But in other contexts (e.g., spherical geometry), we need a different set of axioms.\nIn the same way, in probability we may assume:\n\nOutcomes of an experiment are independent and identically distributed (i.i.d.).\n\nReal-world data often violates this (dependence in time series, non-identical distributions in heterogeneous populations).\nBut within the i.i.d. framework, the consequences are logically consistent and extremely useful: they give us fundamental results like the Law of Large Numbers and the Central Limit Theorem.\nThe analogy with geometry is this:\n\nIn flat Euclidean space, the “straight line” is the natural geodesic.\n\nOn a sphere, the “straight line” is reinterpreted as a great circle.\n\nSimilarly, in probability:\n\nFor many problems, assuming i.i.d. is the natural starting point (the “straight line” of probability).\n\nIn more complex contexts (time series, causal inference), we need to redefine the structure (like choosing geodesics on a sphere) with weaker or different axioms — e.g., mixing conditions, stationarity, or potential outcomes.\n\nWhy we begin with Logic and Set Theory\n\nLogic gives us the rules of the game:\nhow to combine statements, reason consistently, and structure proofs.\nWithout logic, axioms and theorems would collapse into ambiguity.\nSet Theory provides the building blocks:\nalmost every object in modern mathematics (numbers, functions, probability spaces, datasets) can be described in terms of sets.\n\nTogether, Logic and Set Theory form the grammar and vocabulary of mathematics.\nThey are not yet “about the real world” — but they give us the precise tools to state assumptions and derive consequences.\nIntuition for research\nWhen you see theoretical work in physics, economics, or causal machine learning, it often starts by axiomatizing the problem:\n- Define the objects (e.g. random variables, causal spaces).\n- Specify assumptions as axioms (e.g. independence, stability, interventions).\n- Derive results rigorously from there.\nBy starting here, we are learning how to speak the language of mathematics before applying it to inference, probability, and causality.\n\nThus, before diving into analysis and probability, we establish a foundation in logic and set theory. This is important to formalize assumptions, express mathematical objects precisely, and build proofs with rigor.\nLogic gives us the language to connect premises and conclusions, while Set Theory gives us the structure to define universes of discourse, events, functions, probability spaces, etc.\nTherefore: Yes, it would be essential to learn Logic and Set Theory!",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -226,7 +268,7 @@
     "section": "1.1 Statements, Propositions, Predicates, and Connectives",
     "text": "1.1 Statements, Propositions, Predicates, and Connectives\n💡Motivation\nLearning statements and connectives is like learning the alphabet of mathematics.\n- If you cannot distinguish valid statements, you cannot even start a proof.\nExample in causal inference:\n- \\(p\\): “The model includes all relevant confounders.”\n- \\(q\\): “The conditional independence assumption holds.”\n- Then “If the model includes all relevant confounders, then the conditional independence assumption holds” is \\(p \\to q\\).\nWithout connectives, we’d stay in informal language. With them, we can formalize statements and reason rigorously about consequences, such as proving that a set of assumptions implies consistency of an estimator, showing that ignorability implies identification of a treatment effect, or demonstrating that conditional independence leads to factorization of a probability distribution into simpler components.\nA Statement (or Proposition) is a declarative sentence that is either true or false.\n\nExample: “3 is even” (false), “Barcelona is in Spain” (true).\n\nA Predicate is like a “template” for a statement: it depends on a variable and becomes a statement once you specify the value. For example:\n\\(P(x): x &gt; 0\\) (this is a Predicate or a “template”)\n- \\(P(2)\\) → “2 &gt; 0” (This is a Statement, with logic value “true”).\n- \\(P(-1)\\) → “-1 &gt; 0” (This is a Statement, with logic value “false”).\nConnectives are logical “operators” that allow us to combine simple statements into more complex ones.\nThey let us reason systematically instead of relying on vague language.\nBut why do we want to combine simple statements into more complex ones?\nBecause in mathematics (and especially in statistics), we rarely deal with isolated facts.\nWe deal with assumptions and want to know what conclusions they imply.\nConnectives give us the structure to move from “pieces of information” to a logical argument.\nExample from statistics:\n\n\\(p\\): “The sample is i.i.d.”\n\n\\(q\\): “The variance of the sample is finite.”\n\n\\(r\\): “The sample mean converges to the true mean (Law of Large Numbers).”\n\nIn words:\n“If the sample is i.i.d. and the variance is finite, then the sample mean converges.”\nSymbolically:\n\\[\n(p \\land q) \\to r\n\\]\nThis is exactly how many theorems are written: conditions (joined with \\(\\land\\)) imply a result (\\(\\to\\)).\nSo connectives are not just about making compound sentences longer.\nThey are about giving us a precise language of assumptions and consequences.\n\nThis is the foundation of mathematical reasoning: once we can formalize, we can prove.\n\nLet’s see them one by one with examples:\n\nNegation (\\(\\lnot p\\))\nMeaning: “not \\(p\\)”\n\nIf \\(p\\) is: “The number 5 is even” (false),\n\nThen \\(\\lnot p\\) is: “The number 5 is not even” (true).\n\n\n\n\nConjunction (\\(p \\land q\\))\nMeaning: “\\(p\\) and \\(q\\)” → true only when both are true.\n\n\\(p\\): “2 is even” (true)\n\n\\(q\\): “3 is prime” (true)\n\n\\(p \\land q\\): “2 is even and 3 is prime” (true).\n\nIf either part were false, the whole conjunction would be false.\n\n\n\n\nDisjunction (\\(p \\lor q\\))\nMeaning: “\\(p\\) or \\(q\\)” → true if at least one is true.\n\n\\(p\\): “Barcelona is in Spain” (true)\n\n\\(q\\): “Lisbon is in Brazil” (false)\n\n\\(p \\lor q\\): “Barcelona is in Spain or Lisbon is in Brazil” (true).\n\n(Note: In logic, “or” usually means inclusive or — at least one true, possibly both.)\n\n\n\nConditional (\\(p \\to q\\))\nMeaning: “if \\(p\\) then \\(q\\)” → false only if \\(p\\) is true and \\(q\\) is false.\n\n\\(p\\): “It rains.”\n\n\\(q\\): “The ground is wet.”\n\n\\(p \\to q\\): “If it rains, then the ground is wet.”\n\nTrue if it rains and the ground is wet (promise kept).\n\nFalse if it rains but the ground is not wet (promise broken).\n\nTrue if it doesn’t rain (vacuously true).\n\n\n\n\n\nBiconditional (\\(p \\leftrightarrow q\\))\nMeaning: “\\(p\\) if and only if \\(q\\)” → true when \\(p\\) and \\(q\\) have the same truth value.\n\n\\(p\\): “Today is Saturday.”\n\n\\(q\\): “Tomorrow is Sunday.”\n\n\\(p \\leftrightarrow q\\): “Today is Saturday if and only if tomorrow is Sunday.” → true.\n\nIf one part is true and the other false, the biconditional is false.\n\n\nThus:\n- Predicate: general template (open sentence, truth depends on a variable) -&gt; becomes true or false only when a variable is given a value.\n- Proposition/statement: instance of that template (closed sentence, definite truth) -&gt; something that is already true or false.\n- Connectives: operators that take simple propositions and form compound propositions.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -236,7 +278,7 @@
     "section": "1.2 Truth Tables",
     "text": "1.2 Truth Tables\n💡Motivation\nNow that we know connectives allow us to combine assumptions and conclusions into structured arguments, we need a way to check the consistency and behavior of these arguments.\nWhy? Because once statements get more complex, our intuition alone isn’t reliable.\nFor example, the conditional \\(p \\to q\\) often confuses beginners. Why? Because in everyday language, “if… then…” feels different from how logic defines it.\nThe Concept of “Promise”\n\nWe naturally read a conditional like \\(p \\to q\\) as: “If it rains, then the ground gets wet.”\nThink of \\(p \\to q\\) as a promise:\n\n\\(p\\): It rains.\n\n\\(q\\): The ground gets wet.\n\nSo \\(p \\to q\\) means: “I promise that if it rains, then the ground will get wet.”\nWe also naturally think that:\n1. If it rains and the ground is wet → ✅ promise kept.\n2. If it rains and the ground is not wet → ❌ promise broken.\nSo far, this matches intuition.\nBut what if it doesn’t rain?\n- Logic says: the conditional is still true, no matter whether the ground is wet or dry.\n- Why? Because the promise “if it rains, then the ground gets wet” has not been broken — the condition (\\(p\\)) never happened in the first place.\n- This is what we call vacuous truth.\nThis feels counterintuitive, and that’s exactly why we need a systematic tool.\nWhy Truth Tables?\nTruth tables are the grammar checker of logic. They resolve this confusion:\n\nThey let us mechanically verify whether compound statements are valid, equivalent, tautological, or contradictory.\n\nThey are a first step toward building formal proofs, because they allow us to test the “mechanics” of logical structure before tackling deeper arguments.\n\nThink of them as a microscope for logical statements:\nwhen connectives weave sentences together, truth tables let us zoom in and see all possible truth scenarios at once.\nThey also let us test whether two statements are logically equivalent. For example:\n\n“If not \\(p\\), then not \\(q\\).”\n\n“If \\(q\\), then \\(p\\).”\n\nAre these equivalent? Intuition may fail, but a Truth Table makes it crystal clear!\nExample in statistics:\n\nIf the data behave nicely (i.i.d. + finite variance), then the sample mean is reliable (it will converge to the true mean) (\\(p \\to q\\)).\n\nContrapositive: If the sample mean does not converge to the true mean, then the data were not i.i.d. with finite variance (\\(\\lnot q \\to \\lnot p\\)).\n\nA truth table shows how the truth value of a compound statement depends on its parts.\nExample: Prove that an implication (\\(p \\to q\\)) is equivalent (\\(\\equiv\\)) to its contrapositive (\\(\\lnot q \\to \\lnot p\\)).\nWe want to show: \\(p \\to q \\;\\equiv\\; \\lnot q \\to \\lnot p\\)\n\n\n\n\n\n\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\to q\\)\n\\(\\lnot q\\)\n\\(\\lnot p\\)\n\\(\\lnot q \\to \\lnot p\\)\n\n\n\n\nT\nT\nT\nF\nF\nT\n\n\nT\nF\nF\nT\nF\nF\n\n\nF\nT\nT\nF\nT\nT\n\n\nF\nF\nT\nT\nT\nT\n\n\n\nSince the last two columns match, the implication is equivalent to its contrapositive.\nExample: Analysis of a Conditional\nTake \\(p\\): It rains, and \\(q\\): The ground gets wet.\nThe statement \\(p \\to q\\) is a promise: “If it rains, then the ground gets wet.”\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\to q\\)\nExplanation\n\n\n\n\nT\nT\nT\n✅ promise kept\n\n\nT\nF\nF\n❌ promise broken\n\n\nF\nT\nT\nvacuously true (condition never triggered)\n\n\nF\nF\nT\nvacuously true (condition never triggered)\n\n\n\nKey intuition:\n- An implication is only false when the condition happens but the promised result fails.\n- In all other cases, the promise has not been broken, so the implication is true.\nThis is why statements like “All unicorns have horns” are technically true: since there are no unicorns, the condition never triggers, and the statement cannot be falsified.\n\n\nExercises\n\nExercise 1. Show that \\(p \\to q\\) is equivalent to \\(\\lnot p \\lor q\\).\nStep 1. Write the two statements side by side: \\(p \\to q\\) and \\(\\lnot p \\lor q\\).\nStep 2. Build a truth table with columns for \\(p\\), \\(q\\), \\(\\lnot p\\), \\(p \\to q\\), and \\(\\lnot p \\lor q\\).\nStep 3. Compare the last two columns.\nStep 4. Conclude: if they match in all rows, the statements are logically equivalent.\n\nSolution\n\nStep 1: Write the two statements side by side: \\(p \\to q\\) and \\(\\lnot p \\lor q\\).\nWhat we want to check is whether these two always mean the same thing.\n- \\(p \\to q\\): “If \\(p\\), then \\(q\\).”\n- \\(\\lnot p \\lor q\\): “Either not \\(p\\), or \\(q\\).”\nAt first sight they look different, but we suspect they are really saying the same thing.\nTo confirm, we will compare their truth tables row by row.\n\nStep 2: Build a truth table with columns for \\(p\\), \\(q\\), \\(\\lnot p\\), \\(p \\to q\\), and \\(\\lnot p \\lor q\\).\n(Didactic hint: to fill this correctly, recall the “grammar” of each connective.)\n- Negation \\(\\lnot p\\): flips the truth value (T→F, F→T).\n- Disjunction \\(A \\lor B\\): true if at least one of \\(A,B\\) is true.\n- Conditional \\(p \\to q\\): think “promise” — it is false only when the promise is broken (i.e., \\(p\\) is T but \\(q\\) is F); otherwise true (including when \\(p\\) is F: vacuous truth).\n\n\n\n\\(p\\)\n\\(q\\)\n\\(\\lnot p\\)\n\\(p \\to q\\)\n\\(\\lnot p \\lor q\\)\n\n\n\n\nT\nT\nF\nT\nT\n\n\nT\nF\nF\nF\nF\n\n\nF\nT\nT\nT\nT\n\n\nF\nF\nT\nT\nT\n\n\n\nHow we filled it:\n- \\(\\lnot p\\) is just the flip of \\(p\\).\n- \\(p \\to q\\) is only F in the row \\((p,q)=(T,F)\\) (promise broken).\n- \\(\\lnot p \\lor q\\) is true when either \\(\\lnot p\\) is T or \\(q\\) is T.\n\nStep 3: Compare the last two columns.\nThe columns for \\(p \\to q\\) and \\(\\lnot p \\lor q\\) are identical (T, F, T, T).\nTherefore, the statements have the same truth value in every case.\n\nStep 4: Conclude.\nWe conclude:\n\\(p \\to q \\equiv \\lnot p \\lor q\\)\nIn words: an implication “if \\(p\\), then \\(q\\)” always carries the same meaning as saying “either \\(p\\) does not happen, or \\(q\\) happens.”\n\n\nExercise 2. Analyze the statement: “If a number is divisible by 4, then it is even.”\nStep 1. Define \\(p\\): “number is divisible by 4”, and \\(q\\): “number is even.”\nStep 2. Translate into logic: \\(p \\to q\\).\nStep 3. Think through cases:\n- A number divisible by 4 (say 12) → it is even → promise kept.\n- A number divisible by 4 but not even → impossible case → promise broken.\n- A number not divisible by 4 (say 9) → nothing promised, implication vacuously true.\nStep 4. Verify with a truth table if needed.\nStep 5. Conclude: the statement holds logically.\n\nBiconditional: \\(p \\leftrightarrow q\\) (“\\(p\\) if and only if \\(q\\)”)\n\nRule: \\(p \\leftrightarrow q\\) is true exactly when \\(p\\) and \\(q\\) have the same truth value\n(both true or both false).\nEquivalent form:\n\\[\np \\leftrightarrow q \\;\\equiv\\; (p \\to q) \\land (q \\to p)\n\\]\nExample:\n\\(p\\): “Today is Saturday.”\n\\(q\\): “Tomorrow is Sunday.”\n\\(p \\leftrightarrow q\\): “Today is Saturday if and only if tomorrow is Sunday.”\nCase analysis:\n\nIf both \\(p\\) and \\(q\\) are true → the biconditional is true (both directions of the promise hold).\n\nIf \\(p\\) is true but \\(q\\) is false → false, because one direction of the “if and only if” fails.\n\nIf \\(p\\) is false but \\(q\\) is true → false, for the same reason.\n\nIf both \\(p\\) and \\(q\\) are false → true, because they match in value (both false).\n\n\nThis explains why the truth table looks like this:\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\leftrightarrow q\\)\nExplanation\n\n\n\n\nT\nT\nT\nboth true → promise kept\n\n\nT\nF\nF\nmismatch → one direction fails\n\n\nF\nT\nF\nmismatch → one direction fails\n\n\nF\nF\nT\nboth false → they match\n\n\n\nIntuition and goal of the biconditional\nThe biconditional expresses equivalence: \\(p\\) and \\(q\\) “stand or fall together.”\nIt is stronger than a one-way implication: both \\(p \\to q\\) and \\(q \\to p\\) must hold.\n\nIf you read \\(p \\leftrightarrow q\\) aloud, it means:\n“\\(p\\) is true exactly when \\(q\\) is true.” or “\\(p\\) holds exactly when \\(q\\) holds.”\n\nThis is why mathematicians often use “iff” (“if and only if”) in definitions and theorems:\n- It guarantees not only that \\(p\\) implies \\(q\\), but also that \\(q\\) implies \\(p\\).\n\nWhy is this important?\n\nIt formalizes definitions in mathematics.\n\nExample: “A number \\(n\\) is even iff \\(n = 2k\\) for some integer \\(k\\).”\n\nThis captures both directions: every even number has that form, and every number of that form is even.\n\nIt allows us to state equivalence theorems.\n\nExample: “A sequence is Cauchy iff it is convergent (in \\(\\mathbb{R}\\)).”\n\nThe biconditional captures the deep connection: each property implies the other.\n\nIt makes reasoning reversible.\n\nWith an implication, you can only go forward (\\(p \\to q\\)).\n\nWith a biconditional, you can go forward and backward: knowing either \\(p\\) or \\(q\\) tells you the other.\n\n\nBy mastering the biconditional, the reader understands why mathematicians love the phrase “if and only if”: it’s the precise way of stating true equivalence between concepts.\nSummary Table of Connectives\n\n\n\n\n\n\n\n\nConnective\nSymbol\nRule (when true)\n\n\n\n\nNegation\n\\(\\lnot p\\)\nwhen \\(p\\) is false\n\n\nConjunction\n\\(p \\land q\\)\nwhen \\(p\\) and \\(q\\) are true\n\n\nDisjunction\n\\(p \\lor q\\)\nwhen at least one of \\(p, q\\) is true\n\n\nConditional\n\\(p \\to q\\)\nfalse only if \\(p\\) true and \\(q\\) false\n\n\nBiconditional\n\\(p \\leftrightarrow q\\)\nwhen \\(p\\) and \\(q\\) have same truth value",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -246,7 +288,7 @@
     "section": "1.3 Tautologies, Contradictions, and Logical Equivalence",
     "text": "1.3 Tautologies, Contradictions, and Logical Equivalence\nTautology\nDefinition:\nA tautology is a statement that is true in all possible cases.\nWhy it matters:\n- Tautologies act like universal truths: they don’t depend on data or assumptions.\n- They are often the “glue” of proofs, showing that certain forms are always valid.\n- Many rules of inference (like modus ponens) are based on tautologies.\nExample (logic):\n\\[\n(p \\land q) \\to p\n\\]\nThis means: If both (p) and (q) are true, then (p) is true.\n- Always true, regardless of whether (p) or (q) are true or false.\nExample (statistics):\nThe Law of Total Probability is tautological:\n\\[\nP(A) = P(A \\cap B) + P(A \\cap \\lnot B).\n\\]\nThis identity always holds by construction, no matter what events (A) and (B) are.\n\nContradiction\nDefinition:\nA contradiction is a statement that is false in all possible cases.\nWhy it matters:\n- Contradictions are the engine of proof by contradiction.\n- If assuming something leads to a contradiction, then the assumption must be false.\n- They represent “impossible situations” in logic.\nExample (logic):\n\\[\np \\land \\lnot p\n\\]\nThis means: (p) is true and (p) is false at the same time.\n- Always false, no matter what truth value (p) has.\nExample (statistics):\nSuppose we assume:\n1. “The variance of this distribution is finite.”\n2. “The variance of this distribution is infinite.”\nTogether, these form a contradiction, so at least one assumption must be wrong.\n\nLogical Equivalence\nDefinition:\nTwo statements are logically equivalent if they have the same truth value in all possible cases.\nWhy it matters:\n- Logical equivalence lets us replace one statement with another in a proof.\n- Many powerful proof strategies rely on equivalence (contrapositive law, De Morgan’s laws, distributive laws).\n- Often the equivalent form is much easier to work with.\nExample (logic):\n\\[\np \\to q \\;\\equiv\\; \\lnot p \\lor q\n\\]\nThis means: “If (p), then (q)” is the same as “Either not (p), or (q).”\n- This equivalence makes it easier to manipulate conditionals in proofs.\nExample (causal inference):\n\\[\n\\text{Ignorability} \\to \\text{Identifiability}\n\\]\nis logically equivalent to\n\\[\n\\lnot \\text{Identifiability} \\to \\lnot \\text{Ignorability}.\n\\]\nSwitching to the contrapositive often makes a proof or argument simpler.\n\nSummary:\n- Tautologies give us universal truths to rely on.\n- Contradictions allow us to eliminate false assumptions through contradiction proofs.\n- Logical equivalence lets us restate problems in easier forms without changing meaning.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -256,7 +298,7 @@
     "section": "2.1 Predicates and Quantifiers",
     "text": "2.1 Predicates and Quantifiers\nAs we saw above, a predicate is like a sentence with a “blank” — it becomes a full statement only once you plug in a value.\n\nExample: \\(P(x): x &gt; 0\\).\n\nIf \\(x = 2\\), then \\(P(2)\\) is the proposition “2 &gt; 0” (true).\n\nIf \\(x = -3\\), then \\(P(-3)\\) is the proposition “-3 &gt; 0” (false).\n\n\nWe use quantifiers to talk about how many elements satisfy a predicate:\n\nUniversal quantifier (\\(\\forall\\)):\n\\(\\forall x\\; P(x)\\) means “for all \\(x\\), \\(P(x)\\) is true.”\nExistential quantifier (\\(\\exists\\)):\n\\(\\exists x\\; P(x)\\) means “there exists at least one \\(x\\) such that \\(P(x)\\) is true.”\n\nExamples:\n- \\(\\forall x \\in \\mathbb{Z},\\; x^2 \\geq 0\\). (Every integer squared is nonnegative.)\n- \\(\\exists x \\in \\mathbb{Z},\\; x^2 = 9\\). (There exists an integer whose square is 9.)",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -266,7 +308,7 @@
     "section": "2.2 Universe of Discourse",
     "text": "2.2 Universe of Discourse\nThe universe of discourse is the set of objects we allow \\(x\\) to vary over.\nThe truth of a statement depends on it!\nExample:\n\n\\(\\forall x \\in \\mathbb{R},\\; x^2 \\geq 0\\) is true.\n\n\\(\\forall x \\in \\mathbb{Z},\\; x^2 = 2\\) is false (no integer squared equals 2).\n\nIf we didn’t specify whether \\(x\\) ranges over \\(\\mathbb{R}\\) or \\(\\mathbb{Z}\\) (both interpreted as the universe of discourse of each statement), the meaning would be ambiguous.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -276,7 +318,7 @@
     "section": "2.3 Truth of Quantified Statements",
     "text": "2.3 Truth of Quantified Statements\nHow to evaluate quantified statements:\n\n\\(\\forall x\\; P(x)\\) is true if every \\(x\\) in the universe makes \\(P(x)\\) true.\n\n\\(\\exists x\\; P(x)\\) is true if at least one \\(x\\) makes \\(P(x)\\) true.\n\nNegations of Quantifiers\nNegating quantified statements flips the quantifier:\n\\[\n\\lnot (\\forall x\\, P(x)) \\equiv \\exists x\\, \\lnot P(x)\n\\]\n\\[\n\\lnot (\\exists x\\, P(x)) \\equiv \\forall x\\, \\lnot P(x)\n\\]\nExamples:\n\n“Not all students passed” means “There exists a student who did not pass.”\n\n“There does not exist a unicorn” means “For all \\(x\\), \\(x\\) is not a unicorn.”",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -286,7 +328,7 @@
     "section": "2.4 Multiple Quantifiers",
     "text": "2.4 Multiple Quantifiers\nOften statements involve more than one quantifier.\nThe order matters!\n\n\\(\\forall x \\in \\mathbb{R},\\; \\exists y \\in \\mathbb{R}: y &gt; x\\)\n→ True, because for every real number \\(x\\), we can pick \\(y = x+1\\).\n\\(\\exists y \\in \\mathbb{R},\\; \\forall x \\in \\mathbb{R}: y &gt; x\\)\n→ False, because no single real number is greater than all real numbers.\n\nTip: Think of quantifiers as a kind of game:\n- For \\(\\forall x\\), your opponent chooses the worst possible \\(x\\).\n- For \\(\\exists y\\), you get to respond by picking a suitable \\(y\\).\nThe order decides who gets to “move” first, and the outcome can change completely.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -296,7 +338,7 @@
     "section": "2.5 Why This Matters",
     "text": "2.5 Why This Matters\nQuantifiers appear in almost every mathematical theorem.\n\nAnalysis (limits):\n\\[\n\\forall \\epsilon &gt; 0,\\; \\exists \\delta &gt; 0:\\; |x - a| &lt; \\delta \\;\\to\\; |f(x) - L| &lt; \\epsilon\n\\]\n(“For every tolerance \\(\\epsilon\\), there exists a closeness \\(\\delta\\) that guarantees the function stays within that tolerance.”)\nStatistics:\n\n\\(\\forall n,\\; \\exists \\hat{\\theta}_n:\\; \\hat{\\theta}_n \\to \\theta\\) (There exists an estimator consistent for \\(\\theta\\).)\n\n\\(\\exists\\) an unbiased estimator of \\(\\mu\\) (the sample mean).\n\nCausal Inference:\n\n\\(\\forall\\) randomized experiments, \\(\\exists\\) an unbiased estimator of the treatment effect.\n\n\nQuantifiers are the way mathematics formalizes sweeping claims like “always” and “sometimes,” which are at the heart of proofs and assumptions in Causal ML.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -306,7 +348,7 @@
     "section": "2.6 Mathematical Interpretation",
     "text": "2.6 Mathematical Interpretation\nQuantifiers can look intimidating at first, but the real skill is learning how to read them.\nEvery quantified statement has two parts:\n1. the quantifier (\\(\\forall\\) or \\(\\exists\\)), and\n2. the predicate (a property of \\(x\\) that is claimed to hold).\n\n2.6.1 Single Quantifier Examples\n\nUniversal (\\(\\forall\\)):\n\\[\n\\forall x \\in \\mathbb{R},\\; x^2 \\geq 0\n\\]\nRead: “For every real number \\(x\\), the square of \\(x\\) is nonnegative.”\nInterpretation: This is true, because no real number squared gives a negative result.\nStatistics example:\n\\[\n\\forall n \\in \\mathbb{N},\\; \\operatorname{Var}(\\bar{X}_n) \\geq 0\n\\]\nRead: “For every sample size \\(n\\), the variance of the sample mean is nonnegative.”\nInterpretation: Always true, because variances can never be negative.\n\n\n\nExistential (\\(\\exists\\)):\n\\[\n\\exists x \\in \\mathbb{Z},\\; x^2 = 4\n\\]\nRead: “There exists an integer whose square is 4.”\nInterpretation: True, since \\(x = 2\\) and \\(x = -2\\) work.\nStatistics example:\n\\[\n\\exists \\;\\text{an estimator } \\hat{\\theta}\\; : \\; \\mathbb{E}[\\hat{\\theta}] = \\theta\n\\]\nRead: “There exists an estimator whose expected value equals the true parameter.”\nInterpretation: This is the definition of an unbiased estimator (e.g., the sample mean for \\(\\mu\\)).\n\n\n2.6.2 Multiple Quantifier Examples\nWhen quantifiers are combined, order matters.\n\nExample 1:\n\\[\n\\forall x \\in \\mathbb{R},\\; \\exists y \\in \\mathbb{R}:\\; y &gt; x\n\\]\nRead: “For every real number \\(x\\), there exists a real number \\(y\\) that is greater than \\(x\\).”\nTrue, because if someone hands you any \\(x\\), you can always respond with \\(y = x+1\\).\nStatistics example:\n\\[\n\\forall \\epsilon &gt; 0,\\; \\exists N \\in \\mathbb{N}:\\; n &gt; N \\;\\to\\; |\\bar{X}_n - \\mu| &lt; \\epsilon\n\\]\nRead: “For every tolerance \\(\\epsilon\\), there exists a large enough sample size \\(N\\) such that if \\(n &gt; N\\), the sample mean is within \\(\\epsilon\\) of \\(\\mu\\).”\nInterpretation: This is the definition of consistency (Law of Large Numbers).\n\n\n\nExample 2:\n\\[\n\\exists y \\in \\mathbb{R},\\; \\forall x \\in \\mathbb{R}:\\; y &gt; x\n\\]\nRead: “There exists a real number \\(y\\) such that \\(y\\) is greater than every real number \\(x\\).”\nFalse, because no single real number is larger than all others.\nStatistics example (false statement):\n\\[\n\\exists N \\in \\mathbb{N},\\; \\forall n &gt; N:\\; \\bar{X}_n = \\mu\n\\]\nRead: “There exists a finite sample size \\(N\\) such that for all \\(n &gt; N\\), the sample mean equals the population mean exactly.”\nFalse, because sampling variation never completely disappears — the sample mean only converges in probability, not with exact equality at some \\(N\\).\n\n\n2.6.3 How to Think About Multiple Quantifiers\nA useful way to think is as a game:\n\n\\(\\forall x\\) = your opponent picks a value of \\(x\\), possibly trying to make you fail.\n\n\\(\\exists y\\) = you get to respond by picking \\(y\\) to satisfy the condition.\n\nSo the statement\n\\[\n\\forall x \\in \\mathbb{R},\\; \\exists y \\in \\mathbb{R}:\\; y &gt; x\n\\]\nmeans: No matter what \\(x\\) your opponent picks, you can always respond with a suitable \\(y\\).\nBut the reverse order\n\\[\n\\exists y \\in \\mathbb{R},\\; \\forall x \\in \\mathbb{R}:\\; y &gt; x\n\\]\nmeans: You must pick one \\(y\\) that beats all possible \\(x\\). This is impossible, so the statement is false.\n\nWhy this section is important\nQuantifiers are everywhere in math, stats, and causal ML.\n\nUniversal quantifiers express generality:\n\n“For all sample sizes \\(n\\), \\(\\operatorname{Var}(\\bar{X}_n) \\geq 0\\).”\n\n“For all \\(\\epsilon &gt; 0\\), there exists an \\(N\\) such that …” (limits, consistency).\n\nExistential quantifiers express possibility:\n\n“There exists an unbiased estimator of \\(\\mu\\).”\n\n“There exists a consistent estimator for every parameter.”\n\nWith multiple quantifiers, the order of ‘who chooses first’ changes the meaning dramatically.\nThis interpretative skill is essential for reading theorems correctly and avoiding misinterpretation.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -316,7 +358,7 @@
     "section": "2.7 Exercises",
     "text": "2.7 Exercises\nGoal of these exercises:\n- Practice evaluating truth values.\n- Practice negating quantified statements.\n- Practice reading and interpreting symbolic logic in plain English.\nAt this stage, we are not proving statements — only learning to understand and translate them correctly.\n\nTruth values (universe of discourse: \\(\\mathbb{Z}\\)):\nFor each statement, decide whether it is true or false and explain why in words.\n\n\\(\\forall x,\\; x^2 \\geq 0\\)\n\n\\(\\exists x,\\; x^2 = 2\\)\n\nHint: In the first, think: “Is there any integer whose square is negative?”\nIn the second, think: “Is there an integer whose square equals 2?”\n\n\n\nNegation practice:\nWrite the logical negation of each statement and simplify.\n\n\\(\\forall x \\in \\mathbb{R},\\; x^2 \\geq 0\\)\n\n\\(\\exists x \\in \\mathbb{N},\\; x^2 = 2\\)\n\nHint: Use the rules:\n\\[\n\\lnot (\\forall x\\, P(x)) \\equiv \\exists x\\, \\lnot P(x), \\qquad\n\\lnot (\\exists x\\, P(x)) \\equiv \\forall x\\, \\lnot P(x).\n\\]\n\n\n\nQuantifier order:\nCarefully interpret the following statements in plain English.\nAre they true or false?\n\n\\(\\forall x \\in \\mathbb{R},\\; \\exists y \\in \\mathbb{R}: y &gt; x\\)\n\n\\(\\exists y \\in \\mathbb{R},\\; \\forall x \\in \\mathbb{R}: y &gt; x\\)\n\n\n\n\nTranslate into symbols:\nExpress the following in logical notation.\n\n“Every dataset has at least one outlier.”\n\n“There exists a consistent estimator for every parameter.”\n\n\n\n\nInterpret the following statistical statements (no proof needed):\n\n\\(\\forall n \\in \\mathbb{N},\\; \\operatorname{Var}(\\bar{X}_n) \\geq 0\\)\n(For every sample size \\(n\\), the variance of the sample mean is nonnegative.)\n\\(\\exists n \\in \\mathbb{N},\\; \\forall \\epsilon &gt; 0:\\; |\\bar{X}_n - \\mu| &lt; \\epsilon\\)\n(There exists a fixed sample size \\(n\\) such that the sample mean is always arbitrarily close to \\(\\mu\\). Is this realistic?)\n\\(\\forall \\epsilon &gt; 0,\\; \\exists N \\in \\mathbb{N}:\\; n &gt; N \\;\\to\\; |\\bar{X}_n - \\mu| &lt; \\epsilon\\)\n(Interpretation: This is the formal definition of consistency / the Law of Large Numbers).",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
   },
   {
@@ -326,7 +368,24 @@
     "section": "References",
     "text": "References\n\nVelleman, D. J. (2006). How to Prove It: A Structured Approach.\n\nRosen, K. H. (2011). Discrete Mathematics and Its Applications.\n\nSpanos, A. (1999, 2010). Probability Theory and Statistical Inference.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Phase 1: Logic & Set Theory</span>"
+      "Phase 1: Logic & Set Theory"
     ]
+  },
+  {
+    "objectID": "glossary/glossary.html",
+    "href": "glossary/glossary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nData Generating Process (DGP)\n\n\nThe probabilistic mechanism that generates the observed data.\n\n\n\n\n\n\nIID\n\n\nIndependent and identically distributed.\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Glossary"
+    ]
+  },
+  {
+    "objectID": "glossary/terms/iid.html",
+    "href": "glossary/terms/iid.html",
+    "title": "IID",
+    "section": "",
+    "text": "Independent and identically distributed."
   }
 ]

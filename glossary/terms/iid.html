@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Caio Velasco">
-<meta name="dcterms.date" content="2026-03-16">
+<meta name="description" content="Independent and identically distributed.">
 
-<title>Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
+<title>IID – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,23 +24,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-80dbd658170f70648e9a57f9a27e252b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-80dbd658170f70648e9a57f9a27e252b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,7 +119,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Journey Phases</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Foundations of Data Science &amp; Causal ML: A Mathematical Journey
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,7 +136,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Foundations of Data Science &amp; Causal ML: A Mathematical Journey</a> 
+      <a href="../../">Foundations of Data Science &amp; Causal ML: A Mathematical Journey</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -147,31 +148,31 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Journey Phases</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../../chapters/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/00_ch00.html" class="sidebar-item-text sidebar-link">
+  <a href="../../chapters/00_ch00.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Why I’m Interested in Causal ML?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/01_ch01.html" class="sidebar-item-text sidebar-link">
+  <a href="../../chapters/01_ch01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Phase 1: Logic &amp; Set Theory</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./glossary/glossary.html" class="sidebar-item-text sidebar-link">
+  <a href="../../glossary/glossary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Glossary</span></a>
   </div>
 </li>
@@ -180,53 +181,27 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#journey-phases" id="toc-journey-phases" class="nav-link active" data-scroll-target="#journey-phases">Journey Phases</a>
-  <ul class="collapse">
-  <li><a href="#why-im-interested-in-causal-ml" id="toc-why-im-interested-in-causal-ml" class="nav-link" data-scroll-target="#why-im-interested-in-causal-ml">Why I’m Interested in Causal ML?</a></li>
-  <li><a href="#phase-1---logic-set-theory" id="toc-phase-1---logic-set-theory" class="nav-link" data-scroll-target="#phase-1---logic-set-theory">Phase 1 - Logic &amp; Set Theory</a></li>
-  <li><a href="#phase-2---linear-algebra" id="toc-phase-2---linear-algebra" class="nav-link" data-scroll-target="#phase-2---linear-algebra">Phase 2 - Linear Algebra</a></li>
-  <li><a href="#phase-3---real-analysis-ℝ" id="toc-phase-3---real-analysis-ℝ" class="nav-link" data-scroll-target="#phase-3---real-analysis-ℝ">Phase 3 - Real Analysis (ℝ)</a></li>
-  <li><a href="#phase-4---metric-spaces" id="toc-phase-4---metric-spaces" class="nav-link" data-scroll-target="#phase-4---metric-spaces">Phase 4 - Metric Spaces</a></li>
-  <li><a href="#phase-5---measure-theory" id="toc-phase-5---measure-theory" class="nav-link" data-scroll-target="#phase-5---measure-theory">Phase 5 - Measure Theory</a></li>
-  <li><a href="#phase-6---probability-measure-theoretic" id="toc-phase-6---probability-measure-theoretic" class="nav-link" data-scroll-target="#phase-6---probability-measure-theoretic">Phase 6 - Probability (Measure-Theoretic)</a></li>
-  <li><a href="#phase-7---mathematical-statistics" id="toc-phase-7---mathematical-statistics" class="nav-link" data-scroll-target="#phase-7---mathematical-statistics">Phase 7 - Mathematical Statistics</a></li>
-  <li><a href="#phase-8---decision-risk" id="toc-phase-8---decision-risk" class="nav-link" data-scroll-target="#phase-8---decision-risk">Phase 8 - Decision &amp; Risk</a></li>
-  <li><a href="#phase-9---uncertainty-quantification" id="toc-phase-9---uncertainty-quantification" class="nav-link" data-scroll-target="#phase-9---uncertainty-quantification">Phase 9 - Uncertainty Quantification</a></li>
-  <li><a href="#phase-10---statistical-learning-theory" id="toc-phase-10---statistical-learning-theory" class="nav-link" data-scroll-target="#phase-10---statistical-learning-theory">Phase 10 - Statistical Learning Theory</a></li>
-  <li><a href="#phase-11---causal-inference-causal-ml" id="toc-phase-11---causal-inference-causal-ml" class="nav-link" data-scroll-target="#phase-11---causal-inference-causal-ml">Phase 11 - Causal Inference + Causal ML</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">IID</h1>
 </div>
 
+<div>
+  <div class="description">
+    Independent and identically distributed.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Caio Velasco </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 16, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -236,241 +211,10 @@ window.Quarto = {
 </header>
 
 
-<blockquote class="blockquote">
-<p>© 2025 Caio Velasco. All rights reserved.</p>
-</blockquote>
-<p>This is my structured learning roadmap to prepare for research in <strong>causal machine learning</strong> with mathematical rigor.</p>
-<p>Here you can find both <strong>mathematical foundations</strong> and <strong>applications</strong>.</p>
-<section id="journey-phases" class="level1">
-<h1>Journey Phases</h1>
-<section id="why-im-interested-in-causal-ml" class="level2">
-<h2 class="anchored" data-anchor-id="why-im-interested-in-causal-ml">Why I’m Interested in Causal ML?</h2>
-<ul>
-<li>Statistics and econometrics build models on top of <em>stochastic mechanisms</em> (data-generating processes - DGPs), aiming for explanation and inference.<br>
-</li>
-<li>Machine learning often ignores those mechanisms and focuses on prediction accuracy, generalization, and performance.<br>
-</li>
-<li>Causal ML is a synthesis: it combines ML’s flexibility with statistics’ concern for identification, adding a causal lens to reason about interventions and counterfactuals.</li>
-</ul>
-<hr>
-</section>
-<section id="phase-1---logic-set-theory" class="level2">
-<h2 class="anchored" data-anchor-id="phase-1---logic-set-theory">Phase 1 - Logic &amp; Set Theory</h2>
-<p><strong>Goal:</strong> Build comfort with the <em>language of mathematics</em>.</p>
-<ul>
-<li>Proof techniques: direct, contrapositive, contradiction, induction.<br>
-</li>
-<li>Sets, Cartesian products, power sets.<br>
-</li>
-<li>Functions and relations.<br>
-</li>
-<li>Cardinality: countable vs.&nbsp;uncountable sets.</li>
-</ul>
-<p><strong>Theory Output:</strong> Formal proofs and mathematical maturity.<br>
-<strong>Application Project:</strong> Formalize simple statistical statements using logical quantifiers and analyze which assumptions are required for conclusions to hold. (not very hands-on, I know, but having mathematical maturity <strong>will change your life</strong>!)</p>
-<p><strong>References:</strong><br>
-- Velleman - <em>How to Prove It</em></p>
-<hr>
-</section>
-<section id="phase-2---linear-algebra" class="level2">
-<h2 class="anchored" data-anchor-id="phase-2---linear-algebra">Phase 2 - Linear Algebra</h2>
-<p><strong>Goal:</strong> Understand the geometry underlying estimation and projection.</p>
-<ul>
-<li>Vector spaces, bases, dimension.<br>
-</li>
-<li>Linear transformations and matrices.<br>
-</li>
-<li>Inner product spaces and orthogonality.<br>
-</li>
-<li>Eigenvalues, spectral theorem (finite-dimensional).<br>
-</li>
-<li>Singular value decomposition.</li>
-</ul>
-<p><strong>Theory Output:</strong> Proof of spectral theorem (symmetric case), rank-nullity theorem.<br>
-<strong>Application Project:</strong> Derive and implement PCA via SVD.</p>
-<p><strong>References:</strong><br>
-- Axler - <em>Linear Algebra Done Right</em></p>
-<hr>
-</section>
-<section id="phase-3---real-analysis-ℝ" class="level2">
-<h2 class="anchored" data-anchor-id="phase-3---real-analysis-ℝ">Phase 3 - Real Analysis (ℝ)</h2>
-<p><strong>Goal:</strong> Rigorous calculus and convergence.</p>
-<ul>
-<li>Sequences and limits.<br>
-</li>
-<li>Continuity and compactness in ℝ.<br>
-</li>
-<li>Differentiation and Mean Value Theorem.<br>
-</li>
-<li>Uniform convergence.</li>
-</ul>
-<p><strong>Theory Output:</strong> ε-δ proofs, compactness arguments.<br>
-<strong>Application Project:</strong> Analyze convergence of gradient descent under convexity assumptions.</p>
-<p><strong>References:</strong><br>
-- Rudin - <em>Principles of Mathematical Analysis</em><br>
-- Tao - <em>Analysis I</em></p>
-<hr>
-</section>
-<section id="phase-4---metric-spaces" class="level2">
-<h2 class="anchored" data-anchor-id="phase-4---metric-spaces">Phase 4 - Metric Spaces</h2>
-<p><strong>Goal:</strong> Introduce minimal topology needed for probability and asymptotics.</p>
-<ul>
-<li>Metric spaces and convergence.<br>
-</li>
-<li>Open/closed sets.<br>
-</li>
-<li>Completeness.<br>
-</li>
-<li>Compactness in metric spaces.</li>
-</ul>
-<p><strong>Theory Output:</strong> General convergence beyond ℝ.<br>
-<strong>Application Project:</strong> Compare different notions of convergence in simulated estimators.</p>
-<p><strong>References:</strong><br>
-- Rudin - <em>Principles of Mathematical Analysis</em> (Ch. 2)<br>
-- Abbott - <em>Understanding Analysis</em><br>
-- Munkres - <em>Topology</em> (selected sections on metric spaces only)</p>
-<hr>
-</section>
-<section id="phase-5---measure-theory" class="level2">
-<h2 class="anchored" data-anchor-id="phase-5---measure-theory">Phase 5 - Measure Theory</h2>
-<p><strong>Goal:</strong> Build the foundation of integration and probability.</p>
-<ul>
-<li>σ-algebras and measurable functions.<br>
-</li>
-<li>Lebesgue measure and integration.<br>
-</li>
-<li>Convergence theorems (MCT, DCT).<br>
-</li>
-<li>Product measures and Fubini.</li>
-</ul>
-<p><strong>Theory Output:</strong> Construction of Lebesgue integral and convergence theorems.<br>
-<strong>Application Project:</strong> Monte Carlo integration and convergence analysis.</p>
-<p><strong>References:</strong><br>
-- Schilling - <em>Measures, Integrals and Martingales</em></p>
-<hr>
-</section>
-<section id="phase-6---probability-measure-theoretic" class="level2">
-<h2 class="anchored" data-anchor-id="phase-6---probability-measure-theoretic">Phase 6 - Probability (Measure-Theoretic)</h2>
-<p><strong>Goal:</strong> Define uncertainty rigorously.</p>
-<ul>
-<li>Probability spaces and random variables.<br>
-</li>
-<li>Modes of convergence.<br>
-</li>
-<li>LLN and CLT.<br>
-</li>
-<li>Conditional expectation as L² projection.</li>
-</ul>
-<p><strong>Theory Output:</strong> Proof sketches of LLN/CLT; conditional expectation as projection.<br>
-<strong>Application Project:</strong> A/B testing simulation with asymptotic confidence intervals.</p>
-<p><strong>References:</strong><br>
-- Durrett - <em>Probability: Theory and Examples</em></p>
-<hr>
-</section>
-<section id="phase-7---mathematical-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="phase-7---mathematical-statistics">Phase 7 - Mathematical Statistics</h2>
-<p><strong>Goal:</strong> Move from probability to inference.</p>
-<ul>
-<li>Likelihood and estimation (MLE).<br>
-</li>
-<li>Consistency and asymptotic normality.<br>
-</li>
-<li>Delta method.<br>
-</li>
-<li>Efficiency and influence functions.</li>
-</ul>
-<p><strong>Theory Output:</strong> Consistency of MLE; asymptotic normality.<br>
-<strong>Application Project:</strong> Logistic regression - prove Bernoulli MLE consistency and simulate convergence.</p>
-<p><strong>References:</strong><br>
-- Casella &amp; Berger - <em>Statistical Inference</em></p>
-<hr>
-</section>
-<section id="phase-8---decision-risk" class="level2">
-<h2 class="anchored" data-anchor-id="phase-8---decision-risk">Phase 8 - Decision &amp; Risk</h2>
-<p><strong>Goal:</strong> Formalize optimal decisions under uncertainty.</p>
-<ul>
-<li>Loss functions.<br>
-</li>
-<li>Risk and Bayes risk.<br>
-</li>
-<li>Minimax and admissibility.<br>
-</li>
-<li>Connection between estimation and decision rules.</li>
-</ul>
-<p><strong>Theory Output:</strong> Basic optimality results under quadratic loss.<br>
-<strong>Application Project:</strong> Compare decision rules under different loss functions.</p>
-<p><strong>References:</strong><br>
-- Berger - <em>Statistical Decision Theory and Bayesian Analysis</em><br>
-- Lehmann &amp; Casella - <em>Theory of Point Estimation</em><br>
-- Ferguson - <em>Mathematical Statistics: A Decision Theoretic Approach</em></p>
-<hr>
-</section>
-<section id="phase-9---uncertainty-quantification" class="level2">
-<h2 class="anchored" data-anchor-id="phase-9---uncertainty-quantification">Phase 9 - Uncertainty Quantification</h2>
-<p><strong>Goal:</strong> Make uncertainty explicit and operational.</p>
-<ul>
-<li>Parameter uncertainty (confidence intervals, bootstrap).<br>
-</li>
-<li>Predictive distributions.<br>
-</li>
-<li>Robustness under misspecification.<br>
-</li>
-<li>Conformal inference (distribution-free guarantees).<br>
-</li>
-<li>Uncertainty propagation.</li>
-</ul>
-<p><strong>Theory Output:</strong> Coverage guarantees and bootstrap consistency.<br>
-<strong>Application Project:</strong> Implement bootstrap intervals and conformal prediction for regression.</p>
-<p><strong>References:</strong><br>
-- Efron &amp; Tibshirani - <em>An Introduction to the Bootstrap</em><br>
-- Wasserman - <em>All of Statistics</em> (bootstrap &amp; nonparametrics sections)<br>
-- van der Vaart - <em>Asymptotic Statistics</em> (confidence sets &amp; efficiency)<br>
-- Romano, Shafer &amp; Candès - Conformal inference papers<br>
-- Rasmussen &amp; Williams - <em>Gaussian Processes for Machine Learning</em> (predictive uncertainty perspective)</p>
-<hr>
-</section>
-<section id="phase-10---statistical-learning-theory" class="level2">
-<h2 class="anchored" data-anchor-id="phase-10---statistical-learning-theory">Phase 10 - Statistical Learning Theory</h2>
-<p><strong>Goal:</strong> Bridge inference and prediction rigorously.</p>
-<ul>
-<li>Empirical Risk Minimization (ERM).<br>
-</li>
-<li>Generalization bounds.<br>
-</li>
-<li>VC dimension and capacity control.<br>
-</li>
-<li>Regularization and bias-variance tradeoff.</li>
-</ul>
-<p><strong>Theory Output:</strong> Derive simple generalization bound via Hoeffding’s inequality.<br>
-<strong>Application Project:</strong> Simulate empirical vs.&nbsp;generalization error under increasing model complexity.</p>
-<p><strong>References:</strong><br>
-- Shalev-Shwartz &amp; Ben-David - <em>Understanding Machine Learning</em><br>
-- Breiman - <em>Statistical Modeling: The Two Cultures</em></p>
-<hr>
-</section>
-<section id="phase-11---causal-inference-causal-ml" class="level2">
-<h2 class="anchored" data-anchor-id="phase-11---causal-inference-causal-ml">Phase 11 - Causal Inference + Causal ML</h2>
-<p><strong>Goal:</strong> Reason about interventions with statistical guarantees.</p>
-<ul>
-<li>Structural Causal Models and potential outcomes.<br>
-</li>
-<li>Identifiability (backdoor/frontdoor).<br>
-</li>
-<li>Orthogonalization and Double ML.<br>
-</li>
-<li>Valid uncertainty for treatment effects.</li>
-</ul>
-<p><strong>Theory Output:</strong> Proof sketches of backdoor criterion and Neyman orthogonality.<br>
-<strong>Application Project:</strong> Implement Double ML for heterogeneous treatment effects.</p>
-<p><strong>References:</strong><br>
-- Pearl - <em>Causality</em><br>
-- Peters, Janzing, Schölkopf - <em>Elements of Causal Inference</em><br>
-- Chernozhukov et al.&nbsp;- Causal ML papers</p>
+<p>Independent and identically distributed.</p>
 
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

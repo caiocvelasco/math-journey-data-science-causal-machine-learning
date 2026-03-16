@@ -1,0 +1,9 @@
+---
+title: "Glossary"
+listing:
+  contents: "terms.yml"
+  type: table
+  sort: "title asc"
+  fields: [title, description]
+  sort-ui: false
+---

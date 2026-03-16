@@ -1,0 +1,6 @@
+---
+title: "IID"
+description: "Independent and identically distributed."
+---
+
+Independent and identically distributed.

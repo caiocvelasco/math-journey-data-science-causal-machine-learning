@@ -1,0 +1,7 @@
+- title: Data Generating Process (DGP)
+  description: The probabilistic mechanism that generates the observed data.
+  path: terms/dgp.html
+
+- title: IID
+  description: Independent and identically distributed.
+  path: terms/iid.html

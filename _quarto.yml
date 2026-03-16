@@ -1,18 +1,17 @@
 project:
-  type: book
+  type: website
   output-dir: _book
 
-book:
+website:
   title: "Foundations of Data Science & Causal ML: A Mathematical Journey"
-  author: "Caio Velasco"
-  date: today
-  chapters:
-    - index.qmd
-    - chapters/about.qmd
-    - chapters/00_ch00.qmd
-    - chapters/01_ch01.qmd
   sidebar:
-    style: docked        # left, fixed sidebar with chapters
+    contents:
+      - index.qmd
+      - chapters/about.qmd
+      - chapters/00_ch00.qmd
+      - chapters/01_ch01.qmd
+      - glossary/glossary.qmd
+    style: docked
     search: true
     collapse-level: 1
   google-analytics: "GT-W6N7KSB2"   # "G-B19JRNKWM0" - GA4 measurement ID for the book (Quarto will handle the gtag injection)

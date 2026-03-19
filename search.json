@@ -134,100 +134,156 @@
     "href": "glossary/terms/sampling_distribution.html",
     "title": "Sampling Distribution",
     "section": "",
-    "text": "In probability, we usually start by studying the distribution of a random variable.\nFor example, when rolling a fair die, we may ask:\nHere the object of interest is the distribution of the random variable that represents the outcome of the die.\nIn statistical inference, however, the question changes.\nInstead of studying the distribution of a single observation, we study statistics computed from samples.\nA useful way to think about this shift is the following:\nFor example, suppose we roll a die four times and compute the sample mean of the outcomes.\nEach set of four rolls produces a different value for the sample mean.\nIf we repeated this experiment many times - each time rolling four dice and computing the mean - we would obtain many possible values of that statistic.\nThe distribution of those possible values is called the sampling distribution.\nFormally, a sampling distribution is the probability distribution of a statistic computed from a random sample drawn from a population or from a Data Generating Process (DGP).\nSampling distributions play a central role in statistical inference because they allow us to understand how statistics behave across repeated samples.\nMany of the most important results in statistics - such as confidence intervals, hypothesis tests, and the Central Limit Theorem - rely on properties of sampling distributions."
+    "text": "In probability, we usually study the distribution of a random variable.\nFor example, when rolling a fair die, we may ask:\nHere, the object of interest is the distribution of a single random variable."
   },
   {
-    "objectID": "glossary/terms/sampling_distribution.html#connection-to-the-central-limit-theorem",
-    "href": "glossary/terms/sampling_distribution.html#connection-to-the-central-limit-theorem",
+    "objectID": "glossary/terms/sampling_distribution.html#from-random-variables-to-statistics",
+    "href": "glossary/terms/sampling_distribution.html#from-random-variables-to-statistics",
     "title": "Sampling Distribution",
-    "section": "Connection to the Central Limit Theorem",
-    "text": "Connection to the Central Limit Theorem\nIn many practical situations, deriving the exact sampling distribution of a statistic can be difficult.\nA fundamental result in statistics helps us in this situation: the Central Limit Theorem.\nThe Central Limit Theorem states that, under fairly general conditions, the sampling distribution of the sample mean becomes approximately normal (Gaussian) as the sample size increases, regardless of the shape of the original distribution.\nIn other words, even if the underlying data-generating process is not normally distributed, the distribution of the sample mean tends to become approximately normal when the sample size is sufficiently large.\nThis result explains why the normal distribution appears so frequently in statistical inference and why it is widely used for constructing confidence intervals and hypothesis tests.\nA more detailed discussion of the Central Limit Theorem is provided in the dedicated section on the Central Limit Theorem."
+    "section": "From Random Variables to Statistics",
+    "text": "From Random Variables to Statistics\nIn statistical inference, the focus shifts.\nInstead of studying a single observation, we study statistics computed from samples.\nA useful way to think about this shift is:\n\nWhen you roll one die, the natural question is about the distribution of the outcome.\nWhen you roll several dice and compute a statistic, the question becomes the distribution of that statistic."
   },
   {
-    "objectID": "glossary/terms/sampling_distribution.html#where-sampling-distributions-appear-in-data-science-and-machine-learning",
-    "href": "glossary/terms/sampling_distribution.html#where-sampling-distributions-appear-in-data-science-and-machine-learning",
+    "objectID": "glossary/terms/sampling_distribution.html#definition",
+    "href": "glossary/terms/sampling_distribution.html#definition",
     "title": "Sampling Distribution",
-    "section": "Where Sampling Distributions Appear in Data Science and Machine Learning",
-    "text": "Where Sampling Distributions Appear in Data Science and Machine Learning\nAlthough the concept originates in classical statistics, sampling distributions appear frequently in modern data science and machine learning.\nSome common examples include:\n\nModel evaluation\nMetrics such as accuracy, AUC, precision, or recall are statistics computed from a test dataset.\nTheir variability across different samples reflects the sampling distribution of the evaluation metric.\nCross-validation\nWhen a model is trained and evaluated across multiple folds, the resulting scores approximate the sampling distribution of the model’s performance.\nBootstrap methods\nBootstrapping repeatedly resamples the dataset and recomputes a statistic (such as a coefficient or prediction error) to approximate its sampling distribution.\nUncertainty quantification\nConfidence intervals and standard errors used in regression or causal inference rely on theoretical results about sampling distributions.\n\nEven in predictive machine learning pipelines, whenever we compute statistics from data - such as model parameters, evaluation metrics, or feature importance measures - their variability across samples is governed by sampling distributions."
+    "section": "Definition",
+    "text": "Definition\nSuppose we collect data as a random sample:\n\\[\nX_1, X_2, \\dots, X_n \\sim F\n\\]\nand compute a statistic:\n\\[\nT = T(X_1, \\dots, X_n)\n\\]\nThe sampling distribution is the probability distribution of \\(T\\)."
   },
   {
-    "objectID": "chapters/about.html",
-    "href": "chapters/about.html",
-    "title": "About",
+    "objectID": "glossary/terms/sampling_distribution.html#interpretation",
+    "href": "glossary/terms/sampling_distribution.html#interpretation",
+    "title": "Sampling Distribution",
+    "section": "Interpretation",
+    "text": "Interpretation\nThe sampling distribution answers the question:\n\n“How would this statistic vary if we collected many different datasets from the same data-generating process?”\n\nIt is a theoretical object defined by repeated sampling from the Data Generating Process (DGP).\nIn practice:\n\nWe observe only one dataset\n\nBut we reason about many possible datasets"
+  },
+  {
+    "objectID": "glossary/terms/sampling_distribution.html#example",
+    "href": "glossary/terms/sampling_distribution.html#example",
+    "title": "Sampling Distribution",
+    "section": "Example",
+    "text": "Example\nSuppose we roll a die four times and compute the sample mean.\nEach set of four rolls produces a different value:\n\nSample 1 → mean = 3.25\n\nSample 2 → mean = 4.50\n\nSample 3 → mean = 2.75\n\nIf we repeated this experiment many times, we would obtain many possible values.\nThe distribution of those values is the sampling distribution of the sample mean."
+  },
+  {
+    "objectID": "glossary/terms/sampling_distribution.html#two-ways-to-access-the-sampling-distribution",
+    "href": "glossary/terms/sampling_distribution.html#two-ways-to-access-the-sampling-distribution",
+    "title": "Sampling Distribution",
+    "section": "Two Ways to Access the Sampling Distribution",
+    "text": "Two Ways to Access the Sampling Distribution\nThe sampling distribution is usually not directly observable.\nThere are two main approaches to understanding it.\n\n\n1) Classical (Analytical Approach)\nIn classical statistics, we derive properties of the sampling distribution using mathematical theory.\nA fundamental result is the Central Limit Theorem (CLT):\n\nFor large samples, the sample mean is approximately normal\n\nIts variability depends on the variance and sample size\n\nThis provides analytical formulas for:\n\nstandard errors\n\nconfidence intervals\n\nhypothesis tests\n\nHowever, this approach:\n\nrelies on assumptions\n\nworks mainly for simple statistics (e.g., the mean)\n\n\n\n\n2) Computational Approach (Bootstrap)\nIn many practical cases, the sampling distribution is difficult or impossible to derive analytically.\nThe bootstrap provides an alternative:\n\nResample the data\n\nRecompute the statistic\n\nUse the resulting values to approximate its distribution\n\n\nThe bootstrap approximates the sampling distribution by simulation rather than derivation.\n\nMore generally:\n\nBootstrap is a computational shortcut to approximate the same object that classical statistics defines theoretically."
+  },
+  {
+    "objectID": "glossary/terms/sampling_distribution.html#why-sampling-distributions-matter",
+    "href": "glossary/terms/sampling_distribution.html#why-sampling-distributions-matter",
+    "title": "Sampling Distribution",
+    "section": "Why Sampling Distributions Matter",
+    "text": "Why Sampling Distributions Matter\nSampling distributions allow us to:\n\nQuantify uncertainty\n\nCompute standard errors\n\nBuild confidence intervals\n\nPerform hypothesis testing\n\nThey are central to both:\n\nclassical statistical inference\n\nmodern data science workflows"
+  },
+  {
+    "objectID": "glossary/terms/sampling_distribution.html#where-sampling-distributions-appear-in-data-science",
+    "href": "glossary/terms/sampling_distribution.html#where-sampling-distributions-appear-in-data-science",
+    "title": "Sampling Distribution",
+    "section": "Where Sampling Distributions Appear in Data Science",
+    "text": "Where Sampling Distributions Appear in Data Science\nAlthough the concept originates in classical statistics, it appears frequently in modern applications:\n\nModel evaluation\nMetrics such as accuracy, AUC, precision, or recall are statistics.\nTheir variability across datasets reflects their sampling distribution.\nCross-validation\nRepeated training and evaluation across folds approximates the sampling distribution of model performance.\nBootstrap methods\nResampling approximates the sampling distribution of a statistic.\nUncertainty quantification\nConfidence intervals and standard errors rely on sampling distributions."
+  },
+  {
+    "objectID": "glossary/terms/sampling_distribution.html#key-idea",
+    "href": "glossary/terms/sampling_distribution.html#key-idea",
+    "title": "Sampling Distribution",
+    "section": "Key Idea",
+    "text": "Key Idea\nThe sampling distribution is the central object of statistical inference.\n\nClassical statistics approximates it analytically\n\nBootstrap approximates it computationally"
+  },
+  {
+    "objectID": "glossary/terms/sampling_distribution.html#one-line-summary",
+    "href": "glossary/terms/sampling_distribution.html#one-line-summary",
+    "title": "Sampling Distribution",
+    "section": "One-line Summary",
+    "text": "One-line Summary\n\nThe sampling distribution describes how a statistic varies across repeated samples from the same data-generating process, and it can be studied either analytically or approximated computationally."
+  },
+  {
+    "objectID": "glossary/terms/random_sample.html",
+    "href": "glossary/terms/random_sample.html",
+    "title": "Random Sample",
     "section": "",
-    "text": "Hi, I’m Caio Velasco 👋\nI’m originally from Brazil. I studied Mechanical Engineering at the Federal University of Rio de Janeiro (UFRJ) and later completed a 2-year Master in Economics & Public Policy at the University of California Los Angeles (UCLA), supported by a full scholarship from the Lemann Foundation.\nDuring my academic path, I was drawn increasingly toward quantitative reasoning - probability, econometrics, statistical inference - and to the deeper question behind them: Why do these methods work?\nAt some point, applying models was no longer enough. I wanted to understand more. This book is the result of that shift.",
-    "crumbs": [
-      "About"
-    ]
+    "text": "Statistical analysis begins with a random phenomenon, where each observation arises from a repeatable process.\n\nRandom Phenomenon and Regularity\nWe consider processes that can be repeated under similar conditions:\n\nRolling two dice\n\nMeasuring the quality of a coffee\n\nObserving user behavior\n\nEach repetition produces an outcome.\nWhen this process is repeated many times, patterns begin to emerge:\n\nOutcomes follow stable frequencies\n\nRegularities appear in the data\n\n👉 This is known as statistical regularity\nExample (dice):\nSuppose we roll two dice many times and record the sum.\n\nAfter a few rolls → results look irregular (e.g., 5, 9, 3, 11)\n\nAfter many rolls → a pattern emerges\n\nFor example, after 10,000 rolls, we might observe:\n\n\n\nSum\nFrequency\n\n\n\n\n2\n~2.8%\n\n\n3\n~5.6%\n\n\n7\n~16.7%\n\n\n12\n~2.8%\n\n\n\nWe see that:\n\nSome outcomes occur more frequently than others in a stable way.\n\nIn particular, the sum 7 appears most often, with frequency close to \\(1/6\\).\nThis stable pattern is what allows us to model the process using a probability distribution.\n\n\n\nThe Data Generating Process (DGP)\nWe represent this process using a probability model:\n\\[\nX \\sim F\n\\]\n\n\\(X\\) represents the outcome of a single observation\n\n\\(F\\) represents the distribution governing the process\n\n👉 The Data Generating Process (DGP) is a mathematical abstraction of the mechanism that generates the data.\n\n\n\nDefinition of a Random Sample\nTo model repeated data collection, we define a sequence of random variables:\n\\[\nX_1, X_2, \\dots, X_n \\sim F\n\\]\nsuch that:\n\nEach \\(X_i\\) has the same distribution \\(F\\)\n\nThe variables are independent\n\nThis is called a random sample, or:\n\n\\(X_1, \\dots, X_n\\) are independent and identically distributed (i.i.d.)\n\n\n\n\nInterpretation\nA random sample represents repeated draws from the same data-generating process.\nFormally, this is expressed by the assumption that:\n\n\\(X_1, \\dots, X_n\\) are independent and identically distributed (i.i.d.)\n\nThis means:\n\nEach \\(X_i\\) corresponds to one observation\n\nAll \\(X_i\\) have the same distribution \\(F\\) (identically distributed)\n\nNo observation influences another (independent)\n\nImportantly:\n\nThe random sample is a theoretical construct, not the observed data.\n\n\n\n\nFrom Random Sample to Data\nWhat we actually observe is a realization of the random sample:\n\\[\nx_1, x_2, \\dots, x_n\n\\]\nwhere each \\(x_i\\) is a realization of \\(X_i\\).\nThis realization forms the dataset.\n\nThe dataset is a realization of the random sample generated by the data-generating process.\n\n\n\n\nConnection to Data Science\nIn many applications, each observation contains multiple features. In this case:\n\nEach \\(X_i\\) is a random vector\n\nEach \\(x_i\\) is a row in the dataset\n\nFor example, in a coffee dataset:\n\\[\nX_i = (\\text{rating}, \\text{acidity}, \\text{body})\n\\]\nThen:\n\nRows → realizations of \\(X_i\\)\n\nColumns → components of \\(X_i\\)\n\n\n\n\nKey Idea\nA random sample:\n\nFormalizes repeated data collection\n\nConnects data to the underlying process\n\nProvides the foundation for statistical inference\n\n\n\n\nOne-line Summary\n\nA random sample is a collection of independent and identically distributed random variables representing repeated draws from the same data-generating process."
   },
   {
-    "objectID": "chapters/about.html#why-this-book-exists",
-    "href": "chapters/about.html#why-this-book-exists",
-    "title": "About",
-    "section": "Why This Book Exists",
-    "text": "Why This Book Exists\nThroughout my studies, I encountered powerful tools: regression, asymptotics, optimization, machine learning, causal inference.\nBut I realized that true clarity requires something deeper:\n\nUnderstanding convergence, not just using estimators.\n\nUnderstanding probability spaces, not just distributions.\n\nUnderstanding identifiability, not just running models.\n\nThis project is my attempt to rebuild the mathematical backbone behind data science and causal machine learning - slowly, rigorously, and honestly.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "chapters/about.html#what-drives-me",
-    "href": "chapters/about.html#what-drives-me",
-    "title": "About",
-    "section": "What Drives Me",
-    "text": "What Drives Me\n\nRigor. I care about knowing where assumptions live.\n\nStructure. I like seeing how ideas connect across layers.\n\nClarity. I prefer fewer tools, understood deeply.\n\nIntellectual honesty. This book reflects what I have actually studied to get here.\n\nSharing. I am motivated by learning in public and helping demystify ideas that often appear more complex than they need to be.\n\nI believe that prediction without foundations is fragile, and causal claims without structure are dangerous.\nSo this journey begins at the base:\n\nlogic, linear algebra, analysis, measure, probability and builds upward toward causal reasoning.\n\nIf this book does anything well, I hope it shows that mathematical depth is not about abstraction for its own sake, but about understanding the layer you are standing on.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "chapters/00_ch00.html",
-    "href": "chapters/00_ch00.html",
-    "title": "Why I’m Interested in Causal ML?",
+    "objectID": "glossary/terms/empirical_distribution.html",
+    "href": "glossary/terms/empirical_distribution.html",
+    "title": "Empirical Distribution",
     "section": "",
-    "text": "My interest in Causal Machine Learning (Causal ML) comes from a simple tension: many models can predict well, but prediction alone does not answer the questions I care about - what happens if we intervene? and how sure are we?\nIn Statistical Modeling: The Two Cultures (2001), Leo Breiman described two traditions that often talk past each other:\n\n\n\n\n\n\n\n\nCulture\nPrimary goal\nTypical focus\n\n\n\n\nData modeling (statistics/econometrics)\nexplanation + inference\nassumptions, parameters, uncertainty\n\n\nAlgorithmic modeling (machine learning)\nprediction + generalization\nperformance on unseen data\n\n\n\nCausal ML is compelling to me because it aims to combine the strengths of both: flexible prediction models with principled causal questions and uncertainty quantification.",
-    "crumbs": [
-      "Why I'm Interested in Causal ML?"
-    ]
+    "text": "The empirical distribution is the probability distribution obtained by assigning probabilities according to the observed frequencies in the data.\nIn other words:"
   },
   {
-    "objectID": "chapters/00_ch00.html#overview",
-    "href": "chapters/00_ch00.html#overview",
-    "title": "Why I’m Interested in Causal ML?",
+    "objectID": "glossary/terms/empirical_distribution.html#from-data-to-probabilities",
+    "href": "glossary/terms/empirical_distribution.html#from-data-to-probabilities",
+    "title": "Empirical Distribution",
+    "section": "From Data to Probabilities",
+    "text": "From Data to Probabilities\nSuppose we observe a sample:\n\n80, 82, 85, 85, 90\n\nWe start by counting how often each value appears:\n\n80 → 1 time\n\n82 → 1 time\n\n85 → 2 times\n\n90 → 1 time\n\nTotal observations = 5\nNow we convert counts into probabilities:\n\\[\nP(X = x) = \\frac{\\text{count of } x}{n}\n\\]\nSo:\n\n\n\nFlavor Score\nProbability\n\n\n\n\n80\n1/5\n\n\n82\n1/5\n\n\n85\n2/5\n\n\n90\n1/5"
+  },
+  {
+    "objectID": "glossary/terms/empirical_distribution.html#interpretation",
+    "href": "glossary/terms/empirical_distribution.html#interpretation",
+    "title": "Empirical Distribution",
+    "section": "Interpretation",
+    "text": "Interpretation\nThe empirical distribution answers:\n\n“If I randomly pick one observation from my dataset, what is the probability of each value?”\n\nYou can think of it as:\n\nWriting each observation on a ticket\n\nPutting all tickets in a bag\n\nDrawing one at random\n\nSince 85 appears twice, it has twice the chance of being selected."
+  },
+  {
+    "objectID": "glossary/terms/empirical_distribution.html#why-counting-works",
+    "href": "glossary/terms/empirical_distribution.html#why-counting-works",
+    "title": "Empirical Distribution",
+    "section": "Why Counting Works",
+    "text": "Why Counting Works\nWhen we count, we are implicitly:\n\nAssigning equal weight to each observation\n\nTreating each observation as equally likely\n\nThis is equivalent to assuming a uniform distribution over the observed data points.\nFrequencies then emerge naturally when values repeat."
+  },
+  {
+    "objectID": "glossary/terms/empirical_distribution.html#connection-to-the-data-generating-process",
+    "href": "glossary/terms/empirical_distribution.html#connection-to-the-data-generating-process",
+    "title": "Empirical Distribution",
+    "section": "Connection to the Data Generating Process",
+    "text": "Connection to the Data Generating Process\nIn practice, data are generated by an unknown Data Generating Process (DGP), which defines a true distribution \\(F\\).\nWe observe a sample:\n\\[\nX_1, X_2, \\dots, X_n \\sim F\n\\]\nThe distribution \\(F\\) describes the mechanism that generates the data.\nHowever, in practice:\n\n\\(F\\) is unknown\n\nWe only observe a finite dataset\n\nSo while \\(F\\) defines the problem, we cannot work with it directly."
+  },
+  {
+    "objectID": "glossary/terms/empirical_distribution.html#the-plug-in-principle",
+    "href": "glossary/terms/empirical_distribution.html#the-plug-in-principle",
+    "title": "Empirical Distribution",
+    "section": "The Plug-in Principle",
+    "text": "The Plug-in Principle\nIn statistics, many quantities of interest depend on the unknown distribution \\(F\\).\nFor example:\n\nthe mean\n\nthe variance\n\nthe sampling distribution of a statistic\n\nThe plug-in principle provides a simple idea:\n\nTo estimate a quantity defined in terms of \\(F\\), replace \\(F\\) with an estimate.\n\nIn the simplest case, we use the empirical distribution \\(\\hat{F}\\).\nSo instead of working with \\(F\\), we work with:\n\\[\nF \\;\\; \\rightarrow \\;\\; \\hat{F}\n\\]\nImportantly:\n\nThe plug-in principle does not remove the role of \\(F\\) — it approximates it using the data."
+  },
+  {
+    "objectID": "glossary/terms/empirical_distribution.html#why-this-matters",
+    "href": "glossary/terms/empirical_distribution.html#why-this-matters",
+    "title": "Empirical Distribution",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nThe empirical distribution is not just a way to summarize data.\nIt is a data-driven approximation of the true distribution.\nIn this sense, the empirical distribution acts as a proxy for the unknown data-generating process.\nThis allows us to:\n\ncompute estimates\n\napproximate expectations\n\nsimulate new data\n\nwithout making parametric assumptions."
+  },
+  {
+    "objectID": "glossary/terms/empirical_distribution.html#connection-to-bootstrap",
+    "href": "glossary/terms/empirical_distribution.html#connection-to-bootstrap",
+    "title": "Empirical Distribution",
+    "section": "Connection to Bootstrap",
+    "text": "Connection to Bootstrap\nThe bootstrap is a direct application of the plug-in principle.\n\nThe true sampling process depends on \\(F\\)\n\nWe replace \\(F\\) with \\(\\hat{F}\\)\n\nWe simulate new samples from \\(\\hat{F}\\)\n\nIn practice, this means:\n\nResampling the observed data is equivalent to sampling from the empirical distribution."
+  },
+  {
+    "objectID": "glossary/terms/empirical_distribution.html#key-idea",
+    "href": "glossary/terms/empirical_distribution.html#key-idea",
+    "title": "Empirical Distribution",
+    "section": "Key Idea",
+    "text": "Key Idea\nThe empirical distribution is:\n\nA nonparametric estimate of the unknown distribution\n\nDefined entirely by the data\n\nA proxy for the data-generating process\n\nThe foundation for resampling methods like the bootstrap"
+  },
+  {
+    "objectID": "glossary/terms/empirical_distribution.html#one-line-summary",
+    "href": "glossary/terms/empirical_distribution.html#one-line-summary",
+    "title": "Empirical Distribution",
+    "section": "One-line Summary",
+    "text": "One-line Summary\n\nThe empirical distribution approximates the unknown data-generating process by assigning probability mass to observed data points, enabling computation and simulation through the plug-in principle."
+  },
+  {
+    "objectID": "glossary/glossary.html",
+    "href": "glossary/glossary.html",
+    "title": "Glossary",
     "section": "",
-    "text": "My interest in Causal Machine Learning (Causal ML) comes from a simple tension: many models can predict well, but prediction alone does not answer the questions I care about - what happens if we intervene? and how sure are we?\nIn Statistical Modeling: The Two Cultures (2001), Leo Breiman described two traditions that often talk past each other:\n\n\n\n\n\n\n\n\nCulture\nPrimary goal\nTypical focus\n\n\n\n\nData modeling (statistics/econometrics)\nexplanation + inference\nassumptions, parameters, uncertainty\n\n\nAlgorithmic modeling (machine learning)\nprediction + generalization\nperformance on unseen data\n\n\n\nCausal ML is compelling to me because it aims to combine the strengths of both: flexible prediction models with principled causal questions and uncertainty quantification.",
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nBootstrap Distribution\n\n\nThe distribution of a statistic obtained by resampling from the empirical distribution to approximate its sampling variability.\n\n\n\n\n\n\nCentral Limit Theorem (CLT)\n\n\nA fundamental result stating that the sampling distribution of the sample mean becomes approximately normal as the sample size increases, regardless of the original distribution.\n\n\n\n\n\n\nData Generating Process (DGP)\n\n\nThe probabilistic mechanism that generates the observed data.\n\n\n\n\n\n\nEmpirical Distribution\n\n\nA simple, from-scratch explanation of the empirical distribution as probabilities derived from observed frequencies in data.\n\n\n\n\n\n\nGeneralization\n\n\nThe ability of a model or statistical estimate to perform well on new, unseen data drawn from the same underlying process.\n\n\n\n\n\n\nRandom Sample\n\n\nA collection of independent and identically distributed random variables drawn from the same data-generating process.\n\n\n\n\n\n\nRandom Vector\n\n\nA concise explanation of a random vector as a collection of random variables representing a single observation with multiple features.\n\n\n\n\n\n\nSampling Distribution\n\n\nThe probability distribution of a statistic computed from repeated samples drawn from the same data-generating process.\n\n\n\n\n\n\nStratified Sampling\n\n\nA sampling technique that divides the population into subgroups (strata) and samples from each stratum to ensure representative coverage.\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Why I'm Interested in Causal ML?"
-    ]
-  },
-  {
-    "objectID": "chapters/00_ch00.html#focus-of-this-book",
-    "href": "chapters/00_ch00.html#focus-of-this-book",
-    "title": "Why I’m Interested in Causal ML?",
-    "section": "Focus of This Book",
-    "text": "Focus of This Book\nThis online book is my mathematical learning journey toward understanding Causal ML from first principles. My goal is to rebuild the foundations carefully and honestly - writing only what I have actually studied - so that later I can read and use causal methods with clarity and rigor.",
-    "crumbs": [
-      "Why I'm Interested in Causal ML?"
-    ]
-  },
-  {
-    "objectID": "chapters/00_ch00.html#the-foundational-path",
-    "href": "chapters/00_ch00.html#the-foundational-path",
-    "title": "Why I’m Interested in Causal ML?",
-    "section": "The Foundational Path",
-    "text": "The Foundational Path\nThis book is my mathematical learning journey toward understanding Causal ML from first principles.\nEach step builds exactly the structure required for the next - nothing ornamental, nothing skipped.\n\n\n\n\n\n\n\n\nPhase\nTopic\nFocus\n\n\n\n\n1\nLogic & Set Theory\nProof techniques, quantifiers, mathematical language\n\n\n2\nLinear Algebra\nInner products, projections, spectral ideas; geometry of estimation\n\n\n3\nReal Analysis (ℝ)\nLimits, continuity, differentiation, compactness - aka: Calculus\n\n\n4\nMetric Spaces\nConvergence, open/closed sets, completeness; minimal topology\n\n\n5\nMeasure Theory\nσ-algebras, integration, product measures\n\n\n6\nProbability (measure-theoretic)\nProbability spaces, random variables, convergence modes, LLN/CLT, conditional expectation\n\n\n7\nMathematical Statistics\nLikelihood, asymptotics, efficiency, influence functions\n\n\n8\nDecision & Risk\nLoss, optimality, statistical decision theory\n\n\n9\nUncertainty Quantification\nParameter uncertainty, predictive distributions, bootstrap, conformal inference, robustness\n\n\n10\nStatistical Learning Theory\nERM, generalization, regularization, high-dimensional behavior\n\n\n11\nCausal Inference + Causal ML\nIdentifiability, orthogonality, double ML, valid uncertainty for treatment effects",
-    "crumbs": [
-      "Why I'm Interested in Causal ML?"
-    ]
-  },
-  {
-    "objectID": "chapters/00_ch00.html#why-mathematical-rigor-matters-to-me",
-    "href": "chapters/00_ch00.html#why-mathematical-rigor-matters-to-me",
-    "title": "Why I’m Interested in Causal ML?",
-    "section": "Why Mathematical Rigor Matters to Me",
-    "text": "Why Mathematical Rigor Matters to Me\nIn a short interview often titled “Why?”, Richard Feynman is asked a seemingly simple question:\n\n“Why do magnets repel each other?”\n\n\nInstead of giving a comforting mechanical story, he does something deeper.\nHe explains that every answer depends on what you are willing to accept as fundamental.\nIf he says:\n\n“Because of electromagnetic forces,”\n\nthe interviewer can still ask:\n\n“Why electromagnetic forces?”\n\nIf he explains using quantum electrodynamics:\n\n“Because of exchange particles,”\n\none can still ask:\n\n“Why that law?”\n\nEventually, explanation stops being reduction and becomes:\n\n“This is how nature behaves. This is the framework.”\n\nFeynman’s key insight is subtle but profound:\n\nThere is no explanation without a conceptual framework.\nEvery “why” presupposes some deeper structure that we are not questioning.\n\nThis resonates deeply with me.\nIn data science and machine learning, it is possible to use powerful tools without fully understanding the structures that justify them. A model may perform well, an estimator may seem stable, an interval may look convincing.\nBut if I cannot explain why it works - in terms of convergence, projection, identifiability, or probability - then I am operating at a surface layer.\nFor me, mathematical rigor is not about abstraction for its own sake.\nIt is about knowing which layer I am standing on.",
-    "crumbs": [
-      "Why I'm Interested in Causal ML?"
+      "Glossary"
     ]
   },
   {
@@ -351,21 +407,154 @@
     ]
   },
   {
-    "objectID": "glossary/glossary.html",
-    "href": "glossary/glossary.html",
-    "title": "Glossary",
+    "objectID": "chapters/00_ch00.html",
+    "href": "chapters/00_ch00.html",
+    "title": "Why I’m Interested in Causal ML?",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nCentral Limit Theorem (CLT)\n\n\nA fundamental result stating that the sampling distribution of the sample mean becomes approximately normal as the sample size increases, regardless of the original distribution.\n\n\n\n\n\n\nData Generating Process (DGP)\n\n\nThe probabilistic mechanism that generates the observed data.\n\n\n\n\n\n\nSampling Distribution\n\n\nThe probability distribution of a statistic (such as the sample mean) computed from many repeated samples drawn from the same data-generating process.\n\n\n\n\n\n\nStratified Sampling\n\n\nA sampling technique that divides the population into subgroups (strata) and samples from each stratum to ensure representative coverage.\n\n\n\n\n\n\nNo matching items",
+    "text": "My interest in Causal Machine Learning (Causal ML) comes from a simple tension: many models can predict well, but prediction alone does not answer the questions I care about - what happens if we intervene? and how sure are we?\nIn Statistical Modeling: The Two Cultures (2001), Leo Breiman described two traditions that often talk past each other:\n\n\n\n\n\n\n\n\nCulture\nPrimary goal\nTypical focus\n\n\n\n\nData modeling (statistics/econometrics)\nexplanation + inference\nassumptions, parameters, uncertainty\n\n\nAlgorithmic modeling (machine learning)\nprediction + generalization\nperformance on unseen data\n\n\n\nCausal ML is compelling to me because it aims to combine the strengths of both: flexible prediction models with principled causal questions and uncertainty quantification.",
     "crumbs": [
-      "Glossary"
+      "Why I'm Interested in Causal ML?"
     ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#overview",
+    "href": "chapters/00_ch00.html#overview",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "",
+    "text": "My interest in Causal Machine Learning (Causal ML) comes from a simple tension: many models can predict well, but prediction alone does not answer the questions I care about - what happens if we intervene? and how sure are we?\nIn Statistical Modeling: The Two Cultures (2001), Leo Breiman described two traditions that often talk past each other:\n\n\n\n\n\n\n\n\nCulture\nPrimary goal\nTypical focus\n\n\n\n\nData modeling (statistics/econometrics)\nexplanation + inference\nassumptions, parameters, uncertainty\n\n\nAlgorithmic modeling (machine learning)\nprediction + generalization\nperformance on unseen data\n\n\n\nCausal ML is compelling to me because it aims to combine the strengths of both: flexible prediction models with principled causal questions and uncertainty quantification.",
+    "crumbs": [
+      "Why I'm Interested in Causal ML?"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#focus-of-this-book",
+    "href": "chapters/00_ch00.html#focus-of-this-book",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "Focus of This Book",
+    "text": "Focus of This Book\nThis online book is my mathematical learning journey toward understanding Causal ML from first principles. My goal is to rebuild the foundations carefully and honestly - writing only what I have actually studied - so that later I can read and use causal methods with clarity and rigor.",
+    "crumbs": [
+      "Why I'm Interested in Causal ML?"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#the-foundational-path",
+    "href": "chapters/00_ch00.html#the-foundational-path",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "The Foundational Path",
+    "text": "The Foundational Path\nThis book is my mathematical learning journey toward understanding Causal ML from first principles.\nEach step builds exactly the structure required for the next - nothing ornamental, nothing skipped.\n\n\n\n\n\n\n\n\nPhase\nTopic\nFocus\n\n\n\n\n1\nLogic & Set Theory\nProof techniques, quantifiers, mathematical language\n\n\n2\nLinear Algebra\nInner products, projections, spectral ideas; geometry of estimation\n\n\n3\nReal Analysis (ℝ)\nLimits, continuity, differentiation, compactness - aka: Calculus\n\n\n4\nMetric Spaces\nConvergence, open/closed sets, completeness; minimal topology\n\n\n5\nMeasure Theory\nσ-algebras, integration, product measures\n\n\n6\nProbability (measure-theoretic)\nProbability spaces, random variables, convergence modes, LLN/CLT, conditional expectation\n\n\n7\nMathematical Statistics\nLikelihood, asymptotics, efficiency, influence functions\n\n\n8\nDecision & Risk\nLoss, optimality, statistical decision theory\n\n\n9\nUncertainty Quantification\nParameter uncertainty, predictive distributions, bootstrap, conformal inference, robustness\n\n\n10\nStatistical Learning Theory\nERM, generalization, regularization, high-dimensional behavior\n\n\n11\nCausal Inference + Causal ML\nIdentifiability, orthogonality, double ML, valid uncertainty for treatment effects",
+    "crumbs": [
+      "Why I'm Interested in Causal ML?"
+    ]
+  },
+  {
+    "objectID": "chapters/00_ch00.html#why-mathematical-rigor-matters-to-me",
+    "href": "chapters/00_ch00.html#why-mathematical-rigor-matters-to-me",
+    "title": "Why I’m Interested in Causal ML?",
+    "section": "Why Mathematical Rigor Matters to Me",
+    "text": "Why Mathematical Rigor Matters to Me\nIn a short interview often titled “Why?”, Richard Feynman is asked a seemingly simple question:\n\n“Why do magnets repel each other?”\n\n\nInstead of giving a comforting mechanical story, he does something deeper.\nHe explains that every answer depends on what you are willing to accept as fundamental.\nIf he says:\n\n“Because of electromagnetic forces,”\n\nthe interviewer can still ask:\n\n“Why electromagnetic forces?”\n\nIf he explains using quantum electrodynamics:\n\n“Because of exchange particles,”\n\none can still ask:\n\n“Why that law?”\n\nEventually, explanation stops being reduction and becomes:\n\n“This is how nature behaves. This is the framework.”\n\nFeynman’s key insight is subtle but profound:\n\nThere is no explanation without a conceptual framework.\nEvery “why” presupposes some deeper structure that we are not questioning.\n\nThis resonates deeply with me.\nIn data science and machine learning, it is possible to use powerful tools without fully understanding the structures that justify them. A model may perform well, an estimator may seem stable, an interval may look convincing.\nBut if I cannot explain why it works - in terms of convergence, projection, identifiability, or probability - then I am operating at a surface layer.\nFor me, mathematical rigor is not about abstraction for its own sake.\nIt is about knowing which layer I am standing on.",
+    "crumbs": [
+      "Why I'm Interested in Causal ML?"
+    ]
+  },
+  {
+    "objectID": "chapters/about.html",
+    "href": "chapters/about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi, I’m Caio Velasco 👋\nI’m originally from Brazil. I studied Mechanical Engineering at the Federal University of Rio de Janeiro (UFRJ) and later completed a 2-year Master in Economics & Public Policy at the University of California Los Angeles (UCLA), supported by a full scholarship from the Lemann Foundation.\nDuring my academic path, I was drawn increasingly toward quantitative reasoning - probability, econometrics, statistical inference - and to the deeper question behind them: Why do these methods work?\nAt some point, applying models was no longer enough. I wanted to understand more. This book is the result of that shift.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "chapters/about.html#why-this-book-exists",
+    "href": "chapters/about.html#why-this-book-exists",
+    "title": "About",
+    "section": "Why This Book Exists",
+    "text": "Why This Book Exists\nThroughout my studies, I encountered powerful tools: regression, asymptotics, optimization, machine learning, causal inference.\nBut I realized that true clarity requires something deeper:\n\nUnderstanding convergence, not just using estimators.\n\nUnderstanding probability spaces, not just distributions.\n\nUnderstanding identifiability, not just running models.\n\nThis project is my attempt to rebuild the mathematical backbone behind data science and causal machine learning - slowly, rigorously, and honestly.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "chapters/about.html#what-drives-me",
+    "href": "chapters/about.html#what-drives-me",
+    "title": "About",
+    "section": "What Drives Me",
+    "text": "What Drives Me\n\nRigor. I care about knowing where assumptions live.\n\nStructure. I like seeing how ideas connect across layers.\n\nClarity. I prefer fewer tools, understood deeply.\n\nIntellectual honesty. This book reflects what I have actually studied to get here.\n\nSharing. I am motivated by learning in public and helping demystify ideas that often appear more complex than they need to be.\n\nI believe that prediction without foundations is fragile, and causal claims without structure are dangerous.\nSo this journey begins at the base:\n\nlogic, linear algebra, analysis, measure, probability and builds upward toward causal reasoning.\n\nIf this book does anything well, I hope it shows that mathematical depth is not about abstraction for its own sake, but about understanding the layer you are standing on.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "glossary/terms/bootstrap_distribution.html",
+    "href": "glossary/terms/bootstrap_distribution.html",
+    "title": "Bootstrap Distribution",
+    "section": "",
+    "text": "Suppose we collect a small dataset of observed values, for example:\n\n80, 82, 85, 85, 90\n\nWe compute a statistic, such as the average, and obtain a single number.\nThe natural question is:\n\n“If we collected another dataset from the same process, would we get the same result?”\n\nThe answer is no - because data are random.\nSo a deeper question emerges:\n\n“How much would this value vary across different samples?”"
+  },
+  {
+    "objectID": "glossary/terms/bootstrap_distribution.html#motivation",
+    "href": "glossary/terms/bootstrap_distribution.html#motivation",
+    "title": "Bootstrap Distribution",
+    "section": "",
+    "text": "Suppose we collect a small dataset of observed values, for example:\n\n80, 82, 85, 85, 90\n\nWe compute a statistic, such as the average, and obtain a single number.\nThe natural question is:\n\n“If we collected another dataset from the same process, would we get the same result?”\n\nThe answer is no - because data are random.\nSo a deeper question emerges:\n\n“How much would this value vary across different samples?”"
+  },
+  {
+    "objectID": "glossary/terms/bootstrap_distribution.html#a-change-in-perspective",
+    "href": "glossary/terms/bootstrap_distribution.html#a-change-in-perspective",
+    "title": "Bootstrap Distribution",
+    "section": "A Change in Perspective",
+    "text": "A Change in Perspective\nTraditionally, statistical inference relied on mathematical derivations to understand how a statistic behaves across repeated samples. Using tools such as the Central Limit Theorem, statisticians would derive formulas for quantities like standard errors and confidence intervals, often under strong assumptions and for relatively simple statistics.\nFor example, consider the sample mean of coffee ratings. Under classical assumptions, we can conclude that:\n\nThe sample mean is approximately normally distributed\n\nIts variability depends on the variance and the sample size\n\nThis allows us to compute confidence intervals analytically.\nHowever, this approach quickly becomes difficult or impossible for more complex statistics, such as:\n\nthe median\n\npercentiles\n\nmodel parameters\n\nmachine learning performance metrics\n\nFor example, consider evaluating a classification model using the AUC (Area Under the ROC Curve).\nThe AUC depends on:\n\nall predicted scores\n\nthe ranking between positive and negative examples\n\nthe joint behavior of the data and the model\n\nUnlike the sample mean, there is no simple formula for:\n\nits variance\n\nits sampling distribution\n\nTo see why this matters, consider the sample mean as a comparison.\nFor the mean, classical statistics provides a clear result:\n\nThe sampling distribution is approximately normal (by the Central Limit Theorem)\n\nThe variability is given by:\n\n\\[\n\\text{Var}(\\bar{X}) = \\frac{\\sigma^2}{n}\n\\]\nIn practice, we estimate this using the sample variance:\n\\[\n\\widehat{\\text{SE}}(\\bar{X}) = \\frac{s}{\\sqrt{n}}\n\\]\nThis gives us a direct and simple way to:\n\nquantify uncertainty\n\nbuild confidence intervals\n\nperform hypothesis tests\n\nFor example, with coffee ratings:\n\nsample mean = 84.4\n\nsample standard deviation = 3.6\n\nsample size = 5\n\nWe can compute:\n\\[\n\\widehat{\\text{SE}} = \\frac{3.6}{\\sqrt{5}} \\approx 1.61\n\\]\nThis tells us how much the mean would vary across repeated samples - without any simulation.\n\nFor more complex statistics, such as the AUC, no such formula exists.\nThere is no equivalent expression like \\(\\sigma^2/n\\), and no general theorem that gives a simple approximation in practice.\nAs a result, we cannot directly quantify uncertainty using classical methods.\nToday, this classical approach is complemented - and often replaced - by a computational one.\n\nInference can be done by simulation from the data, not only by mathematical derivation from assumptions.\n\nThe bootstrap embodies this shift.\n\nThe bootstrap replaces analytical inference with computational inference.\n\nMore precisely:\n\nBootstrap is a computational shortcut to approximate the same object that classical statistics defines theoretically.\n\nInstead of deriving the sampling distribution of a statistic using mathematics, we approximate it by resampling the observed data."
+  },
+  {
+    "objectID": "glossary/terms/bootstrap_distribution.html#from-data-to-uncertainty",
+    "href": "glossary/terms/bootstrap_distribution.html#from-data-to-uncertainty",
+    "title": "Bootstrap Distribution",
+    "section": "From Data to Uncertainty",
+    "text": "From Data to Uncertainty\nSuppose we compute a statistic from the data, such as the sample mean:\n\\[\n\\bar{X} = \\frac{1}{n} \\sum_{i=1}^n x_i\n\\]\nThis value depends on the particular dataset we observed.\nIf we had observed a different dataset, we would obtain a different value.\nThis leads to the concept of a sampling distribution:\n\nThe distribution of a statistic across repeated samples from the data-generating process.\n\nThe problem is:\n\nWe only observe one dataset."
+  },
+  {
+    "objectID": "glossary/terms/bootstrap_distribution.html#key-idea",
+    "href": "glossary/terms/bootstrap_distribution.html#key-idea",
+    "title": "Bootstrap Distribution",
+    "section": "Key Idea",
+    "text": "Key Idea\nTo approximate how a statistic would behave across repeated samples, we need a way to simulate new datasets.\nHowever, the true distribution \\(F\\) is unknown, so we cannot sample from it directly.\nInstead, we use the Empirical Distribution.\nThe empirical distribution places equal probability on each observed data point:\n\nEach observation \\(x_i\\) receives probability \\(1/n\\)\n\nThis provides a data-driven approximation of the data-generating process, which we can use to simulate repetition."
+  },
+  {
+    "objectID": "glossary/terms/bootstrap_distribution.html#bootstrap-samples",
+    "href": "glossary/terms/bootstrap_distribution.html#bootstrap-samples",
+    "title": "Bootstrap Distribution",
+    "section": "Bootstrap Samples",
+    "text": "Bootstrap Samples\nUsing the empirical distribution, we generate new datasets by:\n\nSampling with replacement\n\nFrom the observed data \\(x_1, \\dots, x_n\\)\n\nKeeping the same sample size \\(n\\)\n\nEach generated dataset is called a bootstrap sample.\nExample:\n\\[\n[85, 85, 90, 82, 85]\n\\]\n\\[\n[80, 80, 85, 82, 90]\n\\]\nEach bootstrap sample represents a new realization drawn from the empirical distribution."
+  },
+  {
+    "objectID": "glossary/terms/bootstrap_distribution.html#bootstrap-distribution",
+    "href": "glossary/terms/bootstrap_distribution.html#bootstrap-distribution",
+    "title": "Bootstrap Distribution",
+    "section": "Bootstrap Distribution",
+    "text": "Bootstrap Distribution\nFor each bootstrap sample, we recompute the statistic of interest:\n\\[\n\\bar{X}^{(1)}, \\bar{X}^{(2)}, \\dots, \\bar{X}^{(B)}\n\\]\nThe distribution of these values is called the bootstrap distribution."
+  },
+  {
+    "objectID": "glossary/terms/bootstrap_distribution.html#interpretation",
+    "href": "glossary/terms/bootstrap_distribution.html#interpretation",
+    "title": "Bootstrap Distribution",
+    "section": "Interpretation",
+    "text": "Interpretation\nIt approximates:\n\n“How the statistic would vary across repeated samples from the data-generating process”"
+  },
+  {
+    "objectID": "glossary/terms/bootstrap_distribution.html#one-line-summary",
+    "href": "glossary/terms/bootstrap_distribution.html#one-line-summary",
+    "title": "Bootstrap Distribution",
+    "section": "One-line Summary",
+    "text": "One-line Summary\n\nThe bootstrap distribution is obtained by resampling from the empirical distribution and recomputing a statistic to approximate its sampling variability."
   },
   {
     "objectID": "glossary/terms/dgp.html",
     "href": "glossary/terms/dgp.html",
     "title": "Data Generating Process (DGP)",
     "section": "",
-    "text": "The data generating process (DGP) is the stochastic mechanism operated by Nature that gives rise to the observable data.\nIn statistical learning and econometrics, we assume that this mechanism can be represented by a probability law, namely the joint probability distribution\n\\[\nP(X,Y)\n\\]\nof the random variables involved in the problem, where:\nThis probability law describes the probabilistic structure governing how the data are generated.\nEquivalently, we express that the random vector \\((X,Y)\\) follows this distribution by writing\n\\[\n(X,Y) \\sim P(X,Y)\n\\]\nImportant points:\nBelow, we show a few ideas to make the DGP concept more concrete."
+    "text": "The data generating process (DGP) is the stochastic mechanism operated by Nature that gives rise to the observable data.\nIn statistical learning and econometrics, we assume that this mechanism can be represented by a probability law, namely the joint probability distribution\n\\[\nP(X,Y)\n\\]\nof the random variables involved in the problem, where:\nThis probability law describes the probabilistic structure governing how the data are generated.\nEquivalently, we express that the random vector \\((X,Y)\\) follows this distribution by writing\n\\[\n(X,Y) \\sim P(X,Y)\n\\]\nTherefore, each row (or each observation) in a dataset is a realization (draw) from the true (unknown) DGP. This means that if a certain value of a random variable (e.g.: \\(X\\) = type of coffee) is more common in the population, it will appear more often in your dataset.\nImportant points:\nBelow, we show a few ideas to make the DGP concept more concrete."
   },
   {
     "objectID": "glossary/terms/dgp.html#realizations-of-the-random-variables",
@@ -401,6 +590,62 @@
     "title": "Data Generating Process (DGP)",
     "section": "Real-world example 3: Cross-Validation and the DGP",
     "text": "Real-world example 3: Cross-Validation and the DGP\nCross-validation also relies on the assumption that the dataset is a random sample from the same data generating process (DGP).\nFormally,\n\\[\n(X_1,Y_1),\\dots,(X_n,Y_n) \\overset{iid}{\\sim} P(X,Y)\n\\]\nBecause of this assumption, we treat different subsets of the data as if they were new observations generated by the same probability law.\n\nDataset\n\n\n\nid\ndays_since_last_purchase\nreactivated\n\n\n\n\n1\n10\n1\n\n\n2\n200\n0\n\n\n3\n40\n1\n\n\n4\n300\n0\n\n\n5\n20\n1\n\n\n6\n100\n0\n\n\n\nEach row satisfies\n\\[\n(X_i,Y_i) \\sim P(X,Y)\n\\]\nmeaning every observation is a realization generated by the same DGP.\n\n\n3-fold cross-validation split\nThe numbers below refer to the row identifiers (id) of the dataset above, indicating which observations are used in each training and validation split.\n\n\n\nFold\nTraining data (ids)\nValidation data (ids)\n\n\n\n\n1\n3,4,5,6\n1,2\n\n\n2\n1,2,5,6\n3,4\n\n\n3\n1,2,3,4\n5,6\n\n\n\nFor example, in Fold 1:\n\nthe model is trained on observations 3,4,5,6\nit is evaluated on observations 1,2\n\nAt each iteration:\n\nthe model is trained on the training subset\nits performance is evaluated on the validation subset\n\nBecause all observations are assumed to come from the same DGP, each validation fold acts as a proxy for new data generated by Nature.\nCross-validation therefore repeats the train/test logic multiple times, providing a more stable estimate of model performance."
+  },
+  {
+    "objectID": "glossary/terms/random_vector.html",
+    "href": "glossary/terms/random_vector.html",
+    "title": "Random Vector",
+    "section": "",
+    "text": "A random vector is a collection of random variables:\n\\[\nX = (X^{(1)}, X^{(2)}, \\dots, X^{(p)})\n\\]\nwhere each component \\(X^{(j)}\\) is a random variable.\nIt represents a single observation with multiple features."
+  },
+  {
+    "objectID": "glossary/terms/random_vector.html#definition",
+    "href": "glossary/terms/random_vector.html#definition",
+    "title": "Random Vector",
+    "section": "",
+    "text": "A random vector is a collection of random variables:\n\\[\nX = (X^{(1)}, X^{(2)}, \\dots, X^{(p)})\n\\]\nwhere each component \\(X^{(j)}\\) is a random variable.\nIt represents a single observation with multiple features."
+  },
+  {
+    "objectID": "glossary/terms/random_vector.html#interpretation",
+    "href": "glossary/terms/random_vector.html#interpretation",
+    "title": "Random Vector",
+    "section": "Interpretation",
+    "text": "Interpretation\nA random vector models the outcome of one observation generated by a Data Generating Process (DGP).\n\nEach component corresponds to a feature\n\nAll components are generated together\n\nTheir joint behavior is described by a distribution \\(F\\)\n\n\\[\nX \\sim F\n\\]"
+  },
+  {
+    "objectID": "glossary/terms/random_vector.html#example",
+    "href": "glossary/terms/random_vector.html#example",
+    "title": "Random Vector",
+    "section": "Example",
+    "text": "Example\nIn a coffee dataset, one observation may include:\n\nrating\n\nacidity\n\nbody\n\nWe represent this as:\n\\[\nX = (\\text{rating}, \\text{acidity}, \\text{body})\n\\]\nEach component is a random variable, and together they form a random vector."
+  },
+  {
+    "objectID": "glossary/terms/random_vector.html#from-random-vector-to-dataset",
+    "href": "glossary/terms/random_vector.html#from-random-vector-to-dataset",
+    "title": "Random Vector",
+    "section": "From Random Vector to Dataset",
+    "text": "From Random Vector to Dataset\nIn practice, we observe multiple realizations of \\(X\\):\n\\[\nX_1, X_2, \\dots, X_n\n\\]\n\nEach \\(X_i\\) is a random vector\n\nEach realization \\(x_i\\) is a row in the dataset\n\nSo:\n\nRows → realizations of random vectors\n\nColumns → components of the random vector"
+  },
+  {
+    "objectID": "glossary/terms/random_vector.html#connection-to-random-sample",
+    "href": "glossary/terms/random_vector.html#connection-to-random-sample",
+    "title": "Random Vector",
+    "section": "Connection to Random Sample",
+    "text": "Connection to Random Sample\nA random sample is a collection of random vectors:\n\\[\nX_1, \\dots, X_n \\overset{i.i.d.}{\\sim} F\n\\]\nThis means:\n\nEach observation has the same distribution\n\nObservations are independent"
+  },
+  {
+    "objectID": "glossary/terms/random_vector.html#key-idea",
+    "href": "glossary/terms/random_vector.html#key-idea",
+    "title": "Random Vector",
+    "section": "Key Idea",
+    "text": "Key Idea\nA random vector represents:\n\nOne observation\n\nMultiple features\n\nJoint randomness across variables"
+  },
+  {
+    "objectID": "glossary/terms/random_vector.html#one-line-summary",
+    "href": "glossary/terms/random_vector.html#one-line-summary",
+    "title": "Random Vector",
+    "section": "One-line Summary",
+    "text": "One-line Summary\n\nA random vector is a collection of random variables representing a single observation with multiple features, generated by the same data-generating process."
   },
   {
     "objectID": "glossary/terms/stratified_sampling.html",

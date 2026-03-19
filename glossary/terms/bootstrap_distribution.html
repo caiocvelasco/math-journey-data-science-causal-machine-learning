@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A simple, from-scratch explanation of the empirical distribution as probabilities derived from observed frequencies in data.">
+<meta name="description" content="A simple introduction to the bootstrap distribution as a way to approximate sampling variability using resampling from the empirical distribution.">
 
-<title>Empirical Distribution – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
+<title>Bootstrap Distribution – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,14 +186,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#from-data-to-probabilities" id="toc-from-data-to-probabilities" class="nav-link active" data-scroll-target="#from-data-to-probabilities">From Data to Probabilities</a></li>
-  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
-  <li><a href="#why-counting-works" id="toc-why-counting-works" class="nav-link" data-scroll-target="#why-counting-works">Why Counting Works</a></li>
-  <li><a href="#connection-to-the-data-generating-process" id="toc-connection-to-the-data-generating-process" class="nav-link" data-scroll-target="#connection-to-the-data-generating-process">Connection to the Data Generating Process</a></li>
-  <li><a href="#the-plug-in-principle" id="toc-the-plug-in-principle" class="nav-link" data-scroll-target="#the-plug-in-principle">The Plug-in Principle</a></li>
-  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why This Matters</a></li>
-  <li><a href="#connection-to-bootstrap" id="toc-connection-to-bootstrap" class="nav-link" data-scroll-target="#connection-to-bootstrap">Connection to Bootstrap</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#a-change-in-perspective" id="toc-a-change-in-perspective" class="nav-link" data-scroll-target="#a-change-in-perspective">A Change in Perspective</a></li>
+  <li><a href="#from-data-to-uncertainty" id="toc-from-data-to-uncertainty" class="nav-link" data-scroll-target="#from-data-to-uncertainty">From Data to Uncertainty</a></li>
   <li><a href="#key-idea" id="toc-key-idea" class="nav-link" data-scroll-target="#key-idea">Key Idea</a></li>
+  <li><a href="#bootstrap-samples" id="toc-bootstrap-samples" class="nav-link" data-scroll-target="#bootstrap-samples">Bootstrap Samples</a></li>
+  <li><a href="#bootstrap-distribution" id="toc-bootstrap-distribution" class="nav-link" data-scroll-target="#bootstrap-distribution">Bootstrap Distribution</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
   <li><a href="#one-line-summary" id="toc-one-line-summary" class="nav-link" data-scroll-target="#one-line-summary">One-line Summary</a></li>
   </ul>
 </nav>
@@ -203,12 +202,12 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Empirical Distribution</h1>
+<h1 class="title">Bootstrap Distribution</h1>
 </div>
 
 <div>
   <div class="description">
-    A simple, from-scratch explanation of the empirical distribution as probabilities derived from observed frequencies in data.
+    A simple introduction to the bootstrap distribution as a way to approximate sampling variability using resampling from the empirical distribution.
   </div>
 </div>
 
@@ -225,184 +224,185 @@ window.Quarto = {
 </header>
 
 
-<p>The <strong>empirical distribution</strong> is the probability distribution obtained by assigning probabilities according to the <strong>observed frequencies in the data</strong>.</p>
-<p>In other words:</p>
-<blockquote class="blockquote">
-<p>Probability = how often a value appears in the dataset</p>
-</blockquote>
-<hr>
-<section id="from-data-to-probabilities" class="level2">
-<h2 class="anchored" data-anchor-id="from-data-to-probabilities">From Data to Probabilities</h2>
-<p>Suppose we observe a sample:</p>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Suppose we collect a small dataset of observed values, for example:</p>
 <blockquote class="blockquote">
 <p>80, 82, 85, 85, 90</p>
 </blockquote>
-<p>We start by <strong>counting</strong> how often each value appears:</p>
-<ul>
-<li>80 → 1 time<br>
-</li>
-<li>82 → 1 time<br>
-</li>
-<li>85 → 2 times<br>
-</li>
-<li>90 → 1 time</li>
-</ul>
-<p>Total observations = 5</p>
-<p>Now we convert counts into probabilities:</p>
-<p><span class="math display">\[
-P(X = x) = \frac{\text{count of } x}{n}
-\]</span></p>
-<p>So:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Flavor Score</th>
-<th>Probability</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>80</td>
-<td>1/5</td>
-</tr>
-<tr class="even">
-<td>82</td>
-<td>1/5</td>
-</tr>
-<tr class="odd">
-<td>85</td>
-<td>2/5</td>
-</tr>
-<tr class="even">
-<td>90</td>
-<td>1/5</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
-<p>The empirical distribution answers:</p>
+<p>We compute a statistic, such as the average, and obtain a single number.</p>
+<p>The natural question is:</p>
 <blockquote class="blockquote">
-<p>“If I randomly pick one observation from my dataset, what is the probability of each value?”</p>
+<p>“If we collected another dataset from the same process, would we get the same result?”</p>
 </blockquote>
-<p>You can think of it as:</p>
-<ul>
-<li>Writing each observation on a ticket<br>
-</li>
-<li>Putting all tickets in a bag<br>
-</li>
-<li>Drawing one at random</li>
-</ul>
-<p>Since 85 appears twice, it has twice the chance of being selected.</p>
-<hr>
-</section>
-<section id="why-counting-works" class="level2">
-<h2 class="anchored" data-anchor-id="why-counting-works">Why Counting Works</h2>
-<p>When we count, we are implicitly:</p>
-<ul>
-<li>Assigning equal weight to each observation<br>
-</li>
-<li>Treating each observation as equally likely</li>
-</ul>
-<p>This is equivalent to assuming a <strong>uniform distribution over the observed data points</strong>.</p>
-<p>Frequencies then emerge naturally when values repeat.</p>
-<hr>
-</section>
-<section id="connection-to-the-data-generating-process" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-the-data-generating-process">Connection to the Data Generating Process</h2>
-<p>In practice, data are generated by an unknown <a href="../../glossary/terms/dgp.html">Data Generating Process (DGP)</a>, which defines a true distribution <span class="math inline">\(F\)</span>.</p>
-<p>We observe a sample:</p>
-<p><span class="math display">\[
-X_1, X_2, \dots, X_n \sim F
-\]</span></p>
-<p>The distribution <span class="math inline">\(F\)</span> describes the mechanism that generates the data.</p>
-<p>However, in practice:</p>
-<ul>
-<li><span class="math inline">\(F\)</span> is unknown<br>
-</li>
-<li>We only observe a finite dataset</li>
-</ul>
-<p>So while <span class="math inline">\(F\)</span> defines the problem, we cannot work with it directly.</p>
-<hr>
-</section>
-<section id="the-plug-in-principle" class="level2">
-<h2 class="anchored" data-anchor-id="the-plug-in-principle">The Plug-in Principle</h2>
-<p>In statistics, many quantities of interest depend on the unknown distribution <span class="math inline">\(F\)</span>.</p>
-<p>For example:</p>
-<ul>
-<li>the mean<br>
-</li>
-<li>the variance<br>
-</li>
-<li>the sampling distribution of a statistic</li>
-</ul>
-<p>The <strong>plug-in principle</strong> provides a simple idea:</p>
+<p>The answer is <strong>no</strong> - because data are random.</p>
+<p>So a deeper question emerges:</p>
 <blockquote class="blockquote">
-<p>To estimate a quantity defined in terms of <span class="math inline">\(F\)</span>, replace <span class="math inline">\(F\)</span> with an estimate.</p>
-</blockquote>
-<p>In the simplest case, we use the empirical distribution <span class="math inline">\(\hat{F}\)</span>.</p>
-<p>So instead of working with <span class="math inline">\(F\)</span>, we work with:</p>
-<p><span class="math display">\[
-F \;\; \rightarrow \;\; \hat{F}
-\]</span></p>
-<p>Importantly:</p>
-<blockquote class="blockquote">
-<p>The plug-in principle does not remove the role of <span class="math inline">\(F\)</span> — it approximates it using the data.</p>
+<p>“How much would this value vary across different samples?”</p>
 </blockquote>
 <hr>
 </section>
-<section id="why-this-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h2>
-<p>The empirical distribution is not just a way to summarize data.</p>
-<p>It is a <strong>data-driven approximation of the true distribution</strong>.</p>
-<p>In this sense, the empirical distribution acts as a <strong>proxy for the unknown data-generating process</strong>.</p>
-<p>This allows us to:</p>
+<section id="a-change-in-perspective" class="level2">
+<h2 class="anchored" data-anchor-id="a-change-in-perspective">A Change in Perspective</h2>
+<p>Traditionally, statistical inference relied on mathematical derivations to understand how a statistic behaves across repeated samples. Using tools such as the Central Limit Theorem, statisticians would derive formulas for quantities like standard errors and confidence intervals, often under strong assumptions and for relatively simple statistics.</p>
+<p>For example, consider the sample mean of coffee ratings. Under classical assumptions, we can conclude that:</p>
 <ul>
-<li>compute estimates<br>
+<li>The sample mean is approximately normally distributed<br>
 </li>
-<li>approximate expectations<br>
-</li>
-<li>simulate new data</li>
+<li>Its variability depends on the variance and the sample size</li>
 </ul>
-<p>without making parametric assumptions.</p>
+<p>This allows us to compute confidence intervals analytically.</p>
+<p>However, this approach quickly becomes difficult or impossible for more complex statistics, such as:</p>
+<ul>
+<li>the median<br>
+</li>
+<li>percentiles<br>
+</li>
+<li>model parameters<br>
+</li>
+<li>machine learning performance metrics</li>
+</ul>
+<p>For example, consider evaluating a classification model using the <strong>AUC (Area Under the ROC Curve)</strong>.</p>
+<p>The AUC depends on:</p>
+<ul>
+<li>all predicted scores<br>
+</li>
+<li>the ranking between positive and negative examples<br>
+</li>
+<li>the joint behavior of the data and the model</li>
+</ul>
+<p>Unlike the sample mean, there is <strong>no simple formula</strong> for:</p>
+<ul>
+<li>its variance<br>
+</li>
+<li>its sampling distribution</li>
+</ul>
+<p>To see why this matters, consider the sample mean as a comparison.</p>
+<p>For the mean, classical statistics provides a clear result:</p>
+<ul>
+<li>The sampling distribution is approximately normal (by the Central Limit Theorem)<br>
+</li>
+<li>The variability is given by:</li>
+</ul>
+<p><span class="math display">\[
+\text{Var}(\bar{X}) = \frac{\sigma^2}{n}
+\]</span></p>
+<p>In practice, we estimate this using the sample variance:</p>
+<p><span class="math display">\[
+\widehat{\text{SE}}(\bar{X}) = \frac{s}{\sqrt{n}}
+\]</span></p>
+<p>This gives us a direct and simple way to:</p>
+<ul>
+<li>quantify uncertainty<br>
+</li>
+<li>build confidence intervals<br>
+</li>
+<li>perform hypothesis tests</li>
+</ul>
+<p>For example, with coffee ratings:</p>
+<ul>
+<li>sample mean = 84.4<br>
+</li>
+<li>sample standard deviation = 3.6<br>
+</li>
+<li>sample size = 5</li>
+</ul>
+<p>We can compute:</p>
+<p><span class="math display">\[
+\widehat{\text{SE}} = \frac{3.6}{\sqrt{5}} \approx 1.61
+\]</span></p>
+<p>This tells us how much the mean would vary across repeated samples - without any simulation.</p>
+<hr>
+<p>For more complex statistics, such as the AUC, no such formula exists.</p>
+<p>There is no equivalent expression like <span class="math inline">\(\sigma^2/n\)</span>, and no general theorem that gives a simple approximation in practice.</p>
+<p>As a result, we cannot directly quantify uncertainty using classical methods.</p>
+<p>Today, this classical approach is complemented - and often replaced - by a computational one.</p>
+<blockquote class="blockquote">
+<p>Inference can be done by simulation from the data, not only by mathematical derivation from assumptions.</p>
+</blockquote>
+<p>The bootstrap embodies this shift.</p>
+<blockquote class="blockquote">
+<p>The bootstrap replaces analytical inference with computational inference.</p>
+</blockquote>
+<p>More precisely:</p>
+<blockquote class="blockquote">
+<p>Bootstrap is a computational shortcut to approximate the same object that classical statistics defines theoretically.</p>
+</blockquote>
+<p>Instead of deriving the sampling distribution of a statistic using mathematics, we approximate it by resampling the observed data.</p>
 <hr>
 </section>
-<section id="connection-to-bootstrap" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-bootstrap">Connection to Bootstrap</h2>
-<p>The bootstrap is a <strong>direct application of the plug-in principle</strong>.</p>
-<ul>
-<li>The true sampling process depends on <span class="math inline">\(F\)</span><br>
-</li>
-<li>We replace <span class="math inline">\(F\)</span> with <span class="math inline">\(\hat{F}\)</span><br>
-</li>
-<li>We simulate new samples from <span class="math inline">\(\hat{F}\)</span></li>
-</ul>
-<p>In practice, this means:</p>
+<section id="from-data-to-uncertainty" class="level2">
+<h2 class="anchored" data-anchor-id="from-data-to-uncertainty">From Data to Uncertainty</h2>
+<p>Suppose we compute a statistic from the data, such as the sample mean:</p>
+<p><span class="math display">\[
+\bar{X} = \frac{1}{n} \sum_{i=1}^n x_i
+\]</span></p>
+<p>This value depends <strong>on the particular dataset</strong> we observed.</p>
+<p>If we had observed a different dataset, we would obtain a different value.</p>
+<p>This leads to the concept of a <strong>sampling distribution</strong>:</p>
 <blockquote class="blockquote">
-<p>Resampling the observed data is equivalent to sampling from the empirical distribution.</p>
+<p>The distribution of a statistic <strong>across repeated samples</strong> from the data-generating process.</p>
+</blockquote>
+<p>The problem is:</p>
+<blockquote class="blockquote">
+<p>We only observe <strong>one dataset</strong>.</p>
 </blockquote>
 <hr>
 </section>
 <section id="key-idea" class="level2">
 <h2 class="anchored" data-anchor-id="key-idea">Key Idea</h2>
-<p>The empirical distribution is:</p>
+<p>To approximate how a statistic would behave across repeated samples, we need a way to simulate new datasets.</p>
+<p>However, the true distribution <span class="math inline">\(F\)</span> is unknown, so we cannot sample from it directly.</p>
+<p>Instead, we use the <a href="../../glossary/terms/empirical_distribution.html">Empirical Distribution</a>.</p>
+<p>The empirical distribution places equal probability on each observed data point:</p>
 <ul>
-<li>A <strong>nonparametric</strong> estimate of the unknown distribution<br>
-</li>
-<li>Defined entirely by the data<br>
-</li>
-<li>A proxy for the data-generating process<br>
-</li>
-<li>The foundation for resampling methods like the bootstrap</li>
+<li>Each observation <span class="math inline">\(x_i\)</span> receives probability <span class="math inline">\(1/n\)</span></li>
 </ul>
+<p>This provides a data-driven approximation of the data-generating process, which we can use to simulate repetition.</p>
+<hr>
+</section>
+<section id="bootstrap-samples" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrap-samples">Bootstrap Samples</h2>
+<p>Using the empirical distribution, we generate new datasets by:</p>
+<ul>
+<li>Sampling <strong>with replacement</strong><br>
+</li>
+<li>From the observed data <span class="math inline">\(x_1, \dots, x_n\)</span><br>
+</li>
+<li>Keeping the same sample size <span class="math inline">\(n\)</span></li>
+</ul>
+<p>Each generated dataset is called a <strong>bootstrap sample</strong>.</p>
+<p>Example:</p>
+<p><span class="math display">\[
+[85, 85, 90, 82, 85]
+\]</span></p>
+<p><span class="math display">\[
+[80, 80, 85, 82, 90]
+\]</span></p>
+<p>Each bootstrap sample represents a new realization drawn from the empirical distribution.</p>
+<hr>
+</section>
+<section id="bootstrap-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrap-distribution">Bootstrap Distribution</h2>
+<p>For each bootstrap sample, we recompute the statistic of interest:</p>
+<p><span class="math display">\[
+\bar{X}^{(1)}, \bar{X}^{(2)}, \dots, \bar{X}^{(B)}
+\]</span></p>
+<p>The distribution of these values is called the <strong>bootstrap distribution</strong>.</p>
+<hr>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<p>It approximates:</p>
+<blockquote class="blockquote">
+<p>“How the statistic would vary across repeated samples from the data-generating process”</p>
+</blockquote>
 <hr>
 </section>
 <section id="one-line-summary" class="level2">
 <h2 class="anchored" data-anchor-id="one-line-summary">One-line Summary</h2>
 <blockquote class="blockquote">
-<p>The empirical distribution approximates the unknown data-generating process by assigning probability mass to observed data points, enabling computation and simulation through the plug-in principle.</p>
+<p>The bootstrap distribution is obtained by resampling from the empirical distribution and recomputing a statistic to approximate its sampling variability.</p>
 </blockquote>
 
 

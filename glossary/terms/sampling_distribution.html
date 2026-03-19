@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="The probability distribution of a statistic (such as the sample mean) computed from many repeated samples drawn from the same data-generating process.">
+<meta name="description" content="The probability distribution of a statistic computed from repeated samples drawn from the same data-generating process.">
 
 <title>Sampling Distribution – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
@@ -186,8 +186,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#connection-to-the-central-limit-theorem" id="toc-connection-to-the-central-limit-theorem" class="nav-link active" data-scroll-target="#connection-to-the-central-limit-theorem">Connection to the Central Limit Theorem</a></li>
-  <li><a href="#where-sampling-distributions-appear-in-data-science-and-machine-learning" id="toc-where-sampling-distributions-appear-in-data-science-and-machine-learning" class="nav-link" data-scroll-target="#where-sampling-distributions-appear-in-data-science-and-machine-learning">Where Sampling Distributions Appear in Data Science and Machine Learning</a></li>
+  <li><a href="#from-random-variables-to-statistics" id="toc-from-random-variables-to-statistics" class="nav-link active" data-scroll-target="#from-random-variables-to-statistics">From Random Variables to Statistics</a></li>
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#two-ways-to-access-the-sampling-distribution" id="toc-two-ways-to-access-the-sampling-distribution" class="nav-link" data-scroll-target="#two-ways-to-access-the-sampling-distribution">Two Ways to Access the Sampling Distribution</a>
+  <ul class="collapse">
+  <li><a href="#classical-analytical-approach" id="toc-classical-analytical-approach" class="nav-link" data-scroll-target="#classical-analytical-approach">1) Classical (Analytical Approach)</a></li>
+  <li><a href="#computational-approach-bootstrap" id="toc-computational-approach-bootstrap" class="nav-link" data-scroll-target="#computational-approach-bootstrap">2) Computational Approach (Bootstrap)</a></li>
+  </ul></li>
+  <li><a href="#why-sampling-distributions-matter" id="toc-why-sampling-distributions-matter" class="nav-link" data-scroll-target="#why-sampling-distributions-matter">Why Sampling Distributions Matter</a></li>
+  <li><a href="#where-sampling-distributions-appear-in-data-science" id="toc-where-sampling-distributions-appear-in-data-science" class="nav-link" data-scroll-target="#where-sampling-distributions-appear-in-data-science">Where Sampling Distributions Appear in Data Science</a></li>
+  <li><a href="#key-idea" id="toc-key-idea" class="nav-link" data-scroll-target="#key-idea">Key Idea</a></li>
+  <li><a href="#one-line-summary" id="toc-one-line-summary" class="nav-link" data-scroll-target="#one-line-summary">One-line Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +212,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    The probability distribution of a statistic (such as the sample mean) computed from many repeated samples drawn from the same data-generating process.
+    The probability distribution of a statistic computed from repeated samples drawn from the same data-generating process.
   </div>
 </div>
 
@@ -218,51 +229,169 @@ window.Quarto = {
 </header>
 
 
-<p>In probability, we usually start by studying the distribution of a <strong>random variable</strong>.</p>
+<p>In probability, we usually study the distribution of a <strong>random variable</strong>.</p>
 <p>For example, when rolling a fair die, we may ask:</p>
 <blockquote class="blockquote">
 <p>What is the probability that the outcome is 4?</p>
 </blockquote>
-<p>Here the object of interest is the <strong>distribution of the random variable</strong> that represents the outcome of the die.</p>
-<p>In statistical inference, however, the question changes.</p>
-<p>Instead of studying the distribution of a single observation, we study <strong>statistics computed from samples</strong>.</p>
-<p>A useful way to think about this shift is the following:</p>
+<p>Here, the object of interest is the <strong>distribution of a single random variable</strong>.</p>
+<hr>
+<section id="from-random-variables-to-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="from-random-variables-to-statistics">From Random Variables to Statistics</h2>
+<p>In statistical inference, the focus shifts.</p>
+<p>Instead of studying a single observation, we study <strong>statistics computed from samples</strong>.</p>
+<p>A useful way to think about this shift is:</p>
 <blockquote class="blockquote">
-<p>When you roll one die, the natural question is about the distribution of the random variable.<br>
+<p>When you roll one die, the natural question is about the distribution of the outcome.<br>
 When you roll several dice and compute a statistic, the question becomes the distribution of that statistic.</p>
 </blockquote>
-<p>For example, suppose we roll a die <strong>four times</strong> and compute the <strong>sample mean</strong> of the outcomes.</p>
-<p>Each set of four rolls produces a different value for the sample mean.</p>
-<p>If we repeated this experiment many times - each time rolling four dice and computing the mean - we would obtain many possible values of that statistic.</p>
-<p>The distribution of those possible values is called the <strong>sampling distribution</strong>.</p>
-<p>Formally, a <strong>sampling distribution</strong> is the probability distribution of a statistic computed from a random sample drawn from a population or from a <a href="../../glossary/terms/dgp.html">Data Generating Process (DGP)</a>.</p>
-<p>Sampling distributions play a central role in statistical inference because they allow us to understand how statistics behave across repeated samples.</p>
-<p>Many of the most important results in statistics - such as confidence intervals, hypothesis tests, and the <strong><a href="../../glossary/terms/clt.html">Central Limit Theorem</a></strong> - rely on properties of sampling distributions.</p>
-<section id="connection-to-the-central-limit-theorem" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-the-central-limit-theorem">Connection to the Central Limit Theorem</h2>
-<p>In many practical situations, deriving the exact sampling distribution of a statistic can be difficult.</p>
-<p>A fundamental result in statistics helps us in this situation: the <strong><a href="../../glossary/terms/clt.html">Central Limit Theorem</a></strong>.</p>
-<p>The Central Limit Theorem states that, under fairly general conditions, the sampling distribution of the <strong>sample mean</strong> becomes approximately <strong>normal (Gaussian)</strong> as the sample size increases, regardless of the shape of the original distribution.</p>
-<p>In other words, even if the underlying data-generating process is not normally distributed, the distribution of the sample mean tends to become approximately normal when the sample size is sufficiently large.</p>
-<p>This result explains why the normal distribution appears so frequently in statistical inference and why it is widely used for constructing confidence intervals and hypothesis tests.</p>
-<p>A more detailed discussion of the Central Limit Theorem is provided in the dedicated section on the <strong><a href="../../glossary/terms/clt.html">Central Limit Theorem</a></strong>.</p>
+<hr>
 </section>
-<section id="where-sampling-distributions-appear-in-data-science-and-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="where-sampling-distributions-appear-in-data-science-and-machine-learning">Where Sampling Distributions Appear in Data Science and Machine Learning</h2>
-<p>Although the concept originates in classical statistics, sampling distributions appear frequently in modern data science and machine learning.</p>
-<p>Some common examples include:</p>
+<section id="definition" class="level2">
+<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>Suppose we collect data as a <a href="../../glossary/terms/random_sample.html">random sample</a>:</p>
+<p><span class="math display">\[
+X_1, X_2, \dots, X_n \sim F
+\]</span></p>
+<p>and compute a statistic:</p>
+<p><span class="math display">\[
+T = T(X_1, \dots, X_n)
+\]</span></p>
+<p>The <strong>sampling distribution</strong> is the probability distribution of <span class="math inline">\(T\)</span>.</p>
+<hr>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<p>The sampling distribution answers the question:</p>
+<blockquote class="blockquote">
+<p>“How would this statistic vary if we collected many different datasets from the same data-generating process?”</p>
+</blockquote>
+<p>It is a <strong>theoretical object</strong> defined by repeated sampling from the <a href="../../glossary/terms/dgp.html">Data Generating Process (DGP)</a>.</p>
+<p>In practice:</p>
+<ul>
+<li>We observe only <strong>one dataset</strong><br>
+</li>
+<li>But we reason about <strong>many possible datasets</strong></li>
+</ul>
+<hr>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>Suppose we roll a die <strong>four times</strong> and compute the sample mean.</p>
+<p>Each set of four rolls produces a different value:</p>
+<ul>
+<li>Sample 1 → mean = 3.25<br>
+</li>
+<li>Sample 2 → mean = 4.50<br>
+</li>
+<li>Sample 3 → mean = 2.75</li>
+</ul>
+<p>If we repeated this experiment many times, we would obtain many possible values.</p>
+<p>The distribution of those values is the <strong>sampling distribution of the sample mean</strong>.</p>
+<hr>
+</section>
+<section id="two-ways-to-access-the-sampling-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="two-ways-to-access-the-sampling-distribution">Two Ways to Access the Sampling Distribution</h2>
+<p>The sampling distribution is usually <strong>not directly observable</strong>.</p>
+<p>There are two main approaches to understanding it.</p>
+<hr>
+<section id="classical-analytical-approach" class="level3">
+<h3 class="anchored" data-anchor-id="classical-analytical-approach">1) Classical (Analytical Approach)</h3>
+<p>In classical statistics, we derive properties of the sampling distribution using mathematical theory.</p>
+<p>A fundamental result is the <strong><a href="../../glossary/terms/clt.html">Central Limit Theorem (CLT)</a></strong>:</p>
+<ul>
+<li>For large samples, the sample mean is approximately normal<br>
+</li>
+<li>Its variability depends on the variance and sample size</li>
+</ul>
+<p>This provides analytical formulas for:</p>
+<ul>
+<li>standard errors<br>
+</li>
+<li>confidence intervals<br>
+</li>
+<li>hypothesis tests</li>
+</ul>
+<p>However, this approach:</p>
+<ul>
+<li>relies on assumptions<br>
+</li>
+<li>works mainly for simple statistics (e.g., the mean)</li>
+</ul>
+<hr>
+</section>
+<section id="computational-approach-bootstrap" class="level3">
+<h3 class="anchored" data-anchor-id="computational-approach-bootstrap">2) Computational Approach (Bootstrap)</h3>
+<p>In many practical cases, the sampling distribution is difficult or impossible to derive analytically.</p>
+<p>The bootstrap provides an alternative:</p>
+<ul>
+<li>Resample the data<br>
+</li>
+<li>Recompute the statistic<br>
+</li>
+<li>Use the resulting values to approximate its distribution</li>
+</ul>
+<blockquote class="blockquote">
+<p>The bootstrap approximates the sampling distribution by simulation rather than derivation.</p>
+</blockquote>
+<p>More generally:</p>
+<blockquote class="blockquote">
+<p>Bootstrap is a computational shortcut to approximate the same object that classical statistics defines theoretically.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="why-sampling-distributions-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-sampling-distributions-matter">Why Sampling Distributions Matter</h2>
+<p>Sampling distributions allow us to:</p>
+<ul>
+<li>Quantify uncertainty<br>
+</li>
+<li>Compute standard errors<br>
+</li>
+<li>Build confidence intervals<br>
+</li>
+<li>Perform hypothesis testing</li>
+</ul>
+<p>They are central to both:</p>
+<ul>
+<li>classical statistical inference<br>
+</li>
+<li>modern data science workflows</li>
+</ul>
+<hr>
+</section>
+<section id="where-sampling-distributions-appear-in-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="where-sampling-distributions-appear-in-data-science">Where Sampling Distributions Appear in Data Science</h2>
+<p>Although the concept originates in classical statistics, it appears frequently in modern applications:</p>
 <ul>
 <li><p><strong>Model evaluation</strong><br>
-Metrics such as accuracy, AUC, precision, or recall are statistics computed from a test dataset.<br>
-Their variability across different samples reflects the <strong>sampling distribution of the evaluation metric</strong>.</p></li>
+Metrics such as accuracy, AUC, precision, or recall are statistics.<br>
+Their variability across datasets reflects their sampling distribution.</p></li>
 <li><p><strong>Cross-validation</strong><br>
-When a model is trained and evaluated across multiple folds, the resulting scores approximate the <strong>sampling distribution of the model’s performance</strong>.</p></li>
+Repeated training and evaluation across folds approximates the sampling distribution of model performance.</p></li>
 <li><p><strong>Bootstrap methods</strong><br>
-Bootstrapping repeatedly resamples the dataset and recomputes a statistic (such as a coefficient or prediction error) to approximate its <strong>sampling distribution</strong>.</p></li>
+Resampling approximates the sampling distribution of a statistic.</p></li>
 <li><p><strong>Uncertainty quantification</strong><br>
-Confidence intervals and standard errors used in regression or causal inference rely on theoretical results about sampling distributions.</p></li>
+Confidence intervals and standard errors rely on sampling distributions.</p></li>
 </ul>
-<p>Even in predictive machine learning pipelines, whenever we compute statistics from data - such as model parameters, evaluation metrics, or feature importance measures - their variability across samples is governed by <strong>sampling distributions</strong>.</p>
+<hr>
+</section>
+<section id="key-idea" class="level2">
+<h2 class="anchored" data-anchor-id="key-idea">Key Idea</h2>
+<p>The sampling distribution is the <strong>central object of statistical inference</strong>.</p>
+<ul>
+<li>Classical statistics approximates it analytically<br>
+</li>
+<li>Bootstrap approximates it computationally</li>
+</ul>
+<hr>
+</section>
+<section id="one-line-summary" class="level2">
+<h2 class="anchored" data-anchor-id="one-line-summary">One-line Summary</h2>
+<blockquote class="blockquote">
+<p>The sampling distribution describes how a statistic varies across repeated samples from the same data-generating process, and it can be studied either analytically or approximated computationally.</p>
+</blockquote>
 
 
 

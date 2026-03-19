@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A simple, from-scratch explanation of the empirical distribution as probabilities derived from observed frequencies in data.">
+<meta name="description" content="A collection of independent and identically distributed random variables drawn from the same data-generating process.">
 
-<title>Empirical Distribution – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
+<title>Random Sample – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,13 +186,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#from-data-to-probabilities" id="toc-from-data-to-probabilities" class="nav-link active" data-scroll-target="#from-data-to-probabilities">From Data to Probabilities</a></li>
+  <li><a href="#random-phenomenon-and-regularity" id="toc-random-phenomenon-and-regularity" class="nav-link active" data-scroll-target="#random-phenomenon-and-regularity">Random Phenomenon and Regularity</a></li>
+  <li><a href="#the-data-generating-process-dgp" id="toc-the-data-generating-process-dgp" class="nav-link" data-scroll-target="#the-data-generating-process-dgp">The Data Generating Process (DGP)</a></li>
+  <li><a href="#definition-of-a-random-sample" id="toc-definition-of-a-random-sample" class="nav-link" data-scroll-target="#definition-of-a-random-sample">Definition of a Random Sample</a></li>
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
-  <li><a href="#why-counting-works" id="toc-why-counting-works" class="nav-link" data-scroll-target="#why-counting-works">Why Counting Works</a></li>
-  <li><a href="#connection-to-the-data-generating-process" id="toc-connection-to-the-data-generating-process" class="nav-link" data-scroll-target="#connection-to-the-data-generating-process">Connection to the Data Generating Process</a></li>
-  <li><a href="#the-plug-in-principle" id="toc-the-plug-in-principle" class="nav-link" data-scroll-target="#the-plug-in-principle">The Plug-in Principle</a></li>
-  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why This Matters</a></li>
-  <li><a href="#connection-to-bootstrap" id="toc-connection-to-bootstrap" class="nav-link" data-scroll-target="#connection-to-bootstrap">Connection to Bootstrap</a></li>
+  <li><a href="#from-random-sample-to-data" id="toc-from-random-sample-to-data" class="nav-link" data-scroll-target="#from-random-sample-to-data">From Random Sample to Data</a></li>
+  <li><a href="#connection-to-data-science" id="toc-connection-to-data-science" class="nav-link" data-scroll-target="#connection-to-data-science">Connection to Data Science</a></li>
   <li><a href="#key-idea" id="toc-key-idea" class="nav-link" data-scroll-target="#key-idea">Key Idea</a></li>
   <li><a href="#one-line-summary" id="toc-one-line-summary" class="nav-link" data-scroll-target="#one-line-summary">One-line Summary</a></li>
   </ul>
@@ -203,12 +202,12 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Empirical Distribution</h1>
+<h1 class="title">Random Sample</h1>
 </div>
 
 <div>
   <div class="description">
-    A simple, from-scratch explanation of the empirical distribution as probabilities derived from observed frequencies in data.
+    A collection of independent and identically distributed random variables drawn from the same data-generating process.
   </div>
 </div>
 
@@ -225,184 +224,169 @@ window.Quarto = {
 </header>
 
 
-<p>The <strong>empirical distribution</strong> is the probability distribution obtained by assigning probabilities according to the <strong>observed frequencies in the data</strong>.</p>
-<p>In other words:</p>
-<blockquote class="blockquote">
-<p>Probability = how often a value appears in the dataset</p>
-</blockquote>
-<hr>
-<section id="from-data-to-probabilities" class="level2">
-<h2 class="anchored" data-anchor-id="from-data-to-probabilities">From Data to Probabilities</h2>
-<p>Suppose we observe a sample:</p>
-<blockquote class="blockquote">
-<p>80, 82, 85, 85, 90</p>
-</blockquote>
-<p>We start by <strong>counting</strong> how often each value appears:</p>
+<p>Statistical analysis begins with a <strong>random phenomenon</strong>, where each observation arises from a repeatable process.</p>
+<section id="random-phenomenon-and-regularity" class="level3">
+<h3 class="anchored" data-anchor-id="random-phenomenon-and-regularity">Random Phenomenon and Regularity</h3>
+<p>We consider processes that can be repeated under similar conditions:</p>
 <ul>
-<li>80 → 1 time<br>
+<li>Rolling two dice<br>
 </li>
-<li>82 → 1 time<br>
+<li>Measuring the quality of a coffee<br>
 </li>
-<li>85 → 2 times<br>
-</li>
-<li>90 → 1 time</li>
+<li>Observing user behavior</li>
 </ul>
-<p>Total observations = 5</p>
-<p>Now we convert counts into probabilities:</p>
-<p><span class="math display">\[
-P(X = x) = \frac{\text{count of } x}{n}
-\]</span></p>
-<p>So:</p>
+<p>Each repetition produces an outcome.</p>
+<p>When this process is repeated many times, patterns begin to emerge:</p>
+<ul>
+<li>Outcomes follow stable frequencies<br>
+</li>
+<li>Regularities appear in the data</li>
+</ul>
+<p>👉 This is known as <strong>statistical regularity</strong></p>
+<p><strong>Example (dice):</strong></p>
+<p>Suppose we roll two dice many times and record the sum.</p>
+<ul>
+<li>After a few rolls → results look irregular (e.g., 5, 9, 3, 11)<br>
+</li>
+<li>After many rolls → a pattern emerges</li>
+</ul>
+<p>For example, after 10,000 rolls, we might observe:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Flavor Score</th>
-<th>Probability</th>
+<th>Sum</th>
+<th>Frequency</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>80</td>
-<td>1/5</td>
+<td>2</td>
+<td>~2.8%</td>
 </tr>
 <tr class="even">
-<td>82</td>
-<td>1/5</td>
+<td>3</td>
+<td>~5.6%</td>
 </tr>
 <tr class="odd">
-<td>85</td>
-<td>2/5</td>
+<td>7</td>
+<td>~16.7%</td>
 </tr>
 <tr class="even">
-<td>90</td>
-<td>1/5</td>
+<td>12</td>
+<td>~2.8%</td>
 </tr>
 </tbody>
 </table>
-<hr>
-</section>
-<section id="interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
-<p>The empirical distribution answers:</p>
+<p>We see that:</p>
 <blockquote class="blockquote">
-<p>“If I randomly pick one observation from my dataset, what is the probability of each value?”</p>
+<p>Some outcomes occur more frequently than others in a stable way.</p>
 </blockquote>
-<p>You can think of it as:</p>
-<ul>
-<li>Writing each observation on a ticket<br>
-</li>
-<li>Putting all tickets in a bag<br>
-</li>
-<li>Drawing one at random</li>
-</ul>
-<p>Since 85 appears twice, it has twice the chance of being selected.</p>
+<p>In particular, the sum <strong>7 appears most often</strong>, with frequency close to <span class="math inline">\(1/6\)</span>.</p>
+<p>This stable pattern is what allows us to model the process using a probability distribution.</p>
 <hr>
 </section>
-<section id="why-counting-works" class="level2">
-<h2 class="anchored" data-anchor-id="why-counting-works">Why Counting Works</h2>
-<p>When we count, we are implicitly:</p>
+<section id="the-data-generating-process-dgp" class="level3">
+<h3 class="anchored" data-anchor-id="the-data-generating-process-dgp">The Data Generating Process (DGP)</h3>
+<p>We represent this process using a probability model:</p>
+<p><span class="math display">\[
+X \sim F
+\]</span></p>
 <ul>
-<li>Assigning equal weight to each observation<br>
+<li><span class="math inline">\(X\)</span> represents the outcome of a single observation<br>
 </li>
-<li>Treating each observation as equally likely</li>
+<li><span class="math inline">\(F\)</span> represents the distribution governing the process</li>
 </ul>
-<p>This is equivalent to assuming a <strong>uniform distribution over the observed data points</strong>.</p>
-<p>Frequencies then emerge naturally when values repeat.</p>
+<p>👉 The <strong>Data Generating Process (DGP)</strong> is a mathematical abstraction of the mechanism that generates the data.</p>
 <hr>
 </section>
-<section id="connection-to-the-data-generating-process" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-the-data-generating-process">Connection to the Data Generating Process</h2>
-<p>In practice, data are generated by an unknown <a href="../../glossary/terms/dgp.html">Data Generating Process (DGP)</a>, which defines a true distribution <span class="math inline">\(F\)</span>.</p>
-<p>We observe a sample:</p>
+<section id="definition-of-a-random-sample" class="level3">
+<h3 class="anchored" data-anchor-id="definition-of-a-random-sample">Definition of a Random Sample</h3>
+<p>To model repeated data collection, we define a sequence of random variables:</p>
 <p><span class="math display">\[
 X_1, X_2, \dots, X_n \sim F
 \]</span></p>
-<p>The distribution <span class="math inline">\(F\)</span> describes the mechanism that generates the data.</p>
-<p>However, in practice:</p>
+<p>such that:</p>
 <ul>
-<li><span class="math inline">\(F\)</span> is unknown<br>
+<li>Each <span class="math inline">\(X_i\)</span> has the same distribution <span class="math inline">\(F\)</span><br>
 </li>
-<li>We only observe a finite dataset</li>
+<li>The variables are <strong>independent</strong></li>
 </ul>
-<p>So while <span class="math inline">\(F\)</span> defines the problem, we cannot work with it directly.</p>
+<p>This is called a <strong>random sample</strong>, or:</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(X_1, \dots, X_n\)</span> are <strong>independent and identically distributed (i.i.d.)</strong></p>
+</blockquote>
 <hr>
 </section>
-<section id="the-plug-in-principle" class="level2">
-<h2 class="anchored" data-anchor-id="the-plug-in-principle">The Plug-in Principle</h2>
-<p>In statistics, many quantities of interest depend on the unknown distribution <span class="math inline">\(F\)</span>.</p>
-<p>For example:</p>
-<ul>
-<li>the mean<br>
-</li>
-<li>the variance<br>
-</li>
-<li>the sampling distribution of a statistic</li>
-</ul>
-<p>The <strong>plug-in principle</strong> provides a simple idea:</p>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<p>A random sample represents <strong>repeated draws from the same data-generating process</strong>.</p>
+<p>Formally, this is expressed by the assumption that:</p>
 <blockquote class="blockquote">
-<p>To estimate a quantity defined in terms of <span class="math inline">\(F\)</span>, replace <span class="math inline">\(F\)</span> with an estimate.</p>
+<p><span class="math inline">\(X_1, \dots, X_n\)</span> are <strong>independent and identically distributed (i.i.d.)</strong></p>
 </blockquote>
-<p>In the simplest case, we use the empirical distribution <span class="math inline">\(\hat{F}\)</span>.</p>
-<p>So instead of working with <span class="math inline">\(F\)</span>, we work with:</p>
-<p><span class="math display">\[
-F \;\; \rightarrow \;\; \hat{F}
-\]</span></p>
+<p>This means:</p>
+<ul>
+<li>Each <span class="math inline">\(X_i\)</span> corresponds to one observation<br>
+</li>
+<li>All <span class="math inline">\(X_i\)</span> have the same distribution <span class="math inline">\(F\)</span> (<strong>identically distributed</strong>)<br>
+</li>
+<li>No observation influences another (<strong>independent</strong>)</li>
+</ul>
 <p>Importantly:</p>
 <blockquote class="blockquote">
-<p>The plug-in principle does not remove the role of <span class="math inline">\(F\)</span> — it approximates it using the data.</p>
+<p>The random sample is a <strong>theoretical construct</strong>, not the observed data.</p>
 </blockquote>
 <hr>
 </section>
-<section id="why-this-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h2>
-<p>The empirical distribution is not just a way to summarize data.</p>
-<p>It is a <strong>data-driven approximation of the true distribution</strong>.</p>
-<p>In this sense, the empirical distribution acts as a <strong>proxy for the unknown data-generating process</strong>.</p>
-<p>This allows us to:</p>
-<ul>
-<li>compute estimates<br>
-</li>
-<li>approximate expectations<br>
-</li>
-<li>simulate new data</li>
-</ul>
-<p>without making parametric assumptions.</p>
-<hr>
-</section>
-<section id="connection-to-bootstrap" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-bootstrap">Connection to Bootstrap</h2>
-<p>The bootstrap is a <strong>direct application of the plug-in principle</strong>.</p>
-<ul>
-<li>The true sampling process depends on <span class="math inline">\(F\)</span><br>
-</li>
-<li>We replace <span class="math inline">\(F\)</span> with <span class="math inline">\(\hat{F}\)</span><br>
-</li>
-<li>We simulate new samples from <span class="math inline">\(\hat{F}\)</span></li>
-</ul>
-<p>In practice, this means:</p>
+<section id="from-random-sample-to-data" class="level3">
+<h3 class="anchored" data-anchor-id="from-random-sample-to-data">From Random Sample to Data</h3>
+<p>What we actually observe is a realization of the random sample:</p>
+<p><span class="math display">\[
+x_1, x_2, \dots, x_n
+\]</span></p>
+<p>where each <span class="math inline">\(x_i\)</span> is a realization of <span class="math inline">\(X_i\)</span>.</p>
+<p>This realization forms the dataset.</p>
 <blockquote class="blockquote">
-<p>Resampling the observed data is equivalent to sampling from the empirical distribution.</p>
+<p>The dataset is a realization of the random sample generated by the data-generating process.</p>
 </blockquote>
 <hr>
 </section>
-<section id="key-idea" class="level2">
-<h2 class="anchored" data-anchor-id="key-idea">Key Idea</h2>
-<p>The empirical distribution is:</p>
+<section id="connection-to-data-science" class="level3">
+<h3 class="anchored" data-anchor-id="connection-to-data-science">Connection to Data Science</h3>
+<p>In many applications, each observation contains multiple features. In this case:</p>
 <ul>
-<li>A <strong>nonparametric</strong> estimate of the unknown distribution<br>
+<li>Each <span class="math inline">\(X_i\)</span> is a <strong>random vector</strong><br>
 </li>
-<li>Defined entirely by the data<br>
+<li>Each <span class="math inline">\(x_i\)</span> is a row in the dataset</li>
+</ul>
+<p>For example, in a coffee dataset:</p>
+<p><span class="math display">\[
+X_i = (\text{rating}, \text{acidity}, \text{body})
+\]</span></p>
+<p>Then:</p>
+<ul>
+<li>Rows → realizations of <span class="math inline">\(X_i\)</span><br>
 </li>
-<li>A proxy for the data-generating process<br>
-</li>
-<li>The foundation for resampling methods like the bootstrap</li>
+<li>Columns → components of <span class="math inline">\(X_i\)</span></li>
 </ul>
 <hr>
 </section>
-<section id="one-line-summary" class="level2">
-<h2 class="anchored" data-anchor-id="one-line-summary">One-line Summary</h2>
+<section id="key-idea" class="level3">
+<h3 class="anchored" data-anchor-id="key-idea">Key Idea</h3>
+<p>A random sample:</p>
+<ul>
+<li>Formalizes repeated data collection<br>
+</li>
+<li>Connects data to the underlying process<br>
+</li>
+<li>Provides the foundation for statistical inference</li>
+</ul>
+<hr>
+</section>
+<section id="one-line-summary" class="level3">
+<h3 class="anchored" data-anchor-id="one-line-summary">One-line Summary</h3>
 <blockquote class="blockquote">
-<p>The empirical distribution approximates the unknown data-generating process by assigning probability mass to observed data points, enabling computation and simulation through the plug-in principle.</p>
+<p>A random sample is a collection of independent and identically distributed random variables representing repeated draws from the same data-generating process.</p>
 </blockquote>
 
 

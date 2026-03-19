@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A simple, from-scratch explanation of the empirical distribution as probabilities derived from observed frequencies in data.">
+<meta name="description" content="A concise explanation of a random vector as a collection of random variables representing a single observation with multiple features.">
 
-<title>Empirical Distribution – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
+<title>Random Vector – Foundations of Data Science &amp; Causal ML: A Mathematical Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,13 +186,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#from-data-to-probabilities" id="toc-from-data-to-probabilities" class="nav-link active" data-scroll-target="#from-data-to-probabilities">From Data to Probabilities</a></li>
+  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
-  <li><a href="#why-counting-works" id="toc-why-counting-works" class="nav-link" data-scroll-target="#why-counting-works">Why Counting Works</a></li>
-  <li><a href="#connection-to-the-data-generating-process" id="toc-connection-to-the-data-generating-process" class="nav-link" data-scroll-target="#connection-to-the-data-generating-process">Connection to the Data Generating Process</a></li>
-  <li><a href="#the-plug-in-principle" id="toc-the-plug-in-principle" class="nav-link" data-scroll-target="#the-plug-in-principle">The Plug-in Principle</a></li>
-  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why This Matters</a></li>
-  <li><a href="#connection-to-bootstrap" id="toc-connection-to-bootstrap" class="nav-link" data-scroll-target="#connection-to-bootstrap">Connection to Bootstrap</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#from-random-vector-to-dataset" id="toc-from-random-vector-to-dataset" class="nav-link" data-scroll-target="#from-random-vector-to-dataset">From Random Vector to Dataset</a></li>
+  <li><a href="#connection-to-random-sample" id="toc-connection-to-random-sample" class="nav-link" data-scroll-target="#connection-to-random-sample">Connection to Random Sample</a></li>
   <li><a href="#key-idea" id="toc-key-idea" class="nav-link" data-scroll-target="#key-idea">Key Idea</a></li>
   <li><a href="#one-line-summary" id="toc-one-line-summary" class="nav-link" data-scroll-target="#one-line-summary">One-line Summary</a></li>
   </ul>
@@ -203,12 +201,12 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Empirical Distribution</h1>
+<h1 class="title">Random Vector</h1>
 </div>
 
 <div>
   <div class="description">
-    A simple, from-scratch explanation of the empirical distribution as probabilities derived from observed frequencies in data.
+    A concise explanation of a random vector as a collection of random variables representing a single observation with multiple features.
   </div>
 </div>
 
@@ -225,184 +223,97 @@ window.Quarto = {
 </header>
 
 
-<p>The <strong>empirical distribution</strong> is the probability distribution obtained by assigning probabilities according to the <strong>observed frequencies in the data</strong>.</p>
-<p>In other words:</p>
-<blockquote class="blockquote">
-<p>Probability = how often a value appears in the dataset</p>
-</blockquote>
-<hr>
-<section id="from-data-to-probabilities" class="level2">
-<h2 class="anchored" data-anchor-id="from-data-to-probabilities">From Data to Probabilities</h2>
-<p>Suppose we observe a sample:</p>
-<blockquote class="blockquote">
-<p>80, 82, 85, 85, 90</p>
-</blockquote>
-<p>We start by <strong>counting</strong> how often each value appears:</p>
-<ul>
-<li>80 → 1 time<br>
-</li>
-<li>82 → 1 time<br>
-</li>
-<li>85 → 2 times<br>
-</li>
-<li>90 → 1 time</li>
-</ul>
-<p>Total observations = 5</p>
-<p>Now we convert counts into probabilities:</p>
+<section id="definition" class="level2">
+<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>A <strong>random vector</strong> is a collection of random variables:</p>
 <p><span class="math display">\[
-P(X = x) = \frac{\text{count of } x}{n}
+X = (X^{(1)}, X^{(2)}, \dots, X^{(p)})
 \]</span></p>
-<p>So:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Flavor Score</th>
-<th>Probability</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>80</td>
-<td>1/5</td>
-</tr>
-<tr class="even">
-<td>82</td>
-<td>1/5</td>
-</tr>
-<tr class="odd">
-<td>85</td>
-<td>2/5</td>
-</tr>
-<tr class="even">
-<td>90</td>
-<td>1/5</td>
-</tr>
-</tbody>
-</table>
+<p>where each component <span class="math inline">\(X^{(j)}\)</span> is a random variable.</p>
+<p>It represents a <strong>single observation with multiple features</strong>.</p>
 <hr>
 </section>
 <section id="interpretation" class="level2">
 <h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
-<p>The empirical distribution answers:</p>
-<blockquote class="blockquote">
-<p>“If I randomly pick one observation from my dataset, what is the probability of each value?”</p>
-</blockquote>
-<p>You can think of it as:</p>
+<p>A random vector models the outcome of one observation generated by a <a href="../../glossary/terms/dgp.html">Data Generating Process (DGP)</a>.</p>
 <ul>
-<li>Writing each observation on a ticket<br>
+<li>Each component corresponds to a feature<br>
 </li>
-<li>Putting all tickets in a bag<br>
+<li>All components are generated together<br>
 </li>
-<li>Drawing one at random</li>
+<li>Their joint behavior is described by a distribution <span class="math inline">\(F\)</span></li>
 </ul>
-<p>Since 85 appears twice, it has twice the chance of being selected.</p>
-<hr>
-</section>
-<section id="why-counting-works" class="level2">
-<h2 class="anchored" data-anchor-id="why-counting-works">Why Counting Works</h2>
-<p>When we count, we are implicitly:</p>
-<ul>
-<li>Assigning equal weight to each observation<br>
-</li>
-<li>Treating each observation as equally likely</li>
-</ul>
-<p>This is equivalent to assuming a <strong>uniform distribution over the observed data points</strong>.</p>
-<p>Frequencies then emerge naturally when values repeat.</p>
-<hr>
-</section>
-<section id="connection-to-the-data-generating-process" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-the-data-generating-process">Connection to the Data Generating Process</h2>
-<p>In practice, data are generated by an unknown <a href="../../glossary/terms/dgp.html">Data Generating Process (DGP)</a>, which defines a true distribution <span class="math inline">\(F\)</span>.</p>
-<p>We observe a sample:</p>
 <p><span class="math display">\[
-X_1, X_2, \dots, X_n \sim F
+X \sim F
 \]</span></p>
-<p>The distribution <span class="math inline">\(F\)</span> describes the mechanism that generates the data.</p>
-<p>However, in practice:</p>
-<ul>
-<li><span class="math inline">\(F\)</span> is unknown<br>
-</li>
-<li>We only observe a finite dataset</li>
-</ul>
-<p>So while <span class="math inline">\(F\)</span> defines the problem, we cannot work with it directly.</p>
 <hr>
 </section>
-<section id="the-plug-in-principle" class="level2">
-<h2 class="anchored" data-anchor-id="the-plug-in-principle">The Plug-in Principle</h2>
-<p>In statistics, many quantities of interest depend on the unknown distribution <span class="math inline">\(F\)</span>.</p>
-<p>For example:</p>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>In a coffee dataset, one observation may include:</p>
 <ul>
-<li>the mean<br>
+<li>rating<br>
 </li>
-<li>the variance<br>
+<li>acidity<br>
 </li>
-<li>the sampling distribution of a statistic</li>
+<li>body</li>
 </ul>
-<p>The <strong>plug-in principle</strong> provides a simple idea:</p>
-<blockquote class="blockquote">
-<p>To estimate a quantity defined in terms of <span class="math inline">\(F\)</span>, replace <span class="math inline">\(F\)</span> with an estimate.</p>
-</blockquote>
-<p>In the simplest case, we use the empirical distribution <span class="math inline">\(\hat{F}\)</span>.</p>
-<p>So instead of working with <span class="math inline">\(F\)</span>, we work with:</p>
+<p>We represent this as:</p>
 <p><span class="math display">\[
-F \;\; \rightarrow \;\; \hat{F}
+X = (\text{rating}, \text{acidity}, \text{body})
 \]</span></p>
-<p>Importantly:</p>
-<blockquote class="blockquote">
-<p>The plug-in principle does not remove the role of <span class="math inline">\(F\)</span> — it approximates it using the data.</p>
-</blockquote>
+<p>Each component is a random variable, and together they form a random vector.</p>
 <hr>
 </section>
-<section id="why-this-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h2>
-<p>The empirical distribution is not just a way to summarize data.</p>
-<p>It is a <strong>data-driven approximation of the true distribution</strong>.</p>
-<p>In this sense, the empirical distribution acts as a <strong>proxy for the unknown data-generating process</strong>.</p>
-<p>This allows us to:</p>
+<section id="from-random-vector-to-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="from-random-vector-to-dataset">From Random Vector to Dataset</h2>
+<p>In practice, we observe multiple realizations of <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[
+X_1, X_2, \dots, X_n
+\]</span></p>
 <ul>
-<li>compute estimates<br>
+<li>Each <span class="math inline">\(X_i\)</span> is a random vector<br>
 </li>
-<li>approximate expectations<br>
-</li>
-<li>simulate new data</li>
+<li>Each realization <span class="math inline">\(x_i\)</span> is a row in the dataset</li>
 </ul>
-<p>without making parametric assumptions.</p>
+<p>So:</p>
+<ul>
+<li>Rows → realizations of random vectors<br>
+</li>
+<li>Columns → components of the random vector</li>
+</ul>
 <hr>
 </section>
-<section id="connection-to-bootstrap" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-bootstrap">Connection to Bootstrap</h2>
-<p>The bootstrap is a <strong>direct application of the plug-in principle</strong>.</p>
+<section id="connection-to-random-sample" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-random-sample">Connection to Random Sample</h2>
+<p>A <a href="../../glossary/terms/random_sample.html">random sample</a> is a collection of random vectors:</p>
+<p><span class="math display">\[
+X_1, \dots, X_n \overset{i.i.d.}{\sim} F
+\]</span></p>
+<p>This means:</p>
 <ul>
-<li>The true sampling process depends on <span class="math inline">\(F\)</span><br>
+<li>Each observation has the same distribution<br>
 </li>
-<li>We replace <span class="math inline">\(F\)</span> with <span class="math inline">\(\hat{F}\)</span><br>
-</li>
-<li>We simulate new samples from <span class="math inline">\(\hat{F}\)</span></li>
+<li>Observations are independent</li>
 </ul>
-<p>In practice, this means:</p>
-<blockquote class="blockquote">
-<p>Resampling the observed data is equivalent to sampling from the empirical distribution.</p>
-</blockquote>
 <hr>
 </section>
 <section id="key-idea" class="level2">
 <h2 class="anchored" data-anchor-id="key-idea">Key Idea</h2>
-<p>The empirical distribution is:</p>
+<p>A random vector represents:</p>
 <ul>
-<li>A <strong>nonparametric</strong> estimate of the unknown distribution<br>
+<li>One observation<br>
 </li>
-<li>Defined entirely by the data<br>
+<li>Multiple features<br>
 </li>
-<li>A proxy for the data-generating process<br>
-</li>
-<li>The foundation for resampling methods like the bootstrap</li>
+<li>Joint randomness across variables</li>
 </ul>
 <hr>
 </section>
 <section id="one-line-summary" class="level2">
 <h2 class="anchored" data-anchor-id="one-line-summary">One-line Summary</h2>
 <blockquote class="blockquote">
-<p>The empirical distribution approximates the unknown data-generating process by assigning probability mass to observed data points, enabling computation and simulation through the plug-in principle.</p>
+<p>A random vector is a collection of random variables representing a single observation with multiple features, generated by the same data-generating process.</p>
 </blockquote>
 
 

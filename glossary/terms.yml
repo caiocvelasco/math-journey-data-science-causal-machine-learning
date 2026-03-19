@@ -11,7 +11,7 @@
   path: terms/stratified_sampling.html
 
 - title: Sampling Distribution
-  description: The probability distribution of a statistic (such as the sample mean) computed from many repeated samples drawn from the same data-generating process.
+  description: The probability distribution of a statistic computed from repeated samples drawn from the same data-generating process.
   path: terms/sampling_distribution.html
 
 - title: Central Limit Theorem (CLT)

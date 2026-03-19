@@ -24,6 +24,8 @@ $$
 (X,Y) \sim P(X,Y)
 $$
 
+Therefore, each row (or each _observation_) in a dataset is a **realization** (draw) from the true (unknown) DGP. This means that if a certain value of a random variable (e.g.: $X$ = type of coffee) is more common in the population, it will appear more often in your dataset.
+
 Important points:
 
 - The DGP **exists theoretically**

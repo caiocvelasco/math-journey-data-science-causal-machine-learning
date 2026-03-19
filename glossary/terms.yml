@@ -2,6 +2,10 @@
   description: The probabilistic mechanism that generates the observed data.
   path: terms/dgp.html
 
+- title: Empirical Distribution
+  description: A simple, from-scratch explanation of the empirical distribution as probabilities derived from observed frequencies in data.
+  path: terms/empirical_distribution.html
+
 - title: Stratified Sampling
   description: A sampling technique that divides the population into subgroups (strata) and samples from each stratum to ensure representative coverage.
   path: terms/stratified_sampling.html
@@ -13,3 +17,19 @@
 - title: Central Limit Theorem (CLT)
   description: A fundamental result stating that the sampling distribution of the sample mean becomes approximately normal as the sample size increases, regardless of the original distribution.
   path: terms/clt.html
+
+- title: Bootstrap Distribution
+  description: The distribution of a statistic obtained by resampling from the empirical distribution to approximate its sampling variability.
+  path: terms/bootstrap_distribution.html
+
+- title: Random Vector
+  description: A concise explanation of a random vector as a collection of random variables representing a single observation with multiple features.
+  path: terms/random_vector.html
+
+- title: Random Sample
+  description: A collection of independent and identically distributed random variables drawn from the same data-generating process.
+  path: terms/random_sample.html
+
+- title: Generalization
+  description: The ability of a model or statistical estimate to perform well on new, unseen data drawn from the same underlying process.
+  path: terms/generalization.html

@@ -1,0 +1,202 @@
+---
+title: "Bootstrap Distribution"
+description: "A simple introduction to the bootstrap distribution as a way to approximate sampling variability using resampling from the empirical distribution."
+---
+
+## Motivation
+
+Suppose we collect a small dataset of observed values, for example:
+
+> 80, 82, 85, 85, 90
+
+We compute a statistic, such as the average, and obtain a single number.
+
+The natural question is:
+
+> "If we collected another dataset from the same process, would we get the same result?"
+
+The answer is **no** - because data are random.
+
+So a deeper question emerges:
+
+> "How much would this value vary across different samples?"
+
+---
+
+## A Change in Perspective
+
+Traditionally, statistical inference relied on mathematical derivations to understand how a statistic behaves across repeated samples. Using tools such as the Central Limit Theorem, statisticians would derive formulas for quantities like standard errors and confidence intervals, often under strong assumptions and for relatively simple statistics.
+
+For example, consider the sample mean of coffee ratings. Under classical assumptions, we can conclude that:
+
+- The sample mean is approximately normally distributed  
+- Its variability depends on the variance and the sample size  
+
+This allows us to compute confidence intervals analytically.
+
+However, this approach quickly becomes difficult or impossible for more complex statistics, such as:
+
+- the median  
+- percentiles  
+- model parameters  
+- machine learning performance metrics  
+
+For example, consider evaluating a classification model using the **AUC (Area Under the ROC Curve)**.
+
+The AUC depends on:
+
+- all predicted scores  
+- the ranking between positive and negative examples  
+- the joint behavior of the data and the model  
+
+Unlike the sample mean, there is **no simple formula** for:
+
+- its variance  
+- its sampling distribution  
+
+To see why this matters, consider the sample mean as a comparison.
+
+For the mean, classical statistics provides a clear result:
+
+- The sampling distribution is approximately normal (by the Central Limit Theorem)  
+- The variability is given by:
+
+$$
+\text{Var}(\bar{X}) = \frac{\sigma^2}{n}
+$$
+
+In practice, we estimate this using the sample variance:
+
+$$
+\widehat{\text{SE}}(\bar{X}) = \frac{s}{\sqrt{n}}
+$$
+
+This gives us a direct and simple way to:
+
+- quantify uncertainty  
+- build confidence intervals  
+- perform hypothesis tests  
+
+For example, with coffee ratings:
+
+- sample mean = 84.4  
+- sample standard deviation = 3.6  
+- sample size = 5  
+
+We can compute:
+
+$$
+\widehat{\text{SE}} = \frac{3.6}{\sqrt{5}} \approx 1.61
+$$
+
+This tells us how much the mean would vary across repeated samples - without any simulation.
+
+---
+
+For more complex statistics, such as the AUC, no such formula exists.
+
+There is no equivalent expression like $\sigma^2/n$, and no general theorem that gives a simple approximation in practice.
+
+As a result, we cannot directly quantify uncertainty using classical methods.
+
+Today, this classical approach is complemented - and often replaced - by a computational one.
+
+> Inference can be done by simulation from the data, not only by mathematical derivation from assumptions.
+
+The bootstrap embodies this shift.
+
+> The bootstrap replaces analytical inference with computational inference.
+
+More precisely:
+
+> Bootstrap is a computational shortcut to approximate the same object that classical statistics defines theoretically.
+
+Instead of deriving the sampling distribution of a statistic using mathematics, we approximate it by resampling the observed data.
+
+---
+
+## From Data to Uncertainty
+
+Suppose we compute a statistic from the data, such as the sample mean:
+
+$$
+\bar{X} = \frac{1}{n} \sum_{i=1}^n x_i
+$$
+
+This value depends **on the particular dataset** we observed.
+
+If we had observed a different dataset, we would obtain a different value.
+
+This leads to the concept of a **sampling distribution**:
+
+> The distribution of a statistic **across repeated samples** from the data-generating process.
+
+The problem is:
+
+> We only observe **one dataset**.
+
+---
+
+## Key Idea
+
+To approximate how a statistic would behave across repeated samples, we need a way to simulate new datasets.
+
+However, the true distribution $F$ is unknown, so we cannot sample from it directly.
+
+Instead, we use the [Empirical Distribution](empirical_distribution.qmd).
+
+The empirical distribution places equal probability on each observed data point:
+
+- Each observation $x_i$ receives probability $1/n$
+
+This provides a data-driven approximation of the data-generating process, which we can use to simulate repetition.
+
+---
+
+## Bootstrap Samples
+
+Using the empirical distribution, we generate new datasets by:
+
+- Sampling **with replacement**  
+- From the observed data $x_1, \dots, x_n$  
+- Keeping the same sample size $n$  
+
+Each generated dataset is called a **bootstrap sample**.
+
+Example:
+
+$$
+[85, 85, 90, 82, 85]
+$$
+
+$$
+[80, 80, 85, 82, 90]
+$$
+
+Each bootstrap sample represents a new realization drawn from the empirical distribution.
+
+---
+
+## Bootstrap Distribution
+
+For each bootstrap sample, we recompute the statistic of interest:
+
+$$
+\bar{X}^{(1)}, \bar{X}^{(2)}, \dots, \bar{X}^{(B)}
+$$
+
+The distribution of these values is called the **bootstrap distribution**.
+
+---
+
+## Interpretation
+
+It approximates:
+
+> "How the statistic would vary across repeated samples from the data-generating process"
+
+---
+
+## One-line Summary
+
+> The bootstrap distribution is obtained by resampling from the empirical distribution and recomputing a statistic to approximate its sampling variability.

@@ -1,70 +1,172 @@
 ---
 title: "Sampling Distribution"
-description: "The probability distribution of a statistic (such as the sample mean) computed from many repeated samples drawn from the same data-generating process."
+description: "The probability distribution of a statistic computed from repeated samples drawn from the same data-generating process."
 ---
 
-In probability, we usually start by studying the distribution of a **random variable**.
+In probability, we usually study the distribution of a **random variable**.
 
 For example, when rolling a fair die, we may ask:
 
 > What is the probability that the outcome is 4?
 
-Here the object of interest is the **distribution of the random variable** that represents the outcome of the die.
+Here, the object of interest is the **distribution of a single random variable**.
 
-In statistical inference, however, the question changes.
+---
 
-Instead of studying the distribution of a single observation, we study **statistics computed from samples**.
+## From Random Variables to Statistics
 
-A useful way to think about this shift is the following:
+In statistical inference, the focus shifts.
 
-> When you roll one die, the natural question is about the distribution of the random variable.  
+Instead of studying a single observation, we study **statistics computed from samples**.
+
+A useful way to think about this shift is:
+
+> When you roll one die, the natural question is about the distribution of the outcome.  
 > When you roll several dice and compute a statistic, the question becomes the distribution of that statistic.
 
-For example, suppose we roll a die **four times** and compute the **sample mean** of the outcomes.
+---
 
-Each set of four rolls produces a different value for the sample mean.
+## Definition
 
-If we repeated this experiment many times - each time rolling four dice and computing the mean - we would obtain many possible values of that statistic.
+Suppose we collect data as a [random sample](random_sample.qmd):
 
-The distribution of those possible values is called the **sampling distribution**.
+$$
+X_1, X_2, \dots, X_n \sim F
+$$
 
-Formally, a **sampling distribution** is the probability distribution of a statistic computed from a random sample drawn from a population or from a [Data Generating Process (DGP)](dgp.qmd).
+and compute a statistic:
 
-Sampling distributions play a central role in statistical inference because they allow us to understand how statistics behave across repeated samples.
+$$
+T = T(X_1, \dots, X_n)
+$$
 
-Many of the most important results in statistics - such as confidence intervals, hypothesis tests, and the **[Central Limit Theorem](clt.qmd)** - rely on properties of sampling distributions.
+The **sampling distribution** is the probability distribution of $T$.
 
-## Connection to the Central Limit Theorem
+---
 
-In many practical situations, deriving the exact sampling distribution of a statistic can be difficult.
+## Interpretation
 
-A fundamental result in statistics helps us in this situation: the **[Central Limit Theorem](clt.qmd)**.
+The sampling distribution answers the question:
 
-The Central Limit Theorem states that, under fairly general conditions, the sampling distribution of the **sample mean** becomes approximately **normal (Gaussian)** as the sample size increases, regardless of the shape of the original distribution.
+> "How would this statistic vary if we collected many different datasets from the same data-generating process?"
 
-In other words, even if the underlying data-generating process is not normally distributed, the distribution of the sample mean tends to become approximately normal when the sample size is sufficiently large.
+It is a **theoretical object** defined by repeated sampling from the [Data Generating Process (DGP)](dgp.qmd).
 
-This result explains why the normal distribution appears so frequently in statistical inference and why it is widely used for constructing confidence intervals and hypothesis tests.
+In practice:
 
-A more detailed discussion of the Central Limit Theorem is provided in the dedicated section on the **[Central Limit Theorem](clt.qmd)**.
+- We observe only **one dataset**  
+- But we reason about **many possible datasets**  
 
-## Where Sampling Distributions Appear in Data Science and Machine Learning
+---
 
-Although the concept originates in classical statistics, sampling distributions appear frequently in modern data science and machine learning.
+## Example
 
-Some common examples include:
+Suppose we roll a die **four times** and compute the sample mean.
+
+Each set of four rolls produces a different value:
+
+- Sample 1 → mean = 3.25  
+- Sample 2 → mean = 4.50  
+- Sample 3 → mean = 2.75  
+
+If we repeated this experiment many times, we would obtain many possible values.
+
+The distribution of those values is the **sampling distribution of the sample mean**.
+
+---
+
+## Two Ways to Access the Sampling Distribution
+
+The sampling distribution is usually **not directly observable**.
+
+There are two main approaches to understanding it.
+
+---
+
+### 1) Classical (Analytical Approach)
+
+In classical statistics, we derive properties of the sampling distribution using mathematical theory.
+
+A fundamental result is the **[Central Limit Theorem (CLT)](clt.qmd)**:
+
+- For large samples, the sample mean is approximately normal  
+- Its variability depends on the variance and sample size  
+
+This provides analytical formulas for:
+
+- standard errors  
+- confidence intervals  
+- hypothesis tests  
+
+However, this approach:
+
+- relies on assumptions  
+- works mainly for simple statistics (e.g., the mean)
+
+---
+
+### 2) Computational Approach (Bootstrap)
+
+In many practical cases, the sampling distribution is difficult or impossible to derive analytically.
+
+The bootstrap provides an alternative:
+
+- Resample the data  
+- Recompute the statistic  
+- Use the resulting values to approximate its distribution  
+
+> The bootstrap approximates the sampling distribution by simulation rather than derivation.
+
+More generally:
+
+> Bootstrap is a computational shortcut to approximate the same object that classical statistics defines theoretically.
+
+---
+
+## Why Sampling Distributions Matter
+
+Sampling distributions allow us to:
+
+- Quantify uncertainty  
+- Compute standard errors  
+- Build confidence intervals  
+- Perform hypothesis testing  
+
+They are central to both:
+
+- classical statistical inference  
+- modern data science workflows  
+
+---
+
+## Where Sampling Distributions Appear in Data Science
+
+Although the concept originates in classical statistics, it appears frequently in modern applications:
 
 - **Model evaluation**  
-  Metrics such as accuracy, AUC, precision, or recall are statistics computed from a test dataset.  
-  Their variability across different samples reflects the **sampling distribution of the evaluation metric**.
+  Metrics such as accuracy, AUC, precision, or recall are statistics.  
+  Their variability across datasets reflects their sampling distribution.
 
 - **Cross-validation**  
-  When a model is trained and evaluated across multiple folds, the resulting scores approximate the **sampling distribution of the model's performance**.
+  Repeated training and evaluation across folds approximates the sampling distribution of model performance.
 
 - **Bootstrap methods**  
-  Bootstrapping repeatedly resamples the dataset and recomputes a statistic (such as a coefficient or prediction error) to approximate its **sampling distribution**.
+  Resampling approximates the sampling distribution of a statistic.
 
 - **Uncertainty quantification**  
-  Confidence intervals and standard errors used in regression or causal inference rely on theoretical results about sampling distributions.
+  Confidence intervals and standard errors rely on sampling distributions.
 
-Even in predictive machine learning pipelines, whenever we compute statistics from data - such as model parameters, evaluation metrics, or feature importance measures - their variability across samples is governed by **sampling distributions**.
+---
+
+## Key Idea
+
+The sampling distribution is the **central object of statistical inference**.
+
+- Classical statistics approximates it analytically  
+- Bootstrap approximates it computationally  
+
+---
+
+## One-line Summary
+
+> The sampling distribution describes how a statistic varies across repeated samples from the same data-generating process, and it can be studied either analytically or approximated computationally.
